@@ -1,12 +1,15 @@
 package us.nineworlds.xstreamer;
 
-import java.awt.Container;
-
 import javax.swing.JFrame;
 
 import org.swixml.jsr296.SwingApplication;
 
+import com.github.xws.XwsSpec;
+
 public class XStreamer extends SwingApplication {
+	
+	public static XwsSpec player1;
+	public static XwsSpec player2;
 	
 	public static void main(String[] args) throws Exception {
 		SwingApplication.launch(XStreamer.class, args);
