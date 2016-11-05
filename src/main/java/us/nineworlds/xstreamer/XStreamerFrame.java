@@ -41,9 +41,9 @@ public class XStreamerFrame extends JFrame {
    JTextField timerMinutesTextField;
    JTextField timerSecondsTextField;
 
-   JLabel countDownHoursLabel;
-   JLabel countDownMinutesLabel;
-   JLabel countDownSecondsLabel;
+   public static JLabel countDownHoursLabel;
+   public static JLabel countDownMinutesLabel;
+   public static JLabel countDownSecondsLabel;
 
    @Action
    public void startTimer(ActionEvent event) {
@@ -54,6 +54,7 @@ public class XStreamerFrame extends JFrame {
          DateTime endTime = startTime.plusHours(2).plusMinutes(30);
          XStreamer.setCountDownTime(endTime.getMillis() - startTime.getMillis());
          scheduleTimer(scheduler);
+         startPauseButton.setText("Pause");
          return;
       }
 
@@ -62,6 +63,7 @@ public class XStreamerFrame extends JFrame {
             scheduler.deleteJob(countDownJobKey);
             System.out.println("Timer has been paused.");
             timerRunning = false;
+            startPauseButton.setText("Resume");
          } catch (SchedulerException e) {
             e.printStackTrace();
          }
@@ -70,6 +72,7 @@ public class XStreamerFrame extends JFrame {
       
       scheduleTimer(scheduler);
       System.out.println("Timer has resumed.");
+      startPauseButton.setText("Pause");
       timerRunning = true;
    }
 
