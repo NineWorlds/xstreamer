@@ -84,3 +84,5 @@ app/fabric.properties
 # Meld
 
 *.orig
+
+output.txt

@@ -1,37 +1,48 @@
 <frame xmlns="http://www.swixml.org/2007/Swixml" size="640,280"
-	title="XStreamer Squad Helper" defaultCloseOperation="JFrame.EXIT_ON_CLOSE">
+   title="XStreamer Squad Helper" defaultCloseOperation="JFrame.EXIT_ON_CLOSE">
 
-	<panel layout="BorderLayout">
-		<tabbedpane constraints="BorderLayout.CENTER">
-			<panel name="Timer" layout="FlowLayout(FlowLayout.LEFT)">
-				<vbox gap="20">
-					<hbox>
-						<textfield id="text_hr" columns="3" text="00" />
-						<label text=":" />
-						<textfield id="text_mn" columns="3" text="00" />
-						<label text=":" />
-						<textfield id="text_ss" columns="3" text="00" />
-						<box.glue/>
-					</hbox>
+   <panel layout="BorderLayout">
+      <tabbedpane constraints="BorderLayout.CENTER">
+         <panel name="Timer" layout="FlowLayout(FlowLayout.LEFT)">
+            <vbox gap="20">
+               <hbox>
+                  <textfield id="timerHourTextField" columns="3" text="00" />
+                  <label text=":" />
+                  <textfield id="timerMinutesTextField" columns="3" text="00" />
+                  <label text=":" />
+                  <textfield id="timerSecondsTextField" columns="3" text="00" />
+                  <box.glue />
+               </hbox>
 
-					<hbox>
-						<button id="btn_timer_rest" text="Rest" />
-						<button id="btn_timer_pause_start" text="Start" />
-					</hbox>
+               <hbox>
+                  <button id="restButton" text="Reset" />
+                  <button id="startPauseButton" text="Start" action="startTimer"/>
+               </hbox>
+
+               <hbox>
+                  <label id="countDownHoursLabel" font="Arial-BOLD-24"
+                     text="00" />
+                  <label font="Arial-BOLD-24" text=" : " />
+                  <label id="countDownMinutesLabel" font="Arial-BOLD-24"
+                     text="00" />
+                  <label font="Arial-BOLD-24" text=" : " />
+                  <label id="countDownSecondsLabel" font="Arial-BOLD-24"
+                     text="00" />
+               </hbox>
 
 
-				</vbox>
-			</panel>
+            </vbox>
+         </panel>
 
-			<panel name="Player1" layout="FlowLayout(FlowLayout.LEFT)">
-				<label font="Georgia-BOLD-36" text="Player 1:" />
-			</panel>
+         <panel name="Player1" layout="FlowLayout(FlowLayout.LEFT)">
+            <label font="Georgia-BOLD-36" text="Player 1:" />
+         </panel>
 
-			<panel name="Player2" layout="FlowLayout(FlowLayout.LEFT)">
-				<label font="Georgia-BOLD-36" text="Player 2:" />
-			</panel>
+         <panel name="Player2" layout="FlowLayout(FlowLayout.LEFT)">
+            <label font="Georgia-BOLD-36" text="Player 2:" />
+         </panel>
 
-		</tabbedpane>
-	</panel>
+      </tabbedpane>
+   </panel>
 
 </frame>
