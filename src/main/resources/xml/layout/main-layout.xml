@@ -15,7 +15,7 @@
                </hbox>
 
                <hbox>
-                  <button id="restButton" text="Reset" />
+                  <button id="restButton" text="Reset" action="resetTimer"/>
                   <button id="startPauseButton" text="Start" action="startTimer"/>
                </hbox>
 

@@ -50,9 +50,7 @@ public class XStreamerFrame extends JFrame {
       Scheduler scheduler = XStreamer.getScheduler();
 
       if (countDownTriggerKey == null) {
-         DateTime startTime = DateTime.now();
-         DateTime endTime = startTime.plusHours(2).plusMinutes(30);
-         XStreamer.setCountDownTime(endTime.getMillis() - startTime.getMillis());
+         setInitialTimer();
          scheduleTimer(scheduler);
          startPauseButton.setText("Pause");
          return;
@@ -74,6 +72,31 @@ public class XStreamerFrame extends JFrame {
       System.out.println("Timer has resumed.");
       startPauseButton.setText("Pause");
       timerRunning = true;
+   }
+
+   private void setInitialTimer() {
+      String inthours = timerHourTextField.getText();
+      String intMins = timerMinutesTextField.getText();
+      String intSeconds = timerSecondsTextField.getText();
+      
+      DateTime startTime = DateTime.now();
+      DateTime endTime = startTime.plusHours(Integer.parseInt(inthours)).plusMinutes(Integer.parseInt(intMins)).plus(Integer.parseInt(intSeconds));
+      
+      XStreamer.setCountDownTime(endTime.getMillis() - startTime.getMillis());
+   }
+   
+   @Action
+   public void resetTimer(ActionEvent event) {
+      setInitialTimer();
+      try {
+         XStreamer.getScheduler().deleteJob(countDownJobKey);
+      } catch (SchedulerException e) {
+         e.printStackTrace();
+      }
+      countDownJobKey = null;
+      countDownTriggerKey = null;
+      timerRunning = false;
+      startPauseButton.setText("Start");
    }
 
    private void scheduleTimer(Scheduler scheduler) {
