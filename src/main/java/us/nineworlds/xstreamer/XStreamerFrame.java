@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultTreeModel;
 
 import org.jdesktop.application.Action;
 import org.joda.time.DateTime;
@@ -25,6 +27,7 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 
 import us.nineworlds.xstreamer.jobs.CountDownJob;
+import us.nineworlds.xstreamer.model.XWSquadTreeNode;
 
 public class XStreamerFrame extends JFrame {
 
@@ -32,19 +35,29 @@ public class XStreamerFrame extends JFrame {
    private static final long serialVersionUID = 1L;
    private boolean timerRunning = false;
    private JobKey countDownJobKey;
-
    private TriggerKey countDownTriggerKey;
+   
+   JTree player1Squad;
+   
    JButton startPauseButton;
    JButton resetButton;
 
    JTextField timerHourTextField;
    JTextField timerMinutesTextField;
    JTextField timerSecondsTextField;
-
+   
+   XWSquadTreeNode player1TreeNode = new XWSquadTreeNode(XStreamer.getPlayer1());
+   DefaultTreeModel player1Model = new DefaultTreeModel(player1TreeNode);
+   
    public static JLabel countDownHoursLabel;
    public static JLabel countDownMinutesLabel;
    public static JLabel countDownSecondsLabel;
-
+   
+   public XStreamerFrame() {
+      super();   
+   }
+  
+   
    @Action
    public void startTimer(ActionEvent event) {
       Scheduler scheduler = XStreamer.getScheduler();
@@ -82,6 +95,10 @@ public class XStreamerFrame extends JFrame {
       DateTime startTime = DateTime.now();
       DateTime endTime = startTime.plusHours(Integer.parseInt(inthours)).plusMinutes(Integer.parseInt(intMins)).plus(Integer.parseInt(intSeconds));
       
+      countDownHoursLabel.setText(timerHourTextField.getText());
+      countDownMinutesLabel.setText(timerMinutesTextField.getText());
+      countDownSecondsLabel.setText(timerSecondsTextField.getText());
+      
       XStreamer.setCountDownTime(endTime.getMillis() - startTime.getMillis());
    }
    
@@ -114,4 +131,13 @@ public class XStreamerFrame extends JFrame {
          System.out.println("Error scheduling job");
       }
    }
+   
+   public DefaultTreeModel getPlayer1Model() {
+      return player1Model;
+   }
+
+   public void setPlayer1Model(DefaultTreeModel player1Model) {
+      this.player1Model = player1Model;
+   }
+
 }

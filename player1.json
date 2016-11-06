@@ -1,0 +1,116 @@
+{
+	"description": "",
+	"faction": "imperial",
+	"name": "Bombing Bulldogs",
+	"pilots": 
+	[
+		{
+			"name": "gammasquadronpilot",
+			"points": 23,
+			"ship": "tiebomber",
+			"upgrades": 
+			{
+				"torpedo": 
+				[
+					"extramunitions",
+					"flechettetorpedoes"
+				],
+
+				"missile": 
+				[
+					"xx23sthreadtracers"
+				],
+
+				"mod": 
+				[
+					"guidancechips"
+				]
+			}
+		},
+
+		{
+			"name": "gammasquadronpilot",
+			"points": 25,
+			"ship": "tiebomber",
+			"upgrades": 
+			{
+				"torpedo": 
+				[
+					"extramunitions",
+					"plasmatorpedoes"
+				],
+
+				"bomb": 
+				[
+					"seismiccharges"
+				],
+
+				"mod": 
+				[
+					"guidancechips"
+				]
+			}
+		},
+
+		{
+			"name": "gammasquadronpilot",
+			"points": 26,
+			"ship": "tiebomber",
+			"upgrades": 
+			{
+				"torpedo": 
+				[
+					"extramunitions",
+					"protontorpedoes"
+				],
+
+				"bomb": 
+				[
+					"seismiccharges"
+				],
+
+				"mod": 
+				[
+					"guidancechips"
+				]
+			}
+		},
+
+		{
+			"name": "gammasquadronpilot",
+			"points": 26,
+			"ship": "tiebomber",
+			"upgrades": 
+			{
+				"torpedo": 
+				[
+					"extramunitions"
+				],
+
+				"missile": 
+				[
+					"assaultmissiles",
+					"xx23sthreadtracers"
+				],
+
+				"mod": 
+				[
+					"guidancechips"
+				]
+			}
+		}
+	],
+
+	"points": 100,
+	"vendor": 
+	{
+		"yasb": 
+		{
+			"builder": "(Yet Another) X-Wing Miniatures Squad Builder",
+			"builder_url": "https://geordanr.github.io/xwing/",
+			"link": "https://geordanr.github.io/xwing/?f=Galactic%20Empire&d=v4!s!50:126,58,-1,143,-1:-1:25:;50:126,136,-1,-1,24:-1:25:;50:126,1,-1,-1,24:-1:25:;50:126,-1,26,143,-1:-1:25:&sn=Bombing%20Bulldogs"
+		}
+	},
+
+	"version": "0.3.0"
+}

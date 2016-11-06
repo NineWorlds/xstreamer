@@ -1,45 +1,84 @@
 <frame xmlns="http://www.swixml.org/2007/Swixml" size="640,280"
    title="XStreamer Squad Helper" defaultCloseOperation="JFrame.EXIT_ON_CLOSE">
+   <menubar>
+      <menu text="File">
+         <menuitem text="Import Squad" />
+         <menuitem></menuitem>
+      </menu>
+
+   </menubar>
 
    <panel layout="BorderLayout">
       <tabbedpane constraints="BorderLayout.CENTER">
-         <panel name="Timer" layout="FlowLayout(FlowLayout.LEFT)">
+         <panel name="Timer" layout="FlowLayout(FlowLayout.CENTER)">
             <vbox gap="20">
-               <hbox>
-                  <textfield id="timerHourTextField" columns="3" text="00" />
+               <hbox gap="2" constraints="FlowLayout.CENTER">
+                  <textfield id="timerHourTextField" columns="3"
+                     text="00" />
                   <label text=":" />
-                  <textfield id="timerMinutesTextField" columns="3" text="00" />
+                  <textfield id="timerMinutesTextField"
+                     columns="3" text="00" />
                   <label text=":" />
-                  <textfield id="timerSecondsTextField" columns="3" text="00" />
+                  <textfield id="timerSecondsTextField"
+                     columns="3" text="00" />
                   <box.glue />
                </hbox>
 
-               <hbox>
-                  <button id="restButton" text="Reset" action="resetTimer"/>
-                  <button id="startPauseButton" text="Start" action="startTimer"/>
+               <hbox gap="10" constraints="FlowLayout.CENTER">
+                  <button id="restButton" text="Reset" action="resetTimer" />
+                  <button id="startPauseButton" text="Start"
+                     action="startTimer" />
                </hbox>
 
-               <hbox>
+               <hbox gap="2" constraints="FlowLayout.CENTER">
                   <label id="countDownHoursLabel" font="Arial-BOLD-24"
                      text="00" />
-                  <label font="Arial-BOLD-24" text=" : " />
+                  <label font="Arial-BOLD-24" text=":" />
                   <label id="countDownMinutesLabel" font="Arial-BOLD-24"
                      text="00" />
-                  <label font="Arial-BOLD-24" text=" : " />
+                  <label font="Arial-BOLD-24" text=":" />
                   <label id="countDownSecondsLabel" font="Arial-BOLD-24"
                      text="00" />
                </hbox>
 
-
             </vbox>
          </panel>
 
-         <panel name="Player1" layout="FlowLayout(FlowLayout.LEFT)">
-            <label font="Georgia-BOLD-36" text="Player 1:" />
+         <panel name="Player1" layout="BorderLayout">
+            <label constraints="BorderLayout.PAGE_START" text="Player 1 Squad Points: 0" font="Arial-BOLD-20"/>
+            <splitpane constraints="BorderLayout.CENTER">
+               <scrollpane minimumSize="150,800">
+                  <tree id="player1Squad" model="${player1Model}" toolTipText="this is a tooltip"  />
+               </scrollpane>
+
+               <panel id="contentPanelPlayer1" name="contentPanel"
+                  layout="BorderLayout">
+                  <textarea constraints="BorderLayout.CENTER"
+                     bindWith="result" editable="false">
+                  </textarea>
+
+               </panel>
+            </splitpane>
+
          </panel>
 
-         <panel name="Player2" layout="FlowLayout(FlowLayout.LEFT)">
-            <label font="Georgia-BOLD-36" text="Player 2:" />
+         <panel name="Player2" layout="BorderLayout">
+            <label constraints="BorderLayout.PAGE_START" text="Player 1 Squad Points: 0" font="Arial-BOLD-20"/>
+            <splitpane constraints="BorderLayout.CENTER">
+               <scrollpane minimumSize="150,800">
+                  <tree id="player2" model="${player1Model}" action="selectNode"
+                     dblClickAction="activeNode" toolTipText="this is a tooltip" />
+               </scrollpane>
+
+               <panel id="contentPanelPlayer2" name="contentPanel"
+                  layout="BorderLayout">
+                  <textarea constraints="BorderLayout.CENTER"
+                     bindWith="result" editable="false">
+                  </textarea>
+
+               </panel>
+
+            </splitpane>
          </panel>
 
       </tabbedpane>
