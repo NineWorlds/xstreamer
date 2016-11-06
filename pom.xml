@@ -98,4 +98,30 @@
          <version>2.3.20</version>
       </dependency>
    </dependencies>
+
+   <profiles>
+      <profile>
+         <id>run</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>exec-maven-plugin</artifactId>
+                  <version>1.5.0</version>
+                  <executions>
+                     <execution>
+                        <phase>package</phase>
+                        <goals>
+                           <goal>java</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+                  <configuration>
+                     <mainClass>us.nineworlds.xstreamer.XStreamer</mainClass>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
 </project>
