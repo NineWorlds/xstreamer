@@ -8,6 +8,11 @@ The purpose of this is to provide a convienent way to manage some basic informat
 3. Ability to edit and update the stats of player squads.
 4. Export the updated information to HTML squad files, for use as overlays with OBS and Xsplit.
 
+## What is working?
+
+1. Timer
+2. Basic Importing of XWS for player 1 and player 2
+
 The program is written in java, and does require Java 8.  It should work across multiple platforms.  Currently the best way to run this is via the -Prun profile, see below for how to execute.
 
 ### HTML Squad List Generation
