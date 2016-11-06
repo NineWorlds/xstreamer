@@ -38,6 +38,7 @@ public class XStreamerFrame extends JFrame {
    private TriggerKey countDownTriggerKey;
    
    JTree player1Squad;
+   JTree player2Squad;
    
    JButton startPauseButton;
    JButton resetButton;
@@ -48,6 +49,9 @@ public class XStreamerFrame extends JFrame {
    
    XWSquadTreeNode player1TreeNode = new XWSquadTreeNode(XStreamer.getPlayer1());
    DefaultTreeModel player1Model = new DefaultTreeModel(player1TreeNode);
+   
+   XWSquadTreeNode player2TreeNode = new XWSquadTreeNode(XStreamer.getPlayer2());
+   DefaultTreeModel player2Model = new DefaultTreeModel(player2TreeNode);
    
    public static JLabel countDownHoursLabel;
    public static JLabel countDownMinutesLabel;
@@ -138,6 +142,14 @@ public class XStreamerFrame extends JFrame {
 
    public void setPlayer1Model(DefaultTreeModel player1Model) {
       this.player1Model = player1Model;
+   }
+
+   public DefaultTreeModel getPlayer2Model() {
+      return player2Model;
+   }
+
+   public void setPlayer2Model(DefaultTreeModel player2Model) {
+      this.player2Model = player2Model;
    }
 
 }

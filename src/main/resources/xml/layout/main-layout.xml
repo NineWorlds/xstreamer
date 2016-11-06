@@ -63,10 +63,10 @@
          </panel>
 
          <panel name="Player2" layout="BorderLayout">
-            <label constraints="BorderLayout.PAGE_START" text="Player 1 Squad Points: 0" font="Arial-BOLD-20"/>
+            <label constraints="BorderLayout.PAGE_START" text="Player 2 Squad Points: 0" font="Arial-BOLD-20"/>
             <splitpane constraints="BorderLayout.CENTER">
                <scrollpane minimumSize="150,800">
-                  <tree id="player2" model="${player1Model}" action="selectNode"
+                  <tree id="player2Squad" model="${player2Model}" action="selectNode"
                      dblClickAction="activeNode" toolTipText="this is a tooltip" />
                </scrollpane>
 

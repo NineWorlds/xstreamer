@@ -3,6 +3,7 @@ package us.nineworlds.xstreamer.model;
 import java.util.List;
 
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeNode;
 
 public class UpgradeTreeNode extends DefaultMutableTreeNode {
    
@@ -16,12 +17,22 @@ public class UpgradeTreeNode extends DefaultMutableTreeNode {
    }
    
    public String toString() {
-      StringBuilder stringBuilder = new StringBuilder("Upgrades: ");
-      for(String options : upgradeOptions) {
-         stringBuilder.append(options);
-         stringBuilder.append(" ");
-      }
-      return stringBuilder.toString();
+      return upgradeSlot;
    }
-
+   
+   @Override
+   public int getChildCount() {
+      if (upgradeOptions == null || upgradeOptions.isEmpty()) {
+         return 0;
+      }
+      
+      return upgradeOptions.size();
+   }
+   
+   @Override
+   public TreeNode getChildAt(int index) {
+      UpgradeTypeTreeNode type = new UpgradeTypeTreeNode(upgradeOptions.get(index));
+      return type;
+   }
+   
 }
