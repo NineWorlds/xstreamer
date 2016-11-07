@@ -1,5 +1,7 @@
 package us.nineworlds.xstreamer;
 
+import static org.quartz.JobBuilder.newJob;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
@@ -9,8 +11,12 @@ import java.util.Map;
 import javax.swing.JFrame;
 
 import org.joda.time.Period;
+import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
+import org.quartz.SimpleScheduleBuilder;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 import org.swixml.jsr296.SwingApplication;
 
@@ -19,6 +25,8 @@ import com.github.xws.XwsSpec;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import us.nineworlds.xstreamer.jobs.CountDownJob;
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 
 public class XStreamer extends SwingApplication {
 
@@ -90,15 +98,23 @@ public class XStreamer extends SwingApplication {
    private static void initFreemarker() throws Exception {
       freemarkerConfig = new Configuration();
       freemarkerConfig.setDirectoryForTemplateLoading(new File("templates"));
-      Template squadTemplate = freemarkerConfig.getTemplate("squadOverlay.ftl");
-      Map<String, Object> input = new HashMap<>();
-      input.put("xwsspec", player1);
       
-      Writer player1SquadFile = new FileWriter(new File("player1.html"));
+      createPlayerFile("player1.html", "1", "squadJob1");
+      createPlayerFile("player2.html", "2", "squadJob2");
+   }
+
+   private static void createPlayerFile(String filename, String playerNumber, String jobName) {
+      JobDetail jobDetail = newJob(GenerateSquadJob.class)
+            .withIdentity(jobName)
+            .usingJobData("filename", filename)
+            .usingJobData("player", playerNumber)
+            .build();
+      Trigger trigger = TriggerBuilder.newTrigger().startNow().withIdentity(jobName).build();
+      
       try {
-         squadTemplate.process(input, player1SquadFile);
-      } finally {
-         player1SquadFile.close();
+         scheduler.scheduleJob(jobDetail, trigger);
+      } catch (SchedulerException e) {
+         System.out.println("Error scheduling job");
       }
    }
 
