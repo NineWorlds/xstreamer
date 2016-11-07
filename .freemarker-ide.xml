@@ -1,0 +1,9 @@
+<config>
+	<context-values>
+		<resource path="templates/squadOverlay.ftl">
+			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
+		</resource>
+	</context-values>
+	<macro-library>
+	</macro-library>
+</config>

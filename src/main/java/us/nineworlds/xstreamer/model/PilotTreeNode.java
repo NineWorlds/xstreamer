@@ -1,9 +1,6 @@
 package us.nineworlds.xstreamer.model;
 
-import java.awt.image.PixelInterleavedSampleModel;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -12,12 +9,12 @@ import javax.swing.tree.TreeNode;
 import com.github.xws.Pilot;
 import com.github.xws.Upgrades;
 import com.google.common.collect.Iterables;
-import com.mchange.v2.c3p0.impl.NewPooledConnection;
 
 public class PilotTreeNode extends DefaultMutableTreeNode {
 
-   Pilot pilot;
-   Upgrades upgrades;
+   private static final long serialVersionUID = -9033190175203649457L;
+   private Pilot pilot;
+   private Upgrades upgrades;
    
    public PilotTreeNode(Pilot userObject, boolean allowsChildren) {
       super(userObject, allowsChildren);
@@ -34,9 +31,7 @@ public class PilotTreeNode extends DefaultMutableTreeNode {
    public String toString() {
      StringBuilder stringBuilder = new StringBuilder();
      stringBuilder.append(pilot.getName());
-     stringBuilder.append("-");
-     stringBuilder.append(pilot.getShip());
-     stringBuilder.append("(");
+     stringBuilder.append(" (");
      stringBuilder.append(pilot.getPoints());
      stringBuilder.append(")");
      return stringBuilder.toString();
@@ -57,5 +52,4 @@ public class PilotTreeNode extends DefaultMutableTreeNode {
     
       return upgradesTreeNode;
    }
-
 }

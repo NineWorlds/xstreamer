@@ -17,23 +17,6 @@
    <build>
       <plugins>
          <plugin>
-            <groupId>org.jsonschema2pojo</groupId>
-            <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-            <version>0.4.27</version>
-            <configuration>
-               <sourceDirectory>${basedir}/src/main/resources/schemas</sourceDirectory>
-               <outputDirectory>${project.build.directory}/generated-sources/schemas</outputDirectory>
-               <targetPackage>com.github.xws</targetPackage>
-            </configuration>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>generate</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.6.0</version>
             <configuration>
@@ -70,6 +53,11 @@
          <groupId>commons-lang</groupId>
          <artifactId>commons-lang</artifactId>
          <version>2.4</version>
+      </dependency>
+      <dependency>
+         <groupId>commons-configuration</groupId>
+         <artifactId>commons-configuration</artifactId>
+         <version>1.10</version>
       </dependency>
       <dependency>
          <groupId>commons-io</groupId>
@@ -119,6 +107,30 @@
                   <configuration>
                      <mainClass>us.nineworlds.xstreamer.XStreamer</mainClass>
                   </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+      <profile>
+         <id>generate</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.jsonschema2pojo</groupId>
+                  <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                  <version>0.4.27</version>
+                  <configuration>
+                     <sourceDirectory>${basedir}/src/main/resources/schemas</sourceDirectory>
+                     <outputDirectory>${project.build.directory}/generated-sources/schemas</outputDirectory>
+                     <targetPackage>com.github.xws</targetPackage>
+                  </configuration>
+                  <executions>
+                     <execution>
+                        <goals>
+                           <goal>generate</goal>
+                        </goals>
+                     </execution>
+                  </executions>
                </plugin>
             </plugins>
          </build>
