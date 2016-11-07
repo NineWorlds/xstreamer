@@ -2,12 +2,8 @@ package us.nineworlds.xstreamer.jobs;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Formatter;
-import java.util.Locale;
-
 import javax.swing.SwingUtilities;
 
 import org.apache.commons.io.FileUtils;
@@ -30,7 +26,8 @@ public class CountDownJob implements Job {
    public CountDownJob() {
    }
 
-   public void execute(JobExecutionContext context) throws JobExecutionException {
+   @Override
+public void execute(JobExecutionContext context) throws JobExecutionException {
       long timeLeft = XStreamer.getCountDownTime();
       if (timeLeft <= 0) {
          try {

@@ -3,18 +3,12 @@ package us.nineworlds.xstreamer;
 import static org.quartz.JobBuilder.newJob;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.Writer;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.swing.JFrame;
 
-import org.joda.time.Period;
+import org.jdesktop.application.Application;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
@@ -24,8 +18,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.xws.XwsSpec;
 
 import freemarker.template.Configuration;
-import freemarker.template.Template;
-import us.nineworlds.xstreamer.jobs.CountDownJob;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 
 public class XStreamer extends SwingApplication {
@@ -43,7 +35,7 @@ public class XStreamer extends SwingApplication {
       player1 = mapper.readValue(new File("player1.json"), XwsSpec.class);
       player2 = mapper.readValue(new File("player2.json"), XwsSpec.class);
       initFreemarker();
-      SwingApplication.launch(XStreamer.class, args);
+      Application.launch(XStreamer.class, args);
    }
 
    @Override

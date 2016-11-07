@@ -28,7 +28,8 @@ public class PilotTreeNode extends DefaultMutableTreeNode {
       upgrades = pilot.getUpgrades();
    }
    
-   public String toString() {
+   @Override
+public String toString() {
      StringBuilder stringBuilder = new StringBuilder();
      stringBuilder.append(pilot.getName());
      stringBuilder.append(" (");

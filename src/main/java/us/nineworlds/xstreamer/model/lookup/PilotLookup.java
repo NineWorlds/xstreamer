@@ -2,8 +2,6 @@ package us.nineworlds.xstreamer.model.lookup;
 
 import java.io.File;
 
-import javax.management.loading.PrivateClassLoader;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 
 public class PilotLookup {

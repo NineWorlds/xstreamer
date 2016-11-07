@@ -2,8 +2,6 @@ package us.nineworlds.xstreamer.model;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
-
 import com.github.xws.XwsSpec;
 
 public class XWSquadTreeNode extends DefaultMutableTreeNode {
@@ -21,7 +19,8 @@ public class XWSquadTreeNode extends DefaultMutableTreeNode {
       playerModel = userObject;
    }
    
-   public String toString() {
+   @Override
+public String toString() {
       return playerModel.getName();
    }
 
