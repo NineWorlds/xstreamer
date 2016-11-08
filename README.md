@@ -27,11 +27,6 @@ The application is written in Java so that it can run across all platforms.  So 
 
 The program is written in java, and does require Java 8.  It should work across multiple platforms.  Currently the best way to run this is via the -Prun profile, see below for how to execute.
 
-### HTML Squad List Generation
-
-The HTML files are generated using Freemarker templates.   This allows for the ability to configure the output for your specific usage.
-TODO: Add more information around this.
-
 ## Installation
 
 To build the application:
