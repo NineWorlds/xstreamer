@@ -119,17 +119,31 @@
                   <groupId>org.jsonschema2pojo</groupId>
                   <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                   <version>0.4.27</version>
-                  <configuration>
-                     <sourceDirectory>${basedir}/src/main/resources/schemas</sourceDirectory>
-                     <outputDirectory>${project.build.directory}/generated-sources/schemas</outputDirectory>
-                     <targetPackage>com.github.xws</targetPackage>
-                  </configuration>
                   <executions>
-                     <execution>
+<!--                      <execution>
+                        <id>xws</id>
                         <goals>
                            <goal>generate</goal>
                         </goals>
+                        <configuration>
+                           <sourceDirectory>${basedir}/src/main/resources/schemas</sourceDirectory>
+                           <outputDirectory>${project.build.directory}/generated-sources/schemas</outputDirectory>
+                           <targetPackage>com.github.xws.temp</targetPackage>
+                        </configuration>
                      </execution>
+ -->                     <execution>
+                        <id>xws-data-pilots</id>
+                        <goals>
+                           <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                           <sourceDirectory>${basedir}/src/main/resources/xws-data</sourceDirectory>
+                           <outputDirectory>${project.build.directory}/generated-sources/xws-data</outputDirectory>
+                           <targetPackage>com.github.xws.pilots</targetPackage>
+                           <sourceType>json</sourceType>
+                        </configuration>
+                     </execution>
+
                   </executions>
                </plugin>
             </plugins>

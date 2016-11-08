@@ -45,37 +45,67 @@
          </panel>
 
          <panel name="Player1" layout="BorderLayout">
-            <label constraints="BorderLayout.PAGE_START" text="Player 1 Squad Points: 0" font="Arial-BOLD-20"/>
-            <splitpane constraints="BorderLayout.CENTER">
+            <label constraints="BorderLayout.PAGE_START" text="Player 1 Squad Points: 0"
+               font="Arial-BOLD-20" />
+            <splitpane constraints="BorderLayout.WEST">
                <scrollpane minimumSize="150,800">
-                  <tree id="player1Squad" model="${player1Model}" toolTipText="this is a tooltip"  />
+                  <tree id="player1Squad" model="${player1Model}"
+                     toolTipText="this is a tooltip" />
                </scrollpane>
 
-               <panel id="contentPanelPlayer1" name="contentPanel"
-                  layout="BorderLayout">
-                  <textarea constraints="BorderLayout.CENTER"
-                     bindWith="result" editable="false">
-                  </textarea>
-
+               <panel id="contentPanelPlayer1" constraints="BorderLayout.WEST"
+                  name="contentPanel" layout="FlowLayout">
+                  <vbox gap="20">
+                     <hbox>
+                        <label text="Pilot status: " />
+                        <checkbox text="destroyed" />
+                     </hbox>
+                     <hbox gap="2">
+                        <label text="Shields:" />
+                        <textfield columns="2" text="0" font="Arial-12" />
+                     </hbox>
+                     <hbox gap="2">
+                        <label text="Hull:" />
+                        <textfield columns="2" text="0" font="Arial-12" />
+                     </hbox>
+                     <hbox gap="10">
+                        <button text="Update" />
+                     </hbox>
+                  </vbox>
                </panel>
             </splitpane>
 
          </panel>
 
          <panel name="Player2" layout="BorderLayout">
-            <label constraints="BorderLayout.PAGE_START" text="Player 2 Squad Points: 0" font="Arial-BOLD-20"/>
-            <splitpane constraints="BorderLayout.CENTER">
+            <label constraints="BorderLayout.PAGE_START" text="Player 2 Squad Points: 0"
+               font="Arial-BOLD-20" />
+            <splitpane constraints="BorderLayout.WEST">
                <scrollpane minimumSize="150,800">
-                  <tree id="player2Squad" model="${player2Model}" action="selectNode"
-                     dblClickAction="activeNode" toolTipText="this is a tooltip" />
+                  <tree id="player2Squad" model="${player2Model}"
+                     action="selectNode" dblClickAction="activeNode"
+                     toolTipText="this is a tooltip" />
                </scrollpane>
 
                <panel id="contentPanelPlayer2" name="contentPanel"
-                  layout="BorderLayout">
-                  <textarea constraints="BorderLayout.CENTER"
-                     bindWith="result" editable="false">
-                  </textarea>
-
+                  layout="FlowLayout">
+                  <vbox gap="20">
+                     <hbox>
+                        <label text="Pilot status: " />
+                        <checkbox text="destroyed" />
+                     </hbox>
+                     <hbox gap="2">
+                        <label text="Shields:" />
+                        <textfield columns="2" text="0" font="Arial-12" />
+                     </hbox>
+                     <hbox gap="2">
+                        <label text="Hull:" />
+                        <textfield columns="2" text="0" font="Arial-12" />
+                     </hbox>
+                     <hbox gap="10">
+                        <button text="Update" />
+                     </hbox>
+                  </vbox>
                </panel>
 
             </splitpane>
