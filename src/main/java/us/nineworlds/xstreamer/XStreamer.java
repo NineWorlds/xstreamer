@@ -39,10 +39,14 @@ public class XStreamer extends SwingApplication {
    private static Scheduler scheduler;
    private static long countDownTime;
    private static Configuration freemarkerConfig;
+   private static us.nineworlds.xstreamer.Configuration configuration;
 
    public static void main(String[] args) throws Exception {
       scheduler = StdSchedulerFactory.getDefaultScheduler();
       scheduler.start();
+      
+      configuration = us.nineworlds.xstreamer.Configuration.getInstance();
+      
       ObjectMapper mapper = new ObjectMapper();
       InputStream shipInputStream = XStreamer.class.getResourceAsStream("/xws-data/ships.json");
       List<Ship> shipData = Arrays.asList(mapper.readValue(XStreamer.class.getResourceAsStream("/xws-data/ships.json"), Ship[].class));
@@ -50,8 +54,8 @@ public class XStreamer extends SwingApplication {
       
       ShipsLookup.newInstance(shipData);
 
-      player1 = mapper.readValue(new File("player1.json"), XwsSpec.class);
-      player2 = mapper.readValue(new File("player2.json"), XwsSpec.class);
+      player1 = mapper.readValue(new File(configuration.getPlayer1XWSFilePath()), XwsSpec.class);
+      player2 = mapper.readValue(new File(configuration.getPlayer2XWSFilePath()), XwsSpec.class);
       
       initFreemarker();
       SwingApplication.launch(XStreamer.class, args);
@@ -110,8 +114,8 @@ public class XStreamer extends SwingApplication {
       freemarkerConfig = new Configuration();
       freemarkerConfig.setDirectoryForTemplateLoading(new File("templates"));
       
-      createPlayerFile("player1.html", "1", "squadJob1");
-      createPlayerFile("player2.html", "2", "squadJob2");
+      createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
+      createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
    }
 
    private static void createPlayerFile(String filename, String playerNumber, String jobName) {
@@ -136,5 +140,4 @@ public class XStreamer extends SwingApplication {
    public static void setFreemarkerConfig(Configuration freemarkerConfig) {
       XStreamer.freemarkerConfig = freemarkerConfig;
    }
-   
 }

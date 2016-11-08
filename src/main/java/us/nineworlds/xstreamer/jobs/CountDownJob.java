@@ -17,6 +17,7 @@ import org.quartz.JobExecutionException;
 import org.quartz.PersistJobDataAfterExecution;
 import org.quartz.SchedulerException;
 
+import us.nineworlds.xstreamer.Configuration;
 import us.nineworlds.xstreamer.XStreamer;
 import us.nineworlds.xstreamer.XStreamerFrame;
 
@@ -69,7 +70,7 @@ public void execute(JobExecutionContext context) throws JobExecutionException {
         };
       SwingUtilities.invokeLater(updateUi);
 
-      File counterFile = new File("/home/dcarver/timer.txt");
+      File counterFile = new File(Configuration.getInstance().getTimerFilePath());
       try {
          FileUtils.writeStringToFile(counterFile, formattedTime, "UTF-8");
       } catch (IOException e) {
