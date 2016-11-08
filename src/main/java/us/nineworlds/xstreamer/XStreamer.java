@@ -3,14 +3,6 @@ package us.nineworlds.xstreamer;
 import static org.quartz.JobBuilder.newJob;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.Writer;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.swing.JFrame;
 
 import org.apache.commons.io.IOUtils;

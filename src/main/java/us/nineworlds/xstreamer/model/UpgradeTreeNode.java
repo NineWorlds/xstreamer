@@ -16,7 +16,8 @@ public class UpgradeTreeNode extends DefaultMutableTreeNode {
       this.upgradeOptions = upgrades;
    }
    
-   public String toString() {
+   @Override
+public String toString() {
       return upgradeSlot;
    }
    

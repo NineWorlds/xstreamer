@@ -13,7 +13,8 @@ public class UpgradeTypeTreeNode extends DefaultMutableTreeNode {
       setAllowsChildren(false);
    }
    
-   public String toString() {
+   @Override
+public String toString() {
       return upgradeName;
    }
    

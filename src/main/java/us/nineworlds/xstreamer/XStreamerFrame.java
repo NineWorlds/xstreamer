@@ -3,22 +3,17 @@ package us.nineworlds.xstreamer;
 import static org.quartz.JobBuilder.newJob;
 
 import java.awt.event.ActionEvent;
-import java.time.Duration;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
 
 import org.jdesktop.application.Action;
 import org.joda.time.DateTime;
-import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
-import org.quartz.ScheduleBuilder;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SimpleScheduleBuilder;
