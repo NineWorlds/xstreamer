@@ -49,8 +49,7 @@
                font="Arial-BOLD-20" />
             <splitpane constraints="BorderLayout.WEST">
                <scrollpane minimumSize="150,800">
-                  <tree id="player1Squad" model="${player1Model}"
-                     toolTipText="this is a tooltip" />
+                  <tree id="player1Squad" model="${player1Model}" dblClickAction="activeNodePlayer1"/>
                </scrollpane>
 
                <panel id="contentPanelPlayer1" constraints="BorderLayout.WEST"
@@ -62,11 +61,11 @@
                      </hbox>
                      <hbox gap="2">
                         <label text="Shields:" />
-                        <textfield columns="2" text="0" font="Arial-12" />
+                        <textfield id="shieldsPlayer1" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="2">
                         <label text="Hull:" />
-                        <textfield columns="2" text="0" font="Arial-12" />
+                        <textfield id="hullPlayer1" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="10">
                         <button text="Update" />
@@ -83,7 +82,7 @@
             <splitpane constraints="BorderLayout.WEST">
                <scrollpane minimumSize="150,800">
                   <tree id="player2Squad" model="${player2Model}"
-                     action="selectNode" dblClickAction="activeNode"
+                     action="selectNode" dblClickAction="activeNodePlayer2"
                      toolTipText="this is a tooltip" />
                </scrollpane>
 
@@ -96,11 +95,11 @@
                      </hbox>
                      <hbox gap="2">
                         <label text="Shields:" />
-                        <textfield columns="2" text="0" font="Arial-12" />
+                        <textfield id="shieldsPlayer2" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="2">
                         <label text="Hull:" />
-                        <textfield columns="2" text="0" font="Arial-12" />
+                        <textfield id="hullPlayer2" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="10">
                         <button text="Update" />

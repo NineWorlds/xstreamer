@@ -3,12 +3,18 @@ package us.nineworlds.xstreamer;
 import static org.quartz.JobBuilder.newJob;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTree;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 
 import org.jdesktop.application.Action;
 import org.joda.time.DateTime;
@@ -20,6 +26,8 @@ import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
+
+import com.github.xws.Pilot;
 
 import us.nineworlds.xstreamer.jobs.CountDownJob;
 import us.nineworlds.xstreamer.model.XWSquadTreeNode;
@@ -41,6 +49,11 @@ public class XStreamerFrame extends JFrame {
    JTextField timerHourTextField;
    JTextField timerMinutesTextField;
    JTextField timerSecondsTextField;
+   
+   JTextField shieldsPlayer2;
+   JTextField hullPlayer2;
+   JTextField shieldsPlayer1;
+   JTextField hullPlayer1;
    
    XWSquadTreeNode player1TreeNode = new XWSquadTreeNode(XStreamer.getPlayer1());
    DefaultTreeModel player1Model = new DefaultTreeModel(player1TreeNode);
@@ -114,6 +127,46 @@ public class XStreamerFrame extends JFrame {
       timerRunning = false;
       startPauseButton.setText("Start");
    }
+   
+   @Action
+   public void activeNodePlayer2(ActionEvent event) {
+	   Object selectedObject = getSelectedObject((MouseEvent)event.getSource());
+	   if (selectedObject instanceof Pilot) {
+		   loadPilotValues((Pilot) selectedObject, shieldsPlayer2, hullPlayer2);
+	   }
+   }
+   
+   @Action
+   public void activeNodePlayer1(ActionEvent event) {
+	   Object selectedObject = getSelectedObject((MouseEvent)event.getSource());
+	   if (selectedObject instanceof Pilot) {
+		   loadPilotValues((Pilot) selectedObject, shieldsPlayer1, hullPlayer1);
+	   }   
+   }
+   
+   private void loadPilotValues(Pilot pilot, JTextField shields, JTextField hull) {
+	   shields.setText(pilot.getShields() != null ? pilot.getShields().toString() : "0");
+	   hull.setText(pilot.getHull() != null ? pilot.getHull().toString() : "0");
+   }
+   
+	public Object getSelectedObject( MouseEvent ev ) {
+	    
+		Object source = ev.getSource();
+		
+		if( source instanceof JTree ) {
+			JTree tbl = (JTree) source; 
+			
+			TreePath selPath = tbl.getPathForLocation(ev.getX(), ev.getY() );
+			
+			if( selPath!=null ) {
+
+				DefaultMutableTreeNode n = (DefaultMutableTreeNode) selPath.getLastPathComponent();
+		        
+		        return n.getUserObject();				
+			}
+		}
+        return null;
+	}
 
    private void scheduleTimer(Scheduler scheduler) {
       SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule();
