@@ -1,5 +1,7 @@
 package us.nineworlds.xstreamer.jobs;
 
+import static org.quartz.JobBuilder.newJob;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,8 +11,12 @@ import java.util.Map;
 
 import org.quartz.Job;
 import org.quartz.JobDataMap;
+import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.SchedulerException;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
 
 import com.github.xws.XwsSpec;
 
@@ -60,4 +66,22 @@ public class GenerateSquadJob implements Job {
          }
       }
    }
+   
+   public static void createPlayerFile(String filename, String playerNumber, String jobName) {
+      JobDetail jobDetail = newJob(GenerateSquadJob.class)
+            .withIdentity(jobName)
+            .usingJobData("filename", filename)
+            .usingJobData("player", playerNumber)
+            .build();
+      Trigger trigger = TriggerBuilder.newTrigger().startNow().withIdentity(jobName).build();
+      
+      try {
+         XStreamer.getScheduler().scheduleJob(jobDetail, trigger);
+      } catch (SchedulerException e) {
+         System.out.println("Error scheduling job");
+      }
+   }
+
+   
+   
 }
