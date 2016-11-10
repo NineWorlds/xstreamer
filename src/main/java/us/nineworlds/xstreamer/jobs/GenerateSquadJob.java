@@ -33,21 +33,25 @@ public class GenerateSquadJob implements Job {
    public void execute(JobExecutionContext context) throws JobExecutionException {
 
       JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
+      String player1Template = us.nineworlds.xstreamer.Configuration.getInstance().player1SquadTemplateFilePath();
+      String player2Template = us.nineworlds.xstreamer.Configuration.getInstance().player2SquadTemplateFilePath();
       String filename = jobDataMap.getString("filename");
       String playerNumber = jobDataMap.getString("player");
       XwsSpec squad = null;
-      
-      if (playerNumber.equals("1")) {
-         squad = XStreamer.getPlayer1();
-      } else {
-         squad = XStreamer.getPlayer2();
-      }
-      
+      Template squadTemplate;
       Configuration config = XStreamer.getFreemarkerConfig();
+      
+      
       Writer player1SquadFile = null;
       try {
+         if (playerNumber.equals("1")) {
+            squadTemplate = config.getTemplate(player1Template);
+            squad = XStreamer.getPlayer1();
+         } else {
+            squadTemplate = config.getTemplate(player2Template);
+            squad = XStreamer.getPlayer2();
+         }
          player1SquadFile = new FileWriter(new File(filename));
-         Template squadTemplate = config.getTemplate("squadOverlay.ftl");
 
          Map<String, Object> input = new HashMap<>();
 
@@ -55,6 +59,7 @@ public class GenerateSquadJob implements Job {
 
          squadTemplate.process(input, player1SquadFile);
       } catch (Exception e) {
+         e.printStackTrace();
          throw new JobExecutionException(e);
       } finally {
          if (player1SquadFile != null) {
