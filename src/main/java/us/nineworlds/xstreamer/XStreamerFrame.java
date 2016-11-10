@@ -151,26 +151,26 @@ public class XStreamerFrame extends JFrame {
    public void squadUpdatePlayer1(ActionEvent event) {
       DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) player1Squad.getLastSelectedPathComponent();
       Object userObject = treeNode.getUserObject();
-      updatePilot(userObject);
+      updatePilot(userObject, shieldsPlayer1, hullPlayer1);
    }
    
    @Action
    public void squadUpdatePlayer2(ActionEvent event) {
       DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) player2Squad.getLastSelectedPathComponent();
       Object userObject = treeNode.getUserObject();
-      updatePilot(userObject);
+      updatePilot(userObject, shieldsPlayer2, hullPlayer2);
    }
 
 
-   private void updatePilot(Object userObject) {
+   private void updatePilot(Object userObject, JTextField shieldsTextField, JTextField hullTextField) {
       if (userObject instanceof Pilot) {
          Pilot pilot = (Pilot) userObject;
-         String shields = shieldsPlayer1.getText();
-         String hull = hullPlayer1.getText();
+         String shields = shieldsTextField.getText();
+         String hull = hullTextField.getText();
          pilot.setHull(Integer.parseInt(hull));
          pilot.setShields(Integer.parseInt(shields));
          GenerateSquadJob.createPlayerFile(Configuration.getInstance().getPlayer1OverlayFilePath(), "1", "squadJob1");
-         GenerateSquadJob.createPlayerFile(Configuration.getInstance().getPlayer1OverlayFilePath(), "2", "squadJob2");
+         GenerateSquadJob.createPlayerFile(Configuration.getInstance().getPlayer2OverlayFilePath(), "2", "squadJob2");
       }
    }
    
