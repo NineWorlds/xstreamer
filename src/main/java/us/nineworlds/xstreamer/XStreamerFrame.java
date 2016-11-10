@@ -30,6 +30,7 @@ import org.quartz.TriggerKey;
 import com.github.xws.Pilot;
 
 import us.nineworlds.xstreamer.jobs.CountDownJob;
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.model.XWSquadTreeNode;
 
 public class XStreamerFrame extends JFrame {
@@ -45,6 +46,8 @@ public class XStreamerFrame extends JFrame {
    
    JButton startPauseButton;
    JButton resetButton;
+   JButton updatePlayer1Button;
+   JButton updatePlayer2Button;
 
    JTextField timerHourTextField;
    JTextField timerMinutesTextField;
@@ -142,6 +145,33 @@ public class XStreamerFrame extends JFrame {
 	   if (selectedObject instanceof Pilot) {
 		   loadPilotValues((Pilot) selectedObject, shieldsPlayer1, hullPlayer1);
 	   }   
+   }
+   
+   @Action
+   public void squadUpdatePlayer1(ActionEvent event) {
+      DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) player1Squad.getLastSelectedPathComponent();
+      Object userObject = treeNode.getUserObject();
+      updatePilot(userObject, shieldsPlayer1, hullPlayer1);
+   }
+   
+   @Action
+   public void squadUpdatePlayer2(ActionEvent event) {
+      DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) player2Squad.getLastSelectedPathComponent();
+      Object userObject = treeNode.getUserObject();
+      updatePilot(userObject, shieldsPlayer2, hullPlayer2);
+   }
+
+
+   private void updatePilot(Object userObject, JTextField shieldsTextField, JTextField hullTextField) {
+      if (userObject instanceof Pilot) {
+         Pilot pilot = (Pilot) userObject;
+         String shields = shieldsTextField.getText();
+         String hull = hullTextField.getText();
+         pilot.setHull(Integer.parseInt(hull));
+         pilot.setShields(Integer.parseInt(shields));
+         GenerateSquadJob.createPlayerFile(Configuration.getInstance().getPlayer1OverlayFilePath(), "1", "squadJob1");
+         GenerateSquadJob.createPlayerFile(Configuration.getInstance().getPlayer2OverlayFilePath(), "2", "squadJob2");
+      }
    }
    
    private void loadPilotValues(Pilot pilot, JTextField shields, JTextField hull) {

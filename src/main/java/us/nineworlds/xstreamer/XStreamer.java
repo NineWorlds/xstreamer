@@ -114,24 +114,10 @@ public class XStreamer extends SwingApplication {
       freemarkerConfig = new Configuration();
       freemarkerConfig.setDirectoryForTemplateLoading(new File("templates"));
       
-      createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
-      createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
+      GenerateSquadJob.createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
+      GenerateSquadJob.createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
    }
 
-   private static void createPlayerFile(String filename, String playerNumber, String jobName) {
-      JobDetail jobDetail = newJob(GenerateSquadJob.class)
-            .withIdentity(jobName)
-            .usingJobData("filename", filename)
-            .usingJobData("player", playerNumber)
-            .build();
-      Trigger trigger = TriggerBuilder.newTrigger().startNow().withIdentity(jobName).build();
-      
-      try {
-         scheduler.scheduleJob(jobDetail, trigger);
-      } catch (SchedulerException e) {
-         System.out.println("Error scheduling job");
-      }
-   }
 
    public static Configuration getFreemarkerConfig() {
       return freemarkerConfig;

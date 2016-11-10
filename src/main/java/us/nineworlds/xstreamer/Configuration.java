@@ -44,4 +44,12 @@ public class Configuration {
 	public String getTimerFilePath() {
 		return properties.getString("xstreamer.timer.file");
 	}
+	
+	public String player1SquadTemplateFilePath() {
+	   return properties.getString("xstreamer.template.player1.squad");
+	}
+	
+	public String player2SquadTemplateFilePath() {
+	   return properties.getString("xstreamer.template.player2.squad");
+	}
 }

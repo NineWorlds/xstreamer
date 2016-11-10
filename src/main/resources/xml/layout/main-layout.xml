@@ -68,7 +68,7 @@
                         <textfield id="hullPlayer1" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="10">
-                        <button text="Update" />
+                        <button id="updatePlayer1Button" text="Update" action="squadUpdatePlayer1" />
                      </hbox>
                   </vbox>
                </panel>
@@ -102,7 +102,7 @@
                         <textfield id="hullPlayer2" columns="2" text="0" font="Arial-12" />
                      </hbox>
                      <hbox gap="10">
-                        <button text="Update" />
+                        <button id="updatePlayer2Button" text="Update" action="squadUpdatePlayer2"/>
                      </hbox>
                   </vbox>
                </panel>
