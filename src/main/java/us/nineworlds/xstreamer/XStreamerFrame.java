@@ -150,7 +150,6 @@ public class XStreamerFrame extends JFrame {
    }
    
 	public Object getSelectedObject( MouseEvent ev ) {
-	    
 		Object source = ev.getSource();
 		
 		if( source instanceof JTree ) {
