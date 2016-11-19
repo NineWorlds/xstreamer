@@ -23,6 +23,9 @@ import com.example.rcpapp.Activator;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class CountDownTimerPage extends ViewPart {
+	
+	public static String TIMER_VIEW_ID = "us.nineworlds.xstreamer.view.timer";
+	
 	private FormToolkit toolkit;
 	private ScrolledForm form;
 	private Button resetButton;

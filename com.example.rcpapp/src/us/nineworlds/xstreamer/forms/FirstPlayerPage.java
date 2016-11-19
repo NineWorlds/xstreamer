@@ -1,28 +1,29 @@
 package us.nineworlds.xstreamer.forms;
 
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.eclipse.ui.part.ViewPart;
 
-public class FirstPlayerPage extends ViewPart {
-	private FormToolkit toolkit;
-	private ScrolledForm form;
+public class FirstPlayerPage extends AbstractPlayerFormPage {
+
+	public static String FIRST_PLAYER_VIEW = "us.nineworlds.xstreamer.view.firstplayer";
 	
-	@Override
-	public void createPartControl(Composite parent) {
-		toolkit = new FormToolkit(parent.getDisplay());
-		form = toolkit.createScrolledForm(parent);
-		form.setText("Player 1");	
-	}
-
 	@Override
 	public void setFocus() {
 		form.setFocus();
 	}
-	
+
 	@Override
 	public void dispose() {
+		toolkit.dispose();
+		super.dispose();
+	}
+
+	@Override
+	void setPageName() {
+		form.setText("Player 1");
+	}
+
+	@Override
+	void pageContent(Composite parent) {
 
 	}
 

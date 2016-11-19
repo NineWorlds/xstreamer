@@ -23,19 +23,24 @@
          point="org.eclipse.ui.views">
       <view
             class="us.nineworlds.xstreamer.forms.CountDownTimerPage"
-            id="com.example.rcpapp.view1"
+            icon="images/clock-icon.png"
+            id="us.nineworlds.xstreamer.view.timer"
             name="Timer"
             restorable="true">
       </view>
       <view
+            allowMultiple="false"
             class="us.nineworlds.xstreamer.forms.FirstPlayerPage"
-            id="com.example.rcpapp.view2"
+            icon="images/P1.png"
+            id="us.nineworlds.xstreamer.view.firstplayer"
             name="Player 1"
             restorable="true">
       </view>
       <view
+            allowMultiple="false"
             class="us.nineworlds.xstreamer.forms.SecondPlayerPage"
-            id="com.example.rcpapp.view3"
+            icon="images/P2.png"
+            id="us.nineworlds.xstreamer.view.secondplayer"
             name="Player 2"
             restorable="true">
       </view>
@@ -45,22 +50,22 @@
       <perspectiveExtension
             targetID="*">
          <view
-               id="com.example.rcpapp.view1"
+               id="us.nineworlds.xstreamer.view.timer"
                minimized="false"
                relationship="left"
                relative="org.eclipse.ui.editorss">
          </view>
          <view
-               id="com.example.rcpapp.view2"
+               id="us.nineworlds.xstreamer.view.firstplayer"
                minimized="false"
                relationship="stack"
-               relative="com.example.rcpapp.view1">
+               relative="us.nineworlds.xstreamer.view.timer">
          </view>
          <view
-               id="com.example.rcpapp.view3"
+               id="us.nineworlds.xstreamer.view.secondplayer"
                minimized="false"
                relationship="stack"
-               relative="com.example.rcpapp.view2">
+               relative="us.nineworlds.xstreamer.view.firstplayer">
          </view>
       </perspectiveExtension>
    </extension>
@@ -71,9 +76,18 @@
          <menu
                label="File">
             <command
+                  commandId="org.eclipse.ui.file.import"
+                  label="Import"
+                  style="push">
+            </command>
+            <command
                   commandId="org.eclipse.ui.file.exit"
                   label="Exit">
             </command>
+            <separator
+                  name="com.example.rcpapp.separator1"
+                  visible="true">
+            </separator>
          </menu>
          <menu
                label="Edit">
@@ -102,6 +116,23 @@
       <initializer
             class="us.nineworlds.xstreamer.preferences.PreferenceInitializer">
       </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="us.nineworlds.xstreamer.ui.importWizards.sampleCategory"
+            name="Squads">
+      </category>
+      <wizard
+            category="us.nineworlds.xstreamer.ui.importWizards.sampleCategory"
+            class="us.nineworlds.xstreamer.ui.importWizards.PlayerSquads"
+            icon="images/Token-PrototypeShip.png"
+            id="us.nineworlds.xstreamer.ui.importWizards.PlayerSquads"
+            name="Import Player Squads">
+         <description>
+            Import a file from the local file system into the workspace.
+         </description>
+      </wizard>
    </extension>
 
 </plugin>
