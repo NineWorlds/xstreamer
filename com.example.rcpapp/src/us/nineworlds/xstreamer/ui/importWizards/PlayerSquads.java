@@ -16,6 +16,7 @@ import com.github.xws.XwsSpec;
 
 import us.nineworlds.xstreamer.forms.FirstPlayerPage;
 import us.nineworlds.xstreamer.forms.SecondPlayerPage;
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.model.ImportPlayerFile;
 
 public class PlayerSquads extends Wizard implements IImportWizard {
@@ -45,6 +46,13 @@ public class PlayerSquads extends Wizard implements IImportWizard {
 			firstPlayer.refreshTree();
 			SecondPlayerPage secondPlayer = (SecondPlayerPage) page.findView(SecondPlayerPage.SECOND_PLAYER_VIEW);
 			secondPlayer.refreshTree();
+			
+			GenerateSquadJob job1 = new GenerateSquadJob("player1Job", firstPlayer.getPlayerModel(), firstPlayer.playerFileName(), firstPlayer.squadTemplate());
+			job1.schedule();
+			
+			GenerateSquadJob job2 = new GenerateSquadJob("player2Job", secondPlayer.getPlayerModel(), secondPlayer.playerFileName(), secondPlayer.squadTemplate());
+			job2.schedule();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;

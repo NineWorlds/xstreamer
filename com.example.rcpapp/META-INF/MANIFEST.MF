@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Rcpapp
+Bundle-Name: XStreamer
 Bundle-SymbolicName: com.example.rcpapp;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: EXAMPLE
+Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.apache.commons.io;bundle-version="2.2.0",

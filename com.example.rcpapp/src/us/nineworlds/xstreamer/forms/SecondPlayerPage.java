@@ -34,17 +34,17 @@ public class SecondPlayerPage extends AbstractPlayerFormPage {
 	}
 
 	@Override
-	XwsSpec getPlayerModel() {
+	public XwsSpec getPlayerModel() {
 		return Activator.getPlayer2();
 	}
 	@Override
-	String playerFileName() {
+	public String playerFileName() {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		return preferenceStore.getString(PreferenceConstants.SECOND_PLAYER_FILENAME);
 	}
 	
 	@Override
-	String squadTemplate() {
+	public String squadTemplate() {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		return preferenceStore.getString(PreferenceConstants.TEMPLATE_SECOND_PLAYER_FILE);
 	}

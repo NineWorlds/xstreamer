@@ -34,19 +34,19 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 	}
 
 	@Override
-	XwsSpec getPlayerModel() {
+	public XwsSpec getPlayerModel() {
 		return Activator.getPlayer1();
 	}
 
 	@Override
-	String playerFileName() {
+	public String playerFileName() {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		
 		return preferenceStore.getString(PreferenceConstants.FIRST_PLAYER_FILENAME);
 	}
 	
 	@Override
-	String squadTemplate() {
+	public String squadTemplate() {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		return preferenceStore.getString(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE);
 	}
