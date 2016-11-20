@@ -7,8 +7,6 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.quartz.Scheduler;
-import org.quartz.impl.StdSchedulerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.guidokessels.ships.Ship;
@@ -22,7 +20,6 @@ public class Activator extends AbstractUIPlugin {
 
 	private static XwsSpec player1;
 	private static XwsSpec player2;
-	private static Scheduler scheduler;
 	private static long countDownTime;
 	private static Configuration freemarkerConfig;
 	private static us.nineworlds.xstreamer.Configuration configuration;
@@ -50,10 +47,6 @@ public class Activator extends AbstractUIPlugin {
 	
 	public static Activator getDefault() {
 		return plugin;
-	}
-
-	public static Scheduler getScheduler() {
-		return scheduler;
 	}
 
 	public static synchronized long getCountDownTime() {
