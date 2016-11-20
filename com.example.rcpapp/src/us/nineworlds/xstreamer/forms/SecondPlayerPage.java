@@ -3,9 +3,9 @@ package us.nineworlds.xstreamer.forms;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.widgets.Composite;
 
-import com.example.rcpapp.Activator;
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class SecondPlayerPage extends AbstractPlayerFormPage {

@@ -1,4 +1,4 @@
-package com.example.rcpapp;
+package us.nineworlds.xstreamer;
 
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;

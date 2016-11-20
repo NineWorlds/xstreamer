@@ -5,8 +5,7 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
 import org.joda.time.DateTime;
 
-import com.example.rcpapp.Activator;
-
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.jobs.CountDownJob;
 
 public class StartPauseButtonListener implements SelectionListener {

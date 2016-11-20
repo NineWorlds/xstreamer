@@ -6,8 +6,7 @@ import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import com.example.rcpapp.Activator;
-
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.preferences.widgets.LabelFieldEditor;
 import us.nineworlds.xstreamer.preferences.widgets.SpacerFieldEditor;
 

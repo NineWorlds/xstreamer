@@ -1,4 +1,4 @@
-package com.example.rcpapp;
+package us.nineworlds.xstreamer;
 
 import java.util.*;
 import org.eclipse.jface.viewers.ArrayContentProvider;

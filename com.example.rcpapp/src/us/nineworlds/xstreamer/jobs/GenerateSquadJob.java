@@ -19,11 +19,11 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import com.example.rcpapp.Activator;
 import com.github.xws.XwsSpec;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class GenerateSquadJob extends Job {

@@ -1,4 +1,4 @@
-package com.example.rcpapp;
+package us.nineworlds.xstreamer;
 
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;

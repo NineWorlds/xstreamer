@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="com.example.rcpapp.Application">
+               class="us.nineworlds.xstreamer.Application">
          </run>
       </application>
    </extension>
@@ -15,7 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="Perspective"
-            class="com.example.rcpapp.Perspective"
+            class="us.nineworlds.xstreamer.Perspective"
             id="com.example.rcpapp.perspective">
       </perspective>
    </extension>

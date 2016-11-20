@@ -2,8 +2,10 @@ package us.nineworlds.xstreamer.preferences;
 
 import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+
+import us.nineworlds.xstreamer.Activator;
+
 import org.eclipse.ui.IWorkbench;
-import com.example.rcpapp.Activator;
 
 /**
  * This class represents a preference page that is contributed to the

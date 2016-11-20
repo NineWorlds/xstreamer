@@ -18,8 +18,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
-import com.example.rcpapp.Activator;
-
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class CountDownTimerPage extends ViewPart {

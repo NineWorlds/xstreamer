@@ -11,9 +11,9 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 
-import com.example.rcpapp.Activator;
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.forms.FirstPlayerPage;
 import us.nineworlds.xstreamer.forms.SecondPlayerPage;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;

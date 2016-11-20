@@ -17,8 +17,7 @@ import org.joda.time.Period;
 import org.joda.time.format.PeriodFormatter;
 import org.joda.time.format.PeriodFormatterBuilder;
 
-import com.example.rcpapp.Activator;
-
+import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.forms.CountDownTimerPage;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 

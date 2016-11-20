@@ -3,7 +3,7 @@ package us.nineworlds.xstreamer.preferences;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import com.example.rcpapp.Activator;
+import us.nineworlds.xstreamer.Activator;
 
 /**
  * Class used to initialize default preference values.

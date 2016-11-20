@@ -1,4 +1,4 @@
-package com.example.rcpapp;
+package us.nineworlds.xstreamer;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Arrays;
