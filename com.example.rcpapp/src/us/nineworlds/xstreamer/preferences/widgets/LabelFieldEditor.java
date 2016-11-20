@@ -16,7 +16,7 @@ public class LabelFieldEditor extends FieldEditor {
 
 	// Adjusts the field editor to be displayed correctly
 	// for the given number of columns.
-	protected void adjustForNumColumns(int numColumns) {
+	public void adjustForNumColumns(int numColumns) {
 		((GridData) label.getLayoutData()).horizontalSpan = numColumns;
 	}
 
@@ -37,6 +37,10 @@ public class LabelFieldEditor extends FieldEditor {
 	// Returns the number of controls in the field editor.
 	public int getNumberOfControls() {
 		return 1;
+	}
+	
+	public void setLayoutData(GridData data) {
+		label.setLayoutData(data);
 	}
 
 	// Labels do not persist any preferences, so these methods are empty.
