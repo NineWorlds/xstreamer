@@ -82,10 +82,6 @@ public class Activator extends AbstractUIPlugin {
 
 	private static void initFreemarker() throws Exception {
 		freemarkerConfig = new Configuration();
-		freemarkerConfig.setDirectoryForTemplateLoading(new File("templates"));
-
-//		GenerateSquadJob.createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
-//		GenerateSquadJob.createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
 	}
 
 	public static Configuration getFreemarkerConfig() {

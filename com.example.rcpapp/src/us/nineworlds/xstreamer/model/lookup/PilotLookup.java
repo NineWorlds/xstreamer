@@ -22,7 +22,7 @@ public class PilotLookup {
    
    private void initPilots() {
       try {
-         configuration = new PropertiesConfiguration(new File("config/pilots.properties"));
+         configuration = new PropertiesConfiguration(this.getClass().getResource("/xws-data/pilots.properties"));
       } catch (Exception ex) {
          
       }

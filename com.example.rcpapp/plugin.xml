@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         id="application"
+         id="us.nineworlds.xstreamer.application"
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
@@ -133,6 +133,30 @@
             Import a file from the local file system into the workspace.
          </description>
       </wizard>
+   </extension>
+   <extension
+         id="xstreamer"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="us.nieworlds.xstreamer.application"
+            name="XStreamer">
+         <property
+               name="appName"
+               value="XStreamer">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="us.nineworlds.xstreamer.application"
+            name="XStreamer">
+         <property
+               name="appName"
+               value="XStreamer">
+         </property>
+      </product>
    </extension>
 
 </plugin>
