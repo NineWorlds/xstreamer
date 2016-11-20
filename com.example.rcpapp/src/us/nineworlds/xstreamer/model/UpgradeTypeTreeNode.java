@@ -1,27 +1,25 @@
 package us.nineworlds.xstreamer.model;
 
-import javax.swing.tree.DefaultMutableTreeNode;
+import org.eclipse.jface.viewers.TreeNode;
 
-public class UpgradeTypeTreeNode extends DefaultMutableTreeNode {
+public class UpgradeTypeTreeNode extends TreeNode {
 
+	private static final long serialVersionUID = 1L;
+	String upgradeName;
 
-   private static final long serialVersionUID = 1L;
-   String upgradeName;
-   
-   public UpgradeTypeTreeNode(String upgrade) {
-      upgradeName = upgrade;
-      setAllowsChildren(false);
-   }
-   
-   @Override
-public String toString() {
-      return upgradeName;
-   }
-   
-   @Override
-   public int getChildCount() {
-      return 0;
-   }
-   
-   
+	public UpgradeTypeTreeNode(Object upgrade) {
+		super(upgrade);
+		upgradeName = (String) upgrade;
+	}
+
+	@Override
+	public String toString() {
+		return upgradeName;
+	}
+	
+	@Override
+	public boolean hasChildren() {
+		return false;
+	}
+
 }

@@ -23,10 +23,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.TIMER_MINUTES_DEFAULT, "15");
 		store.setDefault(PreferenceConstants.TIMER_SECONDS_DEFAULT, "00");
 		
-		store.setDefault(PreferenceConstants.P_BOOLEAN, true);
-		store.setDefault(PreferenceConstants.P_CHOICE, "choice2");
-		store.setDefault(PreferenceConstants.P_STRING,
-				"Default value");
+		store.setDefault(PreferenceConstants.RELOAD_PLAYER_FILES_ON_STARTUP, false);
 	}
 
 }

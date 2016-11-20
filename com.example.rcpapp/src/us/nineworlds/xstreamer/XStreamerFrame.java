@@ -1,5 +1,5 @@
 package us.nineworlds.xstreamer;
-
+ 
 import static org.quartz.JobBuilder.newJob;
 
 import java.awt.event.ActionEvent;

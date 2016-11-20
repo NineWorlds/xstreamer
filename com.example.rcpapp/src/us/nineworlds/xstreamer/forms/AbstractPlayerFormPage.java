@@ -4,6 +4,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
@@ -13,15 +14,22 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
+import com.github.xws.XwsSpec;
+
+import us.nineworlds.xstreamer.model.SquadContentProvider;
+import us.nineworlds.xstreamer.model.SquadLabelProvider;
+
 public abstract class AbstractPlayerFormPage extends ViewPart {
 
 	protected FormToolkit toolkit;
 	protected ScrolledForm form;
 	TreeViewer treeViewer;
 	
+	Label totalShipPoints;
 	Label hullLabel;
 	Label shieldLabel;
 	Text shieldText;
+	Text hullText;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -54,40 +62,55 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		playerSquadPointsData.grabExcessHorizontalSpace = true;
 		playerSquadPointsData.horizontalSpan = 2;
 		
-		Label playerSquadPoints = toolkit.createLabel(shipClient, "Total Squad Points: ");
-		playerSquadPoints.setLayoutData(playerSquadPointsData);
+		totalShipPoints = toolkit.createLabel(shipClient, "Points: ");
+		totalShipPoints.setLayoutData(playerSquadPointsData);
 		
 		hullLabel = toolkit.createLabel(shipClient, "Hull: ");
-		Text hullText = toolkit.createText(shipClient, "");
+		hullText = toolkit.createText(shipClient, "");
 		GridData textData = new GridData();
 		textData.minimumWidth = 30;
+		textData.widthHint = 30;
 		hullText.setLayoutData(textData);
 		
 		shieldLabel = toolkit.createLabel(shipClient, "Shields: ");
-		Text shieldText = toolkit.createText(shipClient, "");
+		shieldText = toolkit.createText(shipClient, "");
 		GridData shieldData = new GridData();
-		textData.minimumWidth = 30;
+		shieldData.minimumWidth = 30;
+		shieldData.widthHint = 30;
+		
 		shieldText.setLayoutData(shieldData);
 		shipSection.setClient(shipClient);
 		
-		toolkit.createButton(shipClient, "Update", SWT.PUSH);
+		Button updateButton = toolkit.createButton(shipClient, "Update", SWT.PUSH);
+		updateButton.addSelectionListener(new UpdateButtonSelectionListener(this));
 	}
 
 	private void createSquadSection() {
 		Section squadSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
-		squadSection.setText("Squad");
+		XwsSpec xwsModel = getPlayerModel();
+		String points = xwsModel != null ? Integer.toString(xwsModel.getPoints()) : "";
+		squadSection.setText("Squad - Total Points " + points);
 		
 		squadSection.setExpanded(true);
 		squadSection.setDescription("This contains the player's squadron");
 		
 		Composite squadComposite = toolkit.createComposite(squadSection);
 		GridLayout squadGridLayout = new GridLayout();
-		squadGridLayout.numColumns = 1;
+		squadGridLayout.numColumns = 3;
 		
 		squadComposite.setLayout(squadGridLayout);
 			
-		treeViewer = new TreeViewer(squadComposite, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-		treeViewer.getTree().setSize(290,  260);
+		treeViewer = new TreeViewer(squadComposite, SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL);
+		treeViewer.setContentProvider(new SquadContentProvider());
+		treeViewer.setLabelProvider(new SquadLabelProvider());
+		treeViewer.setInput(getPlayerModel());
+		treeViewer.addSelectionChangedListener(new SquadSelectionChangeListener(this));
+		
+		GridData treeSize = new GridData(SWT.FILL, SWT.FILL, true, true, 3, 5);
+		treeSize.minimumHeight = 300;
+		treeSize.heightHint = 300;
+		
+		treeViewer.getTree().setLayoutData(treeSize);
 		
 		squadSection.setClient(squadComposite);
 	}
@@ -95,5 +118,17 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	abstract void setPageName();
 	
 	abstract void pageContent(Composite parent);
+	
+	abstract XwsSpec getPlayerModel();
+	
+	abstract String playerFileName();
+	
+	abstract String squadTemplate();
+	
+	public void refreshTree() {
+		treeViewer.setInput(getPlayerModel());
+	}
+	
+	
 
 }

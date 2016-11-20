@@ -1,6 +1,12 @@
 package us.nineworlds.xstreamer.forms;
 
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.widgets.Composite;
+
+import com.example.rcpapp.Activator;
+import com.github.xws.XwsSpec;
+
+import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class FirstPlayerPage extends AbstractPlayerFormPage {
 
@@ -27,4 +33,22 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 
 	}
 
+	@Override
+	XwsSpec getPlayerModel() {
+		return Activator.getPlayer1();
+	}
+
+	@Override
+	String playerFileName() {
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		
+		return preferenceStore.getString(PreferenceConstants.FIRST_PLAYER_FILENAME);
+	}
+	
+	@Override
+	String squadTemplate() {
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		return preferenceStore.getString(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE);
+	}
+	
 }

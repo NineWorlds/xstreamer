@@ -6,11 +6,16 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IImportWizard;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
 
 import com.example.rcpapp.Activator;
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.forms.FirstPlayerPage;
+import us.nineworlds.xstreamer.forms.SecondPlayerPage;
 import us.nineworlds.xstreamer.model.ImportPlayerFile;
 
 public class PlayerSquads extends Wizard implements IImportWizard {
@@ -35,6 +40,11 @@ public class PlayerSquads extends Wizard implements IImportWizard {
 			XwsSpec player2Xws = importPlayerFile.load(player2File);
 			Activator.setPlayer1(player1Xws);
 			Activator.setPlayer2(player2Xws);
+			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+			FirstPlayerPage firstPlayer = (FirstPlayerPage) page.findView(FirstPlayerPage.FIRST_PLAYER_VIEW);
+			firstPlayer.refreshTree();
+			SecondPlayerPage secondPlayer = (SecondPlayerPage) page.findView(SecondPlayerPage.SECOND_PLAYER_VIEW);
+			secondPlayer.refreshTree();
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;

@@ -15,8 +15,15 @@ public class PreferenceConstants {
 	public static final String TIMER_MINUTES_DEFAULT = "xstreamer.timer.minutes";
 	public static final String TIMER_SECONDS_DEFAULT = "xstreamer.timer.seconds";
 	
+	public static final String TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY = "xstreamer.template.output.dir";
+	public static final String TEMPLATE_INPUT_DIRECTORY = "xstreamer.template.input.dir";
 	public static final String TEMPLATE_FIRST_PLAYER_FILE = "xstreamer.template.player1.squad";
-	public static final String TEMPLATE_SECOND_PLAYER_FILE = "xstreamer.template.player2.squad"; 
+	public static final String TEMPLATE_SECOND_PLAYER_FILE = "xstreamer.template.player2.squad";
+	
+	public static final String FIRST_PLAYER_FILENAME = "xstreamer.player.first.filename";
+	public static final String SECOND_PLAYER_FILENAME = "xstreamer.player.second.filename";
+	
+	public static final String RELOAD_PLAYER_FILES_ON_STARTUP = "xstreamer.reload.player.files";
 	
 	public static final String P_PATH = "pathPreference";
 

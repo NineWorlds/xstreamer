@@ -101,9 +101,9 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
+            class="us.nineworlds.xstreamer.preferences.SquadPrefencesPage"
             id="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
-            name="General Preferences">
+            name="Squadron">
       </page>
       <page
             class="us.nineworlds.xstreamer.preferences.TimerPreferencePage"

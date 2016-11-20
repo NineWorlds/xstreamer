@@ -36,23 +36,15 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		
-//		scheduler = StdSchedulerFactory.getDefaultScheduler();
-//		scheduler.start();
-//
-//		configuration = us.nineworlds.xstreamer.Configuration.getInstance();
-//
-//		ObjectMapper mapper = new ObjectMapper();
-//		InputStream shipInputStream = Activator.class.getResourceAsStream("/xws-data/ships.json");
-//		List<Ship> shipData = Arrays
-//				.asList(mapper.readValue(Activator.class.getResourceAsStream("/xws-data/ships.json"), Ship[].class));
-//		IOUtils.closeQuietly(shipInputStream);
-//
-//		ShipsLookup.newInstance(shipData);
-//
-//		player1 = mapper.readValue(new File(configuration.getPlayer1XWSFilePath()), XwsSpec.class);
-//		player2 = mapper.readValue(new File(configuration.getPlayer2XWSFilePath()), XwsSpec.class);
-//
-//		initFreemarker();
+		ObjectMapper mapper = new ObjectMapper();
+		InputStream shipInputStream = Activator.class.getResourceAsStream("/xws-data/ships.json");
+		List<Ship> shipData = Arrays
+				.asList(mapper.readValue(Activator.class.getResourceAsStream("/xws-data/ships.json"), Ship[].class));
+		IOUtils.closeQuietly(shipInputStream);
+		
+		ShipsLookup.newInstance(shipData);
+
+		initFreemarker();
 
 	}
 	
@@ -92,8 +84,8 @@ public class Activator extends AbstractUIPlugin {
 		freemarkerConfig = new Configuration();
 		freemarkerConfig.setDirectoryForTemplateLoading(new File("templates"));
 
-		GenerateSquadJob.createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
-		GenerateSquadJob.createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
+//		GenerateSquadJob.createPlayerFile(configuration.getPlayer1OverlayFilePath(), "1", "squadJob1");
+//		GenerateSquadJob.createPlayerFile(configuration.getPlayer2OverlayFilePath(), "2", "squadJob2");
 	}
 
 	public static Configuration getFreemarkerConfig() {

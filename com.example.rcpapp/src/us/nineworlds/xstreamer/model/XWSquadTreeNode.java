@@ -1,38 +1,40 @@
 package us.nineworlds.xstreamer.model;
 
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.TreeNode;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.jface.viewers.TreeNode;
+
+import com.github.xws.Pilot;
 import com.github.xws.XwsSpec;
 
-public class XWSquadTreeNode extends DefaultMutableTreeNode {
-   
-   private static final long serialVersionUID = 1L;
-   private XwsSpec playerModel;  
-   
-   public XWSquadTreeNode(XwsSpec userObject, boolean allowsChildren) {
-      super(userObject, allowsChildren);
-      playerModel = userObject;
-   }
+public class XWSquadTreeNode extends TreeNode {
 
-   public XWSquadTreeNode(XwsSpec userObject) {
-      super(userObject);
-      playerModel = userObject;
-   }
-   
-   @Override
-public String toString() {
-      return playerModel.getName();
-   }
+	private static final long serialVersionUID = 1L;
+	private XwsSpec playerModel;
 
-   @Override
-   public int getChildCount() {
-      return playerModel.getPilots().size();
-   }
-   
-   @Override
-   public TreeNode getChildAt(int index) {
-      PilotTreeNode pilotTreeNode = new PilotTreeNode(playerModel.getPilots().get(index));
-      return pilotTreeNode;
-   }
-   
+	public XWSquadTreeNode(XwsSpec userObject) {
+		super(userObject);
+		playerModel = userObject;
+	}
+
+	@Override
+	public String toString() {
+		return playerModel.getName();
+	}
+	
+	@Override
+	public boolean hasChildren() {
+		return playerModel.getPilots().size() > 0;
+	}
+	
+	@Override
+	public TreeNode[] getChildren() {
+		List<PilotTreeNode> treeNodes = new ArrayList<>();
+		for (Pilot pilot : playerModel.getPilots()) {
+			PilotTreeNode node = new PilotTreeNode(pilot);
+			treeNodes.add(node);
+		}
+		return treeNodes.toArray(new TreeNode[treeNodes.size()]);
+	}
 }

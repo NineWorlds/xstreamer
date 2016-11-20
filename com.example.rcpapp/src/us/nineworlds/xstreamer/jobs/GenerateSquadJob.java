@@ -1,92 +1,72 @@
 package us.nineworlds.xstreamer.jobs;
 
-import static org.quartz.JobBuilder.newJob;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.quartz.Job;
-import org.quartz.JobDataMap;
-import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.quartz.SchedulerException;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.filefilter.IOFileFilter;
+import org.apache.commons.lang.StringUtils;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.jface.preference.IPreferenceStore;
 
 import com.example.rcpapp.Activator;
 import com.github.xws.XwsSpec;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
-public class GenerateSquadJob implements Job {
+public class GenerateSquadJob extends Job {
 
-   public GenerateSquadJob() {
-   }
+	XwsSpec xwsspec;
+	String playerFilename;
+	String templateFilename;
+	public GenerateSquadJob(String name, XwsSpec model, String preferncePlayerFileName, String templateFileName) {
+		super(name);
+		xwsspec = model;
+		playerFilename = preferncePlayerFileName;
+		this.templateFilename = templateFileName;
+	}
 
-   @Override
-   public void execute(JobExecutionContext context) throws JobExecutionException {
+	@Override
+	protected IStatus run(IProgressMonitor monitor) {
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY);
+		String templateInputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY);
+		if (StringUtils.isEmpty(templateOutputDirectory) || StringUtils.isEmpty(playerFilename) ||
+			StringUtils.isEmpty(templateFilename) || StringUtils.isEmpty(templateInputDirectory)) {
+			return Status.CANCEL_STATUS;
+		}		
 
-      JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
-      String player1Template = us.nineworlds.xstreamer.Configuration.getInstance().player1SquadTemplateFilePath();
-      String player2Template = us.nineworlds.xstreamer.Configuration.getInstance().player2SquadTemplateFilePath();
-      String filename = jobDataMap.getString("filename");
-      String playerNumber = jobDataMap.getString("player");
-      XwsSpec squad = null;
-      Template squadTemplate;
-      Configuration config = Activator.getFreemarkerConfig();
-      
-      
-      Writer player1SquadFile = null;
-      try {
-         if (playerNumber.equals("1")) {
-            squadTemplate = config.getTemplate(player1Template);
-            squad = Activator.getPlayer1();
-         } else {
-            squadTemplate = config.getTemplate(player2Template);
-            squad = Activator.getPlayer2();
-         }
-         player1SquadFile = new FileWriter(new File(filename));
+		Writer player1SquadFile = null;
+		try {
+			Configuration config = Activator.getFreemarkerConfig();
+			config.setDirectoryForTemplateLoading(new File(templateInputDirectory));
+			Path path = Paths.get(templateFilename);
+			Template squadTemplate = config.getTemplate(path.getFileName().toString());
+			player1SquadFile = new FileWriter(new File(templateOutputDirectory + File.separator + playerFilename));
 
-         Map<String, Object> input = new HashMap<>();
+			Map<String, Object> input = new HashMap<>();
 
-         input.put("xwsspec", squad);
+			input.put("xwsspec", xwsspec);
 
-         squadTemplate.process(input, player1SquadFile);
-      } catch (Exception e) {
-         e.printStackTrace();
-         throw new JobExecutionException(e);
-      } finally {
-         if (player1SquadFile != null) {
-            try {
-               player1SquadFile.close();
-            } catch (IOException e) {
-               throw new JobExecutionException(e);
-            }    
-         }
-      }
-   }
-   
-   public static void createPlayerFile(String filename, String playerNumber, String jobName) {
-      JobDetail jobDetail = newJob(GenerateSquadJob.class)
-            .withIdentity(jobName)
-            .usingJobData("filename", filename)
-            .usingJobData("player", playerNumber)
-            .build();
-      Trigger trigger = TriggerBuilder.newTrigger().startNow().withIdentity(jobName).build();
-      
-      try {
-         Activator.getScheduler().scheduleJob(jobDetail, trigger);
-      } catch (SchedulerException e) {
-         System.out.println("Error scheduling job");
-      }
-   }
-
-   
-   
+			squadTemplate.process(input, player1SquadFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Status.CANCEL_STATUS;
+		} finally {
+			IOUtils.closeQuietly(player1SquadFile);			
+		}
+		return Status.OK_STATUS;
+	}
 }
