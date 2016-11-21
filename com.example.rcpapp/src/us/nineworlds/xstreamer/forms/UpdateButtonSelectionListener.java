@@ -24,7 +24,9 @@ public class UpdateButtonSelectionListener implements SelectionListener {
 			PilotTreeNode pilotTreeNode = (PilotTreeNode) structuredSelection.getFirstElement();
 			Pilot pilot = (Pilot) pilotTreeNode.getValue();
 			pilot.setHull(Integer.parseInt(page.hullText.getText()));
-			pilot.setShields(Integer.parseInt(page.shieldText.getText()));			
+			pilot.setShields(Integer.parseInt(page.shieldText.getText()));
+			pilot.setPilotId(page.pilotId.getText());
+			pilot.setPilotSkill(page.pilotSkillText.getText());
 		}
 		
 		if (page.getPlayerModel() != null) {

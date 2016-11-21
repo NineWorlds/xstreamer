@@ -26,6 +26,8 @@ public class SquadSelectionChangeListener implements ISelectionChangedListener {
 			if (structureSelection.getFirstElement() instanceof PilotTreeNode) {
 				PilotTreeNode pilot = (PilotTreeNode) structureSelection.getFirstElement();
 				Pilot p = (Pilot) pilot.getValue();
+				page.pilotId.setText(p.getPilotId() != null ? p.getPilotId() : "");
+				page.pilotSkillText.setText(p.getPilotSkill() != null ? p.getPilotSkill() : "");
 				page.hullText.setText(Integer.toString(p.getHull()));
 				page.shieldText.setText(Integer.toString(p.getShields()));
 				page.totalShipPoints.setText("Points: " + Integer.toString(p.getPoints()));

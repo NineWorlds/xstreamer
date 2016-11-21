@@ -26,10 +26,10 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	TreeViewer treeViewer;
 	
 	Label totalShipPoints;
-	Label hullLabel;
-	Label shieldLabel;
 	Text shieldText;
 	Text hullText;
+	Text pilotSkillText;
+	Text pilotId;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -65,24 +65,25 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		totalShipPoints = toolkit.createLabel(shipClient, "Points: ");
 		totalShipPoints.setLayoutData(playerSquadPointsData);
 		
-		hullLabel = toolkit.createLabel(shipClient, "Hull: ");
-		hullText = toolkit.createText(shipClient, "");
-		GridData textData = new GridData();
-		textData.minimumWidth = 30;
-		textData.widthHint = 30;
-		hullText.setLayoutData(textData);
+		pilotSkillText = createField(shipClient, "Skill: ");
+		pilotId = createField(shipClient, "Unique Id: ");
+		hullText = createField(shipClient, "Hull: ");
+		shieldText = createField(shipClient, "Shields: ");
 		
-		shieldLabel = toolkit.createLabel(shipClient, "Shields: ");
-		shieldText = toolkit.createText(shipClient, "");
-		GridData shieldData = new GridData();
-		shieldData.minimumWidth = 30;
-		shieldData.widthHint = 30;
-		
-		shieldText.setLayoutData(shieldData);
 		shipSection.setClient(shipClient);
 		
 		Button updateButton = toolkit.createButton(shipClient, "Update", SWT.PUSH);
 		updateButton.addSelectionListener(new UpdateButtonSelectionListener(this));
+	}
+	
+	private Text createField(Composite client, String labelName) {
+		toolkit.createLabel(client, labelName);
+		Text field  = toolkit.createText(client, "");
+		GridData textData = new GridData();
+		textData.minimumWidth = 30;
+		textData.widthHint = 30;
+		field.setLayoutData(textData);
+		return field;
 	}
 
 	private void createSquadSection() {
