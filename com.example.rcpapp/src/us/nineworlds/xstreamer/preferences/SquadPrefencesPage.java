@@ -4,6 +4,8 @@ import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.preferences.widgets.LabelFieldEditor;
+import us.nineworlds.xstreamer.preferences.widgets.SpacerFieldEditor;
 
 import org.eclipse.ui.IWorkbench;
 
@@ -37,9 +39,9 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 		
 		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));
 
-		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_FILENAME, "First Player File:",
+		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_SQUAD_FILENAME, "First Player Squad File:",
 				getFieldEditorParent()));
-		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_FILENAME, "Second Player File:",
+		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_SQUAD_FILENAME, "Second Player Squad File:",
 				getFieldEditorParent()));
 		FileFieldEditor firstPlayer = new FileFieldEditor(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE,
 				"First Player Squad Template:", getFieldEditorParent());
@@ -49,17 +51,16 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 				"Second Player Squad Template:", getFieldEditorParent());
 		secondPlayer.setFileExtensions(new String[] { "*.ftl" });
 		addField(secondPlayer);
-
-//		addField(new BooleanFieldEditor(PreferenceConstants.RELOAD_PLAYER_FILES_ON_STARTUP, "&Reload squadrons on restart",
-//				getFieldEditorParent()));
+		
+		new SpacerFieldEditor(getFieldEditorParent());
+		new LabelFieldEditor("Player Filenames", getFieldEditorParent()).adjustForNumColumns(3);
+		
+		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_NAME_FILENAME, "Player 1 Filename:",
+				getFieldEditorParent()));
+		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_NAME_FILENAME, "Player 2 Filename:",
+				getFieldEditorParent()));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
-	 */
 	public void init(IWorkbench workbench) {
 	}
 

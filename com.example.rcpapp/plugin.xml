@@ -22,6 +22,7 @@
    <extension
          point="org.eclipse.ui.views">
       <view
+            category="us.nineworlds.xstreamer.category"
             class="us.nineworlds.xstreamer.forms.CountDownTimerPage"
             icon="images/clock-icon.png"
             id="us.nineworlds.xstreamer.view.timer"
@@ -30,6 +31,7 @@
       </view>
       <view
             allowMultiple="false"
+            category="us.nineworlds.xstreamer.category"
             class="us.nineworlds.xstreamer.forms.FirstPlayerPage"
             icon="images/P1.png"
             id="us.nineworlds.xstreamer.view.firstplayer"
@@ -38,22 +40,41 @@
       </view>
       <view
             allowMultiple="false"
+            category="us.nineworlds.xstreamer.category"
             class="us.nineworlds.xstreamer.forms.SecondPlayerPage"
             icon="images/P2.png"
             id="us.nineworlds.xstreamer.view.secondplayer"
             name="Player 2"
             restorable="true">
       </view>
+      <view
+            category="us.nineworlds.xstreamer.category"
+            class="us.nineworlds.xstreamer.forms.GeneralFormPage"
+            icon="images/Token_Charge_Back.png"
+            id="us.nineworlds.xstreamer.view.general"
+            name="General"
+            restorable="true">
+      </view>
+      <category
+            id="us.nineworlds.xstreamer.category"
+            name="XStreamer">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="*">
          <view
-               id="us.nineworlds.xstreamer.view.timer"
+               id="us.nineworlds.xstreamer.view.general"
                minimized="false"
                relationship="left"
                relative="org.eclipse.ui.editorss">
+         </view>
+         <view
+               id="us.nineworlds.xstreamer.view.timer"
+               minimized="false"
+               relationship="stack"
+               relative="us.nineworlds.xstreamer.view.general">
          </view>
          <view
                id="us.nineworlds.xstreamer.view.firstplayer"
@@ -95,6 +116,14 @@
                   commandId="org.eclipse.ui.window.preferences"
                   label="Preferences">
             </command>
+         </menu>
+         <menu
+               label="Window">
+            <command
+                  commandId="org.eclipse.ui.views.showView"
+                  style="push">
+            </command>
+              
          </menu>
       </menuContribution>
    </extension>

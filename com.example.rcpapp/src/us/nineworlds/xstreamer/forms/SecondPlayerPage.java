@@ -40,7 +40,7 @@ public class SecondPlayerPage extends AbstractPlayerFormPage {
 	@Override
 	public String playerFileName() {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-		return preferenceStore.getString(PreferenceConstants.SECOND_PLAYER_FILENAME);
+		return preferenceStore.getString(PreferenceConstants.SECOND_PLAYER_SQUAD_FILENAME);
 	}
 	
 	@Override
