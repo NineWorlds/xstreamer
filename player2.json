@@ -1,89 +1,58 @@
 {
-	"description": "",
-	"faction": "scum",
-	"name": "Raging Tail",
-	"pilots": 
-	[
-		{
-			"name": "torkilmux",
-			"points": 25,
-			"ship": "hwk290",
-			"upgrades": 
-			{
-				"turret": 
-				[
-					"dorsalturret"
-				],
-
-				"crew": 
-				[
-					"dengar"
-				]
-			}
-		},
-
-		{
-			"name": "kathscarlet",
-			"points": 44,
-			"ship": "firespray31",
-			"upgrades": 
-			{
-				"ept": 
-				[
-					"rage"
-				],
-
-				"crew": 
-				[
-					"tailgunner"
-				],
-
-				"mod": 
-				[
-					"countermeasures"
-				]
-			}
-		},
-
-		{
-			"name": "palobgodalhi",
-			"points": 31,
-			"ship": "hwk290",
-			"upgrades": 
-			{
-				"ept": 
-				[
-					"predator"
-				],
-
-				"turret": 
-				[
-					"blasterturret"
-				],
-
-				"crew": 
-				[
-					"bobafett"
-				],
-
-				"title": 
-				[
-					"moldycrow"
-				]
-			}
-		}
-	],
-
-	"points": 100,
-	"vendor": 
-	{
-		"yasb": 
-		{
-			"builder": "(Yet Another) X-Wing Miniatures Squad Builder",
-			"builder_url": "https://geordanr.github.io/xwing/",
-			"link": "https://geordanr.github.io/xwing/?f=Scum%20and%20Villainy&d=v4!s!126:162,178,-1:-1:-1:;117:175,-1,-1,184,-1,-1:-1:12:;125:57,37,177,-1:3:-1:&sn=Raging%20Tail"
-		}
-	},
-
-	"version": "0.3.0"
+    "version": "0.3.0",
+    "name": "Palp Defenders",
+    "faction": "imperial",
+    "points": 100,
+    "pilots": [
+        {
+            "name": "colonelvessery",
+            "ship": "tiedefender",
+            "points": 35,
+            "upgrades": {
+                "ept": [
+                    "juke"
+                ],
+                "title": [
+                    "tiex7"
+                ]
+            }
+        },
+        {
+            "name": "countessryad",
+            "ship": "tiedefender",
+            "points": 36,
+            "upgrades": {
+                "ept": [
+                    "pushthelimit"
+                ],
+                "title": [
+                    "tiex7"
+                ],
+                "mod": [
+                    "twinionenginemkii"
+                ]
+            }
+        },
+        {
+            "name": "omicrongrouppilot",
+            "ship": "lambdaclassshuttle",
+            "points": 29,
+            "upgrades": {
+                "system": [
+                    "collisiondetector"
+                ],
+                "crew": [
+                    "emperorpalpatine"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 597998,
+            "link": "http://xwing-builder.co.uk/view/597998/palp-defenders",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
 }

@@ -1,116 +1,70 @@
 {
-	"description": "",
-	"faction": "imperial",
-	"name": "Bombing Bulldogs",
-	"pilots": 
-	[
-		{
-			"name": "gammasquadronpilot",
-			"points": 23,
-			"ship": "tiebomber",
-			"upgrades": 
-			{
-				"torpedo": 
-				[
-					"extramunitions",
-					"flechettetorpedoes"
-				],
-
-				"missile": 
-				[
-					"xx23sthreadtracers"
-				],
-
-				"mod": 
-				[
-					"guidancechips"
-				]
-			}
-		},
-
-		{
-			"name": "gammasquadronpilot",
-			"points": 25,
-			"ship": "tiebomber",
-			"upgrades": 
-			{
-				"torpedo": 
-				[
-					"extramunitions",
-					"plasmatorpedoes"
-				],
-
-				"bomb": 
-				[
-					"seismiccharges"
-				],
-
-				"mod": 
-				[
-					"guidancechips"
-				]
-			}
-		},
-
-		{
-			"name": "gammasquadronpilot",
-			"points": 26,
-			"ship": "tiebomber",
-			"upgrades": 
-			{
-				"torpedo": 
-				[
-					"extramunitions",
-					"protontorpedoes"
-				],
-
-				"bomb": 
-				[
-					"seismiccharges"
-				],
-
-				"mod": 
-				[
-					"guidancechips"
-				]
-			}
-		},
-
-		{
-			"name": "gammasquadronpilot",
-			"points": 26,
-			"ship": "tiebomber",
-			"upgrades": 
-			{
-				"torpedo": 
-				[
-					"extramunitions"
-				],
-
-				"missile": 
-				[
-					"assaultmissiles",
-					"xx23sthreadtracers"
-				],
-
-				"mod": 
-				[
-					"guidancechips"
-				]
-			}
-		}
-	],
-
-	"points": 100,
-	"vendor": 
-	{
-		"yasb": 
-		{
-			"builder": "(Yet Another) X-Wing Miniatures Squad Builder",
-			"builder_url": "https://geordanr.github.io/xwing/",
-			"link": "https://geordanr.github.io/xwing/?f=Galactic%20Empire&d=v4!s!50:126,58,-1,143,-1:-1:25:;50:126,136,-1,-1,24:-1:25:;50:126,1,-1,-1,24:-1:25:;50:126,-1,26,143,-1:-1:25:&sn=Bombing%20Bulldogs"
-		}
-	},
-
-	"version": "0.3.0"
+    "version": "0.3.0",
+    "name": "Goon Squad",
+    "faction": "scum",
+    "points": 100,
+    "pilots": [
+        {
+            "name": "manaroo",
+            "ship": "jumpmaster5000",
+            "points": 35,
+            "upgrades": {
+                "ept": [
+                    "attannimindlink"
+                ],
+                "crew": [
+                    "gonk"
+                ],
+                "samd": [
+                    "r5p8"
+                ],
+                "illicit": [
+                    "feedbackarray"
+                ]
+            }
+        },
+        {
+            "name": "fennrau",
+            "ship": "protectoratestarfighter",
+            "points": 32,
+            "upgrades": {
+                "ept": [
+                    "attannimindlink"
+                ],
+                "title": [
+                    "concorddawnprotector"
+                ],
+                "mod": [
+                    "autothrusters"
+                ]
+            }
+        },
+        {
+            "name": "palobgodalhi",
+            "ship": "hwk290",
+            "points": 33,
+            "upgrades": {
+                "ept": [
+                    "attannimindlink"
+                ],
+                "turret": [
+                    "twinlaserturret"
+                ],
+                "crew": [
+                    "dengar"
+                ],
+                "title": [
+                    "moldycrow"
+                ]
+            }
+        }
+    ],
+    "vendor": {
+        "voidstate": {
+            "squadron_id": 597997,
+            "link": "http://xwing-builder.co.uk/view/597997/goon-squad",
+            "builder": "Voidstate's Unofficial X-Wing Squadron Builder",
+            "builder_link": "http://xwing-builder.co.uk/build"
+        }
+    }
 }

@@ -67,8 +67,6 @@ build/
 target
 
 #Eclipse
-.project
-.classpath
 
 # Local configuration file (sdk path, etc)
 local.properties
