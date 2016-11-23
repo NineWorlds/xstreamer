@@ -29,5 +29,9 @@ public class ShipsLookup {
       }
       return null;
    }
+   
+   public List<Ship> getShips() {
+	   return ships;
+   }
 
 }

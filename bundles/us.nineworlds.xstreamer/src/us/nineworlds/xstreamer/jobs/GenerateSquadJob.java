@@ -24,6 +24,7 @@ import com.github.xws.XwsSpec;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.model.lookup.ShipsLookup;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class GenerateSquadJob extends Job {
@@ -59,6 +60,7 @@ public class GenerateSquadJob extends Job {
 			Map<String, Object> input = new HashMap<>();
 
 			input.put("xwsspec", xwsspec);
+			input.put("allships", ShipsLookup.getInstance().getShips());
 
 			squadTemplate.process(input, player1SquadFile);
 		} catch (Exception e) {
