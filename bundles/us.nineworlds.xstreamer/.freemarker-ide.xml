@@ -1,0 +1,17 @@
+<config>
+	<context-values>
+		<resource path="templates/squadOverlay.ftl">
+			<value key="ships" object-class="us.nineworlds.xstreamer.model.lookup.ShipsLookup"/>
+			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
+			<value key="Ship" object-class="com.github.guidokessels.ships.Ship"/>
+			<value key="upgrades" object-class="us.nineworlds.xstreamer.model.lookup.UpgradeLookup"/>
+		</resource>
+		<resource path="templates/steletvRightAligned.ftl">
+			<value key="allships" object-class="us.nineworlds.xstreamer.model.lookup.ShipsLookup"/>
+			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
+			<value key="allupgrades" object-class="us.nineworlds.xstreamer.model.lookup.UpgradeLookup"/>
+		</resource>
+	</context-values>
+	<macro-library>
+	</macro-library>
+</config>

@@ -1,4 +1,3 @@
-
 package com.github.xws;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

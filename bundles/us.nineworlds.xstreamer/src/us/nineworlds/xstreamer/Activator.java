@@ -1,5 +1,4 @@
 package us.nineworlds.xstreamer;
-import java.io.File;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
@@ -10,11 +9,12 @@ import org.osgi.framework.BundleContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.guidokessels.ships.Ship;
+import com.github.guidokessels.ships.Upgrades;
 import com.github.xws.XwsSpec;
 
 import freemarker.template.Configuration;
-import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.model.lookup.ShipsLookup;
+import us.nineworlds.xstreamer.model.lookup.UpgradeLookup;
 
 public class Activator extends AbstractUIPlugin {
 
@@ -22,7 +22,6 @@ public class Activator extends AbstractUIPlugin {
 	private static XwsSpec player2;
 	private static long countDownTime;
 	private static Configuration freemarkerConfig;
-	private static us.nineworlds.xstreamer.Configuration configuration;
 	private static Activator plugin;
 
 	public Activator() {
@@ -36,11 +35,17 @@ public class Activator extends AbstractUIPlugin {
 		ObjectMapper mapper = new ObjectMapper();
 		InputStream shipInputStream = Activator.class.getResourceAsStream("/xws-data/ships.json");
 		List<Ship> shipData = Arrays
-				.asList(mapper.readValue(Activator.class.getResourceAsStream("/xws-data/ships.json"), Ship[].class));
+				.asList(mapper.readValue(shipInputStream, Ship[].class));
 		IOUtils.closeQuietly(shipInputStream);
 		
 		ShipsLookup.newInstance(shipData);
-
+		
+		InputStream upgradesInputStream = Activator.class.getResourceAsStream("/xws-data/upgrades.json");
+		List<Upgrades> upgradeData = Arrays.asList(mapper.readValue(upgradesInputStream, Upgrades[].class));
+		IOUtils.closeQuietly(upgradesInputStream);
+		
+		UpgradeLookup.newInstance(upgradeData);
+		
 		initFreemarker();
 
 	}
