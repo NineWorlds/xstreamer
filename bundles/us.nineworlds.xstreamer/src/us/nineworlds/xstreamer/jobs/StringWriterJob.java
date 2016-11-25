@@ -15,24 +15,24 @@ import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class StringWriterJob extends Job {
 
-	String playerFilename;
+	String filename;
 	String content;
-	public StringWriterJob(String jobname, String content, String playerFilename) {
+	public StringWriterJob(String jobname, String content, String filename) {
 		super(jobname);
 		this.content = content;
-		this.playerFilename = playerFilename;
+		this.filename = filename;
 	}
 
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY);
-		if (StringUtils.isEmpty(content) || StringUtils.isEmpty(playerFilename)) {
+		if (StringUtils.isEmpty(content) || StringUtils.isEmpty(filename)) {
 			return Status.CANCEL_STATUS;
 		}
 		
 		try {
-			FileUtils.writeStringToFile(new File(templateOutputDirectory + File.separator + playerFilename), content);
+			FileUtils.writeStringToFile(new File(templateOutputDirectory + File.separator + filename), content);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Status.CANCEL_STATUS;

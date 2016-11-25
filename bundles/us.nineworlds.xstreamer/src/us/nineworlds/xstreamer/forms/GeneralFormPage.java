@@ -1,7 +1,10 @@
 package us.nineworlds.xstreamer.forms;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -14,6 +17,7 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
 import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.jobs.StringWriterJob;
 
 public class GeneralFormPage extends ViewPart {
 	
@@ -21,6 +25,7 @@ public class GeneralFormPage extends ViewPart {
 		
 	public Text firstPlayerName;
 	public Text secondPlayerName;
+	public Text newsTickerText;
 	
 	private IPreferenceStore preference;
 
@@ -38,6 +43,13 @@ public class GeneralFormPage extends ViewPart {
 		ColumnLayout layout = new ColumnLayout();
 		form.getBody().setLayout(layout);
 		
+		createPlayerSection();
+		createNewsTickerSection();
+		
+
+	}
+
+	private void createPlayerSection() {
 		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
 		playersSection.setText("Timer Section");
 		playersSection.setExpanded(true);
@@ -58,8 +70,7 @@ public class GeneralFormPage extends ViewPart {
 		updateButton.setLayoutData(updateButtonData);
 		updateButton.addSelectionListener(new PlayerNameUpdateButtonSelectionListener(this));
 				
-		playersSection.setClient(playerClient);		
-
+		playersSection.setClient(playerClient);
 	}
 	
 	private Text createPlayerNameField(Composite parent, String label) {
@@ -71,6 +82,50 @@ public class GeneralFormPage extends ViewPart {
 		Text player  = toolkit.createText(parent, "");
 		player.setLayoutData(playerAttributs);
 		return player; 
+	}
+	
+	private void createNewsTickerSection() {
+		Section section = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		section.setText("News Ticker");
+		section.setExpanded(false);
+		section.setDescription("News ticker allows for the entry of data to be displayed in a scrolling textfield. Output is written to a file called ticker.txt");
+		Composite composite = toolkit.createComposite(section);
+		GridLayout gridlayout = new GridLayout();
+		gridlayout.numColumns = 2;
+		composite.setLayout(gridlayout);
+		
+		newsTickerText = toolkit.createText(composite, "", SWT.MULTI | SWT.WRAP | SWT.BORDER | SWT.V_SCROLL);
+		newsTickerText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		newsTickerText.setEditable(true);
+		GridData newsData = (GridData) newsTickerText.getLayoutData();
+		newsData.horizontalSpan = 2;
+		newsData.heightHint = 100;
+		newsData.minimumHeight = 100;
+		
+		Button updateButton = toolkit.createButton(composite, "Update", SWT.PUSH | SWT.RESIZE);
+		GridData updateButtonData = new GridData();
+		updateButtonData.horizontalSpan = 2;
+		updateButtonData.widthHint = 60;
+		updateButtonData.grabExcessHorizontalSpace = true;
+		updateButton.setLayoutData(updateButtonData);
+		updateButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				String news = newsTickerText.getText();
+				if (StringUtils.isNotEmpty(news)) {
+					StringWriterJob job = new StringWriterJob("newsticker", news, "ticker.txt");
+					job.schedule();
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				widgetSelected(e);
+			}
+		});
+		
+		section.setClient(composite);
 	}
 
 	@Override
