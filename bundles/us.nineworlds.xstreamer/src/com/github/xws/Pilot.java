@@ -21,6 +21,8 @@ public class Pilot {
 
 	private boolean shieldsLoaded = false;
 	private boolean hullLoaded = false;
+	
+	private String xwsname;
 
 	@JsonProperty("multisection_id")
 	private Integer multisectionId;
@@ -136,6 +138,7 @@ public class Pilot {
 	@JsonProperty("name")
 	public void setName(String name) {
 		this.name = name;
+		this.xwsname = name;
 	}
 
 	/**
@@ -273,6 +276,10 @@ public class Pilot {
 
 	public void setPilotSkill(String pilotSkill) {
 		this.pilotSkill = pilotSkill;
+	}
+	
+	public String getXwsName() {
+		return xwsname;
 	}
 
 	@Override
