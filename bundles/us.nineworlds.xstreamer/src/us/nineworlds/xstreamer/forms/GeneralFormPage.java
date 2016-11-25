@@ -45,8 +45,6 @@ public class GeneralFormPage extends ViewPart {
 		
 		createPlayerSection();
 		createNewsTickerSection();
-		
-
 	}
 
 	private void createPlayerSection() {
