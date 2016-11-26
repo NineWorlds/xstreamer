@@ -39,8 +39,8 @@ public class PlayerSquads extends Wizard implements IImportWizard {
 		try {
 			XwsSpec player1Xws = importPlayerFile.load(player1File);
 			XwsSpec player2Xws = importPlayerFile.load(player2File);
-			Activator.setPlayer1(player1Xws);
-			Activator.setPlayer2(player2Xws);
+			us.nineworlds.xstreamer.core.Activator.getDefault().setPlayer1(player1Xws);
+			us.nineworlds.xstreamer.core.Activator.getDefault().setPlayer2(player2Xws);
 			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 			FirstPlayerPage firstPlayer = (FirstPlayerPage) page.findView(FirstPlayerPage.FIRST_PLAYER_VIEW);
 			firstPlayer.refreshTree();

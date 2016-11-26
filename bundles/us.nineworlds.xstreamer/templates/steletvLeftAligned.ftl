@@ -18,7 +18,7 @@ remainingHulls - ouputs the remainging hull for a pilot
 -->
 <#list xwsspec.pilots as pilot>
 	<#if pilot.pilotSkill??>
-	  <#t>(${pilotAliveDead()})<#rt>
+	  <#t>(${pilotAliveDead(pilot)})<#rt>
 	</#if> 
 	<#lt> ${pilot.name} <#t>
 	<#if pilot.pilotId??>

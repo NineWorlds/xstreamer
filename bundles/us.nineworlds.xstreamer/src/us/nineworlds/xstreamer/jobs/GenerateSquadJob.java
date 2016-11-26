@@ -2,16 +2,13 @@ package us.nineworlds.xstreamer.jobs;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Writer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -53,7 +50,7 @@ public class GenerateSquadJob extends Job {
 
 		Writer player1SquadFile = null;
 		try {
-			Configuration config = Activator.getFreemarkerConfig();
+			Configuration config = us.nineworlds.xstreamer.core.Activator.getDefault().getFreemarkerConfig();
 			config.setDirectoryForTemplateLoading(new File(templateInputDirectory));
 			Path path = Paths.get(templateFilename);
 			Template squadTemplate = config.getTemplate(path.getFileName().toString());

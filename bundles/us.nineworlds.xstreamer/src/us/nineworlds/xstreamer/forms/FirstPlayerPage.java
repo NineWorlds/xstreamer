@@ -35,7 +35,7 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 
 	@Override
 	public XwsSpec getPlayerModel() {
-		return Activator.getPlayer1();
+		return us.nineworlds.xstreamer.core.Activator.getDefault().getPlayer1();
 	}
 
 	@Override
