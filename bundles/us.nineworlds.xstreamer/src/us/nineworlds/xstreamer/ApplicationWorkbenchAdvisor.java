@@ -1,8 +1,12 @@
 package us.nineworlds.xstreamer;
 
+import org.eclipse.ui.application.ActionBarAdvisor;
+import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
+
+import us.nineworlds.xstreamer.browser.BrowserActionBarAdvisor;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
@@ -18,5 +22,14 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	public String getInitialWindowPerspectiveId() {
 		return PERSPECTIVE_ID;
 	}
+	
+    /* (non-Javadoc)
+     * @see org.eclipse.ui.application.WorkbenchWindowAdvisor#createActionBarAdvisor(org.eclipse.ui.application.IActionBarConfigurer)
+     */
+    public ActionBarAdvisor createActionBarAdvisor(
+            IActionBarConfigurer actionBarConfigurer) {
+        return new BrowserActionBarAdvisor(actionBarConfigurer);
+    }
+
 
 }
