@@ -125,6 +125,15 @@
             </command>
               
          </menu>
+         <menu
+               label="Help"
+               mnemonic="&amp;H">
+            <command
+                  commandId="org.eclipse.ui.help.aboutAction"
+                  label="About XStreamer"
+                  style="push">
+            </command>
+         </menu>
       </menuContribution>
    </extension>
    <extension
@@ -184,6 +193,10 @@
          <property
                name="appName"
                value="XStreamer">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
          </property>
       </product>
    </extension>
