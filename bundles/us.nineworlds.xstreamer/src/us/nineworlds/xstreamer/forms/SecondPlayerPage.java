@@ -49,6 +49,11 @@ public class SecondPlayerPage extends AbstractPlayerFormPage {
 		return preferenceStore.getString(PreferenceConstants.TEMPLATE_SECOND_PLAYER_FILE);
 	}
 
+	@Override
+	void resetPlayerModel(XwsSpec model) {
+		us.nineworlds.xstreamer.core.Activator.getDefault().setPlayer2(model);
+	}
+
 
 
 }

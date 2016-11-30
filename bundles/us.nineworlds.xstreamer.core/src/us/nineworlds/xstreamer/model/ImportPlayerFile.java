@@ -14,4 +14,9 @@ public class ImportPlayerFile {
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.readValue(new File(importFile), XwsSpec.class);
 	}
+	
+	public XwsSpec parseXws(String xwsjson) throws Exception {
+		ObjectMapper mapper = new ObjectMapper();
+		return mapper.readValue(xwsjson, XwsSpec.class);
+	}
 }

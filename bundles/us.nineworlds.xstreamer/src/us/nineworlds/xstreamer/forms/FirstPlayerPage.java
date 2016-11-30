@@ -50,5 +50,10 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		return preferenceStore.getString(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE);
 	}
+
+	@Override
+	void resetPlayerModel(XwsSpec model) {
+		us.nineworlds.xstreamer.core.Activator.getDefault().setPlayer1(model);
+	}
 	
 }

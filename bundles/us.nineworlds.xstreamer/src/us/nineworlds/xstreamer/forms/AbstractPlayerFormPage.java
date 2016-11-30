@@ -1,7 +1,10 @@
 package us.nineworlds.xstreamer.forms;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -16,6 +19,9 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
+import us.nineworlds.xstreamer.jobs.StringWriterJob;
+import us.nineworlds.xstreamer.model.ImportPlayerFile;
 import us.nineworlds.xstreamer.model.SquadContentProvider;
 import us.nineworlds.xstreamer.model.SquadLabelProvider;
 
@@ -30,6 +36,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	Text hullText;
 	Text pilotSkillText;
 	Text pilotId;
+	Text importSquadText;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -41,8 +48,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		form.getBody().setLayout(layout);
 
 		createSquadSection();
-	
 		createShipSection();
+		createImportSquadSection();
 		
 		pageContent(parent);
 	}
@@ -116,6 +123,79 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		squadSection.setClient(squadComposite);
 	}
 	
+	private void createImportSquadSection() {
+		Section section = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		section.setText("Import Squad");
+		section.setExpanded(false);
+		section.setDescription("Cut and paste the XWS squad data in the text box, then press Import.");
+		Composite composite = toolkit.createComposite(section);
+		GridLayout gridlayout = new GridLayout();
+		gridlayout.numColumns = 2;
+		composite.setLayout(gridlayout);
+		
+		importSquadText = toolkit.createText(composite, "", SWT.MULTI | SWT.WRAP | SWT.BORDER | SWT.V_SCROLL);
+		importSquadText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		importSquadText.setEditable(true);
+		GridData newsData = (GridData) importSquadText.getLayoutData();
+		newsData.horizontalSpan = 2;
+		newsData.heightHint = 100;
+		newsData.minimumHeight = 100;
+		
+		Button updateButton = toolkit.createButton(composite, "Import", SWT.PUSH | SWT.RESIZE);
+		GridData updateButtonData = new GridData();
+		updateButtonData.horizontalSpan = 1;
+		updateButtonData.widthHint = 60;
+		updateButtonData.grabExcessHorizontalSpace = false;
+		updateButton.setLayoutData(updateButtonData);
+		updateButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				String json = importSquadText.getText();
+				if (StringUtils.isNotEmpty(json)) {
+					ImportPlayerFile xwsFile = new ImportPlayerFile();
+					try {
+						XwsSpec parseXws = xwsFile.parseXws(json);
+						resetPlayerModel(parseXws);
+						refreshTree();
+						GenerateSquadJob job = new GenerateSquadJob("importxws", getPlayerModel(), playerFileName(), squadTemplate());
+						job.schedule();
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				widgetSelected(e);
+			}
+		});
+		
+		Button clearButton = toolkit.createButton(composite, "Clear", SWT.PUSH | SWT.RESIZE);
+		GridData clearButtonData = new GridData();
+		clearButtonData.horizontalSpan = 1;
+		clearButtonData.widthHint = 60;
+		clearButton.setLayoutData(clearButtonData);
+		clearButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				importSquadText.setText("");
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+
+		
+		section.setClient(composite);
+	}
+
+	
 	abstract void setPageName();
 	
 	abstract void pageContent(Composite parent);
@@ -125,6 +205,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	abstract String playerFileName();
 	
 	abstract String squadTemplate();
+	
+	abstract void resetPlayerModel(XwsSpec model);
 	
 	public void refreshTree() {
 		treeViewer.setInput(getPlayerModel());
