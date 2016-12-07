@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="xstreamer" sequenceNumber="11">
+<?pde version="3.8"?><target name="xstreamer" sequenceNumber="14">
 <locations>
-<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.ui.forms" version="3.7.0.v20160518-1929"/>
 <unit id="org.eclipse.jface.text" version="0.0.0"/>
 </location>
-<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.ui.console" version="3.6.200.v20160518-1858"/>
 </location>
-<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.apache.commons.lang" version="2.6.0.v201404270220"/>
 <unit id="org.apache.commons.logging" version="1.1.1.v201101211721"/>
 <unit id="org.apache.commons.io" version="2.2.0.v201405211200"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository"/>
 </location>
-<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.rcp.feature.group" version="4.6.1.v20160907-1200"/>
+<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.ecore.feature.group" version="2.12.0.v20160420-0247"/>
-<unit id="org.eclipse.emf.common.feature.group" version="2.12.0.v20160420-0247"/>
-<unit id="org.eclipse.platform.feature.group" version="4.6.1.v20160907-1200"/>
 <unit id="org.eclipse.swt.tools.feature.feature.group" version="3.105.1.v20160823-1857"/>
 <unit id="org.eclipse.e4.rcp.feature.group" version="1.5.1.v20160907-0248"/>
+<unit id="org.eclipse.rcp.feature.group" version="4.6.1.v20160907-1200"/>
+<unit id="org.eclipse.emf.common.feature.group" version="2.12.0.v20160420-0247"/>
+<unit id="org.eclipse.platform.feature.group" version="4.6.1.v20160907-1200"/>
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20160829-1338"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.rcp.feature.group" version="4.6.1.v20160907-1200"/>
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20160829-1338"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.6"/>
 </location>
 </locations>
 </target>
