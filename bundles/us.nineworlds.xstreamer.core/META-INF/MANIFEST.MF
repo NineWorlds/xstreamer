@@ -7,8 +7,7 @@ Bundle-Activator: us.nineworlds.xstreamer.core.Activator
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
  us.nineworlds.xstreamer.lib;bundle-version="0.3.0",
- org.eclipse.jface,
- ch.qos.logback.classic;bundle-version="1.0.7"
+ org.eclipse.jface
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.commons.io
