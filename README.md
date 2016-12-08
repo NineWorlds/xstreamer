@@ -29,9 +29,35 @@ The application is written in Java so that it can run across all platforms.  So 
 
 The program is written in java, and does require Java 8.  It should work across multiple platforms.  Currently the best way to run this is via the -Prun profile, see below for how to execute.
 
-## Installation
+## Building
 
-This is being updated... please stay tuned.
+The program is an eclipse rcp application and uses maven tycho to build the project.
+
+### Install the target platform
+
+In order to build the project you need to install the target platform definition file.
+
+```
+  cd releng
+  cd us.nineworlds.xstreamer.target
+  ./mvnw clean install
+```
+
+This will build and install the target platform definition file which has all the necessary repositories defined.
+
+### Building the project
+
+From the projects root directory after the target definition file is installed.
+
+```
+  ./mvnw clean install
+```
+
+This will resolve all the dependencies and build the individual plugins for the application.
+
+### Installing
+
+TODO this isn't yet implemented in the automated build.
 
 
 ### Eclipse
