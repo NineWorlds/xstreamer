@@ -11,6 +11,9 @@
 			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
 			<value key="allupgrades" object-class="us.nineworlds.xstreamer.model.lookup.UpgradeLookup"/>
 		</resource>
+		<resource path="templates/steletvLeftAligned.ftl">
+			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
+		</resource>
 	</context-values>
 	<macro-library>
 	</macro-library>
