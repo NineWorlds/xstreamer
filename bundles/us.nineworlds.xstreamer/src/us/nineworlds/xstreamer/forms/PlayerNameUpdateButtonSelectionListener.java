@@ -4,7 +4,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 
-
 import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.jobs.StringWriterJob;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
@@ -33,7 +32,6 @@ public class PlayerNameUpdateButtonSelectionListener implements SelectionListene
 	private void scheduleJob(String jobname, String filename, String content) {
 		StringWriterJob job = new StringWriterJob(jobname, content, filename);
 		job.schedule();
-
 	}
 
 	@Override

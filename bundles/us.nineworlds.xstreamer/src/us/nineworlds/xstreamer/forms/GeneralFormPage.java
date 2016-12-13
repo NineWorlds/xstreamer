@@ -26,6 +26,8 @@ public class GeneralFormPage extends ViewPart {
 	public Text firstPlayerName;
 	public Text secondPlayerName;
 	public Text newsTickerText;
+	public Text firstPlayerScore;
+	public Text secondPlayerScore;
 	
 	private IPreferenceStore preference;
 
@@ -44,12 +46,13 @@ public class GeneralFormPage extends ViewPart {
 		form.getBody().setLayout(layout);
 		
 		createPlayerSection();
+		createScoringSection();
 		createNewsTickerSection();
 	}
 
 	private void createPlayerSection() {
 		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
-		playersSection.setText("Timer Section");
+		playersSection.setText("Player Section");
 		playersSection.setExpanded(true);
 		playersSection.setDescription("The players that are playing.");
 		Composite playerClient = toolkit.createComposite(playersSection);
@@ -70,6 +73,31 @@ public class GeneralFormPage extends ViewPart {
 				
 		playersSection.setClient(playerClient);
 	}
+	
+	private void createScoringSection() {
+		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		playersSection.setText("Scoreboard Section");
+		playersSection.setExpanded(true);
+		playersSection.setDescription("Current scores for the game");
+		Composite playerClient = toolkit.createComposite(playersSection);
+		GridLayout playerGridLayout = new GridLayout();
+		playerGridLayout.numColumns = 2;
+		playerClient.setLayout(playerGridLayout);
+		
+		firstPlayerScore = createPlayerNameField(playerClient, "Player 1: ");
+		secondPlayerScore = createPlayerNameField(playerClient, "Player 2: ");
+				
+		Button updateButton = toolkit.createButton(playerClient, "Update", SWT.PUSH | SWT.RESIZE);
+		GridData updateButtonData = new GridData();
+		updateButtonData.horizontalSpan = 2;
+		updateButtonData.widthHint = 60;
+		updateButtonData.grabExcessHorizontalSpace = true;
+		updateButton.setLayoutData(updateButtonData);
+		updateButton.addSelectionListener(new PlayerScoreUpdateButtonSelectionListener2(this));
+				
+		playersSection.setClient(playerClient);
+	}
+
 	
 	private Text createPlayerNameField(Composite parent, String label) {
 		toolkit.createLabel(parent, label);
