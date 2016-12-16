@@ -1,4 +1,4 @@
-package us.nineworlds.xstreamer.forms;
+package us.nineworlds.xstreamer.forms.listeners;
 
 import org.eclipse.core.runtime.jobs.IJobManager;
 import org.eclipse.core.runtime.jobs.Job;

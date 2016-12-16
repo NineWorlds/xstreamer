@@ -29,6 +29,7 @@ Bundle-ActivationPolicy: lazy
 Export-Package: schemas,
  us.nineworlds.xstreamer,
  us.nineworlds.xstreamer.forms,
+ us.nineworlds.xstreamer.forms.listeners,
  us.nineworlds.xstreamer.jobs,
  us.nineworlds.xstreamer.preferences,
  us.nineworlds.xstreamer.preferences.widgets,

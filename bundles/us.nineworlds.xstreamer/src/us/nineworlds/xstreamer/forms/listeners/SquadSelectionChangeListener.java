@@ -1,4 +1,4 @@
-package us.nineworlds.xstreamer.forms;
+package us.nineworlds.xstreamer.forms.listeners;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -7,13 +7,14 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 
 import com.github.xws.Pilot;
 
+import us.nineworlds.xstreamer.forms.AbstractPlayerFormPage;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 
 public class SquadSelectionChangeListener implements ISelectionChangedListener {
 	
 	AbstractPlayerFormPage page;
 	
-	SquadSelectionChangeListener(AbstractPlayerFormPage page) {
+	public SquadSelectionChangeListener(AbstractPlayerFormPage page) {
 		this.page = page;
 	}
 

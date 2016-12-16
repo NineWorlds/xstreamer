@@ -15,4 +15,5 @@ Export-Package: com.github.guidokessels.ships,
  com.github.xws,
  us.nineworlds.xstreamer.core,
  us.nineworlds.xstreamer.model,
+ us.nineworlds.xstreamer.model.dice,
  us.nineworlds.xstreamer.model.lookup

@@ -9,6 +9,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.ColumnLayout;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -17,7 +18,13 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
 import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.forms.listeners.PlayerNameUpdateButtonSelectionListener;
+import us.nineworlds.xstreamer.forms.listeners.PlayerScoreUpdateButtonSelectionListener2;
+import us.nineworlds.xstreamer.jobs.GenerateDiceResultsJob;
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.jobs.StringWriterJob;
+import us.nineworlds.xstreamer.model.dice.DiceResults;
+import us.nineworlds.xstreamer.text.util.TextUtil;
 
 public class GeneralFormPage extends ViewPart {
 	
@@ -28,6 +35,16 @@ public class GeneralFormPage extends ViewPart {
 	public Text newsTickerText;
 	public Text firstPlayerScore;
 	public Text secondPlayerScore;
+	
+	public Text attackHits;
+	public Text attackCrits;
+	public Text attackFocus;
+	public Text attackMisses;
+	
+	public Text defenseMisses;
+	public Text defenseFocus;
+	public Text defenseEvades;
+
 	
 	private IPreferenceStore preference;
 
@@ -47,6 +64,7 @@ public class GeneralFormPage extends ViewPart {
 		
 		createPlayerSection();
 		createScoringSection();
+		createDiceSection();
 		createNewsTickerSection();
 	}
 
@@ -77,7 +95,7 @@ public class GeneralFormPage extends ViewPart {
 	private void createScoringSection() {
 		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
 		playersSection.setText("Scoreboard Section");
-		playersSection.setExpanded(true);
+		playersSection.setExpanded(false);
 		playersSection.setDescription("Current scores for the game");
 		Composite playerClient = toolkit.createComposite(playersSection);
 		GridLayout playerGridLayout = new GridLayout();
@@ -153,6 +171,127 @@ public class GeneralFormPage extends ViewPart {
 		
 		section.setClient(composite);
 	}
+	
+	private void createDiceSection() {
+		Section diceSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		diceSection.setText("Dice Section");
+		diceSection.setExpanded(false);
+		diceSection.setDescription("Generate dice results.");
+		Composite diceClient = toolkit.createComposite(diceSection);
+		GridLayout diceGridLayout = new GridLayout();
+		diceGridLayout.numColumns = 8;
+		diceClient.setLayout(diceGridLayout);
+		
+		attackHits = createDiceField(diceClient, "Hits: ");
+		TextUtil.addSelectOnFocusToText(attackHits);
+		attackCrits = createDiceField(diceClient, "Crits: ");
+		TextUtil.addSelectOnFocusToText(attackCrits);
+		attackFocus = createDiceField(diceClient, "Focus: ");
+		TextUtil.addSelectOnFocusToText(attackFocus);
+		attackMisses = createDiceField(diceClient, "Blank: ");
+		TextUtil.addSelectOnFocusToText(attackMisses);
+				
+		defenseEvades = createDiceField(diceClient, "Evades: ");
+		TextUtil.addSelectOnFocusToText(defenseEvades);
+		
+		defenseFocus = createDiceField(diceClient, "Focus: ");
+		TextUtil.addSelectOnFocusToText(defenseFocus);
+		
+		defenseMisses = createDiceField(diceClient, "Blank: ");
+		TextUtil.addSelectOnFocusToText(defenseMisses);
+		
+		Label space = toolkit.createLabel(diceClient, "");
+		GridData spacerData = new GridData();
+		spacerData.horizontalSpan = 1;
+		space.setData(spacerData);
+				
+		Button updateButton = toolkit.createButton(diceClient, "Update", SWT.PUSH | SWT.RESIZE);
+		GridData updateButtonData = new GridData();
+		updateButtonData.horizontalSpan = 2;
+		updateButtonData.widthHint = 60;
+		updateButtonData.grabExcessHorizontalSpace = false;
+		updateButton.setLayoutData(updateButtonData);
+		updateButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				DiceResults results = new DiceResults();
+				if (StringUtils.isNotEmpty(attackCrits.getText())) {
+					results.setAttackCrits(Integer.valueOf(attackCrits.getText()));
+				}
+				if (StringUtils.isNotEmpty(attackHits.getText())) {
+					results.setAttackHits(Integer.valueOf(attackHits.getText()));
+				}
+				if (StringUtils.isNotEmpty(attackFocus.getText())) {
+					results.setAttackFocus(Integer.valueOf(attackFocus.getText()));
+				}
+				if (StringUtils.isNotEmpty(attackMisses.getText())) {
+					results.setAttackMisses(Integer.valueOf(attackMisses.getText()));
+				}
+				if (StringUtils.isNotEmpty(defenseEvades.getText())) {
+					results.setDefenseEvade(Integer.valueOf(defenseEvades.getText()));
+				}
+				if (StringUtils.isNotEmpty(defenseFocus.getText())) {
+					results.setDefenseFocus(Integer.valueOf(defenseFocus.getText()));
+				}
+				if (StringUtils.isNotEmpty(defenseMisses.getText())) {
+					results.setDefenseMisses(Integer.valueOf(defenseMisses.getText()));
+				}
+				GenerateDiceResultsJob job = new GenerateDiceResultsJob("diceresults", results);
+				job.schedule();
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+
+		Button resetButton = toolkit.createButton(diceClient, "Reset", SWT.PUSH | SWT.RESIZE);
+		GridData resetButtonData = new GridData();
+		resetButtonData.horizontalSpan = 2;
+		resetButtonData.widthHint = 60;
+		resetButtonData.grabExcessHorizontalSpace = false;
+		resetButton.setLayoutData(updateButtonData);
+		resetButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				initDiceResults();
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {
+				
+			}
+		});
+		initDiceResults();
+
+		diceSection.setClient(diceClient);
+	}
+	
+	private void initDiceResults() {
+		attackHits.setText("0");
+		attackCrits.setText("0");
+		attackFocus.setText("0");
+		attackMisses.setText("0");
+		defenseEvades.setText("0");
+		defenseFocus.setText("0");
+		defenseMisses.setText("0");
+	}
+
+	private Text createDiceField(Composite parent, String label) {
+		toolkit.createLabel(parent, label);
+		GridData playerAttributs = new GridData();
+		playerAttributs.widthHint = 20;
+		playerAttributs.grabExcessHorizontalSpace = false;
+		
+		Text player  = toolkit.createText(parent, "");
+		player.setLayoutData(playerAttributs);
+		return player; 
+	}
+
 
 	@Override
 	public void setFocus() {

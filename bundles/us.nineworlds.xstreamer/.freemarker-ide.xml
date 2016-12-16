@@ -14,6 +14,9 @@
 		<resource path="templates/steletvLeftAligned.ftl">
 			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
 		</resource>
+		<resource path="templates/diceResults.ftl">
+			<value key="diceresults" object-class="us.nineworlds.xstreamer.model.dice.DiceResults"/>
+		</resource>
 	</context-values>
 	<macro-library>
 	</macro-library>

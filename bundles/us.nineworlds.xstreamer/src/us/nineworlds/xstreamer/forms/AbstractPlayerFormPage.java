@@ -19,6 +19,7 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.forms.listeners.SquadSelectionChangeListener;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.jobs.StringWriterJob;
 import us.nineworlds.xstreamer.model.ImportPlayerFile;
@@ -31,12 +32,12 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	protected ScrolledForm form;
 	TreeViewer treeViewer;
 	
-	Label totalShipPoints;
-	Text shieldText;
-	Text hullText;
-	Text pilotSkillText;
-	Text pilotId;
-	Text importSquadText;
+	public Label totalShipPoints;
+	public Text shieldText;
+	public Text hullText;
+	public Text pilotSkillText;
+	public Text pilotId;
+	public Text importSquadText;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -80,7 +81,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		shipSection.setClient(shipClient);
 		
 		Button updateButton = toolkit.createButton(shipClient, "Update", SWT.PUSH);
-		updateButton.addSelectionListener(new UpdateButtonSelectionListener(this));
+		updateButton.addSelectionListener(new UpdatePilotButtonSelectionListener(this));
 	}
 	
 	private Text createField(Composite client, String labelName) {

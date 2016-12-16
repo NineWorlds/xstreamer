@@ -9,11 +9,11 @@ import com.github.xws.Pilot;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 
-public class UpdateButtonSelectionListener implements SelectionListener {
+public class UpdatePilotButtonSelectionListener implements SelectionListener {
 
 	AbstractPlayerFormPage page;
 	
-	public UpdateButtonSelectionListener(AbstractPlayerFormPage page) {
+	public UpdatePilotButtonSelectionListener(AbstractPlayerFormPage page) {
 		this.page = page;
 	}
 	

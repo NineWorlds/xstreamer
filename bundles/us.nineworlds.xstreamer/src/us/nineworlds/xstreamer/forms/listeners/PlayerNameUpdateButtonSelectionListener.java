@@ -1,10 +1,11 @@
-package us.nineworlds.xstreamer.forms;
+package us.nineworlds.xstreamer.forms.listeners;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 
 import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.forms.GeneralFormPage;
 import us.nineworlds.xstreamer.jobs.StringWriterJob;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
