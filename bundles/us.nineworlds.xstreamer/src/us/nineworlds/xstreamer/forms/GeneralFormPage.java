@@ -215,30 +215,7 @@ public class GeneralFormPage extends ViewPart {
 			
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				DiceResults results = new DiceResults();
-				if (StringUtils.isNotEmpty(attackCrits.getText())) {
-					results.setAttackCrits(Integer.valueOf(attackCrits.getText()));
-				}
-				if (StringUtils.isNotEmpty(attackHits.getText())) {
-					results.setAttackHits(Integer.valueOf(attackHits.getText()));
-				}
-				if (StringUtils.isNotEmpty(attackFocus.getText())) {
-					results.setAttackFocus(Integer.valueOf(attackFocus.getText()));
-				}
-				if (StringUtils.isNotEmpty(attackMisses.getText())) {
-					results.setAttackMisses(Integer.valueOf(attackMisses.getText()));
-				}
-				if (StringUtils.isNotEmpty(defenseEvades.getText())) {
-					results.setDefenseEvade(Integer.valueOf(defenseEvades.getText()));
-				}
-				if (StringUtils.isNotEmpty(defenseFocus.getText())) {
-					results.setDefenseFocus(Integer.valueOf(defenseFocus.getText()));
-				}
-				if (StringUtils.isNotEmpty(defenseMisses.getText())) {
-					results.setDefenseMisses(Integer.valueOf(defenseMisses.getText()));
-				}
-				GenerateDiceResultsJob job = new GenerateDiceResultsJob("diceresults", results);
-				job.schedule();
+				generateDiceResults();
 			}
 			
 			@Override
@@ -259,6 +236,7 @@ public class GeneralFormPage extends ViewPart {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				initDiceResults();
+				generateDiceResults();
 			}
 			
 			@Override
@@ -302,5 +280,32 @@ public class GeneralFormPage extends ViewPart {
 	public void dispose() {
 		toolkit.dispose();
 		super.dispose();
+	}
+
+	private void generateDiceResults() {
+		DiceResults results = new DiceResults();
+		if (StringUtils.isNotEmpty(attackCrits.getText())) {
+			results.setAttackCrits(Integer.valueOf(attackCrits.getText()));
+		}
+		if (StringUtils.isNotEmpty(attackHits.getText())) {
+			results.setAttackHits(Integer.valueOf(attackHits.getText()));
+		}
+		if (StringUtils.isNotEmpty(attackFocus.getText())) {
+			results.setAttackFocus(Integer.valueOf(attackFocus.getText()));
+		}
+		if (StringUtils.isNotEmpty(attackMisses.getText())) {
+			results.setAttackMisses(Integer.valueOf(attackMisses.getText()));
+		}
+		if (StringUtils.isNotEmpty(defenseEvades.getText())) {
+			results.setDefenseEvade(Integer.valueOf(defenseEvades.getText()));
+		}
+		if (StringUtils.isNotEmpty(defenseFocus.getText())) {
+			results.setDefenseFocus(Integer.valueOf(defenseFocus.getText()));
+		}
+		if (StringUtils.isNotEmpty(defenseMisses.getText())) {
+			results.setDefenseMisses(Integer.valueOf(defenseMisses.getText()));
+		}
+		GenerateDiceResultsJob job = new GenerateDiceResultsJob("diceresults", results);
+		job.schedule();
 	}
 }
