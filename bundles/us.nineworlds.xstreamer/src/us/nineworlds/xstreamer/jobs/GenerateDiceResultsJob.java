@@ -41,7 +41,7 @@ public class GenerateDiceResultsJob extends Job {
 		try {
 			Configuration config = us.nineworlds.xstreamer.core.Activator.getDefault().getFreemarkerConfig();
 			config.setDirectoryForTemplateLoading(new File(templateInputDirectory));
-			Template diceResultsTemplate = config.getTemplate("diceResults.ftl");
+			Template diceResultsTemplate = config.getTemplate("dice/html/diceResults.ftl");
 			diceResultsFile = new FileWriter(new File(templateOutputDirectory + File.separator + "diceresults.html"));
 
 			Map<String, Object> input = new HashMap<>();

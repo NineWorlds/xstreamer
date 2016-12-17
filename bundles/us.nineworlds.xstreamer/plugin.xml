@@ -196,7 +196,7 @@
          </property>
          <property
                name="aboutText"
-               value="%aboutText">
+               value="XStreamer Squad Helper&#x0A;Version 0.3.0">
          </property>
       </product>
    </extension>

@@ -155,6 +155,7 @@ Version 0.3.0
       <plugin id="us.nineworlds.xstreamer.browser"/>
       <plugin id="us.nineworlds.xstreamer.core"/>
       <plugin id="us.nineworlds.xstreamer.lib"/>
+      <plugin id="us.nineworlds.xstreamer.templates"/>
    </plugins>
 
    <configurations>
