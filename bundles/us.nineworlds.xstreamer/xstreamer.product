@@ -24,7 +24,6 @@ Version 0.3.0
 
    <windowImages/>
 
-
    <launcher name="xstreamer">
       <solaris/>
       <win useIco="false">
@@ -167,6 +166,7 @@ Version 0.3.0
       <plugin id="us.nineworlds.xstreamer"/>
       <plugin id="us.nineworlds.xstreamer.browser"/>
       <plugin id="us.nineworlds.xstreamer.core"/>
+      <plugin id="us.nineworlds.xstreamer.data"/>
       <plugin id="us.nineworlds.xstreamer.lib"/>
       <plugin id="us.nineworlds.xstreamer.templates"/>
    </plugins>
