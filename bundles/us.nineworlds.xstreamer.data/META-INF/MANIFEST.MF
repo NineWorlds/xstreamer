@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XWing Data
+Bundle-SymbolicName: us.nineworlds.xstreamer.data
+Bundle-Version: 0.3.0.qualifier
+Eclipse-BundleShape: dir

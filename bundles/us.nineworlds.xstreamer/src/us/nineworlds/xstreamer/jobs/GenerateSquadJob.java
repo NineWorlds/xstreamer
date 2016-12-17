@@ -41,8 +41,9 @@ public class GenerateSquadJob extends Job {
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		String templateType = findTemplateType(templateFilename);
 		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY);
-		String templateInputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY);
+		String templateInputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY) + File.separator + "squads" + File.separator + templateType;
 		if (StringUtils.isEmpty(templateOutputDirectory) || StringUtils.isEmpty(playerFilename) ||
 			StringUtils.isEmpty(templateFilename) || StringUtils.isEmpty(templateInputDirectory)) {
 			return Status.CANCEL_STATUS;
@@ -52,6 +53,7 @@ public class GenerateSquadJob extends Job {
 		try {
 			Configuration config = us.nineworlds.xstreamer.core.Activator.getDefault().getFreemarkerConfig();
 			config.setDirectoryForTemplateLoading(new File(templateInputDirectory));
+			
 			Path path = Paths.get(templateFilename);
 			Template squadTemplate = config.getTemplate(path.getFileName().toString());
 			player1SquadFile = new FileWriter(new File(templateOutputDirectory + File.separator + playerFilename));
@@ -71,5 +73,12 @@ public class GenerateSquadJob extends Job {
 			IOUtils.closeQuietly(player1SquadFile);			
 		}
 		return Status.OK_STATUS;
+	}
+	
+	private String findTemplateType(String filenamePath) {
+		if (filenamePath.contains("/html/")) {
+			return "html";
+		}
+		return "text";
 	}
 }

@@ -1,10 +1,16 @@
 package us.nineworlds.xstreamer.core;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -18,6 +24,8 @@ import us.nineworlds.xstreamer.model.lookup.ShipsLookup;
 import us.nineworlds.xstreamer.model.lookup.UpgradeLookup;
 
 public class Activator implements BundleActivator {
+	
+	public static final String DATA_BUNDLE_ID = "us.nineworlds.xstreamer.data";
 
 	private XwsSpec player1;
 	private XwsSpec player2;
@@ -38,15 +46,22 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
 		
+		Bundle dataBundle = Platform.getBundle(DATA_BUNDLE_ID);
+		IPath shipsPath = new Path("ships/ships.json");
+		IPath upgradesPath = new Path("upgrades/upgrades.json");
+		
+		URL shipsUrl = FileLocator.find(dataBundle, shipsPath, null);
+		URL upgradesUrl = FileLocator.find(dataBundle, upgradesPath, null);
+		
 		ObjectMapper mapper = new ObjectMapper();
-		InputStream shipInputStream = Activator.class.getResourceAsStream("/xws-data/ships.json");
+		InputStream shipInputStream = shipsUrl.openStream();
 		List<Ship> shipData = Arrays
 				.asList(mapper.readValue(shipInputStream, Ship[].class));
 		IOUtils.closeQuietly(shipInputStream);
 		
 		ShipsLookup.newInstance(shipData);
 		
-		InputStream upgradesInputStream = Activator.class.getResourceAsStream("/xws-data/upgrades.json");
+		InputStream upgradesInputStream = upgradesUrl.openStream();
 		List<Upgrades> upgradeData = Arrays.asList(mapper.readValue(upgradesInputStream, Upgrades[].class));
 		IOUtils.closeQuietly(upgradesInputStream);
 		

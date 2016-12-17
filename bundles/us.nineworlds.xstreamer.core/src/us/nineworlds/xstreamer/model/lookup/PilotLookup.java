@@ -1,14 +1,22 @@
 package us.nineworlds.xstreamer.model.lookup;
 
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.guidokessels.ships.Pilot;
+
+import us.nineworlds.xstreamer.core.Activator;
 
 public class PilotLookup {
 
@@ -27,9 +35,12 @@ public class PilotLookup {
 	}
 
 	private void initPilots() {
+		Bundle bundle = Platform.getBundle(Activator.DATA_BUNDLE_ID);
+		IPath pilotsPath = new Path("pilots/pilots.json");
+		URL pilotsUrl = FileLocator.find(bundle, pilotsPath, null);
 		InputStream inputStream = null;
 		try {
-			inputStream = this.getClass().getResourceAsStream("/xws-data/pilots.json");
+			inputStream = pilotsUrl.openStream();
 			ObjectMapper mapper = new ObjectMapper();
 			pilots = Arrays.asList(mapper.readValue(inputStream, Pilot[].class));
 		} catch (Exception ex) {
