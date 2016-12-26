@@ -14,6 +14,10 @@
 		<resource path="templates/steletvLeftAligned.ftl">
 			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
 		</resource>
+		<resource path="template/steletvLeftAligned.ftl">
+			<value key="xwsspec" object-class="com.github.xws.XwsSpec"/>
+			<value key="allupgrades" object-class="com.github.guidokessels.ships.Upgrades"/>
+		</resource>
 		<resource path="templates/diceResults.ftl">
 			<value key="diceresults" object-class="us.nineworlds.xstreamer.model.dice.DiceResults"/>
 		</resource>

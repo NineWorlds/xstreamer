@@ -29,8 +29,16 @@ public class SquadSelectionChangeListener implements ISelectionChangedListener {
 				Pilot p = (Pilot) pilot.getValue();
 				page.pilotId.setText(p.getPilotId() != null ? p.getPilotId() : "");
 				page.pilotSkillText.setText(p.getPilotSkill() != null ? p.getPilotSkill() : "");
-				page.hullText.setText(Integer.toString(p.getHull()));
-				page.shieldText.setText(Integer.toString(p.getShields()));
+				if (p.getHull() != null) {
+					page.hullText.setText(Integer.toString(p.getHull()));					
+				} else {
+					page.hullText.setText("");
+				}
+				if (p.getShields() != null) {
+					page.shieldText.setText(Integer.toString(p.getShields()));					
+				} else {
+					page.shieldText.setText("");
+				}
 				page.totalShipPoints.setText("Points: " + Integer.toString(p.getPoints()));
 				page.totalShipPoints.getParent().requestLayout();
 			}
