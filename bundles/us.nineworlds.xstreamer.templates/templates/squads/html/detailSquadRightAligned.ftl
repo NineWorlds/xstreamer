@@ -23,15 +23,16 @@ remainingHulls - ouputs the remainging hull for a pilot
            color: #F8F8FF;
            text-shadow: 4px 1px #000000;
            text-align: right;
+           font-size: 90%;
          }
 
     .squad { padding:10px;
              background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)); 
          }
-    .pilot { font-size: 14pt; margin-top: 5px; font-weight: bold;}
-    .upgrades { font-size: 12pt; margin-bottom: 5px;}
-    .shields { font-size: 14pt; color: cyan; }
-    .hull { font-size: 14pt; color: yellow; }
+    .pilot { font-size: 1.1em; margin-top: 5px; font-weight: bold;}
+    .upgrades { font-size: 0.8em; margin-bottom: 5px;}
+    .shields { font-size: 0.95em; color: cyan; }
+    .hull { font-size: 0.95em; color: yellow; }
     .idtag { background-image: url(images/Token-IDTag_Light.png);
              background-size: 30px 30px;
              background-repeat: no-repeat;
@@ -43,6 +44,7 @@ remainingHulls - ouputs the remainging hull for a pilot
              color: black;
              padding-top: 5px;
              vertical-align: middle;
+             font-size: 0.95em
   </style>
 </head>
 <body>
