@@ -12,25 +12,26 @@ If pilot skill values are entered, when a pilot is destroyed the skill will be r
 This makes use of several custom functions.
 
 findUpgrade - looks up the name of a upgrade from the xws name provided by the squad builders.
-remainingShields - outputs the remaining shields from a pilot
-remainingHulls - ouputs the remainging hull for a pilot
-
+pilotAliveDead - determines whether the pilot is still alive or dead.
 -->
 <html>
 <head>
   <style>
     body { margin: 5px;
-           color: #F8F8FF;
+           color: #FFFFFF;
            text-shadow: 4px 1px #000000;
            text-align: right;
-           font-size: 90%;
+           font-size: 100%;
+           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		   font-weight: bold;
+		   font-style: normal;
          }
 
     .squad { padding:10px;
              background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)); 
          }
     .pilot { font-size: 1.1em; margin-top: 5px; font-weight: bold;}
-    .upgrades { font-size: 0.8em; margin-bottom: 5px;}
+    .upgrades { font-size: 0.9em; margin-bottom: 5px; font-weight: bold;}
     .shields { font-size: 0.95em; color: cyan; }
     .hull { font-size: 0.95em; color: yellow; }
     .idtag { background-image: url(images/Token-IDTag_Light.png);

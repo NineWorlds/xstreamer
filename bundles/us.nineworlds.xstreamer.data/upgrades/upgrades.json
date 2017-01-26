@@ -1432,7 +1432,7 @@
     "image": "upgrades/Torpedo/plasma-torpedoes.png",
     "xws": "plasmatorpedoes",
     "range": "2-3",
-    "attack": "4"
+    "attack": 4
   },
   {
     "name": "Extra Munitions",
@@ -1487,7 +1487,7 @@
     "id": 142,
     "slot": "Missile",
     "attack": 3,
-    "range": 2,
+    "range": "2",
     "points": 3,
     "text": "<strong>Attack (target lock):</strong> Discard this card to perform this attack.<br /><br />If this attack hits, deal 1 faceup Damage card to the defender. Then cancel <strong>all</strong> dice results.",
     "image": "upgrades/Missile/advanced-homing-missiles.png",
@@ -2171,18 +2171,18 @@
   },
   {
     "image": "upgrades/Cannon/tractor-beam.png",
-    "text": "<b>Attack:</b> Attack 1 ship.<br /><br />If this attack hits, the defender receives 1 tractor beam token. Then cancel <b>all</b> dice results.",
+    "text": "<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, the defender receives 1 tractor beam token. Then cancel <strong>all</strong> dice results.",
     "name": "Tractor Beam",
     "points": 1,
     "slot": "Cannon",
     "range": "1-3",
-    "attack": "3",
+    "attack": 3,
     "id": 195,
     "xws": "tractorbeam"
   },
   {
     "image": "upgrades/Illicit/cloaking-device.png",
-    "text": "<b>Action:</b> Perform a free cloak action.<br /><br />At the end of each round, roll 1 attack die. On a [Focus] result, discard this card, then decloak or discard your cloak token.",
+    "text": "<strong>Action:</strong> Perform a free cloak action.<br /><br />At the end of each round, roll 1 attack die. On a [Focus] result, discard this card, then decloak or discard your cloak token.",
     "name": "Cloaking Device",
     "unique": true,
     "points": 2,
@@ -2195,7 +2195,7 @@
   },
   {
     "image": "upgrades/Title/phantom.png",
-    "text": "While you are docked, the <i>Ghost</i> can perform primary weapon attacks from its special firing arc and, at the end of the Combat phase, it may perform an additional attack with an equipped [Turret]. If it performs this attack, it cannot attack again this round.",
+    "text": "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc and, at the end of the Combat phase, it may perform an additional attack with an equipped [Turret]. If it performs this attack, it cannot attack again this round.",
     "name": "Phantom",
     "unique": true,
     "points": 0,
@@ -2208,7 +2208,7 @@
   },
   {
     "image": "upgrades/Title/ghost.png",
-    "text": "Equip the <i>Phantom</i> title card to a friendly Attack Shuttle and dock it to this ship.<br /><br />After you execute a maneuver, you may deploy it from your rear guides.",
+    "text": "Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.<br /><br />After you execute a maneuver, you may deploy it from your rear guides.",
     "name": "Ghost",
     "unique": true,
     "points": 0,
@@ -2221,12 +2221,12 @@
   },
   {
     "image": "upgrades/Missile/xx-23-s-thread-tracers.png",
-    "text": "<b>Attack (Focus):</b> Discard this card to perform this attack. If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender. Then cancel <b>all</b> dice results.",
+    "text": "<strong>Attack (Focus):</strong> Discard this card to perform this attack. If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender. Then cancel <strong>all</strong> dice results.",
     "name": "XX-23 S-Thread Tracers",
     "points": 1,
     "slot": "Missile",
     "range": "1-3",
-    "attack": "3",
+    "attack": 3,
     "id": 199,
     "xws": "xx23sthreadtracers"
   },
@@ -2314,17 +2314,17 @@
   },
   {
     "image": "upgrades/Hardpoint/dual-laser-turret.png",
-    "text": "<b>Attack (Energy):</b> Spend 1 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).",
+    "text": "<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).",
     "name": "Dual Laser Turret",
     "points": 5,
     "slot": "Hardpoint",
     "range": "1-3",
-    "attack": "3",
+    "attack": 3,
     "ship": [
       "Gozanti-Class Cruiser"
     ],
     "id": 207,
-    "energy": "1",
+    "energy": 1,
     "xws": "duallaserturret"
   },
   {
@@ -2380,7 +2380,7 @@
     "name": "Dorsal Turret",
     "points": 3,
     "slot": "Turret",
-    "attack": "2",
+    "attack": 2,
     "range": "1-2",
     "id": 212,
     "xws": "dorsalturret"
@@ -2541,7 +2541,7 @@
     "unique": true,
     "points": 4,
     "slot": "Title",
-    "energy": "0",
+    "energy": 0,
     "ship": [
       "Gozanti-Class Cruiser"
     ],
@@ -2555,7 +2555,7 @@
     "unique": true,
     "points": 2,
     "slot": "Title",
-    "energy": "1",
+    "energy": 1,
     "ship": [
       "Gozanti-Class Cruiser"
     ],
@@ -2569,7 +2569,7 @@
     "unique": true,
     "points": 6,
     "slot": "Title",
-    "energy": "2",
+    "energy": 2,
     "ship": [
       "Gozanti-Class Cruiser"
     ],
@@ -3005,13 +3005,17 @@
     "image": "upgrades/Title/kylo-rens-shuttle.png"
   },
   {
-    "text": "During setup, before the \"Place Forces\" step, choose 1 enemy ship and assign the \"A Debt to Pay\" Condition card to it.\n\nWhen attacking a ship that has the \"A Debt to Pay\" Condition card, you may change 1 [Focus] result to a [Critical Hit] result.",
+    "text": "During setup, before the \"Place Forces\" step, choose 1 enemy ship and assign the \"A Debt to Pay\" Condition card to it.<br /><br />When attacking a ship that has the \"A Debt to Pay\" Condition card, you may change 1 [Focus] result to a [Critical Hit] result.",
     "name": "A Score to Settle",
     "xws": "ascoretosettle",
     "unique": true,
     "points": 0,
     "slot": "Elite",
-    "id": 267
+    "id": 267,
+    "image": "upgrades/Elite/a-score-to-settle.png",
+    "conditions": [
+      "A Debt to Pay"
+    ]
   },
   {
     "image": "upgrades/Crew/jyn-erso.png",
@@ -3093,7 +3097,7 @@
   },
   {
     "image": "upgrades/Illicit/burnout-slam.png",
-    "text": "Your action bar gains the [Slam] action icon.<br /><br />After you perform a SLAM action, discard this card.",
+    "text": "Your action bar gains the [SLAM] action icon.<br /><br />After you perform a SLAM action, discard this card.",
     "name": "Burnout SLAM",
     "xws": "burnoutslam",
     "points": 1,
@@ -3154,7 +3158,7 @@
     "points": 2,
     "slot": "Elite",
     "range": "1",
-    "attack": "2",
+    "attack": 2,
     "id": 279
   },
   {
@@ -3259,5 +3263,176 @@
     "slot": "Tech",
     "points": 1,
     "id": 289
+  },
+  {
+    "image": "upgrades/Crew/bodhi-rook.png",
+    "text": "When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.",
+    "name": "Bodhi Rook",
+    "xws": "bodhirook",
+    "unique": true,
+    "points": 1,
+    "slot": "Crew",
+    "faction": "Rebel Alliance",
+    "id": 290
+  },
+  {
+    "image": "upgrades/Crew/baze-malbus.png",
+    "text": "After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship. You cannot perform another attack this round.",
+    "name": "Baze Malbus",
+    "xws": "bazemalbus",
+    "unique": true,
+    "points": 3,
+    "slot": "Crew",
+    "faction": "Rebel Alliance",
+    "id": 291
+  },
+  {
+    "image": "upgrades/Crew/inspiring-recruit.png",
+    "text": "Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.",
+    "name": "Inspiring Recruit",
+    "xws": "inspiringrecruit",
+    "points": 1,
+    "slot": "Crew",
+    "id": 292
+  },
+  {
+    "image": "upgrades/Illicit/scavenger-crane.png",
+    "text": "After a ship at Range 1-2 is destroyed, you may choose a discarded [Torpedo], [Missile], [Bomb], [Cannon], [Turret], or Modification Upgrade card that was equipped to your ship and flip it faceup. Then roll 1 attack die. On a blank result, discard Scavenger Crane.",
+    "name": "Scavenger Crane",
+    "xws": "scavengercrane",
+    "points": 2,
+    "slot": "Illicit",
+    "id": 293
+  },
+  {
+    "image": "upgrades/Modification/spacetug-tractor-array.png",
+    "text": "<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it. If it is a friendly ship, resolve the effect of the tractor beam token a though it were an enemy ship.",
+    "name": "Spacetug Tractor Array",
+    "xws": "spacetugtractorarray",
+    "points": 2,
+    "ship": [
+      "Quadjumper"
+    ],
+    "id": 294,
+    "slot": "Modification"
+  },
+  {
+    "image": "upgrades/Elite/swarm-leader.png",
+    "text": "When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.",
+    "name": "Swarm Leader",
+    "xws": "swarmleader",
+    "unique": true,
+    "points": 3,
+    "slot": "Elite",
+    "id": 295
+  },
+  {
+    "image": "upgrades/Modification/lightweight-frame.png",
+    "text": "When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.<br /><br />You cannot equip this card if your agility value is \"3\" or higher.",
+    "name": "Lightweight Frame",
+    "xws": "lightweightframe",
+    "points": 2,
+    "slot": "Modification",
+    "ship": [
+      "TIE Adv. Prototype",
+      "TIE Advanced",
+      "TIE Bomber",
+      "TIE Defender",
+      "TIE Fighter",
+      "TIE Interceptor",
+      "TIE Phantom",
+      "TIE Punisher",
+      "TIE Striker",
+      "TIE/fo Fighter",
+      "TIE/sf Fighter"
+    ],
+    "id": 296
+  },
+  {
+    "text": "When attacking, if you are not stressed, you may change all of your [Focus] results to [Hit] results.",
+    "name": "Expertise",
+    "xws": "expertise",
+    "points": 4,
+    "slot": "Elite",
+    "id": 297
+  },
+  {
+    "text": "When attacking at Range 1-2, you may change 1 of your [Hit] results to a [Critical Hit] result.",
+    "name": "Bistan",
+    "xws": "bistan",
+    "unique": true,
+    "points": 2,
+    "slot": "Crew",
+    "faction": "Rebel Alliance",
+    "id": 298
+  },
+  {
+    "image": "upgrades/Hardpoint/heavy-laser-turret.png",
+    "text": "<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).",
+    "name": "Heavy Laser Turret",
+    "xws": "heavylaserturret",
+    "points": 5,
+    "slot": "Hardpoint",
+    "range": "2-3",
+    "attack": 4,
+    "energy": 2,
+    "ship": [
+      "C-ROC Cruiser"
+    ],
+    "id": 299
+  },
+  {
+    "image": "upgrades/Crew/cikatro-vizago.png",
+    "text": "At the start of the End phase, you may discard this card to replace a faceup [Illicit] or [Cargo] Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.",
+    "name": "Cikatro Vizago",
+    "xws": "cikatrovizago",
+    "unique": true,
+    "points": 0,
+    "slot": "Crew",
+    "faction": "Scum and Villainy",
+    "id": 300
+  },
+  {
+    "image": "upgrades/Crew/azmorigan.png",
+    "text": "At the start of the End phase, you may spend 1 energy to replace a faceup [Crew] or [Team] Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.",
+    "name": "Azmorigan",
+    "xws": "azmorigan",
+    "unique": true,
+    "points": 2,
+    "slot": "Crew",
+    "ship": [
+      "CR90 Corvette (Fore)"
+    ],
+    "size": [
+      "huge"
+    ],
+    "faction": "Scum and Villainy",
+    "id": 301
+  },
+  {
+    "image": "upgrades/Title/merchant-one.png",
+    "text": "Your upgrade bar gains 1 additional [Crew] upgrade icon and 1 additional [Team] upgrade icon and loses 1 [Cargo] upgrade icon.",
+    "name": "Merchant One",
+    "xws": "merchantone",
+    "unique": true,
+    "points": 2,
+    "slot": "Title",
+    "energy": 1,
+    "ship": [
+      "C-ROC Cruiser"
+    ],
+    "id": 302
+  },
+  {
+    "image": "upgrades/Title/light-scyk-interceptor.png",
+    "text": "All Damage cards dealt to you are dealt faceup. You may treat all bank maneuvers ([Bank Left] or [Bank Right]) as green maneuvers. You cannot equip Modification upgrades.",
+    "name": "\"Light Scyk\" Interceptor",
+    "xws": "lightscykinterceptor",
+    "points": -2,
+    "slot": "Title",
+    "ship": [
+      "M3-A Interceptor"
+    ],
+    "id": 303
   }
 ]
