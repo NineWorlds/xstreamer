@@ -11,6 +11,7 @@
     .attack { padding:5px; }
     .defense { padding:5px; }
   </style>
+  <link rel="stylesheet" href="animate.css">
 </head>
 <body>
 <#if diceresults.attackCrits gt 0>
@@ -41,24 +42,24 @@
 
 <#macro generateHits numberOfHits>
   <#list 1..numberOfHits as hit>
-    <span class="attack">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Atk-die2.png"/>&nbsp;
+    <span class="attack bounceInDown">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/attack-hit.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
 
 <#macro generateCrits numberOfCrits>
   <#list 1..numberOfCrits as crits>
-    <span class="attack">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Atk-die8.png"/>&nbsp;
+    <span class="attack bounceInDown">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/attack-crit.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
 
 <#macro generateAttackFocus numberOfFocus>
   <#list 1..numberOfFocus as focus>
-    <span class="attack">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Atk-die4.png"/>&nbsp;
+    <span class="attack bounceInDown">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/attack-focus.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
@@ -66,31 +67,31 @@
 <#macro generateAttackMisses numberOfMisses>
   <#list 1..numberOfMisses as blank>
     <span class="attack">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Atk-die3.png"/>&nbsp;
+     <image class="bounceInUp" style="vertical-align: middle;" height="76" width="81" src="images/dice/attack-blank.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
 
 <#macro generateEvades numberOfEvades>
   <#list 1..numberOfEvades as evade>
-    <span class="defense">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Def-die2.png"/>&nbsp;
+    <span class="defense bounceInUp">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/defense-evade.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
 
 <#macro generateDefFocus numberOfFocus>
   <#list 1..numberOfFocus as focus>
-    <span class="defense">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Def-die6.png"/>&nbsp;
+    <span class="defense bounceInUp">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/defense-focus.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
 
 <#macro generateDefMisses numberOfMisses>
   <#list 1..numberOfMisses as blank>
-    <span class="defense">
-     <image style="vertical-align: middle;" height="55" width="30" src="images/Def-die1.png"/>&nbsp;
+    <span class="defense bounceInUp">
+     <image style="vertical-align: middle;" height="76" width="81" src="images/dice/defense-blank.png"/>&nbsp;
     </span>
   </#list>
 </#macro>
