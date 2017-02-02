@@ -57,7 +57,9 @@ This will resolve all the dependencies and build the individual plugins for the 
 
 ### Installing
 
-TODO this isn't yet implemented in the automated build.
+Individual project ZIP and TAR.GZ files are created as part of the builds.  The artifacts for these can be found in the releng/us.nineworlds.xstreamer.product/target/product folders.
+
+Binaries are available for Linux, Mac OS X, and Windows.  All require a 64 bit machine operating system to run, and the latest Java 8 JDK.
 
 
 ### Eclipse
