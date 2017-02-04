@@ -18,34 +18,35 @@ remainingShields - outputs the remaining shields from a pilot
 remainingHulls - ouputs the remainging hull for a pilot
 
 -->
-
 <#list xwsspec.pilots as pilot>
 	<#if pilot.pilotSkill??>
-	  <#t>(${pilotAliveDead(pilot)})<#rt>
+	  <#lt>${pilotAliveDead(pilot)}<#rt>
 	</#if> 
-	<#lt> ${pilot.name} <#t>
-	<#if pilot.pilotId??>
+	<#lt>${pilot.name} <#t>
+	<#if pilot.pilotId?? && pilot.pilotId?length != 0>
 	  <#lt>#${pilot.pilotId}<#t>
 	</#if>
 	 <#lt> - ${pilot.points}
-	<#if pilot.upgrades.additionalProperties??>
-	  <#list pilot.upgrades.additionalProperties as key, value>
-	      <#list value as upgradeType>
-	        <#if upgradeType?has_next>
+	<#if pilot.upgrades??>
+       <#if pilot.upgrades.additionalProperties??>
+	     <#list pilot.upgrades.additionalProperties as key, value>
+	         <#list value as upgradeType>
+	           <#if upgradeType?has_next>
 ${findUpgrade(upgradeType)}, <#rt>
-	        <#else>
+	           <#else>
 ${findUpgrade(upgradeType)}
-	        </#if>
-	      </#list>
-	  </#list>
+	          </#if>
+	         </#list>
+	     </#list>
+	  </#if>
 	</#if>
-	<#if pilot.shields gt 0>
-	   <#lt>${remainingShields(pilot.shields)}<#t>    
-    </#if>
 	<#if pilot.hull gt 0>
-	   <#lt>${remainingHull(pilot.hull)}
+	   <#lt>${remainingHull(pilot.hull)}<#rt>
     </#if>
-    	
+	<#if pilot.shields gt 0>
+	   <#lt>${remainingShields(pilot.shields)}
+    </#if>
+
 </#list>
 
 <#function findUpgrade upgradeName> 
@@ -78,9 +79,11 @@ ${findUpgrade(upgradeType)}
 <#function pilotAliveDead pilot>
   <#assign skill>
   <#if pilot.shields == 0 && pilot.hull == 0>
-     <#lt>X<#rt>
+     <#lt>(X) <#rt>
   <#else>
-     <#lt>${pilot.pilotSkill}<#rt>
+     <#if pilot.pilotSkill?length != 0>
+        <#lt>(${pilot.pilotSkill}) <#rt>
+     </#if>
   </#if>
   </#assign>
   <#return skill>
