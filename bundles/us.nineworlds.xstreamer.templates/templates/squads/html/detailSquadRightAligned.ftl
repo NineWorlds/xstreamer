@@ -65,10 +65,10 @@ pilotAliveDead - determines whether the pilot is still alive or dead.
 	  </#if>
 	  <span> pts: ${pilot.points}</span>
 	</div>    	
-
-	<#if pilot.upgrades.additionalProperties??>
-	 <div class="upgrades">
-	  <#list pilot.upgrades.additionalProperties as key, value>
+	<#if pilot.upgrades??>
+	  <#if pilot.upgrades.additionalProperties??>
+	    <div class="upgrades">
+	    <#list pilot.upgrades.additionalProperties as key, value>
 	      <#list value as upgradeType>
 	        <#if upgradeType?has_next>
 <span>${findUpgrade(upgradeType)}, </span>
@@ -76,8 +76,9 @@ pilotAliveDead - determines whether the pilot is still alive or dead.
 <span>${findUpgrade(upgradeType)}</span><br/>
 	        </#if>
 	      </#list>
-	  </#list>
-	 </div> 
+	    </#list>
+	   </div> 
+	  </#if>
 	</#if>
 </#list>
   </div>

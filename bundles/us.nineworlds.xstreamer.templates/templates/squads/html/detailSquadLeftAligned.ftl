@@ -17,11 +17,6 @@ pilotAliveDead - determines if the pilot is alive or dead
 -->
 <html>
 <head>
-  <meta http-equiv="refresh" content="1">
-  <meta http-equiv="cache-control" content="max-age=0" />
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="expires" content="0" />
-  <meta http-equiv="pragma" content="no-cache" />
   <style>
     body { margin: 5px;
            color: #FFFFFF;
@@ -72,18 +67,20 @@ pilotAliveDead - determines if the pilot is alive or dead
 	  <span> pts: ${pilot.points}</span>
 	</div>    	
 
-	<#if pilot.upgrades.additionalProperties??>
-	 <div class="upgrades">
-	  <#list pilot.upgrades.additionalProperties as key, value>
-	      <#list value as upgradeType>
-	        <#if upgradeType?has_next>
+    <#if pilot.upgrades??>
+	  <#if pilot.upgrades.additionalProperties??>
+	 	<div class="upgrades">
+	  	<#list pilot.upgrades.additionalProperties as key, value>
+	     	 <#list value as upgradeType>
+	        	<#if upgradeType?has_next>
 <span>${findUpgrade(upgradeType)}, </span>
-	        <#else>
+	        	<#else>
 <span>${findUpgrade(upgradeType)}</span><br/>
-	        </#if>
-	      </#list>
-	  </#list>
-	 </div> 
+	        	</#if>
+	    	  </#list>
+		  </#list>
+		 </div> 
+ 	  </#if>
 	</#if>
 </#list>
   </div>

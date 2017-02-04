@@ -1,7 +1,17 @@
 # Change Log
 
+## [v0.4.0-Beta](https://github.com/kingargyle/xstreamer/tree/v0.4.0-Beta) (2017-02-01)
+[Full Changelog](https://github.com/kingargyle/xstreamer/compare/v0.3.0...v0.4.0-Beta)
+
+**Fixed bugs:**
+
+- Count Down Timer loosing time [\#29](https://github.com/kingargyle/xstreamer/issues/29)
+- Updated Ship, Pilot, and Upgrades for Wave X.
+- Fix potential issue with MacOSX builds.
+
+
 ## [v0.3.0](https://github.com/kingargyle/xstreamer/tree/v0.3.0) (2016-12-17)
-[Full Changelog](https://github.com/kingargyle/xstreamer/compare/v0.1.0-M1...v0.3.0)
+[Full Changelog](https://github.com/kingargyle/xstreamer/compare/v0.2.0...v0.3.0)
 
 **Closed issues:**
 
@@ -12,23 +22,7 @@
 - Add optional text editor for FTL files. [\#20](https://github.com/kingargyle/xstreamer/issues/20)
 - Add Import Squad Section to Players tab [\#19](https://github.com/kingargyle/xstreamer/issues/19)
 - Add Simple Web Browser [\#18](https://github.com/kingargyle/xstreamer/issues/18)
-- Expose Ship Data to templates [\#17](https://github.com/kingargyle/xstreamer/issues/17)
-- No way to contact you other than this! :\) [\#15](https://github.com/kingargyle/xstreamer/issues/15)
 - Add in News ticker [\#13](https://github.com/kingargyle/xstreamer/issues/13)
-- Create Template for Generating Stele TV style Squad Lists [\#11](https://github.com/kingargyle/xstreamer/issues/11)
-- Finish migration to Eclipse RCP framework [\#9](https://github.com/kingargyle/xstreamer/issues/9)
-- Migrate from Quartz to Eclipse Jobs API [\#8](https://github.com/kingargyle/xstreamer/issues/8)
-- XStreamer Won't Start [\#7](https://github.com/kingargyle/xstreamer/issues/7)
-- xception in thread "main" java.lang.UnsupportedClassVersionError: us/nineworlds/xstreamer/XStreamer : Unsupported major.minor version 52.0 [\#6](https://github.com/kingargyle/xstreamer/issues/6)
-- Crash when Player 1 and Player 2 JSON is missing [\#5](https://github.com/kingargyle/xstreamer/issues/5)
-- Player Names [\#4](https://github.com/kingargyle/xstreamer/issues/4)
-- Set destroyed flag for Pilots [\#3](https://github.com/kingargyle/xstreamer/issues/3)
-- Squad Points [\#2](https://github.com/kingargyle/xstreamer/issues/2)
-- Assemble Release Jars and ZIPs [\#1](https://github.com/kingargyle/xstreamer/issues/1)
-
-**Merged pull requests:**
-
-- Migrate to Eclipse RCP Application [\#16](https://github.com/kingargyle/xstreamer/pull/16) ([kingargyle](https://github.com/kingargyle))
 
 
 
