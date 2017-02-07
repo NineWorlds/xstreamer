@@ -16,9 +16,10 @@ remainingShields - outputs the remaining shields from a pilot
 remainingHulls - ouputs the remainging hull for a pilot
 
 -->
+<#import "common/common_utils.ftl" as fun>
 <#list xwsspec.pilots as pilot>
 	<#if pilot.pilotSkill??>
-	  <#lt>${pilotAliveDead(pilot)}<#rt>
+	  <#lt>${fun.pilotAliveDead(pilot)}<#rt>
 	</#if>
 	<#lt>${pilot.name} <#t>
 	<#if pilot.pilotId??>
@@ -30,59 +31,19 @@ remainingHulls - ouputs the remainging hull for a pilot
 	    <#list pilot.upgrades.additionalProperties as key, value>
 	        <#list value as upgradeType>
 	          <#if upgradeType?has_next>
-${findUpgrade(upgradeType)}, <#rt>
+${fun.findUpgrade(upgradeType)}, <#rt>
 	          <#else>
-${findUpgrade(upgradeType)}
+${fun.findUpgrade(upgradeType)}
 	          </#if>
 	        </#list>
 	    </#list>
 	  </#if>
 	</#if>
 	<#if pilot.hull gt 0>
-	   <#lt>${remainingHull(pilot.hull)}<#rt>
+	   <#lt>${fun.remainingHull(pilot.hull)}<#rt>
     </#if>
 	<#if pilot.shields gt 0>
-	   <#lt>${remainingShields(pilot.shields)}
+	   <#lt>${fun.remainingShields(pilot.shields)}
     </#if>
 
 </#list>
-
-<#function findUpgrade upgradeName> 
-  <#list allupgrades as upgrade>
-     <#if upgrade.xws == upgradeName>
-         <#return upgrade.name>
-     </#if>
-  </#list>
-  <#return ''>
-</#function>
-
-<#function remainingHull hullValue>
-	<#assign hull>
-	  <#list 1..hullValue as x>
-	    <#lt>H<#rt>
-	  </#list>
-	</#assign>
-	<#return hull>
-</#function>
-
-<#function remainingShields shieldsValue>
-	<#assign shield>
-	  <#list 1..shieldsValue as x>
-	    <#lt>*<#rt>
-	  </#list>
-	</#assign>
-	<#return shield>
-</#function>
-
-<#function pilotAliveDead pilot>
-  <#assign skill>
-  <#if pilot.shields == 0 && pilot.hull == 0>
-     <#lt>(X) <#rt>
-  <#else>
-     <#if pilot.pilotSkill?length != 0>
-        <#lt>(${pilot.pilotSkill}) <#rt>
-     </#if>
-  </#if>
-  </#assign>
-  <#return skill>
-</#function>
