@@ -2,7 +2,7 @@
 <#list xwsspec.pilots as pilot>
   <div class="pilot">
 	<#if pilot.pilotSkill??>
-	  <span>(${fun.pilotAliveDead(pilot)})</span>
+	  <span>${fun.pilotAliveDead(pilot)}</span>
 	</#if> 
 	<span> ${pilot.name} </span>
   </div>
