@@ -16,6 +16,7 @@
      }
                   
     .squad { padding:10px;
+             height: 100%;
              background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)); 
          }
     .pilot { font-size: 1.1em; margin-top: 5px; font-weight: bold;}
