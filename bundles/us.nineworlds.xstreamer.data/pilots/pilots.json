@@ -3020,7 +3020,7 @@
   },
   {
     "image": "pilots/Scum and Villainy/JumpMaster 5000/manaroo.png",
-    "text": "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship.",
+    "text": "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship at Range 1.",
     "name": "Manaroo",
     "xws": "manaroo",
     "ship": "JumpMaster 5000",
@@ -3468,7 +3468,6 @@
     "points": 20,
     "faction": "Scum and Villainy",
     "slots": [
-      "Elite",
       "Torpedo"
     ],
     "id": 210
@@ -3713,7 +3712,8 @@
       "Crew",
       "Missile"
     ],
-    "id": 224
+    "id": 224,
+    "image": "pilots/Resistance/YT-1300/resistance-sympathizer.png"
   },
   {
     "image": "pilots/Rebel Alliance/TIE Fighter/ahsoka-tano.png",
@@ -3983,6 +3983,180 @@
     "points": 13,
     "faction": "Rebel Alliance",
     "slots": [],
-    "id": 241
+    "id": 241,
+    "image": "pilots/Rebel Alliance/TIE Fighter/zeb-orrelios.png"
+  },
+  {
+    "text": "When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.",
+    "name": "Sarco Plank",
+    "xws": "sarcoplank",
+    "ship": "Quadjumper",
+    "unique": true,
+    "skill": 5,
+    "points": 18,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Crew",
+      "Elite",
+      "Bomb",
+      "Illicit",
+      "Tech"
+    ],
+    "id": 242,
+    "image": "pilots/Scum and Villainy/Quadjumper/sarco-plank.png"
+  },
+  {
+    "image": "pilots/Scum and Villainy/M3-A Interceptor/genesis-red.png",
+    "text": "After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.",
+    "name": "Genesis Red",
+    "xws": "genesisred",
+    "ship": "M3-A Interceptor",
+    "unique": true,
+    "skill": 7,
+    "points": 19,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Elite"
+    ],
+    "id": 243
+  },
+  {
+    "image": "pilots/Scum and Villainy/M3-A Interceptor/inaldra.png",
+    "text": "When attacking or defending, you may spend 1 shield to reroll any number of your dice.",
+    "name": "Inaldra",
+    "xws": "inaldra",
+    "ship": "M3-A Interceptor",
+    "unique": true,
+    "skill": 3,
+    "points": 15,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Elite"
+    ],
+    "id": 244
+  },
+  {
+    "image": "pilots/Scum and Villainy/M3-A Interceptor/quinn-jast.png",
+    "text": "At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded [Torpedo] or [Missile] Upgrade cards faceup.",
+    "name": "Quinn Jast",
+    "xws": "quinnjast",
+    "ship": "M3-A Interceptor",
+    "unique": true,
+    "skill": 6,
+    "points": 18,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Elite"
+    ],
+    "id": 245
+  },
+  {
+    "image": "pilots/Scum and Villainy/M3-A Interceptor/sunny-bounder.png",
+    "text": "Once per round, after you roll or reroll dice, if you have the same result on each of your dice, you may add 1 matching result.",
+    "name": "Sunny Bounder",
+    "xws": "sunnybounder",
+    "ship": "M3-A Interceptor",
+    "unique": true,
+    "skill": 1,
+    "points": 14,
+    "faction": "Scum and Villainy",
+    "slots": [],
+    "id": 246
+  },
+  {
+    "name": "Karthakk Pirate",
+    "xws": "karthakkpirate",
+    "ship": "Scurrg H-6 Bomber",
+    "skill": 1,
+    "points": 24,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Bomb",
+      "Bomb",
+      "Crew",
+      "Missile",
+      "Torpedo",
+      "Turret"
+    ],
+    "id": 247
+  },
+  {
+    "name": "Sienar Specialist",
+    "xws": "sienarspecialist",
+    "ship": "TIE Aggressor",
+    "skill": 2,
+    "points": 17,
+    "faction": "Galactic Empire",
+    "slots": [
+      "Missile",
+      "Missile",
+      "Turret"
+    ],
+    "id": 248,
+    "image": "pilots/Galactic Empire/TIE Aggressor/sienar-specialist.png"
+  },
+  {
+    "name": "Kashyyyk Defender",
+    "xws": "kashyyykdefender",
+    "ship": "Auzituck Gunship",
+    "skill": 1,
+    "points": 24,
+    "faction": "Rebel Alliance",
+    "slots": [
+      "Crew",
+      "Crew"
+    ],
+    "id": 249
+  },
+  {
+    "image": "pilots/Galactic Empire/TIE Aggressor/onyx-squadron-escort.png",
+    "name": "Onyx Squadron Escort",
+    "xws": "onyxsquadronescort",
+    "ship": "TIE Aggressor",
+    "skill": 5,
+    "points": 19,
+    "faction": "Galactic Empire",
+    "slots": [
+      "Missile",
+      "Missile",
+      "Turret"
+    ],
+    "id": 250
+  },
+  {
+    "image": "pilots/Galactic Empire/TIE Aggressor/lieutenant-kestal.png",
+    "text": "When attacking, you may spend 1 focus token to cancel all of the defender's blank and [Focus] results.",
+    "name": "Lieutenant Kestal",
+    "xws": "lieutenantkestal",
+    "ship": "TIE Aggressor",
+    "unique": true,
+    "skill": 7,
+    "points": 22,
+    "faction": "Galactic Empire",
+    "slots": [
+      "Elite",
+      "Missile",
+      "Missile",
+      "Turret"
+    ],
+    "id": 251
+  },
+  {
+    "image": "pilots/Galactic Empire/TIE Aggressor/double-edge.png",
+    "text": "Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.",
+    "name": "\"Double Edge\"",
+    "xws": "doubleedge",
+    "ship": "TIE Aggressor",
+    "unique": true,
+    "skill": 4,
+    "points": 19,
+    "faction": "Galactic Empire",
+    "slots": [
+      "Elite",
+      "Missile",
+      "Missile",
+      "Turret"
+    ],
+    "id": 252
   }
 ]
