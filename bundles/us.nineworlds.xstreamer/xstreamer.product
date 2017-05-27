@@ -24,6 +24,11 @@ Version 0.3.0
 
    <windowImages/>
 
+   <splash
+      location="us.nineworlds.xstreamer.branding"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="EDD400" />
    <launcher name="xstreamer">
       <solaris/>
       <win useIco="false">
@@ -164,6 +169,7 @@ Version 0.3.0
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="us.nineworlds.xstreamer"/>
+      <plugin id="us.nineworlds.xstreamer.branding"/>
       <plugin id="us.nineworlds.xstreamer.browser"/>
       <plugin id="us.nineworlds.xstreamer.core"/>
       <plugin id="us.nineworlds.xstreamer.data"/>

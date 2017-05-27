@@ -1,12 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Browser
-Bundle-SymbolicName: us.nineworlds.xstreamer.browser;singleton:=true
+Bundle-Name: XStreamer Branding
+Bundle-SymbolicName: us.nineworlds.xstreamer.branding
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: us.nineworlds.xstreamer.browser.Activator
+Bundle-Activator: us.nineworlds.xstreamer.branding.Activator
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: us.nineworlds.xstreamer.browser

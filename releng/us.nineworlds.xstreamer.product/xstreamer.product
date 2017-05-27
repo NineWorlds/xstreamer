@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="XStreamer" uid="us.nineworlds.xstreamer.xstreamer" id="us.nineworlds.xstreamer.product" application="us.nineworlds.xstreamer.application" version="0.5.0" useFeatures="false" includeLaunchers="true">
+<product name="XStreamer" uid="us.nineworlds.xstreamer.xstreamer" id="us.nineworlds.xstreamer.product" application="us.nineworlds.xstreamer.application" version="0.5.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <text>
@@ -24,12 +24,18 @@ Version 0.4.0
 
    <windowImages/>
 
+   <splash
+      location="us.nineworlds.xstreamer.branding"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="EDD400" />
    <launcher name="xstreamer">
       <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
@@ -152,10 +158,11 @@ Version 0.4.0
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="us.nineworlds.xstreamer"/>
+      <plugin id="us.nineworlds.xstreamer.branding"/>
       <plugin id="us.nineworlds.xstreamer.browser"/>
       <plugin id="us.nineworlds.xstreamer.core"/>
-      <plugin id="us.nineworlds.xstreamer.lib"/>
       <plugin id="us.nineworlds.xstreamer.data"/>
+      <plugin id="us.nineworlds.xstreamer.lib"/>
       <plugin id="us.nineworlds.xstreamer.templates"/>
    </plugins>
 
