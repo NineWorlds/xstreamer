@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="XStreamer" uid="us.nineworlds.xstreamer.xstreamer" id="us.nineworlds.xstreamer.product" application="us.nineworlds.xstreamer.application" version="0.3.1" useFeatures="false" includeLaunchers="true">
+<product name="XStreamer" uid="us.nineworlds.xstreamer.xstreamer" id="us.nineworlds.xstreamer.product" application="us.nineworlds.xstreamer.application" version="0.5.0" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
+      <image path="/us.nineworlds.xstreamer.branding/images/xstreamer_lg.png"/>
       <text>
          XStreamer Squad Helper
-Version 0.3.0
+Version 0.5.0
       </text>
    </aboutInfo>
 
@@ -36,11 +37,13 @@ Version 0.3.0
       </win>
    </launcher>
 
+
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
       <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</macos>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
+
 
    <plugins>
       <plugin id="com.ibm.icu"/>

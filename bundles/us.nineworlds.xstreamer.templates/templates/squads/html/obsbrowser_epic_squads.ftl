@@ -19,8 +19,9 @@ pilotAliveDead - determines if the pilot is alive or dead
 <html>
 <head>
   <#include "common/css_epic_leftaligned_squads.ftl"/>
+  <#include "common/js_refresh.ftl"/>
  </head>
 <body>
-  <#include "epic_leftaligned_squad_detail.ftl"/>
+  <#include "epic_squad_detail.ftl"/>
 </body>
 
