@@ -38,19 +38,6 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 				"XStream Output Directory:", getFieldEditorParent()));
 		
 		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));
-
-		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_SQUAD_FILENAME, "First Player Squad File:",
-				getFieldEditorParent()));
-		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_SQUAD_FILENAME, "Second Player Squad File:",
-				getFieldEditorParent()));
-		FileFieldEditor firstPlayer = new FileFieldEditor(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE,
-				"First Player Squad Template:", getFieldEditorParent());
-		firstPlayer.setFileExtensions(new String[] { "*.ftl" });
-		addField(firstPlayer);
-		FileFieldEditor secondPlayer = new FileFieldEditor(PreferenceConstants.TEMPLATE_SECOND_PLAYER_FILE,
-				"Second Player Squad Template:", getFieldEditorParent());
-		secondPlayer.setFileExtensions(new String[] { "*.ftl" });
-		addField(secondPlayer);
 		
 		new SpacerFieldEditor(getFieldEditorParent());
 		new LabelFieldEditor("Player Filenames", getFieldEditorParent()).adjustForNumColumns(3);
@@ -62,6 +49,7 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 	}
 
 	public void init(IWorkbench workbench) {
+		
 	}
 
 }

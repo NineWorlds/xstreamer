@@ -157,6 +157,12 @@
             id="us.nineworlds.xstreamer.timer.pref"
             name="Timer">
       </page>
+      <page
+            category="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
+            class="us.nineworlds.xstreamer.preferences.TemplatePreferencePage"
+            id="us.nineworlds.xstreamer.squadTemplates"
+            name="Templates">
+      </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
