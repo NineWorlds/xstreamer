@@ -1,9 +1,16 @@
 package us.nineworlds.xstreamer.core;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.IOUtils;
 import org.eclipse.core.runtime.FileLocator;
@@ -13,8 +20,14 @@ import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.github.guidokessels.ships.Ship;
 import com.github.guidokessels.ships.Upgrades;
 import com.github.xws.XwsSpec;
@@ -22,6 +35,8 @@ import com.github.xws.XwsSpec;
 import freemarker.template.Configuration;
 import us.nineworlds.xstreamer.model.lookup.ShipsLookup;
 import us.nineworlds.xstreamer.model.lookup.UpgradeLookup;
+import us.nineworlds.xstreamer.model.template.SquadTemplateModel;
+import us.nineworlds.xstreamer.model.template.Templates;
 
 public class Activator implements BundleActivator {
 	
@@ -29,6 +44,8 @@ public class Activator implements BundleActivator {
 
 	private XwsSpec player1;
 	private XwsSpec player2;
+	
+	private List<SquadTemplateModel> squadTemplates;
 	
 	private static BundleContext context;
 	private static Configuration freemarkerConfig;
@@ -68,6 +85,8 @@ public class Activator implements BundleActivator {
 		UpgradeLookup.newInstance(upgradeData);
 		
 		initFreemarker();
+		
+		loadSquadTemplates();
 
 	}
 
@@ -105,6 +124,35 @@ public class Activator implements BundleActivator {
 	
 	public static Activator getDefault() {
 		return plugin;
+	}
+	
+	private void loadSquadTemplates() {
+		
+		Bundle templateBundle = Platform.getBundle("us.nineworlds.xstreamer.templates");
+		IPath templatePath = new Path("templates/squads/templates.xml");
+		
+		try {
+			File templateFile = FileLocator.getBundleFile(templateBundle);
+			File squadTemplatesFile = new File(templateFile, templatePath.toString());
+			XmlMapper mapper = new XmlMapper();
+			
+			Templates templates = mapper.readValue(squadTemplatesFile, Templates.class);
+			squadTemplates = templates.getTemplates();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+	public List<SquadTemplateModel> getSquadTemplates() {
+		return squadTemplates;
+	}
+
+	public void setSquadTemplates(List<SquadTemplateModel> squadTemplates) {
+		this.squadTemplates = squadTemplates;
 	}
 
 }

@@ -1,13 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
-Bundle-SymbolicName: us.nineworlds.xstreamer.core
+Bundle-SymbolicName: us.nineworlds.xstreamer.core;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: us.nineworlds.xstreamer.core.Activator
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
  us.nineworlds.xstreamer.lib;bundle-version="0.3.0",
- org.eclipse.jface
+ org.eclipse.jface,
+ us.nineworlds.xstreamer.templates;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.commons.io
@@ -16,4 +17,5 @@ Export-Package: com.github.guidokessels.ships,
  us.nineworlds.xstreamer.core,
  us.nineworlds.xstreamer.model,
  us.nineworlds.xstreamer.model.dice,
- us.nineworlds.xstreamer.model.lookup
+ us.nineworlds.xstreamer.model.lookup,
+ us.nineworlds.xstreamer.model.template
