@@ -2,46 +2,56 @@
 	<template name="Epic OBS Browser" description="Epic compatible squad template, with refresh for use with the OBS Browser Source."
 		id="us.nineworlds.xstreamer.template.obsbrowserEpic"
 		filename="obsbrowser_epic_squads.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 	<template name="Epic" description="Epic compatible squad template. Works best with Linux Browser Source plugin."
 		id="us.nineworlds.xstreamer.template.epic"
 		filename="epic_squads.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 		
 	<template name="Dark Side Left OBS Browser" description="Dark Side Production left aligned template with built in refresh."
 		id="us.nineworlds.xstreamer.template.darksideleft"
 		filename="obsbrowser_DarkSide_SquadLeftAligned.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 	<template name="Dark Side Right OBS Browser" description="Dark Side Production right aligned template with built in refresh."
 		id="us.nineworlds.xstreamer.template.darksideright"
 		filename="obsbrowser_DarkSide_SquadRightAligned.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 		
 		
 	<template name="Detail Left Aligned" description="Detail squad template that is left aligned."
 		id="us.nineworlds.xstreamer.template.detailSquadLeftAligned.ftl"
 		filename="detailSquadLeftAligned.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 	<template name="Detail Right Aligned" description="Detail squad template that is right aligned."
 		id="us.nineworlds.xstreamer.template.detailSquadRightAligned.ftl"
 		filename="detailSquadRightAligned.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
+		
+	<template name="OBS - Detail Left Aligned" description="Detail squad template that is left aligned. Auto refreshes."
+		id="us.nineworlds.xstreamer.template.detailSquadLeftAligned.ftl"
+		filename="obsbrowser_detailSquadLeftAligned.ftl" format="html" type="squad"
+		path="squads/html/" enabled="true" />
+	<template name="OBS - Detail Right Aligned" description="Detail squad template that is right aligned. Auto refreshes."
+		id="us.nineworlds.xstreamer.template.detailSquadRightAligned.ftl"
+		filename="obsbrowser_detailSquadRightAligned.ftl" format="html" type="squad"
+		path="squads/html/" enabled="true" />
+		
 	<template name="Basic Left Aligned" description="Basic squad template that is left aligned."
 		id="us.nineworlds.xstreamer.template.simpleLeftSideOverlay.ftl"
 		filename="simpleLeftSideOverlay.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 	<template name="Basic Right Aligned" description="Basic squad template that is right aligned."
 		id="us.nineworlds.xstreamer.template.simpleRightSideOverlay.ftl"
 		filename="simpleRightSideOverlay.ftl" format="html" type="squad"
-		path="templates/squads/html/" enabled="true" />
+		path="squads/html/" enabled="true" />
 		
 		
 	<template name="steletvLeftAligned" description="Stele TV style template. Ideal for left aligned text."
 		id="us.nineworlds.xstreamer.template.steletvLeftAligned"
 		filename="steletvLeftAligned.ftl" format="text" type="squad"
-		path="templates/squads/text/" enabled="true" />
+		path="squads/text/" enabled="true" />
 	<template name="steletvRightAligned" description="Stele TV style template. Ideal for right aligned text."
 		id="org.eclipse.wst.xml.ui.internal.templates.xmldeclaration"
 		filename="steletvLeftAligned.ftl" format="text" type="squad"
-		path="templates/squads/text/" enabled="true" />
+		path="squads/text/" enabled="true" />
 </templates>

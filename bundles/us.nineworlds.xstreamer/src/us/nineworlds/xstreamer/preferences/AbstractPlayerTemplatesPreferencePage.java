@@ -73,7 +73,6 @@ public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorP
 		    public void selectionChanged(final SelectionChangedEvent event) {
 		        IStructuredSelection selection = (IStructuredSelection)event.getSelection();
 		        String templateDirectory = getPreferenceStore().getString(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY);
-		        templateDirectory = templateDirectory.replace("templates/", "");
 		        templateFile.setEmptyStringAllowed(false);
 		        SquadTemplateModel model  = (SquadTemplateModel) selection.getFirstElement();
 		        String fullPath = templateDirectory + File.separator + model.getPath() + model.getFilename();
