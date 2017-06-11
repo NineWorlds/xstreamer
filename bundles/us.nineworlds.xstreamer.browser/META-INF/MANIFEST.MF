@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Browser
 Bundle-SymbolicName: us.nineworlds.xstreamer.browser;singleton:=true
-Bundle-Version: 0.5.0.qualifier
+Bundle-Version: 0.6.0.qualifier
 Bundle-Activator: us.nineworlds.xstreamer.browser.Activator
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.ui,
