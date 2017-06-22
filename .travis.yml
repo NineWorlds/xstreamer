@@ -5,5 +5,8 @@ jdk:
 cache:  
  directories:  
   - $HOME/.m2    
-script:       
+script:
+ - cd releng/us.nineworlds.xstreamer.target       
+ - ../../mvnw clean install
+ - cd ../..
  - ./mvnw clean verify  
