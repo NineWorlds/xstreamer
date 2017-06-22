@@ -9,6 +9,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>releng/us.nineworlds.xstreamer.target</module>
+		<module>bundles/us.nineworlds.xstreamer.feature</module>
 		<module>bundles/us.nineworlds.xstreamer</module>
 		<module>bundles/us.nineworlds.xstreamer.browser</module>
 		<module>bundles/us.nineworlds.xstreamer.core</module>
