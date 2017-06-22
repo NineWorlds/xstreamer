@@ -41,6 +41,7 @@ public class SquadSelectionChangeListener implements ISelectionChangedListener {
 				}
 				page.totalShipPoints.setText("Points: " + Integer.toString(p.getPoints()));
 				page.totalShipPoints.getParent().requestLayout();
+				
 			}
 		};
 	}
