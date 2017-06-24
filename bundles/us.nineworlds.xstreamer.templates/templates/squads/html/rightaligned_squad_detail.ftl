@@ -7,12 +7,12 @@
 	<span> ${pilot.name} </span>
   </div>
   	<div>
-	  <span><b class="shields">${(pilot.shields)!"0"}</b> <image style="vertical-align: middle;" height="30" width="30" src="images/Token_Shield.png"/>&nbsp;&nbsp;</span>
-      <span><b class="hull">${(pilot.hull)!"0"}</b><image style="vertical-align: middle;" height="30" width="30"src="images/Token_Hull.png"/></span>
+	  <span>pts: ${pilot.points}&nbsp;&nbsp;</span>
+	  <span><b class="shields">${(pilot.shields)!"0"}</b> <span class="shields-symbol">*</span>&nbsp;&nbsp;</span>
+      <span><b class="hull">${(pilot.hull)!"0"}</b> <span class="hull-symbol">&</span></span>
       <#if pilot.pilotId!?length gt 0>
 	    <span class="idtag"><b>${pilot.pilotId}</b></span>
 	  </#if>
-	  <span> pts: ${pilot.points}</span>
 	</div>    	
 	<#if pilot.upgrades??>
 	  <#if pilot.upgrades.additionalProperties??>
@@ -22,7 +22,7 @@
 	        <#if upgradeType?has_next>
 <span>${fun.findUpgrade(upgradeType)}, </span>
 	        <#else>
-<span>${fun.findUpgrade(upgradeType)}</span><br/>
+<span>${fun.findUpgrade(upgradeType)}</span> ${fun.upgradeIconMarkup(key)}<br/>
 	        </#if>
 	      </#list>
 	    </#list>

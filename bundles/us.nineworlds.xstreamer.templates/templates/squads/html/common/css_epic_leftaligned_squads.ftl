@@ -14,6 +14,28 @@
         display: inline-block;
         width: 350px;
      }
+     
+    .shields-symbol { font-family: "x-wing-symbols";
+               font-size: 16pt;
+               color: cyan;
+               text-shadow: 0px 0px #000000;
+               -webkit-font-smoothing: always;
+             }
+             
+    .hull-symbol { font-family: "x-wing-symbols";
+               font-size: 16pt;
+               color: yellow;
+               text-shadow: 0px 0px #000000;
+               -webkit-font-smoothing: always;
+             }
+             
+    .upgrade-type-symbol {
+       font-family: "x-wing-symbols";
+       font-size: 16pt;
+       color: #FFFFFF;
+       text-shadow: 0px 0px #000000;
+       -webkit-font-smoothing: always;
+    }
                   
     .squad { padding:10px;
              height: 100%;

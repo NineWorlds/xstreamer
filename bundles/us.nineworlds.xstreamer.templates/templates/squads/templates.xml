@@ -1,4 +1,18 @@
 <templates>
+	<template name="Basic Left Aligned" description="Basic squad template that is left aligned."
+		id="us.nineworlds.xstreamer.template.simpleLeftSideOverlay.ftl"
+		filename="simpleLeftSideOverlay.ftl" format="html" type="squad"
+		path="squads/html/" enabled="true" />
+	<template name="Basic Right Aligned" description="Basic squad template that is right aligned."
+		id="us.nineworlds.xstreamer.template.simpleRightSideOverlay.ftl"
+		filename="simpleRightSideOverlay.ftl" format="html" type="squad"
+		path="squads/html/" enabled="true" />
+<!--  	<template name="XHud" description="An XHud inspired template. Beta"
+		id="us.nineworlds.xstreamer.template.xhud.ftl"
+		filename="xhud.ftl" format="html" type="squad"
+		path="squads/html/" enabled="true" />
+-->		
+		
 	<template name="Epic OBS Browser" description="Epic compatible squad template, with refresh for use with the OBS Browser Source."
 		id="us.nineworlds.xstreamer.template.obsbrowserEpic"
 		filename="obsbrowser_epic_squads.ftl" format="html" type="squad"
@@ -22,6 +36,7 @@
 		id="us.nineworlds.xstreamer.template.detailSquadLeftAligned.ftl"
 		filename="detailSquadLeftAligned.ftl" format="html" type="squad"
 		path="squads/html/" enabled="true" />
+		
 	<template name="Detail Right Aligned" description="Detail squad template that is right aligned."
 		id="us.nineworlds.xstreamer.template.detailSquadRightAligned.ftl"
 		filename="detailSquadRightAligned.ftl" format="html" type="squad"
@@ -36,14 +51,6 @@
 		filename="obsbrowser_detailSquadRightAligned.ftl" format="html" type="squad"
 		path="squads/html/" enabled="true" />
 		
-	<template name="Basic Left Aligned" description="Basic squad template that is left aligned."
-		id="us.nineworlds.xstreamer.template.simpleLeftSideOverlay.ftl"
-		filename="simpleLeftSideOverlay.ftl" format="html" type="squad"
-		path="squads/html/" enabled="true" />
-	<template name="Basic Right Aligned" description="Basic squad template that is right aligned."
-		id="us.nineworlds.xstreamer.template.simpleRightSideOverlay.ftl"
-		filename="simpleRightSideOverlay.ftl" format="html" type="squad"
-		path="squads/html/" enabled="true" />
 		
 		
 	<template name="steletvLeftAligned" description="Stele TV style template. Ideal for left aligned text."

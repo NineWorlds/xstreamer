@@ -7,6 +7,32 @@
   <#return ''>
 </#function>
 
+<#function upgradeIconMarkup upgradeType>
+  <#assign markup>
+    <span class="upgrade-type-symbol">
+     <#switch upgradeType>
+  		<#case "amd">A<#break>
+  		<#case "bomb">B<#break>
+  		<#case "cannon">C<#break>
+  		<#case "crew">V<#break>
+     	<#case "ept">E<#break>
+     	<#case "hardpoint">H<#break>
+     	<#case "illicit">I<#break>
+  		<#case "missile">M<#break>
+  		<#case "mod">m<#break>
+  		<#case "samd">U<#break>
+  		<#case "system">S<#break>
+  		<#case "team">T<#break>
+  		<#case "tech">X<#break>
+  		<#case "title">t<#break>
+  		<#case "torpedo">P<#break>
+  		<#case "turret">T<#break>
+     </#switch>
+     </span>
+  </#assign>
+  <#return markup>
+</#function>
+
 <#function pilotAliveDead pilot>
   <#assign skill>
 	  <#if pilot.shields == 0 && pilot.hull == 0>

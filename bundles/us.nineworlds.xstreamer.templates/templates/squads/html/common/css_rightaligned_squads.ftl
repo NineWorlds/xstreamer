@@ -8,8 +8,32 @@
 		   font-weight: bold;
 		   font-style: normal;
          }
-
+         
+    .shields-symbol { font-family: "x-wing-symbols";
+               font-size: 16pt;
+               color: cyan;
+               text-shadow: 0px 0px #000000;
+               -webkit-font-smoothing: always;
+             }
+             
+    .hull-symbol { font-family: "x-wing-symbols";
+               font-size: 16pt;
+               color: yellow;
+               text-shadow: 0px 0px #000000;
+               -webkit-font-smoothing: always;
+             }
+             
+    .upgrade-type-symbol {
+       font-family: "x-wing-symbols";
+       font-size: 16pt;
+       color: #FFFFFF;
+       text-shadow: 0px 0px #000000;
+       -webkit-font-smoothing: always;
+    }
+             
+             
     .squad { padding:10px;
+    		 height: 100%;	
              background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)); 
          }
     .pilot { font-size: 1.1em; margin-top: 5px; font-weight: bold;}
