@@ -30,7 +30,23 @@
        text-shadow: 0px 0px #000000;
        -webkit-font-smoothing: always;
     }
-     
+
+    .agility-symbol {
+       font-family: "x-wing-symbols";
+       font-size: 16pt;
+       color: #56f442;
+       text-shadow: 0px 0px #000000;
+       -webkit-font-smoothing: always;
+    }
+
+    .attack-symbol {
+       font-family: "x-wing-symbols";
+       font-size: 16pt;
+       color: #f20e38;
+       text-shadow: 0px 0px #000000;
+       -webkit-font-smoothing: always;
+    }
+          
 
     .squad { padding:10px;
              height: 100%; 
@@ -40,6 +56,8 @@
     .upgrades { font-size: 0.9em; margin-bottom: 5px; font-weight:bold;}
     .shields { font-size: 0.95em; color: cyan; }
     .hull { font-size: 0.95em; color: yellow; }
+    .agility { font-size: 0.95em; color: #56f442; }
+    .attack { font-size: 0.95em; color: #f20e38; }    
     .idtag { background-image: url(images/Token-IDTag_Light.png);
              background-size: 30px 30px;
              background-repeat: no-repeat;

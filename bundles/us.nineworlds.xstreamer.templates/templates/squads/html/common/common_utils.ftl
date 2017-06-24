@@ -7,6 +7,25 @@
   <#return ''>
 </#function>
 
+<#function findShipAgility shipName>
+  <#list allships as ship>
+     <#if ship.xws = shipName>
+        <#return ship.agility>
+     </#if>
+  </#list>
+  <#return '0'>
+</#function>
+
+<#function findShipAttack shipName>
+  <#list allships as ship>
+     <#if ship.xws = shipName>
+        <#return ship.attack>
+     </#if>
+  </#list>
+  <#return '0'>
+</#function>
+
+
 <#function upgradeIconMarkup upgradeType>
   <#assign markup>
     <span class="upgrade-type-symbol">
