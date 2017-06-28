@@ -1826,7 +1826,8 @@
     ],
     "text": "You have the pilot ability of each other friendly ship with the IG-2000 Upgrade card (in addition to your own pilot ability).",
     "image": "upgrades/Title/ig-2000.png",
-    "xws": "ig2000"
+    "xws": "ig2000",
+    "faction": "Scum and Villainy"
   },
   {
     "name": "Virago",
@@ -3688,10 +3689,10 @@
     "id": 314
   },
   {
+    "image": "upgrades/Crew/wookiee-commandos.png",
     "text": "When attacking, you may reroll your [Focus] results.",
     "name": "Wookiee Commandos",
     "xws": "wookieecommandos",
-    "limited": false,
     "points": 1,
     "slot": "Crew",
     "faction": "Rebel Alliance",
@@ -3731,5 +3732,92 @@
       "small"
     ],
     "id": 318
+  },
+  {
+    "image": "upgrades/Title/vaksai.png",
+    "text": "The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).<br /><br />You may equip up to 3 different Modification upgrades.",
+    "name": "Vaksai",
+    "xws": "vaksai",
+    "points": 0,
+    "slot": "Title",
+    "ship": [
+      "Kihraxz Fighter"
+    ],
+    "id": 319
+  },
+  {
+    "image": "upgrades/Title/starviper-mk-ii.png",
+    "text": "You may equip up to 2 different Title upgrades.<br /><br />When performing a barrel roll action, you <strong>must</strong> use the ([Bank Left] 1) or ([Bank Right] 1) template instead of the ([Straight] 1) template.",
+    "name": "StarViper Mk.II",
+    "xws": "starvipermkii",
+    "points": -3,
+    "slot": "Title",
+    "ship": [
+      "StarViper"
+    ],
+    "id": 320
+  },
+  {
+    "text": "When attacking, you may change 1 of your [Hit] results to a [Critical Hit] result.",
+    "name": "IG-RM Thug Droids",
+    "xws": "igrmthugdroids",
+    "points": 1,
+    "slot": "Team",
+    "id": 321,
+    "image": "upgrades/Team/ig-rm-thug-droids.png"
+  },
+  {
+    "image": "upgrades/Elite/selflessness.png",
+    "text": "When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled [Hit] results instead of the target ship.",
+    "name": "Selflessness",
+    "xws": "selflessness",
+    "unique": true,
+    "points": 1,
+    "slot": "Elite",
+    "size": [
+      "small"
+    ],
+    "faction": "Rebel Alliance",
+    "id": 322
+  },
+  {
+    "image": "upgrades/Crew/breach-specialist.png",
+    "text": "When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect). If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).",
+    "name": "Breach Specialist",
+    "xws": "breachspecialist",
+    "points": 1,
+    "slot": "Crew",
+    "id": 323
+  },
+  {
+    "image": "upgrades/Bomb/bomblet-generator.png",
+    "text": "When you reveal your maneuver, you may <strong>drop</strong> 1 bomblet token.<br /><br />This token <strong>detonates</strong> at end of the Activation phase.",
+    "name": "Bomblet Generator",
+    "xws": "bombletgenerator",
+    "unique": true,
+    "points": 3,
+    "slot": "Bomb",
+    "effect": "When this token detonates, each ship at Range 1 of the token rolls 2 attack dice and suffers all damage ([Hit]) and critical damage ([Critical Hit]) rolled. Then discard this token.",
+    "id": 324
+  },
+  {
+    "image": "upgrades/Crew/cad-bane.png",
+    "text": "Your upgrade bar gains the [Bomb] upgrade icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of [Focus] and blank results. It must reroll those results.",
+    "name": "Cad Bane",
+    "xws": "cadbane",
+    "unique": true,
+    "points": 2,
+    "slot": "Crew",
+    "faction": "Scum and Villainy",
+    "id": 325
+  },
+  {
+    "image": "upgrades/System/minefield-mapper.png",
+    "text": "During setup, after the \"Place Forces\" step, you may discard any number of your equipped [Bomb] Upgrade cards. Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.",
+    "name": "Minefield Mapper",
+    "xws": "minefieldmapper",
+    "points": 0,
+    "slot": "System",
+    "id": 326
   }
 ]
