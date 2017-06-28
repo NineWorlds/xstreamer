@@ -2384,7 +2384,7 @@
     ],
     "image": "pilots/Galactic Empire/TIE Punisher/black-eight-squadron-pilot.png",
     "faction": "Galactic Empire",
-    "xws": "blackeightsquadronpilot"
+    "xws": "blackeightsqpilot"
   },
   {
     "name": "Moralo Eval",
@@ -4078,7 +4078,8 @@
       "Torpedo",
       "Turret"
     ],
-    "id": 247
+    "id": 247,
+    "image": "pilots/Scum and Villainy/Scurrg H-6 Bomber/karthakk-pirate.png"
   },
   {
     "name": "Sienar Specialist",
@@ -4096,6 +4097,7 @@
     "image": "pilots/Galactic Empire/TIE Aggressor/sienar-specialist.png"
   },
   {
+    "image": "pilots/Rebel Alliance/Auzituck Gunship/kashyyyk-defender.png",
     "name": "Kashyyyk Defender",
     "xws": "kashyyykdefender",
     "ship": "Auzituck Gunship",
@@ -4158,5 +4160,119 @@
       "Turret"
     ],
     "id": 252
+  },
+  {
+    "image": "pilots/Scum and Villainy/StarViper/viktor-hel.png",
+    "text": "After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.",
+    "name": "Viktor Hel",
+    "xws": "viktorhel",
+    "ship": "Kihraxz Fighter",
+    "unique": true,
+    "skill": 7,
+    "points": 25,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Elite",
+      "Missile",
+      "Illicit"
+    ],
+    "id": 253
+  },
+  {
+    "image": "pilots/Rebel Alliance/Auzituck Gunship/lowhhrick.png",
+    "text": "When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 [Evade] result.",
+    "name": "Lowhhrick",
+    "xws": "lowhhrick",
+    "ship": "Auzituck Gunship",
+    "skill": 5,
+    "points": 28,
+    "faction": "Rebel Alliance",
+    "slots": [
+      "Crew",
+      "Crew",
+      "Elite"
+    ],
+    "id": 254,
+    "unique": true
+  },
+  {
+    "image": "pilots/Rebel Alliance/Auzituck Gunship/wullffwarro.png",
+    "text": "When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.",
+    "name": "Wullffwarro",
+    "xws": "wullffwarro",
+    "ship": "Auzituck Gunship",
+    "unique": true,
+    "skill": 7,
+    "points": 30,
+    "faction": "Rebel Alliance",
+    "slots": [
+      "Crew",
+      "Crew",
+      "Elite"
+    ],
+    "id": 255
+  },
+  {
+    "image": "pilots/Scum and Villainy/Scurrg H-6 Bomber/captain-nym.png",
+    "text": "You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 [Evade] result.",
+    "name": "Captain Nym",
+    "xws": "captainnym",
+    "ship": "Scurrg H-6 Bomber",
+    "unique": true,
+    "skill": 8,
+    "points": 30,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Bomb",
+      "Bomb",
+      "Crew",
+      "Elite",
+      "Missile",
+      "Torpedo",
+      "Turret"
+    ],
+    "id": 256
+  },
+  {
+    "image": "pilots/Rebel Alliance/Scurrg H-6 Bomber/captain-nym.png",
+    "text": "Once per round, you may prevent a friendly bomb from detonating.",
+    "name": "Captain Nym",
+    "xws": "captainnym",
+    "ship": "Scurrg H-6 Bomber",
+    "unique": true,
+    "skill": 8,
+    "points": 30,
+    "faction": "Rebel Alliance",
+    "slots": [
+      "Bomb",
+      "Bomb",
+      "Crew",
+      "Elite",
+      "Missile",
+      "Torpedo",
+      "Turret"
+    ],
+    "id": 257
+  },
+  {
+    "image": "pilots/Scum and Villainy/Scurrg H-6 Bomber/sol-sixxa.png",
+    "text": "When dropping a bomb, you may use the ([Turn Left] 1) or ([Turn Right] 1) template instead of the ([Straight] 1) template.",
+    "name": "Sol Sixxa",
+    "xws": "solsixxa",
+    "ship": "Scurrg H-6 Bomber",
+    "unique": true,
+    "skill": 6,
+    "points": 28,
+    "faction": "Scum and Villainy",
+    "slots": [
+      "Bomb",
+      "Bomb",
+      "Crew",
+      "Elite",
+      "Missile",
+      "Torpedo",
+      "Turret"
+    ],
+    "id": 258
   }
 ]
