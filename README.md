@@ -1,4 +1,4 @@
-# XStreamer
+# X-Streamer
 XStreamer X-Wing Squad Helper for Twitch and YouTube Streamers.  It isn't designed to be the prettiest thing, but it is designed take out some of the manual work and consolidate it into one location.
 
 The purpose of this is to provide a convenient way to manage some basic information for your Twitch or YouTube streams using OBS or XSplit.  All files are written as either straight text files, or html files.   The application does provide the ability to import XWS json files, this means you can export squads from Yet Another Squad Builder or XWing Squad Builder, and import them directly into the application.   Features of the application.
