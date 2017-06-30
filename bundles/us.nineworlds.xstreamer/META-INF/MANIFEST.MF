@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Localization: plugin
 Bundle-Name: XStreamer
 Bundle-SymbolicName: us.nineworlds.xstreamer;singleton:=true
-Bundle-Version: 0.6.0.qualifier
+Bundle-Version: 0.6.0
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
