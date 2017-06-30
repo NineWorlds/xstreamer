@@ -5,12 +5,12 @@
   <parent>
     <groupId>us.nineworlds.xstreamer</groupId>
     <artifactId>xstreamer</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1-SNAPSHOT</version>
     <relativePath>../../</relativePath>
   </parent>
   <groupId>us.nineworlds.xstreamer</groupId>
   <artifactId>us.nineworlds.xstreamer.target</artifactId>
-  <version>0.6.0</version>
+  <version>0.6.1-SNAPSHOT</version>
   <packaging>eclipse-target-definition</packaging>
   
 </project>

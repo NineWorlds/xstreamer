@@ -6,11 +6,11 @@
 	<parent>
 		<groupId>us.nineworlds.xstreamer</groupId>
 		<artifactId>xstreamer</artifactId>
-		<version>0.6.0</version>
+		<version>0.6.1-SNAPSHOT</version>
 		<relativePath>../../</relativePath>
 	</parent>
 	<groupId>us.nineworlds.xstreamer</groupId>
 	<artifactId>us.nineworlds.xstreamer.feature</artifactId>
-	<version>0.6.0</version>
+	<version>0.6.1-SNAPSHOT</version>
 	<packaging>eclipse-feature</packaging>
 </project>
