@@ -34,6 +34,15 @@
 						<linux>tar.gz</linux>
 						<macosx>tar.gz</macosx>
 					</formats>
+					<products>
+					   <product>
+					      <id>us.nineworlds.xstreamer.xstreamer</id>
+					      <rootFolder>xstreamer</rootFolder>
+					      <rootFolders>
+						  <macosx>XStreamer.app</macosx>
+					      </rootFolders>
+					   </product>
+					</products>
 				</configuration>
 				<executions>
 					<execution>

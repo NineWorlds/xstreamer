@@ -3,6 +3,7 @@ package us.nineworlds.xstreamer.preferences;
 import java.io.File;
 import java.util.List;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
@@ -24,6 +25,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
+import us.nineworlds.xstreamer.Logger;
+import us.nineworlds.xstreamer.core.Activator;
 import us.nineworlds.xstreamer.model.template.SquadTemplateModel;
 
 public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorPreferencePage {
@@ -76,6 +79,8 @@ public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorP
 		        templateFile.setEmptyStringAllowed(false);
 		        SquadTemplateModel model  = (SquadTemplateModel) selection.getFirstElement();
 		        String fullPath = templateDirectory + File.separator + model.getPath() + model.getFilename();
+		        Logger.info("Template Full Path: " + fullPath);
+		        
 				templateFile.setStringValue(fullPath);
 				templateFile.setFilterPath(new File(fullPath));
 		    }
@@ -139,6 +144,15 @@ public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorP
 			}
 		}
 	
+	}
+	
+	@Override
+	public void setErrorMessage(String newMessage) {
+		if (newMessage != null) {
+			Logger.error(newMessage + "\nTemplateFile = " + templateFile.getStringValue());
+		}
+		
+		super.setErrorMessage(newMessage);
 	}
 
 }

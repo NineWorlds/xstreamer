@@ -7,7 +7,7 @@
       <image path="/us.nineworlds.xstreamer.branding/images/xstreamer_lg.png"/>
       <text>
          XStreamer Squad Helper
-Version 0.5.0
+Version 0.6.1
       </text>
    </aboutInfo>
 
@@ -36,6 +36,7 @@ Version 0.5.0
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>

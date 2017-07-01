@@ -1,5 +1,7 @@
 package us.nineworlds.xstreamer.model.template;
 
+import org.apache.commons.io.FileUtils;
+
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 public class SquadTemplateModel {

@@ -8,6 +8,7 @@ public class Activator extends AbstractUIPlugin {
 
 	private static long countDownTime;
 	private static Activator plugin;
+	public static final String BUNDLE_ID = "us.nineworlds.xstreamer";
 
 	public Activator() {
 		plugin = this;
