@@ -9,7 +9,7 @@
   	<div>
 	  <span>[${pilot.points}]&nbsp;&nbsp;</span>
   	  <span><b class="agility">${fun.findShipAgility(pilot.ship)}</b> <span class="agility-symbol">^</span> </span>
-  	  <span><b class="attack">${fun.findShipAgility(pilot.ship)}</b> <span class="attack-symbol">%</span> </span>	  
+  	  <span><b class="attack">${fun.findShipAttack(pilot.ship)}</b> <span class="attack-symbol">%</span> </span>	  
 	  <span><b class="shields">${(pilot.shields)!"0"}</b> <span class="shields-symbol">*</span>&nbsp;&nbsp;</span>
       <span><b class="hull">${(pilot.hull)!"0"}</b> <span class="hull-symbol">&</span></span>
       <#if pilot.pilotId!?length gt 0>
