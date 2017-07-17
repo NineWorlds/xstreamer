@@ -9,7 +9,7 @@
 	  </div>
 	  	<div>
    	      <span><b class="agility">${fun.findShipAgility(pilot.ship)}</b> <span class="agility-symbol">^</span> </span>
-  	      <span><b class="attack">${fun.findShipAgility(pilot.ship)}</b> <span class="attack-symbol">%</span> </span>
+  	      <span><b class="attack">${fun.findShipAttack(pilot.ship)}</b> <span class="attack-symbol">%</span> </span>
 		  <span>
 		   <b class="shields">${(pilot.shields)!"0"}</b>
 		   <span class="shields-symbol">*</span>&nbsp;&nbsp;
