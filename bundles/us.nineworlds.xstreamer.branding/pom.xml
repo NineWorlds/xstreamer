@@ -5,11 +5,11 @@
   <parent>
     <groupId>us.nineworlds.xstreamer</groupId>
     <artifactId>xstreamer</artifactId>
-    <version>0.6.1</version>
+    <version>0.6.2</version>
     <relativePath>../../</relativePath>
   </parent>
   <groupId>us.nineworlds.xstreamer</groupId>
   <artifactId>us.nineworlds.xstreamer.branding</artifactId>
-  <version>0.6.1</version>
+  <version>0.6.2</version>
   <packaging>eclipse-plugin</packaging>
 </project>

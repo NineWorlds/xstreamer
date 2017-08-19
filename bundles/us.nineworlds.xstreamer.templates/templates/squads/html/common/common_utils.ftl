@@ -33,19 +33,20 @@
   		<#case "amd">A<#break>
   		<#case "bomb">B<#break>
   		<#case "cannon">C<#break>
-  		<#case "crew">V<#break>
+  		<#case "cargo">G<#break>
+  		<#case "crew">W<#break>
      	<#case "ept">E<#break>
      	<#case "hardpoint">H<#break>
      	<#case "illicit">I<#break>
   		<#case "missile">M<#break>
   		<#case "mod">m<#break>
-  		<#case "samd">U<#break>
+  		<#case "samd">V<#break>
   		<#case "system">S<#break>
   		<#case "team">T<#break>
   		<#case "tech">X<#break>
   		<#case "title">t<#break>
   		<#case "torpedo">P<#break>
-  		<#case "turret">T<#break>
+  		<#case "turret">U<#break>
      </#switch>
      </span>
   </#assign>
