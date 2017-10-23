@@ -8,7 +8,8 @@ Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
  us.nineworlds.xstreamer.lib;bundle-version="0.3.0",
  org.eclipse.jface,
- us.nineworlds.xstreamer.templates;bundle-version="0.5.0"
+ us.nineworlds.xstreamer.templates;bundle-version="0.5.0",
+ us.nineworlds.xstreamer.data;bundle-version="0.6.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.commons.io
