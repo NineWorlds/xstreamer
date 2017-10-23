@@ -1,11 +1,11 @@
 # X-Streamer
-XStreamer X-Wing Squad Helper for Twitch and YouTube Streamers.  It isn't designed to be the prettiest thing, but it is designed take out some of the manual work and consolidate it into one location.
+XStreamer X-Wing Squad and Imperial Assault Helper for Twitch and YouTube Streamers.  It isn't designed to be the prettiest thing, but it is designed take out some of the manual work and consolidate it into one location.
 
 The purpose of this is to provide a convenient way to manage some basic information for your Twitch or YouTube streams using OBS or XSplit.  All files are written as either straight text files, or html files.   The application does provide the ability to import XWS json files, this means you can export squads from Yet Another Squad Builder or XWing Squad Builder, and import them directly into the application.   Features of the application.
 
 1. A count down timer written every second to a file named timer.txt.
-2. Import of XWing Squads for player 1 and player 2.
-3. Ability to edit and update the stats of player squads.
+2. Import of XWing Squads and Imperial Assault armies for player 1 and player 2.
+3. Ability to edit and update the stats of player squads/armies.
 4. Export the updated information to HTML squad files, for use as overlays with OBS and Xsplit.
 
 ## Requirements
@@ -20,9 +20,9 @@ The application is written in Java so that it can run across all platforms.  So 
 ## What is working?
 
 1. Timer
-2. Basic Importing of XWS for player 1 and player 2
-3. Generating of the Squad Lists to HTML overlays
-4. Customizable Squad list templates.
+2. Basic Importing of XWS/IASpec (in progress) for player 1 and player 2
+3. Generating of the Squad/Army Lists to HTML overlays
+4. Customizable Squad/Army list templates.
 5. Configurable locations where output and input files reside.
 6. Output files for player names.
 
@@ -84,6 +84,8 @@ You will need a couple of files.
 1. player1.json - A XWS json file, exported from Yet Another Squad Builder or X-Wing Squad Builder that has the squadlist for player 1.
 2. player2.json - A XWS json file that represents the second players list.
 3. timer.txt - A file where the timer output can be written that can then be used by Open Broadcast Software to show an on line timer.
+
+Note Imperial assault is still in development but will suppor the IASpec supported by Tabletop Admiral and others.
 
 ### Configuration
 
