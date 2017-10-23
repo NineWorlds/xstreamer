@@ -12,6 +12,7 @@ import org.osgi.framework.BundleContext;
 
 import us.nineworlds.iadata.CommandCardDB;
 import us.nineworlds.iadata.DeploymentsDB;
+import us.nineworlds.iadata.IASpec;
 import us.nineworlds.iadata.util.CommandCardsDBLoader;
 import us.nineworlds.iadata.util.DepoymentsDBLoader;
 import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
@@ -25,6 +26,9 @@ public class Activator implements BundleActivator {
 	
 	private CommandCardLookup commandCardLookup;
 	private DeploymentsLookup deploymentsLookup;
+	
+	private IASpec player1Model;
+	private IASpec player2Model;
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "us.nineworlds.xstreamer.ia.core"; //$NON-NLS-1$
@@ -73,5 +77,22 @@ public class Activator implements BundleActivator {
 	public DeploymentsLookup getDeploymentsLookup() {
 		return deploymentsLookup;
 	}
+	
+	public IASpec getPlayer1Model() {
+		return player1Model;
+	}
+
+	public void setPlayer1Model(IASpec player1Model) {
+		this.player1Model = player1Model;
+	}
+
+	public IASpec getPlayer2Model() {
+		return player2Model;
+	}
+
+	public void setPlayer2Model(IASpec player2Model) {
+		this.player2Model = player2Model;
+	}
+
 	
 }

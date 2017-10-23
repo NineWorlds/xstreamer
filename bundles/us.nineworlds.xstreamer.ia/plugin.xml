@@ -17,6 +17,13 @@
                relationship="stack"
                relative="us.nineworlds.xstreamer.view.general">
          </view>
+         <view
+               id="us.nineworlds.xstreamer.view.ia.firstplayer"
+               minimized="false"
+               relationship="stack"
+               relative="us.nineworlds.xstreamer.view.timer">
+         </view>
+         
       </perspectiveExtension>
    </extension>
    <extension
@@ -28,6 +35,17 @@
             name="Imperial Assault">
             
       </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="us.nineworlds.xstreamer.ia.forms.FirstPlayerPage"
+            icon="images/P1.png"
+            id="us.nineworlds.xstreamer.view.ia.firstplayer"
+            name="Player 1"
+            restorable="true">
+      </view>
    </extension>
 
 </plugin>

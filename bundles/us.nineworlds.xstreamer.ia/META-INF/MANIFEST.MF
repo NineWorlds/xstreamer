@@ -8,6 +8,8 @@ Bundle-Vendor: NineWorlds
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  us.nineworlds.xstreamer.ia.core;bundle-version="0.6.1",
- org.eclipse.ui.console
+ org.eclipse.ui.console,
+ us.nineworlds.xstreamer.lib;bundle-version="0.6.1",
+ org.eclipse.ui.forms;bundle-version="3.7.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
