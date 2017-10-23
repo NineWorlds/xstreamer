@@ -17,6 +17,9 @@
 		<module>bundles/us.nineworlds.xstreamer.data</module>
 		<module>bundles/us.nineworlds.xstreamer.lib</module>
 		<module>bundles/us.nineworlds.xstreamer.templates</module>
+		<module>bundles/us.nineworlds.xstreamer.ia</module>
+		<module>bundles/us.nineworlds.xstreamer.ia.core</module>
+		<module>bundles/us.nineworlds.xstreamer.ia.data</module>
 		<module>releng/us.nineworlds.xstreamer.product</module>
 	</modules>
 	<properties>

@@ -8,8 +8,6 @@
     <version>0.6.1-SNAPSHOT</version>
     <relativePath>../../</relativePath>
   </parent>
-  <groupId>us.nineworlds.xstreamer</groupId>
   <artifactId>us.nineworlds.xstreamer.data</artifactId>
-  <version>0.6.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>

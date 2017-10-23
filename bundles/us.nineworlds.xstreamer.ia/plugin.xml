@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="us.nineworlds.xstreamer.ia.perspective">
+         <view
+               id="us.nineworlds.xstreamer.view.general"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+         <view
+               id="us.nineworlds.xstreamer.view.timer"
+               minimized="false"
+               relationship="stack"
+               relative="us.nineworlds.xstreamer.view.general">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="us.nineworlds.xstreamer.ia.perspective.PerspectiveFactory"
+            icon="icons/CommanderMask_archigraphs.png"
+            id="us.nineworlds.xstreamer.ia.perspective"
+            name="Imperial Assault">
+            
+      </perspective>
+   </extension>
+
+</plugin>

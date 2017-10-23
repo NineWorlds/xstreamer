@@ -1,0 +1,2221 @@
+{
+  "commandCards": [
+    {
+      "card": {
+        "iaspecName": "assassinate",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabba%20the%20Hutt/Assassinate.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Assassinate",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "adrenaline",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Adrenaline.png",
+        "restrictions": [
+          "wookiee"
+        ],
+        "name": "Adrenaline",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "againsttheodds",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Echo%20Base%20Troopers/Against%20the%20Odds.png",
+        "name": "Against the Odds",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "battlescars",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Battle%20Scars.png",
+        "restrictions": [
+          "wookiee"
+        ],
+        "name": "Battle Scars",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "battlefieldawareness",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Captain%20Terro/Battlefield%20Awareness.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "Battlefield Awareness",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "behindenemylines",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Leia%20Organa/Behind%20Enemy%20Lines.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Behind Enemy Lines",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "blackmarketprices",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Lando%20Calrissian/Black%20Market%20Prices.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Black Market Prices",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "blitz",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Luke%20Skywalker%20Jedi/Blitz.png",
+        "name": "Blitz",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "bodyguard",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Royal%20Guard%20Champion/Bodyguard.png",
+        "restrictions": [
+          "guardian"
+        ],
+        "name": "Bodyguard",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "braceyourself",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Dengar/Brace%20Yourself.png",
+        "name": "Brace Yourself",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "braceforimpact",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/BT-1%20and%200-0-0/Brace%20for%20Impact.png",
+        "name": "Brace for Impact",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "callthevanguard",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Rangers/Call%20the%20Vanguard.png",
+        "restrictions": [
+          "trooper"
+        ],
+        "name": "Call the Vanguard",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "camouflage",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Bespin%20Gambit/Camouflage.png",
+        "name": "Camouflage",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "capturetheweary",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Boba%20Fett/Capture%20the%20Weary.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Capture the Weary",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "celebration",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Celebration.png",
+        "name": "Celebration",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "changeofplans",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Saboteurs/Change%20of%20Plans.png",
+        "name": "Change of Plans",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "closethegap",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Close%20the%20Gap.png",
+        "restrictions": [
+          "brawler"
+        ],
+        "name": "closethegap",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "collateraldamage",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Collateral%20Damage.png",
+        "restrictions": [
+          "heavyweapon"
+        ],
+        "name": "collateraldamage",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "collectintel",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Saboteurs/Collect%20Intel.png",
+        "name": "Collect Intel",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "commdisruption",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/ISB%20Infiltrators/Comm%20Disruption.png",
+        "name": "Comm Disruption",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "counterattack",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Royal%20Guard%20Champion/Counter%20Attack.png",
+        "restrictions": [
+          "brawler"
+        ],
+        "name": "Counter Attack",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "coveringfire",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Covering%20Fire.png",
+        "restrictions": [
+          "trooper"
+        ],
+        "name": "Covering Fire",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "cripple",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Royal%20Guard%20Champion/Cripple.png",
+        "restrictions": [
+          "brawler",
+          "hunter"
+        ],
+        "name": "Cripple",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "cruelstrike",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Twin%20Shadows/Cruel%20Strike.png",
+        "name": "Cruel Strike",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "crush",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bantha%20Rider/Crush.png",
+        "restrictions": [
+          "massive"
+        ],
+        "name": "Crush",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "cutlines",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/ISB%20Infiltrators/Cut%20Lines.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Cut Lines",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "dangerousbargains",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Dengar/Dangerous%20Bargains.png",
+        "name": "Dangerous Bargains",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "datatheft",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/ISB%20Infiltrators/Data%20Theft.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Data Theft",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "deadeye",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Deadeye.png",
+        "name": "Deadeye",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "deathblow",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Maul/Deathblow.png",
+        "name": "deathblow",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "deflection",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Deflection.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Deflection",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "devotion",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/R2-D2%20and%20C-3PO/Devotion.png",
+        "restrictions": [
+          "droid"
+        ],
+        "name": "Deflection",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "dirtytrick",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/IG-88/Dirty%20Trick.png",
+        "restrictions": [
+          "smuggler",
+          "hunter"
+        ],
+        "name": "Dirty Trick",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "disable",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Han%20Solo/Disable.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Disable",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "efficienttravel",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Echo%20Base%20Troopers/Efficient%20Travel.png",
+        "name": "Efficient Travel",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "elementofsurprise",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Element%20of%20Surprise.png",
+        "name": "Element of Surprise",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "explosiveweaponry",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Weiss/Explosive%20Weaponry.png",
+        "restrictions": [
+          "heavyweapon"
+        ],
+        "name": "Explosive Weaponry",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "exposeweakness",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Expose%20Weakness.png",
+        "name": "Expose Weakness",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "facetoface",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Maul/Face%20to%20Face.png",
+        "name": "Face to Face",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "feralswipes",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Captain%20Terro/Feral%20Swipes.png",
+        "restrictions": [
+          "creature"
+        ],
+        "name": "Feral Swipes",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "ferocity",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Ferocity.png",
+        "name": "Feral Swipes",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "fieldtactician",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Sorin/Field%20Tactician.png",
+        "name": "Field Tactician",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "fleetfooted",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Fleet%20Footed.png",
+        "name": "Fleet Footed",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "focus",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Troopers/Focus.png",
+        "name": "Focus",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "foolmeonce",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Ahsoka%20Tano/Fool%20Me%20Once.png",
+        "name": "Fool Me Once",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forceillusion",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Bespin%20Gambit/Force%20Illusion.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Illusion",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forcejump",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Ahsoka%20Tano/Force%20Jump.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Jump",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forcerush",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Grand%20Inquisitor/Force%20Rush.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Rush",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forcesurge",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Obi-Wan%20Kenobi/Force%20Surge.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Surge",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "fuelupgrade",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Sorin/Fuel%20Upgrade.png",
+        "name": "Fuel Upgrade",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "gloryofthekill",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Glory%20of%20the%20Kill.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Glory of the Kill",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "grenadier",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Troopers/Grenadier.png",
+        "restrictions": [
+          "trooper"
+        ],
+        "name": "Grenadier",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "grislycontest",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bossk/Grisly%20Contest.png",
+        "restrictions": [
+          "brawler"
+        ],
+        "name": "Grisly Contest",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "guardianstance",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Guardian%20Stance.png",
+        "restrictions": [
+          "guardian"
+        ],
+        "name": "Guardian Stance",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "hardtohit",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/R2-D2%20and%20C-3PO/Hard%20to%20Hit.png",
+        "name": "Hard to Hit",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "harshenvironment",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Harsh%20Environment.png",
+        "name": "harshenvironment",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "heavyarmor",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Weiss/Heavy%20Armor.png",
+        "restrictions": [
+          "vehicle"
+        ],
+        "name": "Heavy Armor",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "heavyordnance",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Heavy%20Ordnance.png",
+        "restrictions": [
+          "heavyweapon"
+        ],
+        "name": "Heavy Ordnance",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "heightenedreflexes",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Heavy%20Ordnance.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Heightened Reflexes",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "hideinplainsight",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Saboteurs/Hide%20in%20Plain%20Sight.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Hide in Plain Sight",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "hitandrun",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Echo%20Base%20Troopers/Hit%20and%20Run.png",
+        "name": "Hit and Run",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "holdground",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Hold%20Ground.png",
+        "restrictions": [
+          "guardian"
+        ],
+        "name": "Hold Ground",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "hunterprotocol",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Hunter%20Protocol.png",
+        "restrictions": [
+          "droid"
+        ],
+        "name": "Hunter Protocol",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "icanfeelit",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Leia%20Organa/I%20Can%20Feel%20It.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "I Can Feel It",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "improvisedweapons",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Wookie%20Warriors/Improvised%20Weapons.png",
+        "name": "Improvised Weapons",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "intheshadows",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Greedo/In%20the%20Shadows.png",
+        "restrictions": [
+          "smuggler",
+          "hunter"
+        ],
+        "name": "In the Shadows",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "inspiringspeech",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Han%20Solo/Inspiring%20Speech.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "Inspiring Speech",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "intelligenceleak",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Agent%20Blaise/Intelligence%20Leak.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Intelligence Leak",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "jumpjets",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Boba%20Fett/Jump%20Jets.png",
+        "name": "Jump Jets",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "jundlandterror",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bantha%20Rider/Jundland%20Terror.png",
+        "name": "Jundland Terror",
+        "cost": 2,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "lockon",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Saboteurs/Lock%20On.png",
+        "restrictions": [
+          "heavyweapon"
+        ],
+        "name": "Lock On",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "lookingforafight",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Maul/Looking%20for%20a%20Fight.png",
+        "restrictions": [
+          "brawler"
+        ],
+        "name": "Looking for a Fight",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "marksman",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Marksman.png",
+        "name": "Marksman",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "maximumfirepower",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Maximum%20Firepower.png",
+        "restrictions": [
+          "heavyweapon"
+        ],
+        "name": "Maximum Firepower",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "merciless",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/IG-88/Merciless.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Merciless",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "mitigate",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Rangers/Mitigate.png",
+        "name": "Mitigate",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "navigationupgrade",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jawa%20Scavenger/Navigation%20Upgrade.png",
+        "name": "navigationupgrade",
+        "restrictions": [
+          "droid"
+        ],
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "negation",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Negation.png",
+        "name": "negation",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "neworders",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Weiss/New%20Orders.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "New Orders",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "ofnoimportance",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Hired%20Guns/Of%20No%20Importance.png",
+        "name": "Of No Importance",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "onthelam",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/On%20the%20Lam.png",
+        "name": "On the Lam",
+        "restrictions": [
+          "smuggler"
+        ],
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "overchargedweapons",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Overcharged%20Weapons.png",
+        "name": "overchargedweapons",
+        "restrictions": [
+          "vehicle"
+        ],
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "overdrive",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/IG-88/Overdrive.png",
+        "name": "overdrive",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "overrun",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Weiss/Overrun.png",
+        "restrictions": [
+          "vehicle"
+        ],
+        "name": "Overrun",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "parry",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Luke%20Skywalker%20Jedi/Parry.png",
+        "restrictions": [
+          "brawler",
+          "guardian"
+        ],
+        "name": "Parry",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "partingblow",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bantha%20Rider/Parting%20Blow.png",
+        "restrictions": [
+          "brawler"
+        ],
+        "name": "Parting Blow",
+        "cost": 2,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "pickpocket",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Pickpocket.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Pickpocket",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "planning",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Planning.png",
+        "name": "Planning",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "positioningadvantage",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Luke%20Skywalker%20Jedi/Positioning%20Advantage.png",
+        "name": "Positioning Advantage",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "preparedforbattle",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Emperor%20Palpatine/Prepared%20for%20Battle.png",
+        "name": "Prepared for Battle",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "priceontheirheads",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Price%20on%20Their%20Heads.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Price on Their Heads",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "primarytarget",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Greedo/Primary%20Target.png",
+        "restrictions": [
+          "hunter"
+        ],
+        "name": "Primary Target",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "provoke",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Troopers/Provoke.png",
+        "name": "Provoke",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "pummel",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Pummel.png",
+        "name": "Pummel",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "rally",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Rally.png",
+        "name": "Rally",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "rankandfile",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Kayn%20Somos/Rank%20and%20File.png",
+        "restrictions": [
+          "trooper"
+        ],
+        "name": "Rank and File",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "readyweapons",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Ready%20Weapons.png",
+        "restrictions": [
+          "trooper",
+          "guardian"
+        ],
+        "name": "readyweapons",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "recovery",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Recovery.png",
+        "name": "Recovery",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "regroup",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Regroup.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "Regroup",
+        "cost": 1,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "reinforcements",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Troopers/Reinforcements.png",
+        "name": "Reinforcements",
+        "cost": 2,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "repair",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/IG-88/Repair.png",
+        "name": "Repair",
+        "cost": 2,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "reposition",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Han%20Solo/Reposition.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "Reposition",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "roar",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Roar.png",
+        "restrictions": [
+          "wookiee",
+          "creature"
+        ],
+        "name": "Roar",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "runforcover",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Run%20for%20Cover.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Run for Cover",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "selfdefense",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Smuggler/Self-Defense.png",
+        "name": "Self-Defense",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "setatrap",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Set%20a%20Trap.png",
+        "name": "Set a Trap",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "setforstun",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Stormtroopers/Set%20for%20Stun.png",
+        "name": "Set for Stun",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "sharedexperience",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/BT-1%20and%200-0-0/Shared%20Experience.png",
+        "restrictions": [
+          "droid",
+          "vehicle"
+        ],
+        "name": "Shared Experience",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "singlepurpose",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/R2-D2%20and%20C-3PO/Single%20Purpose.png",
+        "name": "Single Purpose",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "sittight",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Sit%20Tight.png",
+        "name": "Sit Tight",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "sizeadvantage",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Size%20Advantage.png",
+        "name": "Size Advantage",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "slipperytarget",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Han%20Solo/Slippery%20Target.png",
+        "restrictions": [
+          "smuggler",
+          "spy"
+        ],
+        "name": "Slippery Target",
+        "cost": 2,
+        "limit": 2
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "smuggledsupplies",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Smuggler/Smuggled%20Supplies.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Smuggled Supplies",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "smugglerstricks",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Smuggler/Smugglers%20Tricks.png",
+        "restrictions": [
+          "smuggler"
+        ],
+        "name": "Smuggler's Tricks",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "squadswarm",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Kayn%20Somos/Squad%20Swarm.png",
+        "name": "Squad Swarm",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "stallfortime",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Kayn%20Somos/Squad%20Swarm.png",
+        "restrictions": [
+          "leader",
+          "spy"
+        ],
+        "name": "Stall for Time",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "stealthtactics",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Stormtroopers/Stealth%20Tactics.png",
+        "name": "Stealth Tactics",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "stimulants",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Stimulants.png",
+        "name": "Stimulants",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "strategicshift",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/ISB%20Infiltrators/Strategic%20Shift.png",
+        "restrictions": [
+          "spy"
+        ],
+        "name": "Strategic Shift",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "strengthinnumbers",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Rebel%20Troopers/Strength%20in%20Numbers.png",
+        "name": "Strength in Numbers",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "survivalinstincts",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Survival%20Instincts.png",
+        "restrictions": [
+          "creature"
+        ],
+        "name": "Survival Instincts",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "takecover",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Take%20Cover.png",
+        "name": "Take Cover",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "takeinitiative",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Take%20Initiative.png",
+        "name": "Take Initiative",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "takeposition",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Hera%20Syndulla%20and%20C1-10P/Take%20Position.png",
+        "restrictions": [
+          "guardian",
+          "vehicle"
+        ],
+        "name": "Take Position",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "targetingnetwork",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Hera%20Syndulla%20and%20C1-10P/Targeting%20Network.png",
+        "restrictions": [
+          "droid",
+          "heavyweapon"
+        ],
+        "name": "Targeting Network",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "telekineticthrow",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Telekinetic%20Throw.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "telekineticthrow",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "terminalprotocol",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/BT-1%20and%200-0-0/Terminal%20Protocol.png",
+        "restrictions": [
+          "droid"
+        ],
+        "name": "Terminal Protocol",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "tothelimit",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/To%20the%20Limit.png",
+        "name": "To the Limit",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "toolsforthejob",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Tools%20for%20the%20Job.png",
+        "restrictions": [
+          "hunter",
+          "smuggler"
+        ],
+        "name": "Tools for the Job",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "toughluck",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Lando%20Calrissian/Tough%20Luck.png",
+        "name": "Tough Luck",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "toxicdart",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Toxic%20Dart.png",
+        "restrictions": [
+          "hunter",
+          "smuggler"
+        ],
+        "name": "Toxic Dart",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "triangulate",
+        "faction": "any",
+        "imageurl": "http://cards.boardwars.eu/cache/Ally-and-Villain-Packs/Wave-9/Jawa%20Scavenger/Command%20Cards/Triangulate_595_ffflogog_whatermark_cc.jpg",
+        "restrictions": [
+          "droid"
+        ],
+        "name": "Triangulate",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "urgency",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Urgency.png",
+        "name": "urgency",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "utinni",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jawa%20Scavenger/Utinni!.png",
+        "name": "utinni",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "wildattack",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bossk/Wild%20Attack.png",
+        "name": "wildattack",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "wildfury",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Wookie%20Warriors/Wild%20Fury.png",
+        "restrictions": [
+          "wookiee",
+          "creature"
+        ],
+        "name": "Wild Fury",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "wookierage",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Wookie%20Rage.png",
+        "restrictions": [
+          "wookiee"
+        ],
+        "name": "Wookie Rage",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "bladestorm",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Bladestorm.png",
+        "deployment": "shylavarad",
+        "name": "Bladestorm",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "blazeofglory",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/IG-88/Blaze%20of%20Glory.png",
+        "deployment": "ig88",
+        "name": "Blaze of Glory",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "bloodfeud",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabba%20the%20Hutt/Blood%20Feud.png",
+        "deployment": "jabbathehutt",
+        "name": "Blood Feud",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "chaoticforce",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Maul/Chaotic%20Force.png",
+        "name": "Chaotic Force",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "draw",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Draw!.png",
+        "deployment": "vintohreeda",
+        "name": "Draw!",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "extraprotection",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabbas%20Realm/Extra%20Protection.png",
+        "deployment": "onarkoma",
+        "name": "Extra Protection",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "mandaloriantactics",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Boba%20Fett/Mandalorian%20Tactics.png",
+        "deployment": "bobafett",
+        "name": "Mandalorian Tactics",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "opportunistic",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bantha%20Rider/Opportunistic.png",
+        "name": "Opportunistic",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "shootthemessenger",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Jabba%20the%20Hutt/Shoot%20the%20Messenger.png",
+        "name": "Shoot the Messenger",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "strokeofbrilliance",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Greedo/Stroke%20of%20Brilliance.png",
+        "deployment": "greedo",
+        "name": "Stroke of Brilliance",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "trandoshanterror",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Bossk/Trandoshan%20Terror.png",
+        "deployment": "bossk",
+        "name": "Trandoshan Terror",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "wreakvengeance",
+        "faction": "mercenary",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Maul/Wreak%20Vengeance.png",
+        "deployment": "maul",
+        "name": "Wreak Vengeance",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "ballisticsmatrix",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/BT-1%20and%200-0-0/Ballistics%20Matrix.png",
+        "deployment": "bt1",
+        "name": "Ballistics Matrix",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "cavalrycharge",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Captain%20Terro/Cavalry%20Charge.png",
+        "deployment": "captainterro",
+        "name": "Captain Terro",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "corruptingforce",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Emperor%20Palpatine/Corrupting%20Force.png",
+        "name": "Corrupting Force",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "darkenergy",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Emperor%20Palpatine/Dark%20Energy.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Dark Energy",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "deadlyprecison",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Grand%20Inquisitor/Deadly%20Precision.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Deadly Precision",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "eerievisage",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/BT-1%20and%200-0-0/Eerie%20Visage.png",
+        "deployment": "000",
+        "name": "Eerie Visage",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "endlessreserves",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Weiss/Endless%20Reserves.png",
+        "deployment": "generalweiss",
+        "name": "Endless Reserves",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "flurryofblades",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Royal%20Guard%20Champion/Flurry%20of%20Blades.png",
+        "deployment": "royalguardchampion",
+        "name": "Flurry of Blades",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forcelightning",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Force%20Lightning.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Lightning",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "huntthemdown",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Grand%20Inquisitor/Hunt%20Them%20Down.png",
+        "deployment": "thegrandinqusitor",
+        "name": "Hunt Them Down",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "lordofthesith",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Lord%20of%20the%20Sith.png",
+        "deployment": "darthvader",
+        "name": "Lord of the Sith",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "lureofthedarkside",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Lure%20of%20the%20Dark%20Side.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Lure of the Dark Side",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "optimalbombardment",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/General%20Sorin/Optimal%20Bombardment.png",
+        "deployment": "generalsorin",
+        "name": "Optimal Bombardment",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "rallythetroops",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Kayn%20Somos/Rally%20the%20Troops.png",
+        "deployment": "kaynsomos",
+        "name": "Rally the Troops",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "unlimitedpower",
+        "faction": "imperial",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Emperor%20Palpatine/Unlimited%20Power.png",
+        "deployment": "emporerpalpatine",
+        "name": "Unlimited Power",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "apowerfulinfluence",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Obi-Wan%20Kenobi/A%20Powerful%20Influence.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "A Powerful Influence",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "balancingforce",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Ahsoka%20Tano/Balancing%20Force.png",
+        "name": "Balancing Force",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "burstfire",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Burst%20Fire.png",
+        "deployment": "fennsignis",
+        "name": "Burst Fire",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "cheattowin",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Lando%20Calrissian/Cheat%20to%20Win.png",
+        "deployment": "landocalrissian",
+        "name": "Cheat to Win",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "coordinatedattack",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Coordinated%20Attack.png",
+        "deployment": "lokukanoloa",
+        "name": "Coordinated Attack",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "debtsrepaid",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Debts%20Repaid.png",
+        "deployment": "chewbacca",
+        "name": "Debts Repaid",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "etiquetteandprotocol",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/R2-D2%20and%20C-3PO/Etiquette%20and%20Protocol.png",
+        "deployment": "c3po",
+        "name": "Etiquette and Protocol",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "evacuate",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Hera%20Syndulla%20and%20C1-10P/Evacuate.png",
+        "deployment": "herasyndulla",
+        "name": "Evacuate",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "fataldeception",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Bespin%20Gambit/Fatal%20Deception.png",
+        "deployment": "murnerin",
+        "name": "Fatal Deception",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "fieldsupply",
+        "faction": "rebel",
+        "imageurl": "http://cards.boardwars.eu/cache/Expansion-Boxes/Heart-of-the-Empire/Command%20Cards/Field%20Supply%20command%20card_595_ffflogog_whatermark_cc.jpg",
+        "deployment": "kotunferalo",
+        "name": "Field Supply",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "forcepush",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Ahsoka%20Tano/Force%20Push.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Force Push",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "furiouscharge",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Furious%20Charge.png",
+        "deployment": "gaarkhan",
+        "name": "Furious Charge",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "heartoffreedom",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Alliance%20Smuggler/Heart%20of%20Freedom.png",
+        "name": "Heart of Freedom",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "masteroperative",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Master%20Operative.png",
+        "deployment": "verenatalos",
+        "name": "Master Operative",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "meditation",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Meditation.png",
+        "restrictions": [
+          "forceuser"
+        ],
+        "name": "Meditation",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "miracleworker",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Miracle%20Worker.png",
+        "deployment": "mhd19",
+        "name": "Miracle Worker",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "onamission",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Hera%20Syndulla%20and%20C1-10P/On%20A%20Mission.png",
+        "deployment": "c110p",
+        "name": "On a Mission",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "oneinamillion",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/One%20in%20a%20Million.png",
+        "deployment": "jynodan",
+        "name": "One in a Million",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "rightbackatya",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/One%20in%20a%20Million.png",
+        "deployment": "ahsokatano",
+        "name": "Right Back At Ya!",
+        "cost": 1,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "sarlacsweep",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Sarlacc%20Sweep.png",
+        "deployment": "dialapassil",
+        "name": "Sarlacc Sweep",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "shadowops",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Shadow%20Ops.png",
+        "deployment": "makeshkarey",
+        "name": "Shadow Ops",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "sonofskywalker",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Son%20of%20Skywalker.png",
+        "deployment": "lukeskywalker",
+        "name": "Son of Skywalker",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "staydown",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Twin%20Shadows/Stay%20Down.png",
+        "deployment": "bivbodhrik",
+        "name": "Stay Down",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "takeitdown",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Take%20it%20Down.png",
+        "deployment": "gideonargus",
+        "name": "Take it Down",
+        "cost": 3,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "terminalnetwork",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/R2-D2%20and%20C-3PO/Terminal%20Network.png",
+        "deployment": "r2d2",
+        "name": "Terminal Network",
+        "cost": 2,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "thereisanother",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Leia%20Organa/There%20is%20Another.png",
+        "deployment": "leiaorgana",
+        "name": "There is Another",
+        "cost": 0,
+        "limit": 1
+      }
+    },
+    {
+      "card": {
+        "iaspecName": "vanish",
+        "faction": "rebel",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/The%20Bespin%20Gambit/Vanish.png",
+        "deployment": "davithelso",
+        "name": "Vanish",
+        "cost": 2,
+        "limit": 1
+      }
+    }    
+  ]
+}

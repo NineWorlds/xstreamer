@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Imperial Assault
+Bundle-SymbolicName: us.nineworlds.xstreamer.ia;singleton:=true
+Bundle-Version: 0.6.1.qualifier
+Bundle-Activator: us.nineworlds.xstreamer.ia.Activator
+Bundle-Vendor: NineWorlds
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ us.nineworlds.xstreamer.ia.core;bundle-version="0.6.1",
+ org.eclipse.ui.console
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

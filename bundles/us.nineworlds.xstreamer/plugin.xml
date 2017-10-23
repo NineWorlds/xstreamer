@@ -14,9 +14,10 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="Perspective"
             class="us.nineworlds.xstreamer.Perspective"
-            id="com.example.rcpapp.perspective">
+            icon="icons/XWing_archigraphsx128.png"
+            id="com.example.rcpapp.perspective"
+            name="X-Wing">
       </perspective>
    </extension>
    <extension
@@ -63,7 +64,7 @@
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
-            targetID="*">
+            targetID="com.example.rcpapp.perspective">
          <view
                id="us.nineworlds.xstreamer.view.general"
                minimized="false"
