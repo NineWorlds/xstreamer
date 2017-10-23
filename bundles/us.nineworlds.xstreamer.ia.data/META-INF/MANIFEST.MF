@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Data
+Bundle-SymbolicName: us.nineworlds.xstreamer.ia.data
+Bundle-Version: 0.6.1.qualifier
+Bundle-Activator: us.nineworlds.xstreamer.ia.data.Activator
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: us.nineworlds.xstreamer.ia.data
