@@ -29,10 +29,14 @@ Import-Package: org.apache.commons.lang,
 Bundle-Activator: us.nineworlds.xstreamer.Activator
 Bundle-ActivationPolicy: lazy
 Export-Package: schemas,
+ uky.article.imageviewer.actions,
+ uky.article.imageviewer.views,
  us.nineworlds.xstreamer,
  us.nineworlds.xstreamer.forms,
  us.nineworlds.xstreamer.forms.listeners,
+ us.nineworlds.xstreamer.handler,
  us.nineworlds.xstreamer.jobs,
  us.nineworlds.xstreamer.preferences,
  us.nineworlds.xstreamer.preferences.widgets,
+ us.nineworlds.xstreamer.text.util,
  us.nineworlds.xstreamer.ui.importWizards

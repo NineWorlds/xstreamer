@@ -25,9 +25,14 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
 import us.nineworlds.iadata.IASpec;
+import us.nineworlds.iadata.deployment.Deployment;
+import us.nineworlds.iadata.deployment.Deployments;
+import us.nineworlds.iadata.enums.Factions;
 import us.nineworlds.iadata.util.IASpecLoader;
+import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.listeners.ArmySelectionChangeListener;
 import us.nineworlds.xstreamer.ia.listeners.UpdateDeploymentButtonSelectionListener;
+import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
 
@@ -186,6 +191,22 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 					IASpecLoader iaspecFile = new IASpecLoader();
 					try {
 						IASpec iaspec = iaspecFile.load(new ByteArrayInputStream(json.getBytes()));
+						DeploymentsLookup deploymentsLookup = Activator.getDefault().getDeploymentsLookup();
+						for (Deployments deployments : iaspec.getArmy().getDeployments()) {
+							Deployment deployment = deployments.getDeployment();
+							Factions faction = deployment.getFaction();
+							String iaspecName = deployment.getIaspecname();
+							Deployment deploymentEntry = deploymentsLookup.findDeploymentCard(iaspecName, faction.toString());
+							if (deploymentEntry != null) {
+								deployment.setHealth(deploymentEntry.getHealth());
+								deployment.setSpeed(deploymentEntry.getSpeed());
+								deployment.setDeploymentCost(deploymentEntry.getDeploymentCost());
+							}
+							if (deployment.getName() == null && deploymentEntry == null) {
+								deployment.setName(deployment.getIaspecname());
+							}
+						}
+						
 						resetPlayerModel(iaspec);
 						refreshTree();
 //						GenerateSquadJob job = new GenerateSquadJob("importxws", getPlayerModel(), playerFileName(),

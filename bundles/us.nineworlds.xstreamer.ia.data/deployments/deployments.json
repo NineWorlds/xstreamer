@@ -8083,6 +8083,21 @@
         "unitsInGroup": 0,
         "health": 0
       }
-    }    
+    },
+    {
+      "deployment": {
+        "iaspecName": "unshakeable",
+        "imageurl": "https://vignette.wikia.nocookie.net/imperial-assault/images/a/ae/Unshakable.png",
+        "faction": "any",
+        "elite": 0,
+        "type": "upgrade",
+        "unique": 0,
+        "name": "Unshakeable",
+        "deploymentCost": 1,
+        "reenforcementCost": 0,
+        "unitsInGroup": 0,
+        "health": 0
+      }
+    }
   ]
 }
