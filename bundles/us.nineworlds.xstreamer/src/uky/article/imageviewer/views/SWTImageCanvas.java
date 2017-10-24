@@ -9,8 +9,10 @@ package uky.article.imageviewer.views;
 
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
+import org.apache.commons.io.IOUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
@@ -256,6 +258,14 @@ public class SWTImageCanvas extends Canvas {
 			sourceImage.dispose();
 			sourceImage = null;
 		}
+	}
+	
+	public Image loadImage(InputStream inputStream) {
+		disposeImage();
+		sourceImage = new Image(getDisplay(), inputStream);
+		IOUtils.closeQuietly(inputStream);
+		showOriginal();
+		return sourceImage;
 	}
 	
 	public Image loadImage(URL url) {

@@ -59,6 +59,15 @@ public class PilotLookup {
 		return value;
 	}
 	
+	public Pilot lookupPilotValue(String xwsname) {
+		for (Pilot pilot : pilots) {
+			if (pilot.getXws().equals(xwsname)) {
+				return pilot;
+			}
+		}
+		return null;
+	}
+	
 	public List<Pilot> getPilots() {
 		return pilots;
 	}
