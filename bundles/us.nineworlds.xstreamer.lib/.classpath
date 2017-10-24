@@ -18,5 +18,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/stax2-api-4.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jackson-databind-2.8.3.jar" sourcepath="/tmp/decompiler/source/jackson-databind-2.8.3-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jackson-core-2.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/okhttp-3.9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/okio-1.13.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

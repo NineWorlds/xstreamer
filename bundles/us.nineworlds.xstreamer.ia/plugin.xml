@@ -23,6 +23,14 @@
                relationship="stack"
                relative="us.nineworlds.xstreamer.view.timer">
          </view>
+         <view
+               closeable="true"
+               id="us.nineworlds.xstreamer.imageview"
+               minimized="false"
+               moveable="true"
+               relationship="bottom"
+               relative="us.nineworlds.xstreamer.ia.firstplayer">
+         </view>
          
       </perspectiveExtension>
    </extension>

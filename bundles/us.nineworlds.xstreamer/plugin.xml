@@ -60,6 +60,12 @@
             id="us.nineworlds.xstreamer.category"
             name="XStreamer">
       </category>
+      <view
+            class="uky.article.imageviewer.views.ImageView"
+            id="us.nineworlds.xstreamer.imageview"
+            name="ImageView"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
@@ -245,4 +251,72 @@
       </handler>
    </extension>
 
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            targetID="us.nineworlds.xstreamer.imageview"
+            id="uky.article.imageviewer.views.ImageView.pushbutton">
+         <!-- Open button -->
+         <action
+               label="open"
+               icon="icons/Open16.gif"
+               tooltip="Open image"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.open">
+               <!--id="org.eclipse.ui.file.open"-->
+         </action>
+         <!-- Rotation button -->
+         <action
+               label="Rotate"
+               icon="icons/Rotate16.gif"
+               tooltip="Rotate"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.rotate">
+         </action>
+         <!-- Fit button -->
+         <action
+               label="FitWindow"
+               icon="icons/Fit16.gif"
+               tooltip="Fit window"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.fit">
+         </action>
+         <!-- Original button -->
+         <action
+               label="OriginalSize"
+               icon="icons/Original16.gif"
+               tooltip="Original size"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.original">
+         </action>
+         <!-- ZoomIn button -->
+         <action
+               label="ZoomIn"
+               icon="icons/ZoomIn16.gif"
+               tooltip="Zoom in"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.zoomin">
+         </action>
+         <!-- ZoomOut button -->
+         <action
+               label="ZoomOut"
+               icon="icons/ZoomOut16.gif"
+               tooltip="Zoom out"
+               class="uky.article.imageviewer.actions.PushActionDelegate"
+               toolbarPath="push_group"
+               enablesFor="*"
+               id="toolbar.zoomout">
+         </action>
+      </viewContribution>
+   </extension>
 </plugin>
