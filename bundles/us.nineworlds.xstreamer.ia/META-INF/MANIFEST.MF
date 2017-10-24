@@ -11,7 +11,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.console,
  us.nineworlds.xstreamer.lib,
  org.eclipse.ui.forms,
- us.nineworlds.xstreamer
+ us.nineworlds.xstreamer,
+ us.nineworlds.xstreamer.core,
+ org.apache.commons.io;bundle-version="2.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: us.nineworlds.xstreamer.ia,

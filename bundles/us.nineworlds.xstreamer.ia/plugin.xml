@@ -9,7 +9,7 @@
                id="us.nineworlds.xstreamer.view.general"
                minimized="false"
                relationship="left"
-               relative="org.eclipse.ui.editorss">
+               relative="org.eclipse.ui.editors">
          </view>
          <view
                id="us.nineworlds.xstreamer.view.timer"
@@ -24,12 +24,17 @@
                relative="us.nineworlds.xstreamer.view.timer">
          </view>
          <view
+               id="us.nineworlds.xstreamer.view.ia.secondplayer"
+               minimized="false"
+               relationship="stack"
+               relative="us.nineworlds.xstreamer.view.ia.firstplayer">
+         </view>
+         <view
                closeable="true"
                id="us.nineworlds.xstreamer.imageview"
                minimized="false"
-               moveable="true"
-               relationship="bottom"
-               relative="us.nineworlds.xstreamer.ia.firstplayer">
+               relative="us.nineworlds.xstreamer.view.ia.secondplayer"
+               relationship="right">
          </view>
          
       </perspectiveExtension>
@@ -54,6 +59,15 @@
             name="Player 1"
             restorable="true">
       </view>
+      <view
+            allowMultiple="false"
+            class="us.nineworlds.xstreamer.ia.forms.SecondPlayerPage"
+            icon="images/P2.png"
+            id="us.nineworlds.xstreamer.view.ia.secondplayer"
+            name="Player 2"
+            restorable="true">
+      </view>
+      
    </extension>
 
 </plugin>

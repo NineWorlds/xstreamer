@@ -95,6 +95,14 @@
                relationship="stack"
                relative="us.nineworlds.xstreamer.view.firstplayer">
          </view>
+         <view
+               closeable="true"
+               id="us.nineworlds.xstreamer.imageview"
+               minimized="false"
+               relative="us.nineworlds.xstreamer.view.secondplayer"
+               relationship="right">
+         </view>
+         
       </perspectiveExtension>
    </extension>
    <extension

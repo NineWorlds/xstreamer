@@ -37,7 +37,7 @@ public class CommandCardLookup {
       return null;
    }
    
-   public List<CommandCards> getDeployments() {
+   public List<CommandCards> getCommandCards() {
 	   return commandCards;
    }
 
