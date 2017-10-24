@@ -736,7 +736,7 @@
     "points": -2,
     "text": "This card has a negative squad point cost.",
     "ship": [
-      "A-Wing"
+      "A-wing"
     ],
     "image": "upgrades/Missile/chardaan-refit.png",
     "xws": "chardaanrefit"
@@ -1154,7 +1154,7 @@
     "id": 111,
     "limited": true,
     "ship": [
-      "Y-Wing"
+      "Y-wing"
     ],
     "slot": "Torpedo",
     "points": 0,
@@ -1638,7 +1638,7 @@
     "unique": true,
     "points": 3,
     "ship": [
-      "Lambda-Class Shuttle"
+      "Lambda-class Shuttle"
     ],
     "text": "When acquiring a target lock, you may lock onto any enemy ship in the play area.",
     "image": "upgrades/Title/st-321.png",
@@ -1676,12 +1676,12 @@
     "xws": "dodonnaspride"
   },
   {
-    "name": "A-Wing Test Pilot",
+    "name": "A-wing Test Pilot",
     "id": 157,
     "slot": "Title",
     "points": 0,
     "ship": [
-      "A-Wing"
+      "A-wing"
     ],
     "text": "Your upgrade bar gains 1 [Elite] upgrade icon.<br /><br />You cannot equip 2 of the same [Elite] Upgrade cards. You cannot equip this if your pilot skill value is \"1\" or lower.",
     "image": "upgrades/Title/a-wing-test-pilot.png",
@@ -1881,7 +1881,7 @@
     "slot": "Title",
     "points": 0,
     "ship": [
-      "Y-Wing"
+      "Y-wing"
     ],
     "text": "You cannot attack ships outside your firing arc. After you perform a primary weapon attack, you may immediately perform an attack with a [Turret] secondary weapon.",
     "image": "upgrades/Title/btl-a4-y-wing.png",
@@ -2092,13 +2092,13 @@
     ]
   },
   {
-    "name": "B-Wing/E2",
+    "name": "B-wing/E2",
     "id": 184,
     "slot": "Modification",
     "points": 1,
     "text": "Your upgrade bar gains the [Crew] upgrade icon.",
     "ship": [
-      "B-Wing"
+      "B-wing"
     ],
     "image": "upgrades/Modification/b-wing-e2.png",
     "grants": [
@@ -2157,7 +2157,7 @@
     "id": 189,
     "slot": "Modification",
     "points": 2,
-    "text": "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action.",
+    "text": "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action on your action bar.",
     "image": "upgrades/Modification/advanced-slam.png",
     "xws": "advancedslam"
   },
@@ -2176,11 +2176,12 @@
       "TIE Interceptor",
       "TIE Phantom",
       "TIE Punisher",
+      "TIE Silencer",
       "TIE Striker",
       "TIE/fo Fighter",
       "TIE/sf Fighter"
     ],
-    "image": "upgrades/Modification/twin-ion-engine-mk2.png",
+    "image": "upgrades/Modification/twin-ion-engine-mkii.png",
     "text": "You may treat all bank maneuvers ([Bank Left] or [Bank Right]) as green maneuvers.",
     "xws": "twinionenginemkii"
   },
@@ -2214,8 +2215,8 @@
     "slot": "Modification",
     "points": 0,
     "ship": [
-      "X-Wing",
-      "T-70 X-Wing"
+      "X-wing",
+      "T-70 X-wing"
     ],
     "text": "When you are dealt a Damage card, you may discard 1 of your [Astromech] Upgrade cards to discard that Damage card (without resolving its effect).",
     "image": "upgrades/Modification/integrated-astromech.png",
@@ -2325,7 +2326,7 @@
   },
   {
     "image": "upgrades/Modification/automated-protocols.png",
-    "text": "Once per round, after you perform an action that is not a recover or reinforce action, you pay spend 1 energy to perform a free recover or reinforce action.",
+    "text": "Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.",
     "name": "Automated Protocols",
     "points": 5,
     "slot": "Modification",
@@ -2366,7 +2367,7 @@
     "points": 2,
     "slot": "Cargo",
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 205,
     "xws": "broadcastarray",
@@ -2385,7 +2386,7 @@
     "points": 0,
     "slot": "Cargo",
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 206,
     "xws": "dockingclamps"
@@ -2399,7 +2400,7 @@
     "range": "1-3",
     "attack": 3,
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 207,
     "energy": 1,
@@ -2437,7 +2438,7 @@
     ]
   },
   {
-    "image": "upgrades/Crew/kannan-jarrus.png",
+    "image": "upgrades/Crew/kanan-jarrus.png",
     "text": "Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship.",
     "name": "Kanan Jarrus",
     "unique": true,
@@ -2637,7 +2638,7 @@
     "slot": "Title",
     "energy": 0,
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 226,
     "image": "upgrades/Title/requiem.png",
@@ -2651,7 +2652,7 @@
     "slot": "Title",
     "energy": 1,
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 227,
     "image": "upgrades/Title/vector.png",
@@ -2665,7 +2666,7 @@
     "slot": "Title",
     "energy": 2,
     "ship": [
-      "Gozanti-Class Cruiser"
+      "Gozanti-class Cruiser"
     ],
     "id": 228,
     "image": "upgrades/Title/suppressor.png",
@@ -2831,7 +2832,7 @@
     "points": 1,
     "slot": "Title",
     "ship": [
-      "T-70 X-Wing"
+      "T-70 X-wing"
     ],
     "id": 244,
     "image": "upgrades/Title/black-one.png"
@@ -3034,7 +3035,7 @@
     "points": 1,
     "slot": "Illicit",
     "id": 262,
-    "image": "upgrades/Elite/black-market-slicer-tools.png"
+    "image": "upgrades/Illicit/black-market-slicer-tools.png"
   },
   {
     "image": "upgrades/Title/sabines-masterpiece.png",
@@ -3153,7 +3154,7 @@
     "points": 0,
     "slot": "Title",
     "ship": [
-      "U-Wing"
+      "U-wing"
     ],
     "id": 271
   },
@@ -3165,7 +3166,7 @@
     "points": 0,
     "slot": "Title",
     "ship": [
-      "U-Wing"
+      "U-wing"
     ],
     "id": 272
   },
@@ -3444,6 +3445,7 @@
       "TIE Interceptor",
       "TIE Phantom",
       "TIE Punisher",
+      "TIE Silencer",
       "TIE Striker",
       "TIE/fo Fighter",
       "TIE/sf Fighter"
@@ -3868,5 +3870,144 @@
     "conditions": [
       "Harpooned!"
     ]
+  },
+  {
+    "image": "upgrades/Title/xg-1-assault-configuration.png",
+    "text": "Your upgrade bar gains 2 [Cannon] upgrade icons.<br /><br />You may perform attacks with [Cannon] secondary weapons that cost 2 or fewer squad points even while you have a weapons disabled token.",
+    "name": "Xg-1 Assault Configuration",
+    "xws": "xg1assaultconfiguration",
+    "unique": false,
+    "points": 1,
+    "slot": "Title",
+    "ship": [
+      "Alpha-class Star Wing"
+    ],
+    "grants": [
+      {
+        "type": "slot",
+        "name": "Cannon"
+      },
+      {
+        "type": "slot",
+        "name": "Cannon"
+      }
+    ],
+    "id": 331
+  },
+  {
+    "text": "After defending, if the attacker is inside your bullseye firing arc, it receives 1 stress token.",
+    "name": "Enforcer",
+    "xws": "enforcer",
+    "unique": true,
+    "points": 1,
+    "slot": "Title",
+    "ship": [
+      "M12-L Kimogila Fighter"
+    ],
+    "id": 332
+  },
+  {
+    "image": "upgrades/Title/ghost-swx72.png",
+    "text": "Equip the <em>Phantom II</em> title card to a friendly Sheathipede-class shuttle and dock it to this ship.<br /><br />After you execute a maneuver, you may deploy it from your rear guides.",
+    "name": "Ghost",
+    "xws": "ghost-swx72",
+    "unique": true,
+    "points": 0,
+    "slot": "Title",
+    "ship": [
+      "VCX-100"
+    ],
+    "id": 333
+  },
+  {
+    "image": "upgrades/Title/phantom-ii.png",
+    "text": "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.<br /><br />While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.",
+    "name": "Phantom II",
+    "xws": "phantomii",
+    "unique": true,
+    "points": 0,
+    "slot": "Title",
+    "ship": [
+      "Sheathipede-class Shuttle"
+    ],
+    "id": 334
+  },
+  {
+    "image": "upgrades/Bomb/ordnance-silos.png",
+    "text": "When you equip this card, place 3 ordnance tokens on each other equipped [Bomb] Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.",
+    "name": "Ordnance Silos",
+    "xws": "ordnancesilos",
+    "points": 2,
+    "slot": "Bomb",
+    "ship": [
+      "B/SF-17 Bomber"
+    ],
+    "id": 335
+  },
+  {
+    "image": "upgrades/System/trajectory-simulator.png",
+    "text": "You may launch bombs using the ([Straight] 5) template instead of dropping them. You cannot launch bombs with the \"<strong>Action:</strong>\" header in this way.",
+    "name": "Trajectory Simulator",
+    "xws": "trajectorysimulator",
+    "points": 1,
+    "slot": "System",
+    "id": 336
+  },
+  {
+    "text": "When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.<br /><br />When defending, you may discard this card to reroll all of your defense dice.",
+    "name": "First Order Vanguard",
+    "xws": "firstordervanguard",
+    "unique": true,
+    "points": 2,
+    "slot": "Title",
+    "ship": [
+      "TIE Silencer"
+    ],
+    "id": 337
+  },
+  {
+    "image": "upgrades/Title/os-1-arsenal-loadout.png",
+    "text": "Your upgrade bar gains the [Torpedo] and [Missile] upgrade icons.<br /><br />You may perform attacks with [Torpedo] and [Missile] secondary weapons against ships you have locked even while you have a weapons disabled token.",
+    "name": "Os-1 Arsenal Loadout",
+    "xws": "os1arsenalloadout",
+    "points": 2,
+    "slot": "Title",
+    "ship": [
+      "Alpha-class Star Wing"
+    ],
+    "id": 338
+  },
+  {
+    "image": "upgrades/Cannon/jamming-beam.png",
+    "text": "<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, assign the defender 1 jam token. Then cancel <strong>all</strong> dice results.",
+    "name": "Jamming Beam",
+    "xws": "jammingbeam",
+    "points": 1,
+    "slot": "Cannon",
+    "range": "1-2",
+    "attack": 3,
+    "id": 339
+  },
+  {
+    "image": "upgrades/Cannon/linked-battery.png",
+    "text": "When attacking with a primary weapon or [Cannon] seconday weapon, you may reroll 1 attack die.",
+    "name": "Linked Battery",
+    "xws": "linkedbattery",
+    "limited": true,
+    "points": 2,
+    "slot": "Cannon",
+    "size": [
+      "small"
+    ],
+    "id": 340
+  },
+  {
+    "image": "upgrades/Elite/saturation-salvo.png",
+    "text": "After you perform an attack with a [Torpedo] or [Missile] secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the [Torpedo] or [Missile] Upgrade card must roll 1 attack die and suffer any damage ([Hit]) or critical damage ([Critical Hit]) rolled.",
+    "name": "Saturation Salvo",
+    "xws": "saturationsalvo",
+    "points": 1,
+    "slot": "Elite",
+    "id": 341
   }
 ]
