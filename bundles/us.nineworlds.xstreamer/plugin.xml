@@ -102,6 +102,11 @@
                relative="us.nineworlds.xstreamer.view.secondplayer"
                relationship="right">
          </view>
+         <view
+               id="org.eclipse.ui.views.PropertySheet"
+               relationship="bottom"
+               relative="us.nineworlds.xstreamer.view.general">
+         </view>
          
       </perspectiveExtension>
    </extension>
@@ -326,5 +331,20 @@
                id="toolbar.zoomout">
          </action>
       </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="us.nineworlds.xstreamer.model.PilotTreeNode"
+            class="us.nineworlds.xstreamer.property.PilotAdapterFactory">
+         <adapter type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="us.nineworlds.xstreamer.Startup">
+      </startup>
    </extension>
 </plugin>

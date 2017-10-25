@@ -20,7 +20,7 @@ public class PilotTreeNode extends TreeNode {
 		pilot = userObject;
 		upgrades = pilot.getUpgrades();
 	}
-
+	
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
