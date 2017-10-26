@@ -31,7 +31,6 @@ import us.nineworlds.iadata.enums.Factions;
 import us.nineworlds.iadata.util.IASpecLoader;
 import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.listeners.ArmySelectionChangeListener;
-import us.nineworlds.xstreamer.ia.listeners.UpdateDeploymentButtonSelectionListener;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
@@ -43,10 +42,6 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	protected ScrolledForm form;
 	public TreeViewer treeViewer;
 
-	public Label totalArmyPoints;
-	public Text health;
-	public Text speed;
-	public Text squadID;
 	public Text importArmyText;
 
 	@Override
@@ -59,7 +54,6 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		form.getBody().setLayout(layout);
 
 		createArmySection();
-		createDeploymentSection();
 		createImportSquadSection();
 		
 		getSite().setSelectionProvider(treeViewer);
@@ -68,44 +62,6 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		pageContent(parent);
 	}
 
-	private void createDeploymentSection() {
-		Section deploymentSection = toolkit.createSection(form.getBody(),
-				Section.TWISTIE | Section.DESCRIPTION | Section.TITLE_BAR);
-		deploymentSection.setText("Deployment Details");
-
-		deploymentSection.setExpanded(true);
-		deploymentSection.setDescription("Health and Speed.");
-		Composite shipClient = toolkit.createComposite(deploymentSection);
-		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 2;
-		gridLayout.makeColumnsEqualWidth = false;
-		shipClient.setLayout(gridLayout);
-		GridData playerSquadPointsData = new GridData();
-		playerSquadPointsData.grabExcessHorizontalSpace = true;
-		playerSquadPointsData.horizontalSpan = 2;
-
-		totalArmyPoints = toolkit.createLabel(shipClient, "Points: ");
-		totalArmyPoints.setLayoutData(playerSquadPointsData);
-
-		squadID = createField(shipClient, "Squad ID: ");
-		health = createField(shipClient, "Health: ");
-		speed = createField(shipClient, "Speed: ");
-
-		deploymentSection.setClient(shipClient);
-
-		Button updateButton = toolkit.createButton(shipClient, "Update", SWT.PUSH);
-		updateButton.addSelectionListener(new UpdateDeploymentButtonSelectionListener(this));
-	}
-
-	private Text createField(Composite client, String labelName) {
-		toolkit.createLabel(client, labelName);
-		Text field = toolkit.createText(client, "");
-		GridData textData = new GridData();
-		textData.minimumWidth = 30;
-		textData.widthHint = 30;
-		field.setLayoutData(textData);
-		return field;
-	}
 
 	private void createArmySection() {
 		Section squadSection = toolkit.createSection(form.getBody(),

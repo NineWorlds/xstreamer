@@ -10,10 +10,13 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import uky.article.imageviewer.views.ImageView;
+import us.nineworlds.iadata.command.CommandCard;
 import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.forms.AbstractPlayerFormPage;
+import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
+import us.nineworlds.xstreamer.ia.model.CommandCardTreeNode;
 import us.nineworlds.xstreamer.ia.model.DeploymentTreeNode;
 
 
@@ -34,9 +37,6 @@ public class ArmySelectionChangeListener implements ISelectionChangedListener {
 			if (structureSelection.getFirstElement() instanceof DeploymentTreeNode) {
 				DeploymentTreeNode deployment = (DeploymentTreeNode) structureSelection.getFirstElement();
 				Deployment p = (Deployment) deployment.getValue();
-				page.squadID.setText("");
-				page.health.setText(Integer.toString(p.getHealth()));					
-				page.speed.setText(Integer.toString(p.getSpeed()));
 				
 				DeploymentsLookup dbLookup = Activator.getDefault().getDeploymentsLookup();
 				Deployment foundDeployment = dbLookup.findDeploymentCard(p.getIaspecname(), p.getFaction().toString());
@@ -44,18 +44,40 @@ public class ArmySelectionChangeListener implements ISelectionChangedListener {
 					return;
 				}
 				
-				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				IViewPart view = page.findView("us.nineworlds.xstreamer.imageview");
-				if (view != null) {
-					ImageView imageView = (ImageView) view;
-					try {
-						imageView.imageCanvas.loadImage(new URL(foundDeployment.getImageurl()));
-					} catch (Exception ex) {
-						ex.printStackTrace();
-					}
-				}
+				IViewPart view = findImageViewer();
+				loadImage(foundDeployment.getImageurl(), view);
 			}
 			
+			if (structureSelection.getFirstElement() instanceof CommandCardTreeNode) {
+				CommandCardTreeNode node = (CommandCardTreeNode) structureSelection.getFirstElement();
+				CommandCard card = (CommandCard) node.getValue();
+				CommandCardLookup cardLookup = Activator.getDefault().getCommandCardLookup();
+				CommandCard commandCard = cardLookup.findCommandCard(card.getIaspecname(), card.getFaction().toString());
+				if (commandCard == null) {
+					return;
+				}
+				
+				IViewPart view = findImageViewer();
+				loadImage(commandCard.getImageurl(), view);				
+			}
+			
+		}
+	}
+
+	private IViewPart findImageViewer() {
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		IViewPart view = page.findView("us.nineworlds.xstreamer.imageview");
+		return view;
+	}
+
+	private void loadImage(String imageUrl, IViewPart view) {
+		if (view != null) {
+			ImageView imageView = (ImageView) view;
+			try {
+				imageView.imageCanvas.loadImage(new URL(imageUrl));
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
