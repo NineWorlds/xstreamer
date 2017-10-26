@@ -7,6 +7,8 @@ public class Upgrade {
 	private String xwsspecname;
 	
 	private boolean discarded = false;
+	
+	private int quantity = 1;
 
 	public String getType() {
 		return type;
@@ -38,6 +40,17 @@ public class Upgrade {
 	
 	public void attach() {
 		this.discarded = false;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+		if (quantity == 0) {
+			this.discarded = true;
+		}
 	}
 
 }

@@ -27,18 +27,34 @@ public class DeploymentPropertySource implements IPropertySource {
 	public IPropertyDescriptor[] getPropertyDescriptors() {
 		return new IPropertyDescriptor[] {
 				new TextPropertyDescriptor("health", "Health"),
-				new TextPropertyDescriptor("speed", "Speed")
+				new TextPropertyDescriptor("speed", "Speed"),
+				new TextPropertyDescriptor("units", "Units"),
+				new TextPropertyDescriptor("renforcement", "Unit Cost"),
+				new TextPropertyDescriptor("deploymentCost", "Deployment Cost")
 		};
 	}
 
 	@Override
 	public Object getPropertyValue(Object id) {
+				
 		if ("health".equals(id)) {
 			return deployment.getHealth();
 		}
 		
 		if ("speed".equals(id)) {
 			return deployment.getSpeed();
+		}
+		
+		if ("units".equals(id)) {
+			return deployment.getUnitsInGroup();
+		}
+		
+		if ("renforcement".equals(id)) {
+			return deployment.getReenforcementCost();
+		}
+		
+		if ("deploymentCost".equals(id)) {
+			return deployment.getDeploymentCost();
 		}
 		
 		return null;
@@ -63,7 +79,11 @@ public class DeploymentPropertySource implements IPropertySource {
 		
 		if ("speed".equals(id)) {
 			deployment.setSpeed(Integer.valueOf(newValue));
-		}		
+		}
+		
+		if ("units".equals(id)) {
+			deployment.setUnitsInGroup(Integer.valueOf(newValue));
+		}
 	}
 
 }

@@ -25,7 +25,8 @@ public class UpgradeTypePropertySource implements IPropertySource {
 
 	@Override
 	public IPropertyDescriptor[] getPropertyDescriptors() {
-		return new IPropertyDescriptor[] { new CheckboxPropertyDescriptor("discarded", "Discarded") };
+		return new IPropertyDescriptor[] { new CheckboxPropertyDescriptor("discarded", "Discarded"),
+				new TextPropertyDescriptor("quantity", "Quantity")};
 	}
 
 	@Override
@@ -33,7 +34,11 @@ public class UpgradeTypePropertySource implements IPropertySource {
 		if ("discarded".equals(id)) {
 			return upgrade.isDiscarded();
 		}
-
+		
+		if ("quantity".equals(id)) {
+			return upgrade.getQuantity();
+		}
+			
 		return null;
 	}
 
@@ -51,6 +56,10 @@ public class UpgradeTypePropertySource implements IPropertySource {
 	public void setPropertyValue(Object id, Object value) {
 		if ("discarded".equals(id) && value instanceof Boolean) {
 			upgrade.toggleDiscardFlag(Boolean.valueOf((Boolean) value));
+		}
+		
+		if ("quantity".equals(id)) {
+			upgrade.setQuantity(Integer.valueOf((String) value));
 		}
 	}
 

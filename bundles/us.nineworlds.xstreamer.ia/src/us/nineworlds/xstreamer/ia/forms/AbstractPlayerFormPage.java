@@ -160,6 +160,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 								deployment.setHealth(deploymentEntry.getHealth());
 								deployment.setSpeed(deploymentEntry.getSpeed());
 								deployment.setDeploymentCost(deploymentEntry.getDeploymentCost());
+								deployment.setUnitsInGroup(deploymentEntry.getUnitsInGroup());
+								deployment.setReenforcementCost(deploymentEntry.getReenforcementCost());
 							}
 							if (deployment.getName() == null && deploymentEntry == null) {
 								deployment.setName(deployment.getIaspecname());
