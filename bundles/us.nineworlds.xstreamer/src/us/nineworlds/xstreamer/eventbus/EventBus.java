@@ -16,5 +16,12 @@ public class EventBus {
 		return eventBus;
 	}
 	
+	public void register(Object eventSubscriber) {
+		eventdispatcher.addHandler(eventSubscriber);
+	}
 	
+	public void post(Object event) {
+		eventdispatcher.publish(event);
+	}
+		
 }

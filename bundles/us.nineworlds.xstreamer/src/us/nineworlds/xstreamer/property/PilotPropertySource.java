@@ -6,14 +6,18 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 
 import com.github.xws.Pilot;
 
+import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 
 public class PilotPropertySource implements IPropertySource {
 
 	private Pilot pilot;
+	private EventBus eventBus;
 	
 	public PilotPropertySource(PilotTreeNode pilot) {
 		this.pilot = (Pilot) pilot.getValue();
+		eventBus = EventBus.getInstance();
 	}
 
 	@Override
@@ -52,6 +56,10 @@ public class PilotPropertySource implements IPropertySource {
 		return null;
 	}
 
+	private void postGenerateJobEvent() {
+		eventBus.post(new GenerateSquadJobEvent());
+	}
+
 	@Override
 	public boolean isPropertySet(Object id) {
 		return false;
@@ -65,21 +73,30 @@ public class PilotPropertySource implements IPropertySource {
 	@Override
 	public void setPropertyValue(Object id, Object value) {
 		String newValue = (String) value;
+		boolean postJob = false;
 		if ("skill".equals(id)) {
+			postJob = true;
 			pilot.setPilotSkill(newValue);
 		}
 		
 		if ("id".equals(id)) {
+			postJob = true;
 			pilot.setPilotId(newValue);
 			
 		}
 		
 		if ("hull".equals(id)) {
+			postJob = true;
 			pilot.setHull(Integer.parseInt(newValue));
 		}
 		
 		if ("shields".equals(id)) {
+			postJob = true;
 			pilot.setShields(Integer.parseInt(newValue));
+		}
+		
+		if (postJob) {
+			postGenerateJobEvent();
 		}
 	}
 

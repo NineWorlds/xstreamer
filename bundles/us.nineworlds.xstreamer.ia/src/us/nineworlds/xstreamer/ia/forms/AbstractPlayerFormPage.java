@@ -61,6 +61,9 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		createArmySection();
 		createDeploymentSection();
 		createImportSquadSection();
+		
+		getSite().setSelectionProvider(treeViewer);
+
 
 		pageContent(parent);
 	}

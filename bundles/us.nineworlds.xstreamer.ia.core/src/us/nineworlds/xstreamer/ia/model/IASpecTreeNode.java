@@ -30,11 +30,12 @@ public class IASpecTreeNode extends TreeNode {
 	
 	@Override
 	public TreeNode[] getChildren() {
-		List<DeploymentTreeNode> treeNodes = new ArrayList<>();
-		for (Deployments deployments : playerModel.getArmy().getDeployments()) {
-			DeploymentTreeNode node = new DeploymentTreeNode(deployments.getDeployment());
-			treeNodes.add(node);
-		}
+		
+		List<TreeNode> treeNodes = new ArrayList<>();
+		
+		treeNodes.add(new ArmyTreeNode(playerModel.getArmy().getDeployments()));
+		treeNodes.add(new CommandCardsTreeNode(playerModel.getCommandCards()));
+				
 		return treeNodes.toArray(new TreeNode[treeNodes.size()]);
 	}
 }

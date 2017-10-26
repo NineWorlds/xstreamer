@@ -48,20 +48,6 @@ public class SquadSelectionChangeListener implements ISelectionChangedListener {
 			if (structureSelection.getFirstElement() instanceof PilotTreeNode) {
 				PilotTreeNode pilot = (PilotTreeNode) structureSelection.getFirstElement();
 				Pilot p = (Pilot) pilot.getValue();
-				page.pilotId.setText(p.getPilotId() != null ? p.getPilotId() : "");
-				page.pilotSkillText.setText(p.getPilotSkill() != null ? p.getPilotSkill() : "");
-				if (p.getHull() != null) {
-					page.hullText.setText(Integer.toString(p.getHull()));					
-				} else {
-					page.hullText.setText("");
-				}
-				if (p.getShields() != null) {
-					page.shieldText.setText(Integer.toString(p.getShields()));					
-				} else {
-					page.shieldText.setText("");
-				}
-				page.totalShipPoints.setText("Points: " + Integer.toString(p.getPoints()));
-				page.totalShipPoints.getParent().requestLayout();
 				
 				if (view != null) {
 					loadPilotImage(view, dataBundle, p);

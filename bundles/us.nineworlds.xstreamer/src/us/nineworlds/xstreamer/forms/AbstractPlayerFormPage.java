@@ -23,6 +23,9 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.eventbus.EventHandler;
+import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.forms.listeners.SquadSelectionChangeListener;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.jobs.StringWriterJob;
@@ -36,12 +39,21 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	protected ScrolledForm form;
 	TreeViewer treeViewer;
 
-	public Label totalShipPoints;
-	public Text shieldText;
-	public Text hullText;
-	public Text pilotSkillText;
-	public Text pilotId;
 	public Text importSquadText;
+	private EventBus eventBus;
+	
+	public AbstractPlayerFormPage() {
+		super();
+		
+		eventBus = EventBus.getInstance();
+		eventBus.register(this);
+	}
+
+	@EventHandler
+	public void updateJob(GenerateSquadJobEvent event) {
+		GenerateSquadJob job = new GenerateSquadJob("generateSquad", getPlayerModel(), playerFileName(), squadTemplate());
+		job.schedule();
+	}
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -53,52 +65,11 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		form.getBody().setLayout(layout);
 
 		createSquadSection();
-		createShipSection();
 		createImportSquadSection();
 		
 		getSite().setSelectionProvider(treeViewer);
 
 		pageContent(parent);
-	}
-
-	private void createShipSection() {
-		Section shipSection = toolkit.createSection(form.getBody(),
-				Section.TWISTIE | Section.DESCRIPTION | Section.TITLE_BAR);
-		shipSection.setText("Ship and Squad Details");
-
-		shipSection.setExpanded(true);
-		shipSection.setDescription("Shields, Hull, and other ship data.");
-		Composite shipClient = toolkit.createComposite(shipSection);
-		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 2;
-		gridLayout.makeColumnsEqualWidth = false;
-		shipClient.setLayout(gridLayout);
-		GridData playerSquadPointsData = new GridData();
-		playerSquadPointsData.grabExcessHorizontalSpace = true;
-		playerSquadPointsData.horizontalSpan = 2;
-
-		totalShipPoints = toolkit.createLabel(shipClient, "Points: ");
-		totalShipPoints.setLayoutData(playerSquadPointsData);
-
-		pilotSkillText = createField(shipClient, "Skill: ");
-		pilotId = createField(shipClient, "Unique Id: ");
-		hullText = createField(shipClient, "Hull: ");
-		shieldText = createField(shipClient, "Shields: ");
-
-		shipSection.setClient(shipClient);
-
-		Button updateButton = toolkit.createButton(shipClient, "Update", SWT.PUSH);
-		updateButton.addSelectionListener(new UpdatePilotButtonSelectionListener(this));
-	}
-
-	private Text createField(Composite client, String labelName) {
-		toolkit.createLabel(client, labelName);
-		Text field = toolkit.createText(client, "");
-		GridData textData = new GridData();
-		textData.minimumWidth = 30;
-		textData.widthHint = 30;
-		field.setLayoutData(textData);
-		return field;
 	}
 
 	private void createSquadSection() {
@@ -191,9 +162,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 						XwsSpec parseXws = xwsFile.parseXws(json);
 						resetPlayerModel(parseXws);
 						refreshTree();
-						GenerateSquadJob job = new GenerateSquadJob("importxws", getPlayerModel(), playerFileName(),
-								squadTemplate());
-						job.schedule();
+						
+						eventBus.post(new GenerateSquadJobEvent());
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}

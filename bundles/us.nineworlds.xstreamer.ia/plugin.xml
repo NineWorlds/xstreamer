@@ -36,7 +36,12 @@
                relative="us.nineworlds.xstreamer.view.ia.secondplayer"
                relationship="right">
          </view>
-         
+         <view
+               id="org.eclipse.ui.views.PropertySheet"
+               relationship="bottom"
+               relative="us.nineworlds.xstreamer.view.general">
+         </view>
+                  
       </perspectiveExtension>
    </extension>
    <extension
@@ -68,6 +73,29 @@
             restorable="true">
       </view>
       
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="us.nineworlds.xstreamer.ia.model.DeploymentTreeNode"
+            class="us.nineworlds.xstreamer.ia.property.DeploymentAdapterFactory">
+         <adapter type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+      <factory
+            adaptableType="us.nineworlds.xstreamer.ia.model.CommandCardTreeNode"
+            class="us.nineworlds.xstreamer.ia.property.CommandCardAdapterFactory">
+         <adapter type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+      
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="us.nineworlds.xstreamer.ia.Startup">
+      </startup>
    </extension>
 
 </plugin>
