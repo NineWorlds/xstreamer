@@ -17,6 +17,7 @@ import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
 
 import com.github.xws.Pilot;
+import com.github.xws.Upgrade;
 import com.github.xws.Upgrades;
 
 import uky.article.imageviewer.views.ImageView;
@@ -68,17 +69,16 @@ public class SquadSelectionChangeListener implements ISelectionChangedListener {
 			} else if (structureSelection instanceof TreeSelection) {
 				try {
 					UpgradeTypeTreeNode upgradeNode = (UpgradeTypeTreeNode) structureSelection.getFirstElement();
-					loadUpgradeImage(view, dataBundle, (String)upgradeNode.getValue());
+					loadUpgradeImage(view, dataBundle, (Upgrade)upgradeNode.getValue());
 				} catch (ClassCastException ex) {
-					
 				}
 				
 			}
-		};
+		}
 	}
 	
-	private void loadUpgradeImage(IViewPart view, Bundle dataBundle, String xwsupgradeName) {
-		com.github.guidokessels.ships.Upgrades upgrade = UpgradeLookup.getInstance().findShip(xwsupgradeName);
+	private void loadUpgradeImage(IViewPart view, Bundle dataBundle, Upgrade upg) {
+		com.github.guidokessels.ships.Upgrades upgrade = UpgradeLookup.getInstance().findUpgrade(upg.getXwsspecname());
 		if (upgrade == null) {
 			return;
 		}

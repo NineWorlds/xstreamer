@@ -1,7 +1,9 @@
 
 package com.github.xws;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -17,9 +19,12 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 })
 public class Upgrades {
-
+	
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    
+    @JsonIgnore
+    private List<Upgrade> allUpgrades = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -34,6 +39,37 @@ public class Upgrades {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+        
+        if (value instanceof List) {
+        	List<String> upgrades = (List<String>) value;
+        	for (String upgrade : upgrades) {
+        		Upgrade upg = new Upgrade();
+        		upg.setType(name);
+        		upg.setXwsspecname(upgrade);
+        		upg.toggleDiscardFlag(false);
+        		allUpgrades.add(upg);
+        	}
+        }
+    }
+    
+    public Upgrade findUpgrade(String xwsspecname) {
+    	for(Upgrade upgrade : allUpgrades) {
+    		if (upgrade.getXwsspecname().equals(xwsspecname)) {
+    			return upgrade;
+    		}
+    	}
+    	return null;
+    }
+    
+    public void updateUpgrade(Upgrade upgrade) {
+    	for(int i = 0; i < allUpgrades.size(); i++) {
+    		Upgrade upg = allUpgrades.get(i);
+    		if (upg.getXwsspecname().equals(upgrade.getXwsspecname())) {
+    			upg.toggleDiscardFlag(upgrade.isDiscarded());
+    			return;
+    		}
+    	}
+    	
     }
 
     @Override

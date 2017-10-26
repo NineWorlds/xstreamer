@@ -340,6 +340,13 @@
          <adapter type="org.eclipse.ui.views.properties.IPropertySource">
          </adapter>
       </factory>
+      <factory
+            adaptableType="us.nineworlds.xstreamer.model.UpgradeTypeTreeNode"
+            class="us.nineworlds.xstreamer.property.UpgradeTypeAdapterFactory">
+         <adapter type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+      
    </extension>
    <extension
          point="org.eclipse.ui.startup">

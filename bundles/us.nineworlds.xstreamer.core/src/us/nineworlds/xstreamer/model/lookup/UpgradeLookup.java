@@ -21,7 +21,7 @@ public class UpgradeLookup {
       this.upgrades = upgrades;
    }
    
-   public Upgrades findShip(String xwsname) {
+   public Upgrades findUpgrade(String xwsname) {
       for(Upgrades upgrade : upgrades) {
          if (upgrade.getXws().equals(xwsname)) {
             return upgrade;

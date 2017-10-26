@@ -44,7 +44,7 @@ public class PilotTreeNode extends TreeNode {
 	public TreeNode[] getChildren() {
 		List<UpgradeTreeNode> upgrades = new ArrayList<>();
 		for (Entry<String, Object> entry : this.upgrades.getAdditionalProperties().entrySet()) {
-			UpgradeTreeNode upgradesTreeNode = new UpgradeTreeNode(entry.getKey(), (List<String>) entry.getValue());
+			UpgradeTreeNode upgradesTreeNode = new UpgradeTreeNode(entry.getKey(), (List<String>) entry.getValue(), this.upgrades);
 			upgrades.add(upgradesTreeNode);
 		}
 		
