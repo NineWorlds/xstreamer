@@ -2,14 +2,23 @@
     <head>
 		<meta charset="UTF-8"/>
 		<style>
+			body { margin: 5px;
+			   color: #FFFFFF;
+			   text-shadow: 4px 1px #000000;
+			   text-align: left;
+			   font-size: 100%;
+			   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			   font-style: normal;
+			 }
+			 
 			.box {
-				width: 4px;
-				height: 4px;
-				padding: 4px;
+				width: 15px;
+				height: 15px;
 				float: left;
 				border-style: solid;
 				border-color: white;
 				border-width: 1px;
+				vertical-align: text-bottom;
 			}
 			
 			.spacer {
@@ -27,12 +36,12 @@
 			}
 			
 			.green {
-				backgroud: green;
+				background: green;
 			}
 			
 			.yellow {
-				background: yellow;
-			}
+				background: red;
+			}			
 			
 			.black {
 				background: black;
@@ -46,105 +55,106 @@
 				float: left;
 			}
 			
+			.vitals {
+				clear: both;
+				margin-top: 1px;
+			}
+			
+						
+			.melee {
+				font-family: "ImperialAssaultSymbols";			
+				font-size: 12pt;
+				padding-right: 5px;
+				color: white;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			.range {
+				font-family: "ImperialAssaultSymbols";			
+				font-size: 12pt;
+				padding-right: 5px;
+				color: white;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			.defense {
+				font-family: "ImperialAssaultSymbols";			
+				font-size: 12pt;
+				padding-right: 5px;
+				color: white;			
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			.mercenary {
+				font-family: "ImperialAssaultSymbols";			
+				font-size: 12pt;
+				padding-right: 5px;
+				color: green;
+			}
+			
+			.limit {
+				padding-left: 10px;
+			}
+			
+			.deploymentName {
+				font-weight: bold;
+			}
+						
 			#deployment {
 				padding-bottom: 5px;
 			}
 			
+			#army {
+				padding:10px;
+				height: 100%; 
+				background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)); 			
+			}
+						
 		</style>
 	</head>
 	
-	<body style="background-color: grey">
+	<body>
 	    <div id="army">
+			<hr/>
 		   <div id="deployment">
-		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
+		      <div id="name"><span class="mercenary">W</span><span class="deploymentName">Rancor</span> <span>(10)</span></div>
 			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
+			     <div class="left-text range">O</div>
 				 <div class="box red">&nbsp;</div>
 				 <div class="spacer">&nbsp;</div>
 				 <div class="box blue">&nbsp;</div>
-				 <div class="left-text">&nbsp;D:</div>
+				 <div class="left-text defense">&nbsp;&nbsp;E</div>
 				 <div class="box black">&nbsp;</div>
 				 <div class="spacer">&nbsp;</div>
 				 <div class="box white">&nbsp;</div>
 				 <br/>
 			  </div>
-			  <div id="vitals">
-				 <span>16&#10084; 4S 3U</span>
-			  </div>
+			  <div class="vitals">16&#10084; 4S 3U</div>
 		   </div>
 		   <div id="deployment">
 		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
 			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
+			     <div class="left-text ia-symbols melee">P</div>
 				 <div class="box red">&nbsp;</div>
 				 <div class="spacer">&nbsp;</div>
 				 <div class="box blue">&nbsp;</div>
-				 <div Class="spacer">&nbsp;D:</div>
-				 <br/>
+				 <div class="spacer ia-symbols">&nbsp;R</div>
+				 </br>
 			  </div>
-			  <div id="vitals">
-				 <span>16H 4S</span>
-			  </div>
-		   </div>
-		   <div id="deployment">
-		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
-			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
-				 <div class="box red">&nbsp;</div>
-				 <div class="spacer">&nbsp;</div>
-				 <div class="box blue">&nbsp;</div>
-				 <div Class="spacer">&nbsp;D:</div>
-				 <br/>
-			  </div>
-			  <div id="vitals">
-				 <span>16H 4S</span>
+			  <div class="vitals">
+				 <span>16&#10084; 4S</span>
 			  </div>
 		   </div>
-		   <div id="deployment">
-		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
-			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
-				 <div class="box red">&nbsp;</div>
-				 <div class="spacer">&nbsp;</div>
-				 <div class="box blue">&nbsp;</div>
-				 <div Class="spacer">&nbsp;D:</div>
-				 <br/>
-			  </div>
-			  <div id="vitals">
-				 <span>16H 4S</span>
-			  </div>
-		   </div>
-		   <div id="deployment">
-		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
-			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
-				 <div class="box red">&nbsp;</div>
-				 <div class="spacer">&nbsp;</div>
-				 <div class="box blue">&nbsp;</div>
-				 <div Class="spacer">&nbsp;D:</div>
-				 <br/>
-			  </div>
-			  <div id="vitals">
-				 <span>16H 4S</span>
-			  </div>
-		   </div>
-		   <div id="deployment">
-		      <div id="name"><span>Rancor</span> <span>(10)</span></div>
-			  <div id="attack_defense">
-			     <div class="left-text">A:</div>
-				 <div class="box red">&nbsp;</div>
-				 <div class="spacer">&nbsp;</div>
-				 <div class="box blue">&nbsp;</div>
-				 <div Class="spacer">&nbsp;D:</div>
-				 <br/>
-			  </div>
-			  <div id="vitals">
-				 <span>16H 4S</span>
-			  </div>
-		   </div>
-		   
+		<hr/>
+		<div id="commandCards">
+			<div class="cardName">Ferocity : 1</div>
 		</div>
-	
+		<div id="commandCards">
+			<div class="cardName">Ferocity : 1</div>
+		</div>		
+
+		</div>
 	</body>
+
 
 </html>

@@ -195,7 +195,7 @@
         "restrictions": [
           "brawler"
         ],
-        "name": "closethegap",
+        "name": "Close the Gap",
         "cost": 2,
         "limit": 1
       }
@@ -2216,6 +2216,19 @@
         "cost": 2,
         "limit": 1
       }
-    }    
+    },
+    {
+      "card": {
+        "iaspecName": "advancewarning",
+        "faction": "any",
+        "imageurl": "https://images-cdn.fantasyflightgames.com/filer_public/29/d6/29d6425d-a52e-41d5-84e4-9478034edcc7/swi43-advance-warning.png",
+        "restrictions": [
+          "leader"
+        ],
+        "name": "Advance Warning",
+        "cost": 0,
+        "limit": 1
+      }
+    }       
   ]
 }

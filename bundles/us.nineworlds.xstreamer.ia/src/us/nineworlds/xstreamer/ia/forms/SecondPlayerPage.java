@@ -34,7 +34,7 @@ public class SecondPlayerPage extends AbstractPlayerFormPage {
 
 	@Override
 	public IASpec getPlayerModel() {
-		return us.nineworlds.xstreamer.ia.core.Activator.getDefault().getPlayer1Model();
+		return us.nineworlds.xstreamer.ia.core.Activator.getDefault().getPlayer2Model();
 	}
 
 	@Override

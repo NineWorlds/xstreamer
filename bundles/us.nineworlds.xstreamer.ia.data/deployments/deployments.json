@@ -5259,7 +5259,7 @@
     },
     {
       "deployment": {
-        "iaspecName": "temporaryalliance",
+        "iaspecName": "temporaryallianceempire",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Temporary%20Alliance%20(E).png",
         "faction": "imperial",
         "elite": 0,
@@ -7827,7 +7827,7 @@
     },
     {
       "deployment": {
-        "iaspecName": "tempoaryalliance",
+        "iaspecName": "tempoaryalliancescum",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Temporary%20Alliance%20(M).png",
         "faction": "mercenary",
         "elite": 0,
