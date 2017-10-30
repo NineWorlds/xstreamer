@@ -21,8 +21,8 @@ public class Pilot {
 
 	private boolean shieldsLoaded = false;
 	private boolean hullLoaded = false;
-	
 	private String xwsname;
+	private boolean criticalDamage = false;
 
 	@JsonProperty("multisection_id")
 	private Integer multisectionId;
@@ -261,6 +261,7 @@ public class Pilot {
 	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
 	}
+	
 
 	public String getPilotId() {
 		return pilotId;
@@ -281,21 +282,37 @@ public class Pilot {
 	public String getXwsName() {
 		return xwsname;
 	}
+	
+	
+
+	public boolean hasCriticalDamage() {
+		return criticalDamage;
+	}
+
+	public void setCriticalDamage(boolean criticalDamage) {
+		this.criticalDamage = criticalDamage;
+	}
 
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
+		return "Pilot [shipsLookup=" + shipsLookup + ", shieldsLoaded=" + shieldsLoaded + ", hullLoaded=" + hullLoaded
+				+ ", xwsname=" + xwsname + ", criticalDamage=" + criticalDamage + ", multisectionId=" + multisectionId
+				+ ", points=" + points + ", name=" + name + ", ship=" + ship + ", hull=" + hull + ", shields=" + shields
+				+ ", upgrades=" + upgrades + ", vendor=" + vendor + ", pilotId=" + pilotId + ", pilotSkill="
+				+ pilotSkill + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + (criticalDamage ? 1231 : 1237);
 		result = prime * result + ((hull == null) ? 0 : hull.hashCode());
 		result = prime * result + (hullLoaded ? 1231 : 1237);
 		result = prime * result + ((multisectionId == null) ? 0 : multisectionId.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((pilotId == null) ? 0 : pilotId.hashCode());
+		result = prime * result + ((pilotSkill == null) ? 0 : pilotSkill.hashCode());
 		result = prime * result + ((points == null) ? 0 : points.hashCode());
 		result = prime * result + ((shields == null) ? 0 : shields.hashCode());
 		result = prime * result + (shieldsLoaded ? 1231 : 1237);
@@ -303,6 +320,7 @@ public class Pilot {
 		result = prime * result + ((shipsLookup == null) ? 0 : shipsLookup.hashCode());
 		result = prime * result + ((upgrades == null) ? 0 : upgrades.hashCode());
 		result = prime * result + ((vendor == null) ? 0 : vendor.hashCode());
+		result = prime * result + ((xwsname == null) ? 0 : xwsname.hashCode());
 		return result;
 	}
 
@@ -315,6 +333,8 @@ public class Pilot {
 		if (getClass() != obj.getClass())
 			return false;
 		Pilot other = (Pilot) obj;
+		if (criticalDamage != other.criticalDamage)
+			return false;
 		if (hull == null) {
 			if (other.hull != null)
 				return false;
@@ -336,6 +356,11 @@ public class Pilot {
 			if (other.pilotId != null)
 				return false;
 		} else if (!pilotId.equals(other.pilotId))
+			return false;
+		if (pilotSkill == null) {
+			if (other.pilotSkill != null)
+				return false;
+		} else if (!pilotSkill.equals(other.pilotSkill))
 			return false;
 		if (points == null) {
 			if (other.points != null)
@@ -368,6 +393,11 @@ public class Pilot {
 			if (other.vendor != null)
 				return false;
 		} else if (!vendor.equals(other.vendor))
+			return false;
+		if (xwsname == null) {
+			if (other.xwsname != null)
+				return false;
+		} else if (!xwsname.equals(other.xwsname))
 			return false;
 		return true;
 	}

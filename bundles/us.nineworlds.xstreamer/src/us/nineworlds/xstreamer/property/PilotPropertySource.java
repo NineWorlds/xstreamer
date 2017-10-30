@@ -31,7 +31,8 @@ public class PilotPropertySource implements IPropertySource {
 				new TextPropertyDescriptor("skill", "Skill"),
 				new TextPropertyDescriptor("id", "Unique ID"),
 				new TextPropertyDescriptor("hull", "Hull"),
-				new TextPropertyDescriptor("shields", "Shields")
+				new TextPropertyDescriptor("shields", "Shields"),
+				new CheckboxPropertyDescriptor("critical", "Critical Damage")
 		};
 	}
 
@@ -51,6 +52,10 @@ public class PilotPropertySource implements IPropertySource {
 		
 		if ("shields".equals(id)) {
 			return pilot.getShields().toString();
+		}
+		
+		if ("critical".equals(id)) {
+			return pilot.hasCriticalDamage();
 		}
 		
 		return null;
@@ -93,6 +98,10 @@ public class PilotPropertySource implements IPropertySource {
 		if ("shields".equals(id)) {
 			postJob = true;
 			pilot.setShields(Integer.parseInt(newValue));
+		}
+		
+		if ("critical".equals(id) && value instanceof Boolean) {
+			pilot.setCriticalDamage(Boolean.valueOf((Boolean) value));
 		}
 		
 		if (postJob) {
