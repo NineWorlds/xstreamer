@@ -1,5 +1,7 @@
 package us.nineworlds.xstreamer.forms;
 
+import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
@@ -21,8 +23,11 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
+import com.github.guidokessels.ships.Upgrades;
+import com.github.xws.Pilot;
 import com.github.xws.XwsSpec;
 
+import us.nineworlds.xstreamer.core.Activator;
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.eventbus.EventHandler;
 import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
@@ -32,6 +37,8 @@ import us.nineworlds.xstreamer.jobs.StringWriterJob;
 import us.nineworlds.xstreamer.model.ImportPlayerFile;
 import us.nineworlds.xstreamer.model.SquadContentProvider;
 import us.nineworlds.xstreamer.model.SquadLabelProvider;
+import us.nineworlds.xstreamer.model.lookup.PilotLookup;
+import us.nineworlds.xstreamer.model.lookup.UpgradeLookup;
 
 public abstract class AbstractPlayerFormPage extends ViewPart {
 
@@ -160,6 +167,21 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 					ImportPlayerFile xwsFile = new ImportPlayerFile();
 					try {
 						XwsSpec parseXws = xwsFile.parseXws(json);
+						
+						List<Pilot> pilots = parseXws.getPilots();
+						PilotLookup pilotLookup = PilotLookup.getInstance();
+						for (Pilot pilot : pilots) {
+							com.github.guidokessels.ships.Pilot actualPilot = pilotLookup.lookupPilotValue(pilot.getXwsName());
+							if (actualPilot != null) {
+								Integer skill = Integer.valueOf(actualPilot.getSkill());
+								com.github.xws.Upgrades upgrades = pilot.getUpgrades();
+								if (upgrades.findUpgrade("veteraninstincts") != null) {
+									skill = skill + 2;
+								}
+								pilot.setPilotSkill(Integer.toString(skill));
+							}
+						}
+						
 						resetPlayerModel(parseXws);
 						refreshTree();
 						
