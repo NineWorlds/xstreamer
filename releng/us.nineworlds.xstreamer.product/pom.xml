@@ -22,6 +22,9 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<includeAllDependencies>true</includeAllDependencies>
+					<profileProperties>
+					  	<macosx-bundle>true</macosx-bundle>
+					</profileProperties>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -39,7 +42,7 @@
 					      <id>us.nineworlds.xstreamer.xstreamer</id>
 					      <rootFolder>xstreamer</rootFolder>
 					      <rootFolders>
-						  <macosx>XStreamer.app</macosx>
+						  	<macosx>XStreamer.app</macosx>
 					      </rootFolders>
 					   </product>
 					</products>
