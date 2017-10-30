@@ -23,10 +23,10 @@
 				<configuration>
 					<includeAllDependencies>true</includeAllDependencies>
 					<profileProperties>
-					  	<macosx-bundle>true</macosx-bundle>
+					  	<macosx-bundled>true</macosx-bundled>
 					</profileProperties>
-				</configuration>
-			</plugin>
+ 				</configuration>
+ 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-director-plugin</artifactId>
