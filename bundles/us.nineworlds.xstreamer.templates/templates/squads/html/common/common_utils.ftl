@@ -28,27 +28,27 @@
 
 <#function upgradeIconMarkup upgradeType>
   <#assign markup>
-    <span class="upgrade-type-symbol">
+    <i class="xwing-miniatures-font 
      <#switch upgradeType>
-  		<#case "amd">A<#break>
-  		<#case "bomb">B<#break>
-  		<#case "cannon">C<#break>
-  		<#case "cargo">G<#break>
-  		<#case "crew">W<#break>
-     	<#case "ept">E<#break>
-     	<#case "hardpoint">H<#break>
-     	<#case "illicit">I<#break>
-  		<#case "missile">M<#break>
-  		<#case "mod">m<#break>
-  		<#case "samd">V<#break>
-  		<#case "system">S<#break>
-  		<#case "team">T<#break>
-  		<#case "tech">X<#break>
-  		<#case "title">t<#break>
-  		<#case "torpedo">P<#break>
-  		<#case "turret">U<#break>
-     </#switch>
-     </span>
+  		<#case "amd"> xwing-miniatures-font-astromech<#break>
+  		<#case "bomb"> xwing-miniatures-font-bomb<#break>
+  		<#case "cannon"> xwing-miniatures-font-cannon<#break>
+  		<#case "cargo"> xwing-miniatures-font-cargo<#break>
+  		<#case "crew"> xwing-miniatures-font-crew<#break>
+     	<#case "ept"> xwing-miniatures-font-elite<#break>
+     	<#case "hardpoint"> xwing-miniatures-font-hardpoint<#break>
+     	<#case "illicit"> xwing-miniatures-font-illicit<#break>
+  		<#case "missile"> xwing-miniatures-font-missile<#break>
+  		<#case "mod"> xwing-miniatures-font-modification<#break>
+  		<#case "samd"> xwing-miniatures-font-salvagedastromech<#break>
+  		<#case "system"> xwing-miniatures-font-system<#break>
+  		<#case "team"> xwing-miniatures-font-team<#break>
+  		<#case "tech"> xwing-miniatures-font-tech<#break>
+  		<#case "title"> xwing-miniatures-font-title<#break>
+  		<#case "torpedo"> xwing-miniatures-font-torpedo<#break>
+  		<#case "turret"> xwing-miniatures-font-turret<#break>
+     </#switch>">
+     </i>
   </#assign>
   <#return markup>
 </#function>
