@@ -77,31 +77,35 @@ public class PilotPropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
-		String newValue = (String) value;
 		boolean postJob = false;
-		if ("skill".equals(id)) {
-			postJob = true;
-			pilot.setPilotSkill(newValue);
-		}
 		
-		if ("id".equals(id)) {
-			postJob = true;
-			pilot.setPilotId(newValue);
+		if (value instanceof String) {
+			String newValue = (String) value;
+			if ("skill".equals(id)) {
+				postJob = true;
+				pilot.setPilotSkill(newValue);
+			}
 			
-		}
-		
-		if ("hull".equals(id)) {
-			postJob = true;
-			pilot.setHull(Integer.parseInt(newValue));
-		}
-		
-		if ("shields".equals(id)) {
-			postJob = true;
-			pilot.setShields(Integer.parseInt(newValue));
-		}
-		
-		if ("critical".equals(id) && value instanceof Boolean) {
-			pilot.setCriticalDamage(Boolean.valueOf((Boolean) value));
+			if ("id".equals(id)) {
+				postJob = true;
+				pilot.setPilotId(newValue);
+				
+			}
+			
+			if ("hull".equals(id)) {
+				postJob = true;
+				pilot.setHull(Integer.parseInt(newValue));
+			}
+			
+			if ("shields".equals(id)) {
+				postJob = true;
+				pilot.setShields(Integer.parseInt(newValue));
+			}			
+		} else {
+			if ("critical".equals(id) && value instanceof Boolean) {
+				postJob = true;
+				pilot.setCriticalDamage(Boolean.valueOf((Boolean) value));
+			}			
 		}
 		
 		if (postJob) {
