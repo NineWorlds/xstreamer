@@ -30,7 +30,6 @@ Import-Package: org.apache.commons.lang,
 Bundle-Activator: us.nineworlds.xstreamer.Activator
 Bundle-ActivationPolicy: lazy
 Export-Package: schemas,
- uky.article.imageviewer.actions,
  uky.article.imageviewer.views,
  us.nineworlds.xstreamer,
  us.nineworlds.xstreamer.eventbus,

@@ -1141,7 +1141,7 @@
           "trooper",
           "guardian"
         ],
-        "name": "readyweapons",
+        "name": "Ready Weapons",
         "cost": 0,
         "limit": 1
       }
@@ -1604,13 +1604,13 @@
     },
     {
       "card": {
-        "iaspecName": "wookierage",
+        "iaspecName": "wookieerage",
         "faction": "any",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Chewbacca/Wookie%20Rage.png",
         "restrictions": [
           "wookiee"
         ],
-        "name": "Wookie Rage",
+        "name": "Wookiee Rage",
         "cost": 2,
         "limit": 1
       }
@@ -2229,6 +2229,21 @@
         "cost": 0,
         "limit": 1
       }
+    },
+    {
+      "card": {
+        "iaspecName": "armedescort",
+        "faction": "any",
+        "imageurl": "http://tabletopadmiral.com/static/main/images/Heart%20of%20the%20Empire/Armed%20Escort.png",
+        "restrictions": [
+          "vehicle",
+          "droid"
+        ],
+        "name": "Armed Escort",
+        "cost": 1,
+        "limit": 1
+      }
     }       
+           
   ]
 }

@@ -255,6 +255,41 @@
             id="us.nineworlds.xstreamer.donate"
             name="Donate">
       </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewOpenHandler"
+            id="us.nineworlds.xstreamer.imageview.open"
+            name="Open">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewFitHandler"
+            id="us.nineworlds.xstreamer.imageview.fit"
+            name="Fit">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewRotateHandler"
+            id="us.nineworlds.xstreamer.imageview.rotate"
+            name="Rotate">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewSaveAsHandler"
+            id="us.nineworlds.xstreamer.imageview.saveas"
+            name="Save As">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewShowOriginalHandler"
+            id="us.nineworlds.xstreamer.imageview.originalsize"
+            name="Original Size">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewZoomInHandler"
+            id="us.nineworlds.xstreamer.imageview.zoomin"
+            name="Zoom In">
+      </command>
+      <command
+            defaultHandler="uky.article.imageviewer.handlers.ImageViewZoomOutHandler"
+            id="us.nineworlds.xstreamer.imageview.zoomout"
+            name="Zoom Out">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -262,75 +297,6 @@
             class="us.nineworlds.xstreamer.handler.DonateHandler"
             commandId="us.nineworlds.xstreamer.donate">
       </handler>
-   </extension>
-
-   <extension
-         point="org.eclipse.ui.viewActions">
-      <viewContribution
-            targetID="us.nineworlds.xstreamer.imageview"
-            id="uky.article.imageviewer.views.ImageView.pushbutton">
-         <!-- Open button -->
-         <action
-               label="open"
-               icon="icons/Open16.gif"
-               tooltip="Open image"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.open">
-               <!--id="org.eclipse.ui.file.open"-->
-         </action>
-         <!-- Rotation button -->
-         <action
-               label="Rotate"
-               icon="icons/Rotate16.gif"
-               tooltip="Rotate"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.rotate">
-         </action>
-         <!-- Fit button -->
-         <action
-               label="FitWindow"
-               icon="icons/Fit16.gif"
-               tooltip="Fit window"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.fit">
-         </action>
-         <!-- Original button -->
-         <action
-               label="OriginalSize"
-               icon="icons/Original16.gif"
-               tooltip="Original size"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.original">
-         </action>
-         <!-- ZoomIn button -->
-         <action
-               label="ZoomIn"
-               icon="icons/ZoomIn16.gif"
-               tooltip="Zoom in"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.zoomin">
-         </action>
-         <!-- ZoomOut button -->
-         <action
-               label="ZoomOut"
-               icon="icons/ZoomOut16.gif"
-               tooltip="Zoom out"
-               class="uky.article.imageviewer.actions.PushActionDelegate"
-               toolbarPath="push_group"
-               enablesFor="*"
-               id="toolbar.zoomout">
-         </action>
-      </viewContribution>
    </extension>
    <extension
          point="org.eclipse.core.runtime.adapters">
@@ -353,5 +319,54 @@
       <startup
             class="us.nineworlds.xstreamer.Startup">
       </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:us.nineworlds.xstreamer.imageview">
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.open"
+               icon="icons/Open16.gif"
+               style="push"
+               tooltip="Open">
+         </command>
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.zoomin"
+               icon="icons/ZoomIn16.gif"
+               style="push"
+               tooltip="Zoom In">
+         </command>         
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.zoomout"
+               icon="icons/ZoomOut16.gif"
+               style="push"
+               tooltip="Zoom Out">
+         </command>
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.zoomfit"
+               icon="icons/Fit16.gif"
+               style="push"
+               tooltip="Fit">
+         </command>
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.rotate"
+               icon="icons/Rotate16.gif"
+               style="push"
+               tooltip="Rotate">
+         </command>                   
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.originalsize"
+               icon="icons/Original16.gif"
+               style="push"
+               tooltip="Original Size">
+         </command>                   
+         <command
+               commandId="us.nineworlds.xstreamer.imageview.saveas"
+               icon="icons/saveas_edit.gif"
+               style="push"
+               tooltip="Save As">
+         </command>                            
+      </menuContribution>
    </extension>
 </plugin>
