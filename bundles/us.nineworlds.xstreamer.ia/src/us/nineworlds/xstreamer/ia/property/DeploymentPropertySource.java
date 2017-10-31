@@ -7,6 +7,7 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.ia.model.DeploymentTreeNode;
+import us.nineworlds.xstreamer.property.NumericPropertyDescriptor;
 
 public class DeploymentPropertySource implements IPropertySource {
 
@@ -26,11 +27,11 @@ public class DeploymentPropertySource implements IPropertySource {
 	@Override
 	public IPropertyDescriptor[] getPropertyDescriptors() {
 		return new IPropertyDescriptor[] {
-				new TextPropertyDescriptor("health", "Health"),
-				new TextPropertyDescriptor("speed", "Speed"),
-				new TextPropertyDescriptor("units", "Units"),
-				new TextPropertyDescriptor("renforcement", "Unit Cost"),
-				new TextPropertyDescriptor("deploymentCost", "Deployment Cost")
+				new NumericPropertyDescriptor("health", "Health"),
+				new NumericPropertyDescriptor("speed", "Speed"),
+				new NumericPropertyDescriptor("units", "Units"),
+				new NumericPropertyDescriptor("renforcement", "Unit Cost"),
+				new NumericPropertyDescriptor("deploymentCost", "Deployment Cost")
 		};
 	}
 
@@ -72,18 +73,26 @@ public class DeploymentPropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
-		String newValue = (String) value;
 		if ("health".equals(id)) {
-			deployment.setHealth(Integer.valueOf(newValue));
+			deployment.setHealth((Integer) value);
 		}
 		
 		if ("speed".equals(id)) {
-			deployment.setSpeed(Integer.valueOf(newValue));
+			deployment.setSpeed((Integer) value);
 		}
 		
 		if ("units".equals(id)) {
-			deployment.setUnitsInGroup(Integer.valueOf(newValue));
+			deployment.setUnitsInGroup((Integer) value);
 		}
+
+		if ("renforcement".equals(id)) {
+			deployment.setReenforcementCost((Integer) value);
+		}
+		
+		if ("deploymentCost".equals(id)) {
+			deployment.setDeploymentCost((Integer) value);
+		}
+		
 	}
 
 }

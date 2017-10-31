@@ -11,6 +11,7 @@ import us.nineworlds.iadata.command.CommandCard;
 import us.nineworlds.xstreamer.ia.model.CommandCardTreeNode;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
+import us.nineworlds.xstreamer.property.NumericPropertyDescriptor;
 
 public class CommandCardPropertySource implements IPropertySource {
 
@@ -27,18 +28,18 @@ public class CommandCardPropertySource implements IPropertySource {
 
 	@Override
 	public IPropertyDescriptor[] getPropertyDescriptors() {
-		return new IPropertyDescriptor[] { new TextPropertyDescriptor("cost", "Cost"),
-				new TextPropertyDescriptor("limit", "Limit")};
+		return new IPropertyDescriptor[] { new NumericPropertyDescriptor("cost", "Cost"),
+				new NumericPropertyDescriptor("limit", "Limit")};
 	}
 
 	@Override
 	public Object getPropertyValue(Object id) {
 		if ("cost".equals(id)) {
-			return Integer.toString(commandCard.getCost());
+			return commandCard.getCost();
 		}
 		
 		if ("limit".equals(id)) {
-			return Integer.toString(commandCard.getLimit());
+			return commandCard.getLimit();
 		}
 
 		return null;
@@ -56,7 +57,13 @@ public class CommandCardPropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
+		if ("cost".equals(id)) {
+			commandCard.setCost((Integer) value);
+		}
 		
+		if ("limit".equals(id)) {
+			commandCard.setLimit((Integer) value);
+		}		
 	}
 
 }
