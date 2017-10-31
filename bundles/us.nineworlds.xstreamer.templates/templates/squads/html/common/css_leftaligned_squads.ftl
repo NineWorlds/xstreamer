@@ -8,6 +8,9 @@
            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
            font-style: normal;
          }
+    .red {
+        color: red;
+    }     
          
     .shields-symbol { font-family: "x-wing-symbols";
                font-size: 1.7em;

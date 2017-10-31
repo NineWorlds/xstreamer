@@ -5,6 +5,9 @@
 	  <span>${fun.pilotAliveDead(pilot)}</span>
 	</#if> 
 	<span> ${pilot.name} </span>
+	<#if pilot.hasCriticalDamage()>
+	<span> <i class="xwing-miniatures-font xwing-miniatures-font-token-crit red"></i></span>
+	</#if>
   </div>
   	<div>
   	  <span><span class="attack-symbol">%</span>&nbsp;<b class="attack">${fun.findShipAttack(pilot.ship)}&nbsp;</b></span>	  
