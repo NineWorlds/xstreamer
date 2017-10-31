@@ -19,20 +19,22 @@
 	    <span class="idtag"><b>${pilot.pilotId}</b></span>
 	  </#if>
 	</div>    	
-	<#if pilot.upgrades??>
+    <#if pilot.upgrades??>
 	  <#if pilot.upgrades.additionalProperties??>
-	    <div class="upgrades">
-	    <#list pilot.upgrades.additionalProperties as key, value>
-	      <#list value as upgradeType>
-	        <#if upgradeType?has_next>
+	 	<div class="upgrades">
+	  	<#list pilot.upgrades.additionalProperties as key, value>
+	  	     ${fun.upgradeIconMarkup(key)}
+	     	 <#list value as upgradeType>
+	     	    ${fun.upgradeDiscardedMarkup(pilot.upgrades.findUpgrade(upgradeType))}
+	        	<#if upgradeType?has_next>
 <span>${fun.findUpgrade(upgradeType)}, </span>
-	        <#else>
-<span>${fun.findUpgrade(upgradeType)}</span> ${fun.upgradeIconMarkup(key)}<br/>
-	        </#if>
-	      </#list>
-	    </#list>
-	   </div> 
-	  </#if>
+	        	<#else>
+<span>${fun.findUpgrade(upgradeType)}</span><br/>
+	        	</#if>
+	    	  </#list>
+		  </#list>
+		 </div> 
+ 	  </#if>
 	</#if>
 </#list>
   </div>

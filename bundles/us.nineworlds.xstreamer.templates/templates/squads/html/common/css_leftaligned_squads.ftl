@@ -74,6 +74,14 @@
              vertical-align: middle;
              font-size: 0.95em
      }
+     
+    .upgradeDiscarded {
+       color:red;
+    }
+    
+    .upgradeDiscarded:before {
+       content: "\002718";
+    }
 
 	i.xwing-miniatures-font {
       text-shadow: 0px 0px #000000;	

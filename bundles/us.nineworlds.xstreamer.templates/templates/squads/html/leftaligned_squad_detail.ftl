@@ -26,6 +26,7 @@
 	  	<#list pilot.upgrades.additionalProperties as key, value>
 	  	     ${fun.upgradeIconMarkup(key)}
 	     	 <#list value as upgradeType>
+	     	    ${fun.upgradeDiscardedMarkup(pilot.upgrades.findUpgrade(upgradeType))}
 	        	<#if upgradeType?has_next>
 <span>${fun.findUpgrade(upgradeType)}, </span>
 	        	<#else>

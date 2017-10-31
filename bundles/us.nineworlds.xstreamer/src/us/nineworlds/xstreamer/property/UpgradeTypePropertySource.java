@@ -7,15 +7,19 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import com.github.xws.Pilot;
 import com.github.xws.Upgrade;
 
+import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
 
 public class UpgradeTypePropertySource implements IPropertySource {
 
 	private Upgrade upgrade;
+	private EventBus eventBus;
 
 	public UpgradeTypePropertySource(UpgradeTypeTreeNode type) {
 		this.upgrade = type.getUpgrade();
+		eventBus = EventBus.getInstance();		
 	}
 
 	@Override
@@ -55,15 +59,26 @@ public class UpgradeTypePropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
+		boolean postJob = false;
+		
 		if ("quantity".equals(id) && value instanceof Integer) {
+			postJob = true;
 			upgrade.setQuantity((Integer) value);
-			return;
 		}
 		
 		if ("discarded".equals(id) && value instanceof Boolean) {
+			postJob = true;
 			upgrade.toggleDiscardFlag((Boolean) value);
-			return;
-		}	
+		}
+		
+		if (postJob) {
+			postGenerateJobEvent();
+		}
+		
 	}
-
+	
+	private void postGenerateJobEvent() {
+		eventBus.post(new GenerateSquadJobEvent());
+	}
+	
 }

@@ -25,6 +25,15 @@
   <#return '0'>
 </#function>
 
+<#function upgradeDiscardedMarkup upgrade>
+   <#if upgrade.isDiscarded()>
+     <#assign markup>
+        <span class="upgradeDiscarded"></span>
+     </#assign>
+     <#return markup>
+   </#if>
+  <#return "">
+</#function>
 
 <#function upgradeIconMarkup upgradeType>
   <#assign markup>
