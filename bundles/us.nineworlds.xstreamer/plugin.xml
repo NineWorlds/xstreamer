@@ -168,9 +168,14 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="us.nineworlds.xstreamer.preferences.SquadPrefencesPage"
+            class="us.nineworlds.xstreamer.preferences.GeneralPrefencesPage"
             id="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
-            name="Squadron">
+            name="General">
+      </page>
+      <page
+            class="us.nineworlds.xstreamer.preferences.SquadPrefencesPage"
+            id="us.nineworlds.xstreamer.preferences.XWingPreferencePage"
+            name="XWing">
       </page>
       <page
             class="us.nineworlds.xstreamer.preferences.TimerPreferencePage"
@@ -178,13 +183,13 @@
             name="Timer">
       </page>
       <page
-            category="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
+            category="us.nineworlds.xstreamer.preferences.XWingPreferencePage"
             class="us.nineworlds.xstreamer.preferences.PlayerTemplatePreferencePage"
             id="us.nineworlds.xstreamer.squadTemplates"
             name="First Player Templates">
       </page>
       <page
-            category="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
+            category="us.nineworlds.xstreamer.preferences.XWingPreferencePage"
             class="us.nineworlds.xstreamer.preferences.SecondPlayerTemplatePreference"
             id="us.nineworlds.xstreamer.SecondPlayerSquadTemplates"
             name="Second Player Templates">

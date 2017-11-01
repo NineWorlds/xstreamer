@@ -20,12 +20,12 @@ import org.eclipse.ui.IWorkbench;
  * preferences can be accessed directly via the preference store.
  */
 
-public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
+public class GeneralPrefencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
-	public SquadPrefencesPage() {
+	public GeneralPrefencesPage() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("X-Wing Squadron Generation Preferences.");
+		setDescription("General Player Preferences.");
 	}
 
 	/**
@@ -34,10 +34,12 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 	 * editor knows how to save and restore itself.
 	 */
 	public void createFieldEditors() {
-		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY,
-				"XStream Output Directory:", getFieldEditorParent()));
+		new LabelFieldEditor("Player Filenames", getFieldEditorParent()).adjustForNumColumns(3);
 		
-		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));		
+		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_NAME_FILENAME, "Player 1 Filename:",
+				getFieldEditorParent()));
+		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_NAME_FILENAME, "Player 2 Filename:",
+				getFieldEditorParent()));
 	}
 
 	public void init(IWorkbench workbench) {

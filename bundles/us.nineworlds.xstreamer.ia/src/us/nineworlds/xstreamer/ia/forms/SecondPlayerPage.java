@@ -1,11 +1,8 @@
 package us.nineworlds.xstreamer.ia.forms;
 
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.widgets.Composite;
 
 import us.nineworlds.iadata.IASpec;
-import us.nineworlds.xstreamer.ia.Activator;
-import us.nineworlds.xstreamer.ia.preferences.PreferenceConstants;
 
 public class SecondPlayerPage extends AbstractPlayerFormPage {
 
@@ -39,16 +36,12 @@ public class SecondPlayerPage extends AbstractPlayerFormPage {
 
 	@Override
 	public String playerFileName() {
-		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-		
-		return preferenceStore.getString(PreferenceConstants.SECOND_PLAYER_SQUAD_FILENAME);
+		return "ia_player2_army.html";
 	}
 	
 	@Override
 	public String armyTemplate() {
-//		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-//		return preferenceStore.getString(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE);
-		return null;
+		return "army_left_aligned.ftl";
 	}
 
 	@Override

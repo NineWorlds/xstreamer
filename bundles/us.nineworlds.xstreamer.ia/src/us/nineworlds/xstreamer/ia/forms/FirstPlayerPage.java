@@ -39,16 +39,12 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 
 	@Override
 	public String playerFileName() {
-		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-		
-		return preferenceStore.getString(PreferenceConstants.FIRST_PLAYER_SQUAD_FILENAME);
+		return "ia_player1_army.html";
 	}
 	
 	@Override
 	public String armyTemplate() {
-//		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-//		return preferenceStore.getString(PreferenceConstants.TEMPLATE_FIRST_PLAYER_FILE);
-		return null;
+		return "army_left_aligned.ftl";
 	}
 
 	@Override

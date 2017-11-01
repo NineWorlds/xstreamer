@@ -29,11 +29,17 @@ import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.iadata.deployment.Deployments;
 import us.nineworlds.iadata.enums.Factions;
 import us.nineworlds.iadata.util.IASpecLoader;
+import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.eventbus.EventHandler;
+import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.ia.core.Activator;
+import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
+import us.nineworlds.xstreamer.ia.jobs.GenerateArmyJob;
 import us.nineworlds.xstreamer.ia.listeners.ArmySelectionChangeListener;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
+import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 
 
 public abstract class AbstractPlayerFormPage extends ViewPart {
@@ -43,6 +49,14 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	public TreeViewer treeViewer;
 
 	public Text importArmyText;
+	
+	private EventBus eventBus;
+	
+	public AbstractPlayerFormPage() {
+		super();
+		eventBus = EventBus.getInstance();
+		eventBus.register(this);		
+	}
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -170,9 +184,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 						
 						resetPlayerModel(iaspec);
 						refreshTree();
-//						GenerateSquadJob job = new GenerateSquadJob("importxws", getPlayerModel(), playerFileName(),
-//								squadTemplate());
-//						job.schedule();
+						eventBus.post(new GenerateArmyEvent());
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
@@ -221,5 +233,10 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	public void refreshTree() {
 		treeViewer.setInput(getPlayerModel());
 	}
-
+	
+	@EventHandler
+	public void updateJob(GenerateArmyEvent event) {
+		GenerateArmyJob job = new GenerateArmyJob("generateArmy", getPlayerModel(), playerFileName(), armyTemplate());
+		job.schedule();
+	}
 }

@@ -97,5 +97,15 @@
             class="us.nineworlds.xstreamer.ia.Startup">
       </startup>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="us.nineworlds.xstreamer.ia.preferences.ArmyPrefencesPage"
+            id="us.nineworlds.xstreamer.preferences.IAPreferencePage"
+            name="Imperial Assault">
+      </page>
+   </extension>
+   
 
 </plugin>

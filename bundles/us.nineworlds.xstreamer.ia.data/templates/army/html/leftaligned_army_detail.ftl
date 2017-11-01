@@ -1,61 +1,50 @@
   <div id="army">
     <hr/>
 <#list iaspec.army.deployments as deployments>
+  <#assign dbDeployment>${fun.deploymentLookup(deployments.deployment)}</#assign>
+  <#if dbDeployment??>
   <div class="deployment">
      <div class="name">
-        <span class="mercenary"></span><span class="deploymentName">${deployments.deployment.name}</span>
-        <span>(${deployments.deployment.deploymentCost})</span>
+        <span class="${dbDeployment.faction.toString()}"></span><span class="deploymentName">${dbDeployment.name}</span>
+        <span>(${dbDeployment.deploymentCost})</span>
      </div>
+     <#if dbDeployment.attack?? || dbDeployment.defense??>
      <div id="attack_defense">
-        <#if deployments.deployment.attack.attackType == "range">
+        <#if dbDeployment.attack.attackType.toString() == "range">
            <div class="left-text range"></div>
-        <#else>
+        <#elseif dbDeployment.attack.attackType == "melee">
            <div class="left-text melee"></div>
         </#if>
-        <div class="box red">&nbsp;</div>
-        <div class="spacer">&nbsp;</div>
-        <div class="box blue">&nbsp;</div>
+        <#if dbDeployment.attack.getDicePool()?? && dbDeployment.deploymentType.toString() == "deployment">
+		    <#list dbDeployment.attack.getDicePool() as attackDice>
+	        	<#switch attackDice.toString()>
+	        	   <#case "red"><div class="box red">&nbsp;</div><#break>
+	        	   <#case "blue"><div class="box blue">&nbsp;</div><#break>
+	        	   <#case "green"><div class="box green">&nbsp;</div><#break>
+	        	   <#case "yellow"><div class="box yellow">&nbsp;</div><#break>
+	        	   <#case "any"><div class="box any">&nbsp;</div><#break>
+				   <#default><#break>
+	        	</#switch>
+	        <div class="spacer">&nbsp;</div>
+	        </#list>
+	    </#if>
+	    <#if dbDeployment.getDefenseDicePool()?? && dbDeployment.deploymentType.toString() == "deployment">
         <div class="left-text defense">&nbsp;&nbsp;E</div>
-        <div class="box black">&nbsp;</div>
+	    	<#list dbDeployment.getDefenseDicePool() as defense>
+	    		<#switch defense.toString()>
+	    			<#case "white"><div class="box white">&nbsp;</div><#break>
+					<#case "black"><div class="box black">&nbsp;</div><#break>
+					<#default><#break>
+	    		</#switch>
+	    	</#list>
         <div class="spacer">&nbsp;</div>
-        <div class="box white">&nbsp;</div>
+	    </#if>
         <br />
      </div>
-  
-	<#if pilot.pilotSkill??>
-	  <span>${fun.pilotAliveDead(pilot)}</span>
-	</#if> 
-	<span> ${pilot.name} </span>
-	<#if pilot.hasCriticalDamage()>
-	<span> <i class="xwing-miniatures-font xwing-miniatures-font-token-crit red"></i></span>
-	</#if>
+     </#if>
+     <#if dbDeployment.deploymentType.toString() == "deployment">
+     <div class="vitals">${dbDeployment.getDeploymentCost()}&#10084; ${dbDeployment.getSpeed()}S ${dbDeployment.getUnitsInGroup()}U</div>
+     </#if>
   </div>
-  	<div>
-  	  <span><span class="attack-symbol">%</span>&nbsp;<b class="attack">${fun.findShipAttack(pilot.ship)}&nbsp;</b></span>	  
-  	  <span><span class="agility-symbol">^</span>&nbsp;<b class="agility">${fun.findShipAgility(pilot.ship)}&nbsp;</b> </span>
-      <span><span class="hull-symbol">&</span>&nbsp;<b class="hull">${(pilot.hull)!"0"}&nbsp;</b> </span>
-	  <span><span class="shields-symbol">*</span>&nbsp;<b class="shields">${(pilot.shields)!"0"}</b> &nbsp;&nbsp;</span>
-      <#if pilot.pilotId!?length gt 0>
-	    <span class="idtag"><b>${pilot.pilotId}</b></span>
-	  </#if>
-	  <span> [${pilot.points}]</span>
-	</div>    	
-
-    <#if pilot.upgrades??>
-	  <#if pilot.upgrades.additionalProperties??>
-	 	<div class="upgrades">
-	  	<#list pilot.upgrades.additionalProperties as key, value>
-	  	     ${fun.upgradeIconMarkup(key)}
-	     	 <#list value as upgradeType>
-	        	<#if upgradeType?has_next>
-<span>${fun.findUpgrade(upgradeType)}, </span>
-	        	<#else>
-<span>${fun.findUpgrade(upgradeType)}</span><br/>
-	        	</#if>
-	    	  </#list>
-		  </#list>
-		 </div> 
- 	  </#if>
-	</#if>
+  </#if>
 </#list>
-  </div>

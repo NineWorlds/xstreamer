@@ -8,6 +8,8 @@ import com.github.xws.Pilot;
 import com.github.xws.Upgrade;
 
 import us.nineworlds.iadata.command.CommandCard;
+import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.model.CommandCardTreeNode;
 import us.nineworlds.xstreamer.model.PilotTreeNode;
 import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
@@ -16,9 +18,11 @@ import us.nineworlds.xstreamer.property.NumericPropertyDescriptor;
 public class CommandCardPropertySource implements IPropertySource {
 
 	private CommandCard commandCard;
+	private EventBus eventBus;
 
 	public CommandCardPropertySource(CommandCardTreeNode card) {
 		this.commandCard = (CommandCard) card.getValue();
+		eventBus = EventBus.getInstance();
 	}
 
 	@Override
@@ -57,13 +61,20 @@ public class CommandCardPropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
+		boolean postEvent = false;
 		if ("cost".equals(id)) {
+			postEvent = true;
 			commandCard.setCost((Integer) value);
 		}
 		
 		if ("limit".equals(id)) {
+			postEvent = true;
 			commandCard.setLimit((Integer) value);
-		}		
+		}
+		
+		if (postEvent) {
+			eventBus.post(new GenerateArmyEvent());
+		}
 	}
 
 }

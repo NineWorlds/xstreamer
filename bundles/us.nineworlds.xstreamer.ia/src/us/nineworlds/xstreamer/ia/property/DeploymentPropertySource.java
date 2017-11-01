@@ -6,6 +6,7 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 
 import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.xstreamer.eventbus.EventBus;
+import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.model.DeploymentTreeNode;
 import us.nineworlds.xstreamer.property.NumericPropertyDescriptor;
 
@@ -73,24 +74,34 @@ public class DeploymentPropertySource implements IPropertySource {
 
 	@Override
 	public void setPropertyValue(Object id, Object value) {
+		boolean postEvent = false;
 		if ("health".equals(id)) {
+			postEvent = true;
 			deployment.setHealth((Integer) value);
 		}
 		
 		if ("speed".equals(id)) {
+			postEvent = true;
 			deployment.setSpeed((Integer) value);
 		}
 		
 		if ("units".equals(id)) {
+			postEvent = true;
 			deployment.setUnitsInGroup((Integer) value);
 		}
 
 		if ("renforcement".equals(id)) {
+			postEvent = true;
 			deployment.setReenforcementCost((Integer) value);
 		}
 		
 		if ("deploymentCost".equals(id)) {
+			postEvent = true;
 			deployment.setDeploymentCost((Integer) value);
+		}
+		
+		if (postEvent) {
+			eventBus.post(new GenerateArmyEvent());
 		}
 		
 	}
