@@ -1357,7 +1357,7 @@
       "card": {
         "iaspecName": "stallfortime",
         "faction": "any",
-        "imageurl": "http://tabletopadmiral.com/static/main/images/Kayn%20Somos/Squad%20Swarm.png",
+        "imageurl": "https://vignette.wikia.nocookie.net/imperial-assault/images/b/b5/Swi27-stall-for-time.png",
         "restrictions": [
           "leader",
           "spy"

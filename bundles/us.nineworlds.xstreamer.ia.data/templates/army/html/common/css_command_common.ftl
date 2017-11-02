@@ -8,4 +8,5 @@
 .commandCards {
    padding: 2px;
    font-style: bold;
+   font-
 }
