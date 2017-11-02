@@ -15,8 +15,10 @@ public class PreferenceConstants {
 	public static final String TIMER_MINUTES_DEFAULT = "xstreamer.timer.minutes";
 	public static final String TIMER_SECONDS_DEFAULT = "xstreamer.timer.seconds";
 	
-	public static final String TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY = "xstreamer.template.output.dir";
-	public static final String TEMPLATE_INPUT_DIRECTORY = "xstreamer.template.input.dir";
+	public static final String TEMPLATE_XSTREAMER_XWING_OUTPUT_DIRECTORY = "xstreamer.template.xwing.output.dir";
+	public static final String XSTREAMER_GENERAL_OUTPUT_DIRECTORY = "xstreamer.template.general.output.dir";
+	
+	public static final String TEMPLATE_XWING_INPUT_DIRECTORY = "xstreamer.template.input.dir";
 	public static final String TEMPLATE_FIRST_PLAYER_FILE = "xstreamer.template.player1.squad";
 	public static final String TEMPLATE_SECOND_PLAYER_FILE = "xstreamer.template.player2.squad";
 	

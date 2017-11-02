@@ -42,8 +42,8 @@ public class GenerateSquadJob extends Job {
 	protected IStatus run(IProgressMonitor monitor) {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		String templateType = findTemplateType(templateFilename);
-		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY);
-		String templateInputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY) + File.separator + "squads" + File.separator + templateType;
+		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_XWING_OUTPUT_DIRECTORY);
+		String templateInputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XWING_INPUT_DIRECTORY) + File.separator + "squads" + File.separator + templateType;
 		if (StringUtils.isEmpty(templateOutputDirectory) || StringUtils.isEmpty(playerFilename) ||
 			StringUtils.isEmpty(templateFilename) || StringUtils.isEmpty(templateInputDirectory)) {
 			return Status.CANCEL_STATUS;

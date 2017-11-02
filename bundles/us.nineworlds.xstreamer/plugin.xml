@@ -178,6 +178,7 @@
             name="XWing">
       </page>
       <page
+      		category="us.nineworlds.xstreamer.preferences.GeneralPreferencePage"
             class="us.nineworlds.xstreamer.preferences.TimerPreferencePage"
             id="us.nineworlds.xstreamer.timer.pref"
             name="Timer">

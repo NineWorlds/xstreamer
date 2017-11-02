@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,11 +20,10 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.osgi.framework.Bundle;
 
-import com.github.xws.XwsSpec;
-
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import us.nineworlds.iadata.IASpec;
+import us.nineworlds.xstreamer.ia.core.Activator;
 
 public class GenerateArmyJob extends Job {
 
@@ -41,28 +39,21 @@ public class GenerateArmyJob extends Job {
 
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
-		IPreferenceStore iaPreferenceStore = us.nineworlds.xstreamer.ia.Activator.getDefault().getPreferenceStore();
-		
-		Bundle templateBundle = Platform.getBundle("us.nineworlds.xstreamer.ia.data");
-		Path path = new Path("templates");
-		URL url = FileLocator.find(templateBundle, path, null);
-		URL realUrl = null;
-		String templateInputDirectory = null;
-		try {
-			realUrl = FileLocator.toFileURL(url);
-			File templateDirectory = FileUtils.toFile(realUrl);			
-			templateInputDirectory = templateDirectory.getCanonicalPath().toString() + File.separator + "army" + File.separator + "html";
-		} catch (Exception ex) {
-			
-		}
+		IPreferenceStore iaPreferenceStore = us.nineworlds.xstreamer.ia.Activator.getDefault().getPreferenceStore();		
+		boolean obsRefreshFlag = iaPreferenceStore.getBoolean(us.nineworlds.xstreamer.ia.preferences.PreferenceConstants.OBS_REFRESH_SCRIPT);
 
-		
+		String templateInputDirectory = templateInputDirectory();		
 		String templateOutputDirectory = iaPreferenceStore.getString(us.nineworlds.xstreamer.ia.preferences.PreferenceConstants.TEMPLATE_XSTREAMER_IA_OUTPUT_DIRECTORY);
+		
 		if (StringUtils.isEmpty(templateOutputDirectory) || StringUtils.isEmpty(playerFilename) ||
 			StringUtils.isEmpty(templateFilename) || StringUtils.isEmpty(templateInputDirectory)) {
 			return Status.CANCEL_STATUS;
 		}		
 
+		return writeArmy(obsRefreshFlag, templateInputDirectory, templateOutputDirectory);
+	}
+
+	private IStatus writeArmy(boolean obsRefreshFlag, String templateInputDirectory, String templateOutputDirectory) {
 		Writer playerArmyFile = null;
 		try {
 			Configuration config = us.nineworlds.xstreamer.core.Activator.getDefault().getFreemarkerConfig();
@@ -75,8 +66,9 @@ public class GenerateArmyJob extends Job {
 			Map<String, Object> input = new HashMap<>();
 
 			input.put("iaspec", iaspec);
-			input.put("allDeployments", us.nineworlds.xstreamer.ia.core.Activator.getDefault().getDeploymentsLookup().getDeployments());
-			input.put("allCommandCards", us.nineworlds.xstreamer.ia.core.Activator.getDefault().getCommandCardLookup().getCommandCards());
+			input.put("allDeployments", Activator.getDefault().getDeploymentsLookup().getDeployments());
+			input.put("allCommandCards", Activator.getDefault().getCommandCardLookup().getCommandCards());
+			input.put("obs_refresh", obsRefreshFlag);
 
 			armyTemplate.process(input, playerArmyFile);
 		} catch (Exception e) {
@@ -86,6 +78,22 @@ public class GenerateArmyJob extends Job {
 			IOUtils.closeQuietly(playerArmyFile);			
 		}
 		return Status.OK_STATUS;
+	}
+
+	private String templateInputDirectory() {
+		Bundle templateBundle = Platform.getBundle("us.nineworlds.xstreamer.ia.data");
+		Path path = new Path("templates");
+		URL url = FileLocator.find(templateBundle, path, null);
+		URL realUrl = null;
+		String templateInputDirectory = null;
+		try {
+			realUrl = FileLocator.toFileURL(url);
+			File templateDirectory = FileUtils.toFile(realUrl);			
+			templateInputDirectory = templateDirectory.getCanonicalPath().toString() + File.separator + "army" + File.separator + "html";
+		} catch (Exception ex) {
+			
+		}
+		return templateInputDirectory;
 	}
 	
 }

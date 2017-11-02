@@ -34,10 +34,10 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 	 * editor knows how to save and restore itself.
 	 */
 	public void createFieldEditors() {
-		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY,
+		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XSTREAMER_XWING_OUTPUT_DIRECTORY,
 				"XStream Output Directory:", getFieldEditorParent()));
 		
-		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));		
+		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XWING_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));		
 	}
 
 	public void init(IWorkbench workbench) {

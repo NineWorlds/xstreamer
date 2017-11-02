@@ -20,16 +20,11 @@ import us.nineworlds.xstreamer.Activator;
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	
-	public static final String TEMPLATE_BUNDLE_ID = "us.nineworlds.xstreamer.templates";
+	public static final String TEMPLATE_XWING_BUNDLE_ID = "us.nineworlds.xstreamer.templates";
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
-	 */
 	public void initializeDefaultPreferences() {
 		
-		Bundle templateBundle = Platform.getBundle(TEMPLATE_BUNDLE_ID);
+		Bundle templateBundle = Platform.getBundle(TEMPLATE_XWING_BUNDLE_ID);
 		Path path = new Path("templates");
 		URL url = FileLocator.find(templateBundle, path, null);
 		URL realUrl = null;
@@ -38,10 +33,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			realUrl = FileLocator.toFileURL(url);
 			File templateDirectory = FileUtils.toFile(realUrl);			
 			File currentDirectory = new File(new File("").getAbsolutePath());
-			store.setDefault(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY, currentDirectory.getAbsolutePath());
-			store.setDefault(PreferenceConstants.TEMPLATE_INPUT_DIRECTORY, templateDirectory.getCanonicalPath().toString());
+			store.setDefault(PreferenceConstants.TEMPLATE_XSTREAMER_XWING_OUTPUT_DIRECTORY, currentDirectory.getAbsolutePath());
+			store.setDefault(PreferenceConstants.XSTREAMER_GENERAL_OUTPUT_DIRECTORY, currentDirectory.getAbsolutePath());
+			store.setDefault(PreferenceConstants.TEMPLATE_XWING_INPUT_DIRECTORY, templateDirectory.getCanonicalPath().toString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 				
@@ -54,5 +49,4 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		
 		store.setDefault(PreferenceConstants.RELOAD_PLAYER_FILES_ON_STARTUP, false);
 	}
-
 }

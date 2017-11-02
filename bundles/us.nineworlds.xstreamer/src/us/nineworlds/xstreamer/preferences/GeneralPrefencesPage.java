@@ -36,6 +36,8 @@ public class GeneralPrefencesPage extends FieldEditorPreferencePage implements I
 	public void createFieldEditors() {
 		new LabelFieldEditor("Player Filenames", getFieldEditorParent()).adjustForNumColumns(3);
 		
+		addField(new DirectoryFieldEditor(PreferenceConstants.XSTREAMER_GENERAL_OUTPUT_DIRECTORY, "Output Directory for Player Files:", getFieldEditorParent()));
+		
 		addField(new StringFieldEditor(PreferenceConstants.FIRST_PLAYER_NAME_FILENAME, "Player 1 Filename:",
 				getFieldEditorParent()));
 		addField(new StringFieldEditor(PreferenceConstants.SECOND_PLAYER_NAME_FILENAME, "Player 2 Filename:",

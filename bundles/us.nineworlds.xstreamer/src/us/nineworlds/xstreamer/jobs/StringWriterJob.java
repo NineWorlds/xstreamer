@@ -26,7 +26,7 @@ public class StringWriterJob extends Job {
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.TEMPLATE_XSTREAMER_OUTPUT_DIRECTORY);
+		String templateOutputDirectory = preferenceStore.getString(PreferenceConstants.XSTREAMER_GENERAL_OUTPUT_DIRECTORY);
 		if (StringUtils.isEmpty(content) || StringUtils.isEmpty(filename)) {
 			return Status.CANCEL_STATUS;
 		}
