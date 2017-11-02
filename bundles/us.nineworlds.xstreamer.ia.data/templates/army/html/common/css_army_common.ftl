@@ -95,6 +95,30 @@
     content: "W";
 }
 
+.imperial {
+	font-family: "ImperialAssaultSymbols";
+	font-size: 12pt;
+	padding-right: 5px;
+	color: white;
+}
+
+.imperial:before {
+    content: "U";
+}
+
+.rebel {
+	font-family: "ImperialAssaultSymbols";
+	font-size: 12pt;
+	padding-right: 5px;
+	color: red;
+}
+
+.rebel:before {
+    content: "V";
+}
+
+
+
 .limit {
 	padding-left: 10px;
 }
