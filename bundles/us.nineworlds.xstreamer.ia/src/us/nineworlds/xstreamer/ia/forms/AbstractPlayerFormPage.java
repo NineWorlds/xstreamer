@@ -25,6 +25,8 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.ViewPart;
 
 import us.nineworlds.iadata.IASpec;
+import us.nineworlds.iadata.command.CommandCard;
+import us.nineworlds.iadata.command.CommandCards;
 import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.iadata.deployment.Deployments;
 import us.nineworlds.iadata.enums.Factions;
@@ -36,6 +38,7 @@ import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.jobs.GenerateArmyJob;
 import us.nineworlds.xstreamer.ia.listeners.ArmySelectionChangeListener;
+import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
@@ -164,23 +167,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 					IASpecLoader iaspecFile = new IASpecLoader();
 					try {
 						IASpec iaspec = iaspecFile.load(new ByteArrayInputStream(json.getBytes()));
-						DeploymentsLookup deploymentsLookup = Activator.getDefault().getDeploymentsLookup();
-						for (Deployments deployments : iaspec.getArmy().getDeployments()) {
-							Deployment deployment = deployments.getDeployment();
-							Factions faction = deployment.getFaction();
-							String iaspecName = deployment.getIaspecname();
-							Deployment deploymentEntry = deploymentsLookup.findDeploymentCard(iaspecName, faction.toString());
-							if (deploymentEntry != null) {
-								deployment.setHealth(deploymentEntry.getHealth());
-								deployment.setSpeed(deploymentEntry.getSpeed());
-								deployment.setDeploymentCost(deploymentEntry.getDeploymentCost());
-								deployment.setUnitsInGroup(deploymentEntry.getUnitsInGroup());
-								deployment.setReenforcementCost(deploymentEntry.getReenforcementCost());
-							}
-							if (deployment.getName() == null && deploymentEntry == null) {
-								deployment.setName(deployment.getIaspecname());
-							}
-						}
+						updateDeployments(iaspec);
+						updateCommandCards(iaspec);
 						
 						resetPlayerModel(iaspec);
 						refreshTree();
@@ -190,6 +178,45 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 					}
 				}
 			}
+
+			private void updateDeployments(IASpec iaspec) {
+				DeploymentsLookup deploymentsLookup = Activator.getDefault().getDeploymentsLookup();
+				for (Deployments deployments : iaspec.getArmy().getDeployments()) {
+					Deployment deployment = deployments.getDeployment();
+					Factions faction = deployment.getFaction();
+					String iaspecName = deployment.getIaspecname();
+					Deployment deploymentEntry = deploymentsLookup.findDeploymentCard(iaspecName, faction.toString());
+					if (deploymentEntry != null) {
+						deployment.setHealth(deploymentEntry.getHealth());
+						deployment.setSpeed(deploymentEntry.getSpeed());
+						deployment.setDeploymentCost(deploymentEntry.getDeploymentCost());
+						deployment.setUnitsInGroup(deploymentEntry.getUnitsInGroup());
+						deployment.setReenforcementCost(deploymentEntry.getReenforcementCost());
+					}
+					if (deployment.getName() == null && deploymentEntry == null) {
+						deployment.setName(deployment.getIaspecname());
+					}
+				}
+			}
+			
+			private void updateCommandCards(IASpec iaspec) {
+				CommandCardLookup commandLookup = Activator.getDefault().getCommandCardLookup();
+				for (CommandCards commandCards : iaspec.getCommandCards()) {
+					CommandCard commandCard = commandCards.getCommandCard();
+					Factions faction = commandCard.getFaction();
+					String iaspecName = commandCard.getIaspecname();
+					CommandCard card = commandLookup.findCommandCard(iaspecName, faction.toString());
+					if (card != null) {
+						commandCard.setCost(card.getCost());
+						commandCard.setLimit(card.getLimit());
+						commandCard.setName(card.getName());
+					}
+					if (commandCard.getName() == null && card == null) {
+						commandCard.setName(commandCard.getIaspecname());
+					}
+				}
+			}
+
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {

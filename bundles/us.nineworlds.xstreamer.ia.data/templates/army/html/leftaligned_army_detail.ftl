@@ -47,4 +47,10 @@
   </div>
   </#if>
 </#list>
-
+  <hr />
+<#list iaspec.commandCards as command>
+  <div id="commandCards">
+     <div class="cardName">${command.commandCard.name} : ${command.commandCard.cost}</div>
+  </div>
+</#list>
+  <hr />
