@@ -15,6 +15,10 @@
 	float: left;
 }
 
+.red-font {
+  color: red;
+}
+
 .red {
 	background: red;
 }
@@ -28,7 +32,7 @@
 }
 
 .yellow {
-	background: red;
+	background: yellow;
 }
 
 .black {
@@ -100,6 +104,7 @@
 }
 
 .deployment {
+    margin-bottom: 5px;
 	padding-bottom: 5px;
 }
 
