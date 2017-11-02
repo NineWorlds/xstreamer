@@ -1,22 +1,21 @@
   <div id="army">
     <hr/>
 <#list iaspec.army.deployments as deployments>
-  <#assign dbDeployment>${fun.deploymentLookup(deployments.deployment)}</#assign>
-  <#if dbDeployment??>
+  <#if fun.findDeployment(deployments.deployment)??>
   <div class="deployment">
      <div class="name">
-        <span class="${dbDeployment.faction.toString()}"></span><span class="deploymentName">${dbDeployment.name}</span>
-        <span>(${dbDeployment.deploymentCost})</span>
+        <span class="${fun.findDeployment(deployments.deployment).faction.toString()}"></span><span class="deploymentName">${fun.findDeployment(deployments.deployment).name}</span>
+        <span>(${fun.findDeployment(deployments.deployment).deploymentCost})</span>
      </div>
-     <#if dbDeployment.attack?? || dbDeployment.defense??>
+     <#if fun.findDeployment(deployments.deployment).attack?? || fun.findDeployment(deployments.deployment).defense??>
      <div id="attack_defense">
-        <#if dbDeployment.attack.attackType.toString() == "range">
+        <#if fun.findDeployment(deployments.deployment).attack.attackType.toString() == "range">
            <div class="left-text range"></div>
-        <#elseif dbDeployment.attack.attackType == "melee">
+        <#elseif fun.findDeployment(deployments.deployment).attack.attackType == "melee">
            <div class="left-text melee"></div>
         </#if>
-        <#if dbDeployment.attack.getDicePool()?? && dbDeployment.deploymentType.toString() == "deployment">
-		    <#list dbDeployment.attack.getDicePool() as attackDice>
+        <#if fun.findDeployment(deployments.deployment).attack.getDicePool()?? && fun.findDeployment(deployments.deployment).deploymentType.toString() == "deployment">
+		    <#list fun.findDeployment(deployments.deployment).attack.getDicePool() as attackDice>
 	        	<#switch attackDice.toString()>
 	        	   <#case "red"><div class="box red">&nbsp;</div><#break>
 	        	   <#case "blue"><div class="box blue">&nbsp;</div><#break>
@@ -28,9 +27,9 @@
 	        <div class="spacer">&nbsp;</div>
 	        </#list>
 	    </#if>
-	    <#if dbDeployment.getDefenseDicePool()?? && dbDeployment.deploymentType.toString() == "deployment">
+	    <#if fun.findDeployment(deployments.deployment).getDefenseDicePool()?? && fun.findDeployment(deployments.deployment).deploymentType.toString() == "deployment">
         <div class="left-text defense">&nbsp;&nbsp;E</div>
-	    	<#list dbDeployment.getDefenseDicePool() as defense>
+	    	<#list fun.findDeployment(deployments.deployment).getDefenseDicePool() as defense>
 	    		<#switch defense.toString()>
 	    			<#case "white"><div class="box white">&nbsp;</div><#break>
 					<#case "black"><div class="box black">&nbsp;</div><#break>
@@ -42,9 +41,10 @@
         <br />
      </div>
      </#if>
-     <#if dbDeployment.deploymentType.toString() == "deployment">
-     <div class="vitals">${dbDeployment.getDeploymentCost()}&#10084; ${dbDeployment.getSpeed()}S ${dbDeployment.getUnitsInGroup()}U</div>
+     <#if fun.findDeployment(deployments.deployment).deploymentType.toString() == "deployment">
+     <div class="vitals">${fun.findDeployment(deployments.deployment).getDeploymentCost()}&#10084; ${fun.findDeployment(deployments.deployment).getSpeed()}S ${fun.findDeployment(deployments.deployment).getUnitsInGroup()}U</div>
      </#if>
   </div>
   </#if>
 </#list>
+

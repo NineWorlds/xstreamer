@@ -51,7 +51,7 @@ public class GenerateArmyJob extends Job {
 		try {
 			realUrl = FileLocator.toFileURL(url);
 			File templateDirectory = FileUtils.toFile(realUrl);			
-			templateInputDirectory = templateDirectory.getCanonicalPath().toString() + File.separator + "squads" + File.separator + "html";
+			templateInputDirectory = templateDirectory.getCanonicalPath().toString() + File.separator + "army" + File.separator + "html";
 		} catch (Exception ex) {
 			
 		}
