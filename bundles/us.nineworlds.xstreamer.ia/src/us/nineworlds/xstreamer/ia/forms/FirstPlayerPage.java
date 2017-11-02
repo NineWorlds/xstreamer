@@ -51,5 +51,15 @@ public class FirstPlayerPage extends AbstractPlayerFormPage {
 	void resetPlayerModel(IASpec model) {
 		us.nineworlds.xstreamer.ia.core.Activator.getDefault().setPlayer1Model(model);
 	}
+
+	@Override
+	String commandTemplate() {
+		return "command_left_aligned.ftl";
+	}
+
+	@Override
+	String commandFileName() {
+		return "ia_player1_command.html";
+	}
 	
 }

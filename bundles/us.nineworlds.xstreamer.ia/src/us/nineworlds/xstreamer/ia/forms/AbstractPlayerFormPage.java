@@ -37,6 +37,7 @@ import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.jobs.GenerateArmyJob;
+import us.nineworlds.xstreamer.ia.jobs.GenerateCommandJob;
 import us.nineworlds.xstreamer.ia.listeners.ArmySelectionChangeListener;
 import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
@@ -254,6 +255,10 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	abstract String playerFileName();
 
 	abstract String armyTemplate();
+	
+	abstract String commandTemplate();
+	
+	abstract String commandFileName();
 
 	abstract void resetPlayerModel(IASpec model);
 
@@ -265,5 +270,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	public void updateJob(GenerateArmyEvent event) {
 		GenerateArmyJob job = new GenerateArmyJob("generateArmy", getPlayerModel(), playerFileName(), armyTemplate());
 		job.schedule();
+		
+		GenerateCommandJob commandJob = new GenerateCommandJob("generateCommands", getPlayerModel(), commandFileName(), commandTemplate());
+		commandJob.schedule();
 	}
 }
