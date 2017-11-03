@@ -23,6 +23,7 @@ import org.osgi.framework.Bundle;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import us.nineworlds.iadata.IASpec;
+import us.nineworlds.xstreamer.Logger;
 import us.nineworlds.xstreamer.ia.core.Activator;
 
 public class GenerateArmyJob extends Job {
@@ -73,10 +74,12 @@ public class GenerateArmyJob extends Job {
 			armyTemplate.process(input, playerArmyFile);
 		} catch (Exception e) {
 			e.printStackTrace();
+			Logger.error("Exception writing Army " + templateOutputDirectory, e);			
 			return Status.CANCEL_STATUS;
 		} finally {
 			IOUtils.closeQuietly(playerArmyFile);			
 		}
+		Logger.info("File " + playerFilename + " written successfully");
 		return Status.OK_STATUS;
 	}
 
@@ -91,7 +94,7 @@ public class GenerateArmyJob extends Job {
 			File templateDirectory = FileUtils.toFile(realUrl);			
 			templateInputDirectory = templateDirectory.getCanonicalPath().toString() + File.separator + "army" + File.separator + "html";
 		} catch (Exception ex) {
-			
+			Logger.error("Exception creating Template Input Directory  ", ex);			
 		}
 		return templateInputDirectory;
 	}

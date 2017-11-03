@@ -48,7 +48,7 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		Activator.context = context;
 		
-		Bundle dataBundle = Platform.getBundle(us.nineworlds.xstreamer.ia.data.Activator.DATA_BUNDLE_ID);
+		Bundle dataBundle = Platform.getBundle("us.nineworlds.xstreamer.ia.data");
 		IPath deploymentsPath = new Path("deployments/deployments.json");
 		IPath commandCardsPath = new Path("commandCards/commandcards.json");
 		
