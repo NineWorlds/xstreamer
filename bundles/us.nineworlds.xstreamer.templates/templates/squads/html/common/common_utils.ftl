@@ -35,6 +35,58 @@
   <#return "">
 </#function>
 
+<#function shipIconMarkup shipName>
+  <#assign markup>
+    <i class="xwing-miniatures-ship  
+     <#switch shipName>
+  		<#case "gr75mediumtransport"> xwing-miniatures-ship-gr75mediumtransport<#break>
+  		<#case "cr90corvette"> xwing-miniatures-ship-cr90corvette<#break>
+  		<#case "raiderclasscorvette"> xwing-miniatures-ship-raiderclasscorvette<#break>
+  		<#case "gozanticlasscruiser"> xwing-miniatures-ship-gozanticlasscruiser<#break>	
+  		<#case "tieadvanced"> xwing-miniatures-ship-tieadvanced<#break>	
+  		<#case "tiebomber"> xwing-miniatures-ship-tiebomber<#break>
+  		<#case "tiedefender"> xwing-miniatures-ship-tiedefender<#break>
+  		<#case "tiefighter"> xwing-miniatures-ship-tiefighter<#break>
+  		<#case "vcx100"> xwing-miniatures-ship-vcx100<#break>
+  		<#case "tieinterceptor"> xwing-miniatures-ship-tieinterceptor<#break>
+  		<#case "lancerclasspursuitcraft"> xwing-miniatures-ship-lancerclasspursuitcraft<#break>
+  		<#case "protectoratestarfighter"> xwing-miniatures-ship-protectoratestarfighter<#break>
+  		<#case "tiepunisher"> xwing-miniatures-ship-tiepunisher<#break>
+  		<#case "tiefofighter"> xwing-miniatures-ship-tiefofighter<#break>
+  		<#case "tiephantom"> xwing-miniatures-ship-tiephantom<#break>
+  		<#case "tieadvancedprototype"> xwing-miniatures-ship-tieadvancedprototype<#break>
+  		<#case "tiesffighter"> xwing-miniatures-ship-tiesffighter<#break>
+  		<#case "awing"> xwing-miniatures-ship-awing<#break>
+  		<#case "bwing"> xwing-miniatures-ship-bwing<#break>
+  		<#case "arc170"> xwing-miniatures-ship-arc170<#break>
+  		<#case "vt49decimator"> xwing-miniatures-ship-vt49decimator<#break>
+  		<#case "ewing"> xwing-miniatures-ship-ewing<#break>
+  		<#case "firespray31"> xwing-miniatures-ship-firespray31<#break>
+  		<#case "attackshuttle"> xwing-miniatures-ship-attackshuttle<#break>
+  		<#case "hwk290"> xwing-miniatures-ship-hwk290<#break>
+  		<#case "ig2000"> xwing-miniatures-ship-ig2000<#break>
+  		<#case "aggressor"> xwing-miniatures-ship-aggressor<#break>
+  		<#case "kwing"> xwing-miniatures-ship-kwing<#break>
+  		<#case "lambdaclasshuttle"> xwing-miniatures-ship-lambdaclassshuttle<#break>
+  		<#case "yt1300"> xwing-miniatures-ship-yt1300<#break>
+  		<#case "g1astarfighter"> xwing-miniatures-ship-g1astarfighter<#break>
+  		<#case "yt2400freighter"> xwing-miniatures-ship-yt2400freighter<#break>
+  		<#case "jumpmaster5000"> xwing-miniatures-ship-jumpmaster<#break>
+  		<#case "kihraxzfighter"> xwing-miniatures-ship-kihraxzfighter<#break>
+  		<#case "m3ainterceptor"> xwing-miniatures-ship-m3ainterceptor<#break>
+  		<#case "yv666"> xwing-miniatures-ship-yv666<#break>
+  		<#case "starviper"> xwing-miniatures-ship-starviper<#break>
+  		<#case "t70xwing"> xwing-miniatures-ship-t70xwing<#break>
+  		<#case "xwing"> xwing-miniatures-ship-xwing<#break>
+  		<#case "ywing"> xwing-miniatures-ship-ywing<#break>
+  		<#case "z95headhunter"> xwing-miniatures-ship-z95headhunter<#break>
+     </#switch>">
+     </i>
+  </#assign>
+  <#return markup>
+</#function>
+
+
 <#function upgradeIconMarkup upgradeType>
   <#assign markup>
     <i class="xwing-miniatures-font 

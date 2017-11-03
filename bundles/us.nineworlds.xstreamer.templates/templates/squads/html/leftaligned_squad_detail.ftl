@@ -1,6 +1,7 @@
   <div class="squad">
 <#list xwsspec.pilots as pilot>
   <div class="pilot">
+    ${fun.shipIconMarkup(pilot.ship)}
 	<#if pilot.pilotSkill??>
 	  <span>${fun.pilotAliveDead(pilot)}</span>
 	</#if> 
