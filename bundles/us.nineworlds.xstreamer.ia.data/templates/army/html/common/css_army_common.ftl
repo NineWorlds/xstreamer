@@ -1,3 +1,7 @@
+.deploymentName {
+  font-size: 110%;
+}
+
 .box {
 	width: 15px;
 	height: 15px;
