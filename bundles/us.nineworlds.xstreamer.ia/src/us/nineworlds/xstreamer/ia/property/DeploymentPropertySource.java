@@ -103,7 +103,6 @@ public class DeploymentPropertySource implements IPropertySource {
 		if (postEvent) {
 			eventBus.post(new GenerateArmyEvent());
 		}
-		
 	}
 
 }

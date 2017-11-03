@@ -42,7 +42,7 @@
      </div>
      </#if>
      <#if fun.findDeployment(deployments.deployment).deploymentType.toString() == "deployment">
-     <div class="vitals">${fun.findDeployment(deployments.deployment).getDeploymentCost()}<span class="red-font">&#10084;</span> ${fun.findDeployment(deployments.deployment).getSpeed()}S ${fun.findDeployment(deployments.deployment).getUnitsInGroup()}U</div>
+     <div class="vitals">${deployments.deployment.health}<span class="red-font">&#10084;</span> ${deployments.deployment.getSpeed()}S ${deployments.deployment.getUnitsInGroup()}U</div>
      </#if>
   </div>
   </#if>

@@ -268,7 +268,8 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 	
 	@EventHandler
 	public void updateJob(GenerateArmyEvent event) {
-		GenerateArmyJob job = new GenerateArmyJob("generateArmy", getPlayerModel(), playerFileName(), armyTemplate());
+		IASpec playerModel = getPlayerModel();
+		GenerateArmyJob job = new GenerateArmyJob("generateArmy",playerModel, playerFileName(), armyTemplate());
 		job.schedule();
 		
 		GenerateCommandJob commandJob = new GenerateCommandJob("generateCommands", getPlayerModel(), commandFileName(), commandTemplate());
