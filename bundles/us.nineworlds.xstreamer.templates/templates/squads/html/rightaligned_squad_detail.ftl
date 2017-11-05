@@ -24,14 +24,14 @@
 	  <#if pilot.upgrades.additionalProperties??>
 	 	<div class="upgrades">
 	  	<#list pilot.upgrades.additionalProperties as key, value>
-	  	     ${fun.upgradeIconMarkup(key)}
 	     	 <#list value as upgradeType>
 	     	    ${fun.upgradeDiscardedMarkup(pilot.upgrades.findUpgrade(upgradeType))}
 	        	<#if upgradeType?has_next>
 <span>${fun.findUpgrade(upgradeType)}, </span>
 	        	<#else>
-<span>${fun.findUpgrade(upgradeType)}</span><br/>
+<span>${fun.findUpgrade(upgradeType)}</span>
 	        	</#if>
+	  	        ${fun.upgradeIconMarkup(key)} <br/>
 	    	  </#list>
 		  </#list>
 		 </div> 
