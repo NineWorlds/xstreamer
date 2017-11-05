@@ -81,6 +81,14 @@
              font-size: 0.95em
      }
      
+    .upgradeDiscarded {
+       color:red;
+    }
+    
+    .upgradeDiscarded:before {
+       content: "\002718";
+    }
+          
     <#include "xwing_miniatures_font.ftl">                
 	
   </style>
