@@ -916,7 +916,7 @@
         "iaspecName": "negation",
         "faction": "any",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Return%20to%20Hoth/Negation.png",
-        "name": "negation",
+        "name": "Negation",
         "cost": 1,
         "limit": 1
       }
@@ -1563,7 +1563,7 @@
         "iaspecName": "urgency",
         "faction": "any",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Core/Urgency.png",
-        "name": "urgency",
+        "name": "Urgency",
         "cost": 0,
         "limit": 1
       }
@@ -1573,7 +1573,7 @@
         "iaspecName": "utinni",
         "faction": "any",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Jawa%20Scavenger/Utinni!.png",
-        "name": "utinni",
+        "name": "Utinni",
         "cost": 1,
         "limit": 1
       }
@@ -1583,7 +1583,7 @@
         "iaspecName": "wildattack",
         "faction": "any",
         "imageurl": "http://tabletopadmiral.com/static/main/images/Bossk/Wild%20Attack.png",
-        "name": "wildattack",
+        "name": "Wild Attack",
         "cost": 0,
         "limit": 1
       }

@@ -6,3 +6,9 @@
   </#list>
   <#return null>
 </#function>
+
+<#function commandCardDiscarded commandCard>
+  <#if commandCard.vendorOptions["xstreamerOptions"].isDiscarded()>
+     <span class="commandCardDiscarded">&nbsp;</span>
+  </#if>
+</#function>
