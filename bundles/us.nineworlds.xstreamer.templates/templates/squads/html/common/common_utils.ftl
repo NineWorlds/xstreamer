@@ -117,7 +117,7 @@
 <#function pilotAliveDead pilot>
   <#assign skill>
 	  <#if pilot.shields == 0 && pilot.hull == 0>
-	     <#lt>(X) <#rt>
+	     <#lt>&#9760;<#rt>
 	  <#else>
 	     <#if pilot.pilotSkill?length != 0>
 	        <#lt>(${pilot.pilotSkill}) <#rt>

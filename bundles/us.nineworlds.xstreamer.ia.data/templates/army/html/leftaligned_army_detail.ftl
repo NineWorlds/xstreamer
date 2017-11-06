@@ -4,7 +4,12 @@
   <#if fun.findDeployment(deployments.deployment)??>
   <div class="deployment">
      <div class="name">
-        <span class="${fun.findDeployment(deployments.deployment).faction.toString()}"></span><span class="deploymentName">${fun.findDeployment(deployments.deployment).name}</span>
+        <#if deployments.deployment.health == 0 && fun.findDeployment(deployments.deployment).deploymentType.toString() == "deployment">
+           <span class="rip"></span>
+        <#else>
+           <span class="${fun.findDeployment(deployments.deployment).faction.toString()}"></span>
+        </#if>
+        <span class="deploymentName">${fun.findDeployment(deployments.deployment).name}</span>
         <span>(${fun.findDeployment(deployments.deployment).deploymentCost})</span>
      </div>
      <#if fun.findDeployment(deployments.deployment).attack?? || fun.findDeployment(deployments.deployment).defense??>

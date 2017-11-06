@@ -8,7 +8,6 @@
 .commandCards {
    padding: 2px;
    font-style: bold;
-   font-
 }
 
 .commandCardDiscarded {
@@ -18,3 +17,4 @@
 .commandCardDiscarded:before {
    content: "\002718";
 }
+

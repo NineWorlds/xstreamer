@@ -1,3 +1,15 @@
+.rip {
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: normal;
+  text-shadow: 0px 0px #000000;
+  color: cornsilk;
+}
+
+.rip:before {
+  content: "\002620";
+}
+
 .deploymentName {
   font-size: 110%;
 }
