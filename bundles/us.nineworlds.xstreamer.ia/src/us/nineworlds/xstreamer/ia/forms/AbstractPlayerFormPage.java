@@ -2,6 +2,8 @@ package us.nineworlds.xstreamer.ia.forms;
 
 import java.io.ByteArrayInputStream;
 import java.io.StringBufferInputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -43,6 +45,7 @@ import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
+import us.nineworlds.xstreamer.ia.model.vendoroptions.CommandCardVendorOptions;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 
 
@@ -215,6 +218,13 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 					if (commandCard.getName() == null && card == null) {
 						commandCard.setName(commandCard.getIaspecname());
 					}
+					
+					// Add XStreamer specific options
+					if (commandCard.getVendorOptions() == null || commandCard.getVendorOptions().isEmpty()) {
+						Map<String, Object> vendorOptionsMap = new HashMap<String, Object>(); 
+						vendorOptionsMap.put("xstreamerOptions", new CommandCardVendorOptions());
+						commandCard.setVendorOptions(vendorOptionsMap);
+					}	
 				}
 			}
 

@@ -8,5 +8,13 @@
 .commandCards {
    padding: 2px;
    font-style: bold;
-   font-
 }
+
+.commandCardDiscarded {
+   color:red;
+}
+
+.commandCardDiscarded:before {
+   content: "\002718";
+}
+
