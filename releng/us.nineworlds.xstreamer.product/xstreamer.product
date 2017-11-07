@@ -31,12 +31,10 @@ Version 0.6.1
       startupMessageRect="7,252,445,20"
       startupForegroundColor="EDD400" />
    <launcher name="xstreamer">
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
@@ -50,6 +48,9 @@ Version 0.6.1
    <features>
       <feature id="us.nineworlds.xstreamer.feature"/>
       <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.e4.rcp"/>
    </features>
 
    <configurations>

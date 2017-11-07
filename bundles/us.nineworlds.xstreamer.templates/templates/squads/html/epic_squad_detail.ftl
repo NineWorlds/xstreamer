@@ -2,10 +2,14 @@
 <#list xwsspec.pilots as pilot>
   <div class="blocks">
 	  <div class="pilot">
+	      ${fun.shipIconMarkup(pilot.ship)}
 		<#if pilot.pilotSkill??>
 		  <span>${fun.pilotAliveDead(pilot)}</span>
 		</#if> 
 		<span> ${pilot.name} </span>
+		<#if pilot.hasCriticalDamage()>
+		  <span> <i class="xwing-miniatures-font xwing-miniatures-font-token-crit red"></i></span>
+	    </#if>
 	  </div>
 	  	<div>
   	      <span><b class="attack">${fun.findShipAttack(pilot.ship)}</b> <span class="attack-symbol">%</span> </span>
@@ -30,6 +34,7 @@
 		  	<#list pilot.upgrades.additionalProperties as key, value>
  	  	         ${fun.upgradeIconMarkup(key)}
 		     	 <#list value as upgradeType>
+  	     	        ${fun.upgradeDiscardedMarkup(pilot.upgrades.findUpgrade(upgradeType))}
 		        	<#if upgradeType?has_next>
 	<span>${fun.findUpgrade(upgradeType)}, </span>
 		        	<#else>
