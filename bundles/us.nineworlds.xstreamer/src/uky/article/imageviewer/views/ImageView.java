@@ -10,11 +10,18 @@
  *******************************************************************************/
 package uky.article.imageviewer.views;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
+import org.osgi.framework.Bundle;
+
+import us.nineworlds.xstreamer.Activator;
+import us.nineworlds.xstreamer.Logger;
 
 /**
  * This ImageView class shows how to use SWTImageCanvas to manipulate images.
@@ -45,10 +52,14 @@ public class ImageView extends ViewPart {
 	public void createPartControl(Composite frame) {
 		imageCanvas = new SWTImageCanvas(frame);
 		
+		Bundle bundle = Activator.getDefault().getBundle();
+		Path path = new Path("images/placeholder-image.png");
+		URL placeHolderImageUrl = FileLocator.find(bundle, path, null);
+		
 		try {
-			imageCanvas.loadImage(new URL("http://tabletopadmiral.com/static/main/images/Chewbacca/Chewbacca.png"));
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
+			imageCanvas.loadImage(placeHolderImageUrl.openStream());
+		} catch (IOException e) {
+			Logger.error("Unable to load place holder image", e);
 		}
 	}
 
