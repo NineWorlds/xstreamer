@@ -7,7 +7,7 @@
       <image path="/us.nineworlds.xstreamer.branding/images/xstreamer_lg.png"/>
       <text>
          XStreamer Squad Helper
-Version 0.6.1
+Version 0.7.0
       </text>
    </aboutInfo>
 
@@ -15,8 +15,6 @@ Version 0.6.1
    </configIni>
 
    <launcherArgs>
-      <programArgs>-consoleLog
-      </programArgs>
       <vmArgs>-Xms256m -Xmx256m
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
