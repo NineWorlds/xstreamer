@@ -53,6 +53,7 @@ public class BrowserActionBarAdvisor extends ActionBarAdvisor {
         super(configurer);
 	}
     
+	@Override
 	protected void makeActions(final IWorkbenchWindow window) {
         ISharedImages images = window.getWorkbench().getSharedImages();
 		
@@ -64,7 +65,8 @@ public class BrowserActionBarAdvisor extends ActionBarAdvisor {
 		    int counter = 0;
 		    { setId("newTab");
               setActionDefinitionId(IBrowserConstants.COMMAND_PREFIX + "newTab"); } //$NON-NLS-1$
-            public void run() {
+            @Override
+			public void run() {
                 try {
                     String secondaryId = Integer.toString(++counter);
                     IWorkbenchPage page = window.getActivePage();
@@ -110,7 +112,8 @@ public class BrowserActionBarAdvisor extends ActionBarAdvisor {
 		historyAction = new Action("History", IAction.AS_CHECK_BOX) { //$NON-NLS-1$
 		    { setId("history");
               setActionDefinitionId(IBrowserConstants.COMMAND_PREFIX + "history"); } //$NON-NLS-1$
-		    public void run() {
+		    @Override
+			public void run() {
 		        try {
 		            IWorkbenchPage page = window.getActivePage();
 		            if (page != null) {
@@ -135,6 +138,7 @@ public class BrowserActionBarAdvisor extends ActionBarAdvisor {
         register(aboutAction);
 	}
 
+	@Override
 	protected void fillMenuBar(IMenuManager menuBar) {
 		IMenuManager fileMenu = new MenuManager("&File", "file");  //$NON-NLS-2$
 		menuBar.add(fileMenu);
@@ -157,6 +161,7 @@ public class BrowserActionBarAdvisor extends ActionBarAdvisor {
         helpMenu.add(aboutAction);
 	}
 
+	@Override
 	protected void fillCoolBar(ICoolBarManager coolBar) {
 		IToolBarManager toolBar = new ToolBarManager(SWT.FLAT | SWT.RIGHT);
 		coolBar.add(new ToolBarContributionItem(toolBar, "standard")); //$NON-NLS-1$

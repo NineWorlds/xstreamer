@@ -13,7 +13,6 @@ package us.nineworlds.xstreamer.browser;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IStatusLineManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
@@ -39,7 +38,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IMemento;
-import org.eclipse.ui.IPerspectiveDescriptor;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IViewReference;
 import org.eclipse.ui.IViewSite;
@@ -47,7 +45,6 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.WorkbenchException;
 import org.eclipse.ui.part.ViewPart;
 
 /**
@@ -110,6 +107,7 @@ public class BrowserView extends ViewPart {
 		initialUrl = "https://geordanr.github.io/xwing/";
 	}
 
+	@Override
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
 		super.init(site);
 		if (memento != null) {
@@ -120,15 +118,18 @@ public class BrowserView extends ViewPart {
 		}
 	}
 
+	@Override
 	public void saveState(IMemento memento) {
 		memento.putString(IBrowserConstants.MEMENTO_URL, browser.getUrl());
 	}
 
+	@Override
 	public void createPartControl(Composite parent) {
 		browser = createBrowser(parent, getViewSite().getActionBars());
 		browser.setUrl(initialUrl);
 	}
 
+	@Override
 	public void setFocus() {
 		if (browser != null && !browser.isDisposed()) {
 			browser.setFocus();
@@ -165,6 +166,7 @@ public class BrowserView extends ViewPart {
 			boolean working = false;
 			int workedSoFar;
 
+			@Override
 			public void changed(ProgressEvent event) {
 				if (DEBUG) {
 					System.out.println("changed: " + event.current + "/" + event.total);
@@ -182,6 +184,7 @@ public class BrowserView extends ViewPart {
 				workedSoFar = event.current;
 			}
 
+			@Override
 			public void completed(ProgressEvent event) {
 				if (DEBUG) {
 					System.out.println("completed: " + event.current + "/" + event.total);
@@ -193,6 +196,7 @@ public class BrowserView extends ViewPart {
 		browser.addStatusTextListener(new StatusTextListener() {
 			IStatusLineManager status = actionBars.getStatusLineManager();
 
+			@Override
 			public void changed(StatusTextEvent event) {
 				if (DEBUG) {
 					System.out.println("status: " + event.text);
@@ -201,28 +205,33 @@ public class BrowserView extends ViewPart {
 			}
 		});
 		browser.addLocationListener(new LocationAdapter() {
+			@Override
 			public void changed(LocationEvent event) {
 				if (event.top)
 					location.setText(event.location);
 			}
 		});
 		browser.addTitleListener(new TitleListener() {
+			@Override
 			public void changed(TitleEvent event) {
 				setPartName(event.title);
 			}
 		});
 		browser.addOpenWindowListener(new OpenWindowListener() {
+			@Override
 			public void open(WindowEvent event) {
 				BrowserView.this.openWindow(event);
 			}
 		});
 		// TODO: should handle VisibilityWindowListener.show and .hide events
 		browser.addCloseWindowListener(new CloseWindowListener() {
+			@Override
 			public void close(WindowEvent event) {
 				BrowserView.this.close();
 			}
 		});
 		location.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				browser.setUrl(location.getText());
 			}

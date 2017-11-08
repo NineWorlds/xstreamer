@@ -6,7 +6,6 @@ import java.util.List;
 import org.eclipse.jface.viewers.TreeNode;
 
 import us.nineworlds.iadata.IASpec;
-import us.nineworlds.iadata.deployment.Deployments;
 
 public class IASpecTreeNode extends TreeNode {
 

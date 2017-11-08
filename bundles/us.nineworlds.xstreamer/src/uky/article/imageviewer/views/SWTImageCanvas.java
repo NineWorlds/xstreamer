@@ -68,11 +68,13 @@ public class SWTImageCanvas extends Canvas {
 		super( parent, style|SWT.BORDER|SWT.V_SCROLL|SWT.H_SCROLL
 				            | SWT.NO_BACKGROUND);
 		addControlListener(new ControlAdapter() { /* resize listener. */
+			@Override
 			public void controlResized(ControlEvent event) {
 				syncScrollBars();
 			}
 		});
 		addPaintListener(new PaintListener() { /* paint listener. */
+			@Override
 			public void paintControl(final PaintEvent event) {
 				paint(event.gc);
 			}
@@ -83,6 +85,7 @@ public class SWTImageCanvas extends Canvas {
 	/**
 	 * Dispose the garbage here
 	 */
+	@Override
 	public void dispose() {
 		if (sourceImage != null && !sourceImage.isDisposed()) {
 			sourceImage.dispose();
@@ -137,6 +140,7 @@ public class SWTImageCanvas extends Canvas {
 		ScrollBar horizontal = getHorizontalBar();
 		horizontal.setEnabled(false);
 		horizontal.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent event) {
 				scrollHorizontally((ScrollBar) event.widget);
 			}
@@ -144,6 +148,7 @@ public class SWTImageCanvas extends Canvas {
 		ScrollBar vertical = getVerticalBar();
 		vertical.setEnabled(false);
 		vertical.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent event) {
 				scrollVertically((ScrollBar) event.widget);
 			}
@@ -202,7 +207,7 @@ public class SWTImageCanvas extends Canvas {
 		if (ty > 0) ty = 0;
 
 		ScrollBar horizontal = getHorizontalBar();
-		horizontal.setIncrement((int) (getClientArea().width / 100));
+		horizontal.setIncrement(getClientArea().width / 100);
 		horizontal.setPageIncrement(getClientArea().width);
 		Rectangle imageBound = sourceImage.getBounds();
 		int cw = getClientArea().width, ch = getClientArea().height;
@@ -216,11 +221,11 @@ public class SWTImageCanvas extends Canvas {
 			tx = (cw - imageBound.width * sx) / 2; //center if too small.
 		}
 		horizontal.setSelection((int) (-tx));
-		horizontal.setThumb((int) (getClientArea().width));
+		horizontal.setThumb((getClientArea().width));
 
 		ScrollBar vertical = getVerticalBar();
-		vertical.setIncrement((int) (getClientArea().height / 100));
-		vertical.setPageIncrement((int) (getClientArea().height));
+		vertical.setIncrement(getClientArea().height / 100);
+		vertical.setPageIncrement((getClientArea().height));
 		if (imageBound.height * sy > ch) { /* image is higher than client area */
 			vertical.setMaximum((int) (imageBound.height * sy));
 			vertical.setEnabled(true);
@@ -231,7 +236,7 @@ public class SWTImageCanvas extends Canvas {
 			ty = (ch - imageBound.height * sy) / 2; //center if too small.
 		}
 		vertical.setSelection((int) (-ty));
-		vertical.setThumb((int) (getClientArea().height));
+		vertical.setThumb((getClientArea().height));
 
 		/* update transform. */
 		af = AffineTransform.getScaleInstance(sx, sy);

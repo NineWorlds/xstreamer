@@ -9,10 +9,6 @@ import com.github.guidokessels.ships.Ship;
 import us.nineworlds.xstreamer.model.lookup.PilotLookup;
 import us.nineworlds.xstreamer.model.lookup.ShipsLookup;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "multisection_id", "points", "name", "ship", "hull", "shields", "upgrades", "vendor" })
 public class Pilot {

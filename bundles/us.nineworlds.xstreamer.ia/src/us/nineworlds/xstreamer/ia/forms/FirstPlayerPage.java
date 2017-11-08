@@ -1,11 +1,8 @@
 package us.nineworlds.xstreamer.ia.forms;
 
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.widgets.Composite;
 
 import us.nineworlds.iadata.IASpec;
-import us.nineworlds.xstreamer.ia.Activator;
-import us.nineworlds.xstreamer.ia.preferences.PreferenceConstants;
 
 public class FirstPlayerPage extends AbstractPlayerFormPage {
 

@@ -133,15 +133,18 @@ public class NumericCellEditor extends CellEditor {
 	/*
 	 * (non-Javadoc) Method declared on CellEditor.
 	 */
+	@Override
 	protected Control createControl(Composite parent) {
 		text = new Text(parent, getStyle());
 		text.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				handleDefaultSelection(e);
 			}
 		});
 		text.addKeyListener(new KeyAdapter() {
 			// hook key pressed - see PR 14201
+			@Override
 			public void keyPressed(KeyEvent e) {
 				keyReleaseOccured(e);
 
@@ -156,6 +159,7 @@ public class NumericCellEditor extends CellEditor {
 			}
 		});
 		text.addTraverseListener(new TraverseListener() {
+			@Override
 			public void keyTraversed(TraverseEvent e) {
 				if (e.detail == SWT.TRAVERSE_ESCAPE || e.detail == SWT.TRAVERSE_RETURN) {
 					e.doit = false;
@@ -166,6 +170,7 @@ public class NumericCellEditor extends CellEditor {
 		// use a key listener and a mouse listener to know when selection changes
 		// may have occurred
 		text.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseUp(MouseEvent e) {
 				checkSelection();
 				checkDeleteable();
@@ -173,6 +178,7 @@ public class NumericCellEditor extends CellEditor {
 			}
 		});
 		text.addFocusListener(new FocusAdapter() {
+			@Override
 			public void focusLost(FocusEvent e) {
 				NumericCellEditor.this.focusLost();
 			}
@@ -190,6 +196,7 @@ public class NumericCellEditor extends CellEditor {
 	 *
 	 * @return the text string
 	 */
+	@Override
 	protected Object doGetValue() {
 		String s = text.getText();
 
@@ -207,6 +214,7 @@ public class NumericCellEditor extends CellEditor {
 	/*
 	 * (non-Javadoc) Method declared on CellEditor.
 	 */
+	@Override
 	protected void doSetFocus() {
 		if (text != null) {
 			text.selectAll();
@@ -226,6 +234,7 @@ public class NumericCellEditor extends CellEditor {
 	 *            a numeric value (type <code>Double</code> or <code>Float</code> or
 	 *            <code>Integer</code>)
 	 */
+	@Override
 	protected void doSetValue(Object value) {
 		String sval = "";
 
@@ -267,6 +276,7 @@ public class NumericCellEditor extends CellEditor {
 	/**
 	 * Since a text editor field is scrollable we don't set a minimumSize.
 	 */
+	@Override
 	public LayoutData getLayoutData() {
 		return new LayoutData();
 	}
@@ -277,6 +287,7 @@ public class NumericCellEditor extends CellEditor {
 	private ModifyListener getModifyListener() {
 		if (modifyListener == null) {
 			modifyListener = new ModifyListener() {
+				@Override
 				public void modifyText(ModifyEvent e) {
 					editOccured(e);
 				}
@@ -303,6 +314,7 @@ public class NumericCellEditor extends CellEditor {
 	 * <code>CellEditor</code> method returns <code>true</code> if the current
 	 * selection is not empty.
 	 */
+	@Override
 	public boolean isCopyEnabled() {
 		if (text == null || text.isDisposed()) {
 			return false;
@@ -315,6 +327,7 @@ public class NumericCellEditor extends CellEditor {
 	 * <code>CellEditor</code> method returns <code>true</code> if the current
 	 * selection is not empty.
 	 */
+	@Override
 	public boolean isCutEnabled() {
 		if (text == null || text.isDisposed()) {
 			return false;
@@ -327,6 +340,7 @@ public class NumericCellEditor extends CellEditor {
 	 * <code>CellEditor</code> method returns <code>true</code> if there is a
 	 * selection or if the caret is not positioned at the end of the text.
 	 */
+	@Override
 	public boolean isDeleteEnabled() {
 		if (text == null || text.isDisposed()) {
 			return false;
@@ -338,6 +352,7 @@ public class NumericCellEditor extends CellEditor {
 	 * The <code>TextCellEditor</code> implementation of this
 	 * <code>CellEditor</code> method always returns <code>true</code>.
 	 */
+	@Override
 	public boolean isPasteEnabled() {
 		if (text == null || text.isDisposed()) {
 			return false;
@@ -370,6 +385,7 @@ public class NumericCellEditor extends CellEditor {
 	 * @return <code>true</code> if select all is possible, <code>false</code>
 	 *         otherwise
 	 */
+	@Override
 	public boolean isSelectAllEnabled() {
 		if (text == null || text.isDisposed()) {
 			return false;
@@ -389,6 +405,7 @@ public class NumericCellEditor extends CellEditor {
 	 * @param keyEvent
 	 *            the key event
 	 */
+	@Override
 	protected void keyReleaseOccured(KeyEvent keyEvent) {
 		if (keyEvent.character == '\r') { // Return key
 											// Enter is handled in handleDefaultSelection.
@@ -426,6 +443,7 @@ public class NumericCellEditor extends CellEditor {
 	 * The <code>TextCellEditor</code> implementation of this
 	 * <code>CellEditor</code> method copies the current selection to the clipboard.
 	 */
+	@Override
 	public void performCopy() {
 		text.copy();
 	}
@@ -434,6 +452,7 @@ public class NumericCellEditor extends CellEditor {
 	 * The <code>TextCellEditor</code> implementation of this
 	 * <code>CellEditor</code> method cuts the current selection to the clipboard.
 	 */
+	@Override
 	public void performCut() {
 		text.cut();
 		checkSelection();
@@ -446,6 +465,7 @@ public class NumericCellEditor extends CellEditor {
 	 * <code>CellEditor</code> method deletes the current selection or, if there is
 	 * no selection, the character next character from the current position.
 	 */
+	@Override
 	public void performDelete() {
 		if (text.getSelectionCount() > 0) {
 			// remove the contents of the current selection
@@ -468,6 +488,7 @@ public class NumericCellEditor extends CellEditor {
 	 * <code>CellEditor</code> method pastes the the clipboard contents over the
 	 * current selection.
 	 */
+	@Override
 	public void performPaste() {
 		text.paste();
 		checkSelection();
@@ -479,6 +500,7 @@ public class NumericCellEditor extends CellEditor {
 	 * The <code>TextCellEditor</code> implementation of this
 	 * <code>CellEditor</code> method selects all of the current text.
 	 */
+	@Override
 	public void performSelectAll() {
 		text.selectAll();
 		checkSelection();
@@ -491,6 +513,7 @@ public class NumericCellEditor extends CellEditor {
 	 * otherwise. Subclasses that hook their own focus listener should override this
 	 * method and return false. See also bug 58777.
 	 */
+	@Override
 	protected boolean dependsOnExternalFocusListener() {
 		return getClass() != NumericCellEditor.class;
 	}

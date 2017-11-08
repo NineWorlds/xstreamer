@@ -3,8 +3,6 @@ package us.nineworlds.xstreamer.ia.model;
 import org.eclipse.jface.viewers.TreeNode;
 
 import us.nineworlds.iadata.command.CommandCard;
-import us.nineworlds.iadata.deployment.Deployment;
-import us.nineworlds.iadata.util.CommandCardsDBLoader;
 import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 
 public class CommandCardTreeNode extends TreeNode {

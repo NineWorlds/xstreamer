@@ -6,14 +6,12 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IImportWizard;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 
 import com.github.xws.XwsSpec;
 
-import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.forms.FirstPlayerPage;
 import us.nineworlds.xstreamer.forms.SecondPlayerPage;
 import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
@@ -27,6 +25,7 @@ public class PlayerSquads extends Wizard implements IImportWizard {
 		super();
 	}
 
+	@Override
 	public boolean performFinish() {
 		String player1File = mainPage.getEditorPlayer1().getStringValue();
 		String player2File = mainPage.getEditorPlayer2().getStringValue();
@@ -61,13 +60,15 @@ public class PlayerSquads extends Wizard implements IImportWizard {
         return true;
 	}
 	
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		setWindowTitle("XStreamer File Import Wizard"); //NON-NLS-1
 		setNeedsProgressMonitor(false);
 		mainPage = new PlayerSquadsImportWizardPage("Import Player Squads"); //NON-NLS-1
 	}
 	
-    public void addPages() {
+    @Override
+	public void addPages() {
         super.addPages(); 
         addPage(mainPage);        
     }

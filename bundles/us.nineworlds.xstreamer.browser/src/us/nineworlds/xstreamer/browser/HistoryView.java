@@ -61,9 +61,11 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 		public TreeParent getParent() {
 			return parent;
 		}
+		@Override
 		public String toString() {
 			return getName();
 		}
+		@Override
 		public Object getAdapter(Class key) {
 			return null;
 		}
@@ -95,10 +97,13 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 										   ITreeContentProvider {
 		private TreeParent invisibleRoot;
 
+		@Override
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
 		}
+		@Override
 		public void dispose() {
 		}
+		@Override
 		public Object[] getElements(Object parent) {
 			if (parent.equals(getViewSite())) {
 				if (invisibleRoot==null) initialize();
@@ -106,18 +111,21 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 			}
 			return getChildren(parent);
 		}
+		@Override
 		public Object getParent(Object child) {
 			if (child instanceof TreeObject) {
 				return ((TreeObject)child).getParent();
 			}
 			return null;
 		}
+		@Override
 		public Object [] getChildren(Object parent) {
 			if (parent instanceof TreeParent) {
 				return ((TreeParent)parent).getChildren();
 			}
 			return new Object[0];
 		}
+		@Override
 		public boolean hasChildren(Object parent) {
 			if (parent instanceof TreeParent)
 				return ((TreeParent)parent).hasChildren();
@@ -151,9 +159,11 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 	}
 	class ViewLabelProvider extends LabelProvider {
 
+		@Override
 		public String getText(Object obj) {
 			return obj.toString();
 		}
+		@Override
 		public Image getImage(Object obj) {
 			String imageKey = ISharedImages.IMG_OBJ_ELEMENT;
 			if (obj instanceof TreeParent)
@@ -172,6 +182,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 	 * This is a callback that will allow us
 	 * to create the viewer and initialize it.
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		drillDownAdapter = new DrillDownAdapter(viewer);
@@ -187,6 +198,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 		MenuManager menuMgr = new MenuManager("#PopupMenu");
 		menuMgr.setRemoveAllWhenShown(true);
 		menuMgr.addMenuListener(new IMenuListener() {
+			@Override
 			public void menuAboutToShow(IMenuManager manager) {
 				HistoryView.this.fillContextMenu(manager);
 			}
@@ -210,6 +222,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 
 	private void makeActions() {
 		action1 = new Action() {
+			@Override
 			public void run() {
 				showMessage("Action 1 executed");
 			}
@@ -220,6 +233,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 			getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
 		
 		action2 = new Action() {
+			@Override
 			public void run() {
 				showMessage("Action 2 executed");
 			}
@@ -229,6 +243,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 		action2.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
 				getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
 		doubleClickAction = new Action() {
+			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
 				Object obj = ((IStructuredSelection)selection).getFirstElement();
@@ -239,6 +254,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 
 	private void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
 				doubleClickAction.run();
 			}
@@ -254,6 +270,7 @@ public class HistoryView extends ViewPart implements ISecondaryPart {
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}

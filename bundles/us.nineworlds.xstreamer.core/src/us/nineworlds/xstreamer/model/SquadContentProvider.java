@@ -1,14 +1,9 @@
 package us.nineworlds.xstreamer.model;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-
-import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeNode;
 
-import com.github.xws.Pilot;
 import com.github.xws.XwsSpec;
 
 public class SquadContentProvider implements ITreeContentProvider {

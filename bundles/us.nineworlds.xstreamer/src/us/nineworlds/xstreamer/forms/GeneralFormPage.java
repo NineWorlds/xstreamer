@@ -10,6 +10,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.ColumnLayout;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -45,7 +46,7 @@ public class GeneralFormPage extends ViewPart {
 	}
 
 	private void createPlayerSection() {
-		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		Section playersSection = toolkit.createSection(form.getBody(), ExpandableComposite.TWISTIE | Section.DESCRIPTION| ExpandableComposite.TITLE_BAR);
 		playersSection.setText("Player Section");
 		playersSection.setExpanded(true);
 		playersSection.setDescription("The players that are playing.");
@@ -69,7 +70,7 @@ public class GeneralFormPage extends ViewPart {
 	}
 	
 	private void createScoringSection() {
-		Section playersSection = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		Section playersSection = toolkit.createSection(form.getBody(), ExpandableComposite.TWISTIE | Section.DESCRIPTION| ExpandableComposite.TITLE_BAR);
 		playersSection.setText("Scoreboard Section");
 		playersSection.setExpanded(false);
 		playersSection.setDescription("Current scores for the game");
@@ -105,7 +106,7 @@ public class GeneralFormPage extends ViewPart {
 	}
 	
 	private void createNewsTickerSection() {
-		Section section = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		Section section = toolkit.createSection(form.getBody(), ExpandableComposite.TWISTIE | Section.DESCRIPTION| ExpandableComposite.TITLE_BAR);
 		section.setText("News Ticker");
 		section.setExpanded(false);
 		section.setDescription("News ticker allows for the entry of data to be displayed in a scrolling textfield. Output is written to a file called ticker.txt");

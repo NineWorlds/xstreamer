@@ -1,6 +1,5 @@
 package us.nineworlds.xstreamer.ui.importWizards;
 
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;

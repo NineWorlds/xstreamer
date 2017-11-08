@@ -2,14 +2,10 @@ package us.nineworlds.xstreamer.property;
 
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
-import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-
-import com.github.xws.Pilot;
 import com.github.xws.Upgrade;
 
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
-import us.nineworlds.xstreamer.model.PilotTreeNode;
 import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
 
 public class UpgradeTypePropertySource implements IPropertySource {

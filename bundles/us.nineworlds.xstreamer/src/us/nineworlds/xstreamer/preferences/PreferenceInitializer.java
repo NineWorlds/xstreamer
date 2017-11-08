@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -22,6 +21,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	
 	public static final String TEMPLATE_XWING_BUNDLE_ID = "us.nineworlds.xstreamer.templates";
 
+	@Override
 	public void initializeDefaultPreferences() {
 		
 		Bundle templateBundle = Platform.getBundle(TEMPLATE_XWING_BUNDLE_ID);

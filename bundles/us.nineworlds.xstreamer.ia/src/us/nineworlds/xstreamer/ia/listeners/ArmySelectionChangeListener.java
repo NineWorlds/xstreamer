@@ -79,9 +79,8 @@ public class ArmySelectionChangeListener implements ISelectionChangedListener {
 	}
 
 	private IViewPart findImageViewer() {
-		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		IViewPart view = page.findView("us.nineworlds.xstreamer.imageview");
-		return view;
+		IWorkbenchPage currentActivePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		return currentActivePage.findView("us.nineworlds.xstreamer.imageview");
 	}
 
 	private void loadImage(String imageUrl, IViewPart view) {
@@ -90,7 +89,7 @@ public class ArmySelectionChangeListener implements ISelectionChangedListener {
 			try {
 				imageView.imageCanvas.loadImage(new URL(imageUrl));
 			} catch (Exception ex) {
-				ex.printStackTrace();
+				Logger.info("Unable to load image");
 			}
 		}
 	}

@@ -6,10 +6,6 @@ import org.eclipse.swt.widgets.Composite;
 import com.github.xws.XwsSpec;
 
 import us.nineworlds.xstreamer.Activator;
-import us.nineworlds.xstreamer.eventbus.EventBus;
-import us.nineworlds.xstreamer.eventbus.EventHandler;
-import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
-import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 import us.nineworlds.xstreamer.preferences.PreferenceConstants;
 
 public class FirstPlayerPage extends AbstractPlayerFormPage {

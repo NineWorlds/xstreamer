@@ -2,17 +2,14 @@ package us.nineworlds.xstreamer.forms;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.ColumnLayout;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -51,7 +48,7 @@ public class CountDownTimerPage extends ViewPart {
 		ColumnLayout layout = new ColumnLayout();
 		form.getBody().setLayout(layout);
 		
-		Section timer = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		Section timer = toolkit.createSection(form.getBody(), ExpandableComposite.TWISTIE | Section.DESCRIPTION| ExpandableComposite.TITLE_BAR);
 		timer.setText("Timer Section");
 		timer.setExpanded(true);
 		timer.setDescription("Set the intial count down timer value.");
@@ -98,7 +95,7 @@ public class CountDownTimerPage extends ViewPart {
 	}
 
 	private void createCountDownSection() {
-		Section countDown = toolkit.createSection(form.getBody(), Section.TWISTIE | Section.DESCRIPTION| Section.TITLE_BAR);
+		Section countDown = toolkit.createSection(form.getBody(), ExpandableComposite.TWISTIE | Section.DESCRIPTION| ExpandableComposite.TITLE_BAR);
 		countDown.setText("Count Down Section");
 		countDown.setExpanded(true);
 		countDown.setDescription("Time left in the match.");

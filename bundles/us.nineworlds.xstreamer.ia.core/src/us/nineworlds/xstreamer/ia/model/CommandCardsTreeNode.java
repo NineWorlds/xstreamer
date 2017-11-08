@@ -5,10 +5,7 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.TreeNode;
 
-import us.nineworlds.iadata.command.CommandCard;
 import us.nineworlds.iadata.command.CommandCards;
-import us.nineworlds.iadata.deployment.Deployment;
-import us.nineworlds.iadata.deployment.Deployments;
 
 public class CommandCardsTreeNode extends TreeNode {
 

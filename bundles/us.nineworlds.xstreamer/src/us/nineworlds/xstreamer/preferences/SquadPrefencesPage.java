@@ -4,9 +4,6 @@ import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import us.nineworlds.xstreamer.Activator;
-import us.nineworlds.xstreamer.preferences.widgets.LabelFieldEditor;
-import us.nineworlds.xstreamer.preferences.widgets.SpacerFieldEditor;
-
 import org.eclipse.ui.IWorkbench;
 
 /**
@@ -33,6 +30,7 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 	 * GUI blocks needed to manipulate various types of preferences. Each field
 	 * editor knows how to save and restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {
 		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XSTREAMER_XWING_OUTPUT_DIRECTORY,
 				"XStream Output Directory:", getFieldEditorParent()));
@@ -40,6 +38,7 @@ public class SquadPrefencesPage extends FieldEditorPreferencePage implements IWo
 		addField(new DirectoryFieldEditor(PreferenceConstants.TEMPLATE_XWING_INPUT_DIRECTORY, "Template Directory", getFieldEditorParent()));		
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		
 	}

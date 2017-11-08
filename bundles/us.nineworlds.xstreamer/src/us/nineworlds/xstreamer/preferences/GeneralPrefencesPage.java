@@ -5,8 +5,6 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import us.nineworlds.xstreamer.Activator;
 import us.nineworlds.xstreamer.preferences.widgets.LabelFieldEditor;
-import us.nineworlds.xstreamer.preferences.widgets.SpacerFieldEditor;
-
 import org.eclipse.ui.IWorkbench;
 
 /**
@@ -33,6 +31,7 @@ public class GeneralPrefencesPage extends FieldEditorPreferencePage implements I
 	 * GUI blocks needed to manipulate various types of preferences. Each field
 	 * editor knows how to save and restore itself.
 	 */
+	@Override
 	public void createFieldEditors() {
 		new LabelFieldEditor("Player Filenames", getFieldEditorParent()).adjustForNumColumns(3);
 		
@@ -44,6 +43,7 @@ public class GeneralPrefencesPage extends FieldEditorPreferencePage implements I
 				getFieldEditorParent()));
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		
 	}

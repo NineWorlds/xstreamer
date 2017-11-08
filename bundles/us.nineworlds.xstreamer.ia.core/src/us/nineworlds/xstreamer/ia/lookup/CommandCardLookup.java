@@ -3,11 +3,8 @@ package us.nineworlds.xstreamer.ia.lookup;
 import java.util.List;
 
 import us.nineworlds.iadata.CommandCardDB;
-import us.nineworlds.iadata.DeploymentsDB;
 import us.nineworlds.iadata.command.CommandCard;
 import us.nineworlds.iadata.command.CommandCards;
-import us.nineworlds.iadata.deployment.Deployment;
-import us.nineworlds.iadata.deployment.Deployments;
 
 public class CommandCardLookup {
    

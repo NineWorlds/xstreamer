@@ -4,18 +4,11 @@ import java.util.Map;
 
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
-import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-
-import com.github.xws.Pilot;
-import com.github.xws.Upgrade;
-
 import us.nineworlds.iadata.command.CommandCard;
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.model.CommandCardTreeNode;
 import us.nineworlds.xstreamer.ia.model.vendoroptions.CommandCardVendorOptions;
-import us.nineworlds.xstreamer.model.PilotTreeNode;
-import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
 import us.nineworlds.xstreamer.property.CheckboxPropertyDescriptor;
 import us.nineworlds.xstreamer.property.NumericPropertyDescriptor;
 

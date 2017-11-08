@@ -45,6 +45,7 @@ public class Activator implements BundleActivator {
 		plugin = this;
 	}
 	
+	@Override
 	public void start(BundleContext context) throws Exception {
 		Activator.context = context;
 		
@@ -62,6 +63,7 @@ public class Activator implements BundleActivator {
 		deploymentsLookup = DeploymentsLookup.newInstance(deploymentsDB);		
 	}
 
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 	}

@@ -11,7 +11,6 @@
 package uky.article.imageviewer.views;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.eclipse.core.runtime.FileLocator;
@@ -49,6 +48,7 @@ public class ImageView extends ViewPart {
 	 * @param frame
 	 *            The Composite handle of parent
 	 */
+	@Override
 	public void createPartControl(Composite frame) {
 		imageCanvas = new SWTImageCanvas(frame);
 		
@@ -68,6 +68,7 @@ public class ImageView extends ViewPart {
 	 * 
 	 * @see org.eclipse.ui.part.ViewPart#setFocus
 	 */
+	@Override
 	public void setFocus() {
 		imageCanvas.setFocus();
 	}
@@ -75,6 +76,7 @@ public class ImageView extends ViewPart {
 	/**
 	 * Called when the View is to be disposed
 	 */
+	@Override
 	public void dispose() {
 		imageCanvas.dispose();
 		super.dispose();

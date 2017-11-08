@@ -2,8 +2,6 @@ package us.nineworlds.xstreamer.ia.property;
 
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
-import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-
 import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;

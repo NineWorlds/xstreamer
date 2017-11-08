@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.eclipse.jface.viewers.TreeNode;
 
-import us.nineworlds.iadata.deployment.Deployment;
 import us.nineworlds.iadata.deployment.Deployments;
 
 public class ArmyTreeNode extends TreeNode {

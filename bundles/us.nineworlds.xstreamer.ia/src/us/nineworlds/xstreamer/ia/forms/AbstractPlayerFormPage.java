@@ -1,7 +1,6 @@
 package us.nineworlds.xstreamer.ia.forms;
 
 import java.io.ByteArrayInputStream;
-import java.io.StringBufferInputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,11 +15,11 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.forms.widgets.ColumnLayout;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -35,7 +34,6 @@ import us.nineworlds.iadata.enums.Factions;
 import us.nineworlds.iadata.util.IASpecLoader;
 import us.nineworlds.xstreamer.eventbus.EventBus;
 import us.nineworlds.xstreamer.eventbus.EventHandler;
-import us.nineworlds.xstreamer.eventbus.GenerateSquadJobEvent;
 import us.nineworlds.xstreamer.ia.core.Activator;
 import us.nineworlds.xstreamer.ia.events.GenerateArmyEvent;
 import us.nineworlds.xstreamer.ia.jobs.GenerateArmyJob;
@@ -46,7 +44,6 @@ import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
 import us.nineworlds.xstreamer.ia.model.ArmyContentProvider;
 import us.nineworlds.xstreamer.ia.model.ArmyLabelProvider;
 import us.nineworlds.xstreamer.ia.model.vendoroptions.CommandCardVendorOptions;
-import us.nineworlds.xstreamer.jobs.GenerateSquadJob;
 
 
 public abstract class AbstractPlayerFormPage extends ViewPart {
@@ -86,7 +83,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 
 	private void createArmySection() {
 		Section squadSection = toolkit.createSection(form.getBody(),
-				Section.TWISTIE | Section.DESCRIPTION | Section.TITLE_BAR);
+				ExpandableComposite.TWISTIE | Section.DESCRIPTION | ExpandableComposite.TITLE_BAR);
 		String points = "";
 		squadSection.setText("Army - Total Points " + points);
 
@@ -127,7 +124,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 
 	private void createImportSquadSection() {
 		Section section = toolkit.createSection(form.getBody(),
-				Section.TWISTIE | Section.DESCRIPTION | Section.TITLE_BAR);
+				ExpandableComposite.TWISTIE | Section.DESCRIPTION | ExpandableComposite.TITLE_BAR);
 		section.setText("Import Army");
 		section.setExpanded(false);
 		section.setDescription("Cut and paste the IASpec army data in the text box, then press Import.");

@@ -3,8 +3,6 @@ package us.nineworlds.xstreamer.preferences;
 import java.io.File;
 import java.util.List;
 
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -26,7 +24,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
 import us.nineworlds.xstreamer.Logger;
-import us.nineworlds.xstreamer.core.Activator;
 import us.nineworlds.xstreamer.model.template.SquadTemplateModel;
 
 public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorPreferencePage {
@@ -73,7 +70,8 @@ public abstract class AbstractPlayerTemplatesPreferencePage extends FieldEditorP
 		TableViewer tv = new TableViewer(tableViewerContainer, SWT.FILL | SWT.SINGLE | SWT.BORDER | SWT.FULL_SELECTION);
 				
 		tv.addSelectionChangedListener(new ISelectionChangedListener() {
-		    public void selectionChanged(final SelectionChangedEvent event) {
+		    @Override
+			public void selectionChanged(final SelectionChangedEvent event) {
 		        IStructuredSelection selection = (IStructuredSelection)event.getSelection();
 		        String templateDirectory = getPreferenceStore().getString(PreferenceConstants.TEMPLATE_XWING_INPUT_DIRECTORY);
 		        templateFile.setEmptyStringAllowed(false);

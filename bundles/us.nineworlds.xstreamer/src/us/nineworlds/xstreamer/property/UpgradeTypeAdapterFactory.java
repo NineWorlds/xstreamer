@@ -3,9 +3,6 @@ package us.nineworlds.xstreamer.property;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import com.github.xws.Pilot;
-
-import us.nineworlds.xstreamer.model.PilotTreeNode;
 import us.nineworlds.xstreamer.model.UpgradeTypeTreeNode;
 
 public class UpgradeTypeAdapterFactory implements IAdapterFactory {
