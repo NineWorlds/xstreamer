@@ -18,10 +18,16 @@
                relative="us.nineworlds.xstreamer.view.general">
          </view>
          <view
+               minimized="false"
+	           id="us.nineworlds.xstreamer.view.ia.maps"
+               relationship="stack"
+               relative="us.nineworlds.xstreamer.view.timer">
+         </view>
+         <view
                id="us.nineworlds.xstreamer.view.ia.firstplayer"
                minimized="false"
                relationship="stack"
-               relative="us.nineworlds.xstreamer.view.timer">
+               relative="us.nineworlds.xstreamer.view.ia.maps">
          </view>
          <view
                id="us.nineworlds.xstreamer.view.ia.secondplayer"
@@ -70,6 +76,13 @@
             icon="images/P2.png"
             id="us.nineworlds.xstreamer.view.ia.secondplayer"
             name="Player 2"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="us.nineworlds.xstreamer.ia.forms.MapsFormPage"
+            id="us.nineworlds.xstreamer.view.ia.maps"
+            name="Maps"
             restorable="true">
       </view>
       

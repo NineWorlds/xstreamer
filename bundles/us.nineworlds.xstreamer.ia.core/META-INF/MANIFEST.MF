@@ -22,4 +22,5 @@ Export-Package: us.nineworlds.iadata,
  us.nineworlds.xstreamer.ia.core,
  us.nineworlds.xstreamer.ia.lookup,
  us.nineworlds.xstreamer.ia.model,
+ us.nineworlds.xstreamer.ia.model.maps,
  us.nineworlds.xstreamer.ia.model.vendoroptions

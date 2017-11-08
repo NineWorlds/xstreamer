@@ -17,6 +17,9 @@ import us.nineworlds.iadata.util.CommandCardsDBLoader;
 import us.nineworlds.iadata.util.DepoymentsDBLoader;
 import us.nineworlds.xstreamer.ia.lookup.CommandCardLookup;
 import us.nineworlds.xstreamer.ia.lookup.DeploymentsLookup;
+import us.nineworlds.xstreamer.ia.lookup.SkirmishMapsLookup;
+import us.nineworlds.xstreamer.ia.model.maps.Maps;
+import us.nineworlds.xstreamer.ia.model.maps.SkirmishMapsLoader;
 
 
 /**
@@ -26,6 +29,7 @@ public class Activator implements BundleActivator {
 	
 	private CommandCardLookup commandCardLookup;
 	private DeploymentsLookup deploymentsLookup;
+	private SkirmishMapsLookup skirmishMapsLookup;
 	
 	private IASpec player1Model;
 	private IASpec player2Model;
@@ -52,15 +56,19 @@ public class Activator implements BundleActivator {
 		Bundle dataBundle = Platform.getBundle("us.nineworlds.xstreamer.ia.data");
 		IPath deploymentsPath = new Path("deployments/deployments.json");
 		IPath commandCardsPath = new Path("commandCards/commandcards.json");
+		IPath mapsPath = new Path("iaskirmishMaps/ia_skirmish_maps.json");
 		
 		URL deploymentsUrl = FileLocator.find(dataBundle, deploymentsPath, null);
 		URL commandCardsUrl = FileLocator.find(dataBundle, commandCardsPath, null);
+		URL mapsUrl = FileLocator.find(dataBundle, mapsPath, null);
 		
 		DeploymentsDB deploymentsDB = new DepoymentsDBLoader().load(deploymentsUrl);
 		CommandCardDB commandCardsDB = new CommandCardsDBLoader().load(commandCardsUrl);
+		Maps skirmishMaps = new SkirmishMapsLoader().loadSkirmishMaps(mapsUrl.openStream());
 		
+		skirmishMapsLookup = SkirmishMapsLookup.newInstance(skirmishMaps);
 		commandCardLookup = CommandCardLookup.newInstance(commandCardsDB);
-		deploymentsLookup = DeploymentsLookup.newInstance(deploymentsDB);		
+		deploymentsLookup = DeploymentsLookup.newInstance(deploymentsDB);
 	}
 
 	@Override
