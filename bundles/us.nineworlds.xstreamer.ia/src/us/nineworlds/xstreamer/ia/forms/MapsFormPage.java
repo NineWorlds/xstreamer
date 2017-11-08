@@ -89,6 +89,7 @@ public class MapsFormPage extends ViewPart {
 		listViewer.add(SkirmishMapsLookup.getInstance().getMaps().toArray());
 		listViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			
+			//TODO: Extract me out to my own class. Messy code!!!!
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				
