@@ -104,7 +104,7 @@ public class MapsFormPage extends ViewPart {
 						URL mapImageUrl = FileLocator.find(bundle, mapImagePath, null);
 						try {
 							loadImage(mapImageUrl.openStream(), imageView);
-							saveImage("xstreamer_skirmish_map.jpg", imageView);
+							saveImage("xstreamer_skirmish_map.png", imageView);
 						} catch (IOException e) {
 						}
 					}
