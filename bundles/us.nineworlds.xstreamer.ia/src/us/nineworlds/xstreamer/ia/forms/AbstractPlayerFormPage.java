@@ -100,7 +100,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 		treeViewer.setContentProvider(new ArmyContentProvider());
 		treeViewer.setLabelProvider(new ArmyLabelProvider());
 		treeViewer.setInput(getPlayerModel());
-		treeViewer.addSelectionChangedListener(new ArmySelectionChangeListener(this));
+		treeViewer.addSelectionChangedListener(new ArmySelectionChangeListener());
 
 		GridData treeSize = new GridData(SWT.FILL, SWT.FILL, true, true, 3, 5);
 		treeSize.minimumHeight = 300;
