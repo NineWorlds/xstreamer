@@ -6,7 +6,7 @@ import us.nineworlds.iadata.IASpec;
 
 public class FirstPlayerPage extends AbstractPlayerFormPage {
 
-	public static String FIRST_PLAYER_VIEW = "us.nineworlds.xstreamer.view.ia.firstplayer";
+	public static final String FIRST_PLAYER_VIEW = "us.nineworlds.xstreamer.view.ia.firstplayer";
 	
 	@Override
 	public void setFocus() {

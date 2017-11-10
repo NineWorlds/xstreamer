@@ -1034,7 +1034,7 @@
     "slot": "Elite",
     "unique": true,
     "points": 2,
-    "text": "When attacking or defending, if there are no other friendly ships at Range 1‚Äì2, you may reroll 1 of your blank results.",
+    "text": "When attacking or defending, if there are no other friendly ships at Range 1ñ2, you may reroll 1 of your blank results.",
     "image": "upgrades/Elite/lone-wolf.png",
     "xws": "lonewolf"
   },
@@ -1106,7 +1106,7 @@
     "id": 106,
     "slot": "System",
     "points": 3,
-    "text": "When attacking, during the ‚ÄúModify Attack Dice‚Äù step, you may cancel all of your dice results. Then, you may add 2 [Hit] results to your roll.<br /><br />Your dice cannot be modified again during this attack.",
+    "text": "When attacking, during the ìModify Attack Diceî step, you may cancel all of your dice results. Then, you may add 2 [Hit] results to your roll.<br /><br />Your dice cannot be modified again during this attack.",
     "image": "upgrades/System/accuracy-corrector.png",
     "xws": "accuracycorrector"
   },
@@ -1145,7 +1145,7 @@
     "unique": true,
     "slot": "Salvaged Astromech",
     "points": 0,
-    "text": "If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb after you execute your maneuver instead.",
+    "text": "After you reveal and execute a maneuver, if you did not overlap a ship, you may discard 1 of your equipped [Bomb] Upgrade cards without the \"<strong>Action:</strong>\" header to drop the corresponding bomb token.",
     "image": "upgrades/Salvaged Astromech/genius.png",
     "xws": "genius"
   },
@@ -2148,7 +2148,7 @@
     "id": 188,
     "slot": "Modification",
     "points": 2,
-    "text": "When defending, if you are inside the attacker‚Äôs firing arc beyond Range 2 or outside the attacker‚Äôs firing arc, you may change 1 of your blank results to a [Evade] result. You can equip this card only if you have the [Boost] action icon.",
+    "text": "When defending, if you are inside the attackerís firing arc beyond Range 2 or outside the attackerís firing arc, you may change 1 of your blank results to a [Evade] result. You can equip this card only if you have the [Boost] action icon.",
     "image": "upgrades/Modification/autothrusters.png",
     "xws": "autothrusters"
   },
@@ -2747,6 +2747,7 @@
     "points": 1,
     "slot": "Elite",
     "faction": "Scum and Villainy",
+    "squadLimited": 2,
     "id": 236
   },
   {
