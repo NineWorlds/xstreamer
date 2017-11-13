@@ -44,6 +44,7 @@
 					      <rootFolders>
 						  	<macosx>XStreamer.app</macosx>
 					      </rootFolders>
+					      <archiveFileName>xstreamer-${project.version}</archiveFileName>
 					   </product>
 					</products>
 				</configuration>
