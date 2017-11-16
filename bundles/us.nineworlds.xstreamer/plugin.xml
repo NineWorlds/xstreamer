@@ -56,6 +56,14 @@
             name="General"
             restorable="true">
       </view>
+      <view
+            category="us.nineworlds.xstreamer.category"
+            class="us.nineworlds.xstreamer.forms.OtherCardsFormPage"
+            id="us.nineworlds.xstreamer.view.othercards"
+            name="Conditions and Damage Decks"
+            restorable="true">
+      </view>
+      
       <category
             id="us.nineworlds.xstreamer.category"
             name="XStreamer">
@@ -165,6 +173,30 @@
          </menu>
       </menuContribution>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:us.nineworlds.xstreamer.view.othercards">
+         <command
+               commandId="us.nineworlds.xstreamer.view.othercards.conditions"
+               style="push"
+               tooltip="Conditions">
+         </command>
+         <command
+               commandId="us.nineworlds.xstreamer.view.othercards.damagedeckcore"
+               style="push"
+               tooltip="Core">
+         </command>
+         <command
+               commandId="us.nineworlds.xstreamer.view.othercards.damagedecktfa"
+               style="push"
+               tooltip="TFA">
+         </command>
+      </menuContribution>
+   </extension>
+   
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
@@ -296,6 +328,21 @@
             id="us.nineworlds.xstreamer.imageview.zoomout"
             name="Zoom Out">
       </command>
+         <command
+               id="us.nineworlds.xstreamer.view.othercards.conditions"
+               name="Conditions"
+               defaultHandler="us.nineworlds.xstreamer.handler.ConditionsHandler">
+         </command>
+         <command
+               id="us.nineworlds.xstreamer.view.othercards.damagedeckcore"
+               name="Core"
+               defaultHandler="us.nineworlds.xstreamer.handler.CoreDamageDeckHandler">
+         </command>
+         <command
+               id="us.nineworlds.xstreamer.view.othercards.damagedecktfa"
+               name="TFA"
+               defaultHandler="us.nineworlds.xstreamer.handler.TFADamageDeckHandler">
+          </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">

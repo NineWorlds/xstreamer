@@ -102,7 +102,7 @@ public class Activator implements BundleActivator {
 		
 		Map<String, Object> miscellaneousCards = extraCardsModel.getMiscellaneousCards();
 		miscellaneousCards.put("Conditions", conditions);
-		miscellaneousCards.put("Damage Deck TFA ", damageDeckCoreTFAList);
+		miscellaneousCards.put("Damage Deck TFA", damageDeckCoreTFAList);
 		miscellaneousCards.put("Damage Deck Original", damageDeckCoreList);	
 		
 		extraCardsModel.setMiscellaneousCards(miscellaneousCards);

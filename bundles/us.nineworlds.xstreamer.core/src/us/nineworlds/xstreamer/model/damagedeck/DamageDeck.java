@@ -70,4 +70,8 @@ public class DamageDeck {
 		this.section = section;
 	}
 	
+	public String toString() {
+		return name;
+	}
+	
 }
