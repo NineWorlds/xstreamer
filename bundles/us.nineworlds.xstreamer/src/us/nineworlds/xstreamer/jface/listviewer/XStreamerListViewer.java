@@ -13,5 +13,5 @@ public class XStreamerListViewer extends ListViewer {
 	public void listRemoveAll() {
 		super.listRemoveAll();
 	}
-
+	
 }
