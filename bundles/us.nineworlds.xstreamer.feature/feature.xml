@@ -2,7 +2,7 @@
 <feature
       id="us.nineworlds.xstreamer.feature"
       label="XStreamer Feature"
-      version="0.7.1.qualifier"
+      version="0.7.1"
       plugin="us.nineworlds.xstreamer.branding">
 
    <description url="http://www.example.com/description">

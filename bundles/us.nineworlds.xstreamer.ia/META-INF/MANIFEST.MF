@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Imperial Assault
 Bundle-SymbolicName: us.nineworlds.xstreamer.ia;singleton:=true
-Bundle-Version: 0.7.1.qualifier
+Bundle-Version: 0.7.1
 Bundle-Activator: us.nineworlds.xstreamer.ia.Activator
 Bundle-Vendor: NineWorlds
 Require-Bundle: org.eclipse.ui,
