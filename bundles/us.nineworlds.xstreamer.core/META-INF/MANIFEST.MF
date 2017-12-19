@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
 Bundle-SymbolicName: us.nineworlds.xstreamer.core;singleton:=true
-Bundle-Version: 0.7.1.qualifier
+Bundle-Version: 0.7.1
 Bundle-Activator: us.nineworlds.xstreamer.core.Activator
 Bundle-Vendor: Nineworlds
 Require-Bundle: org.eclipse.core.runtime,
