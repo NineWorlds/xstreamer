@@ -171,7 +171,7 @@ public abstract class AbstractPlayerFormPage extends ViewPart {
 							if (actualPilot != null) {
 								Integer skill = Integer.valueOf(actualPilot.getSkill());
 								com.github.xws.Upgrades upgrades = pilot.getUpgrades();
-								if (upgrades.findUpgrade("veteraninstincts") != null) {
+								if (upgrades != null && upgrades.findUpgrade("veteraninstincts") != null) {
 									skill = skill + 2;
 								}
 								pilot.setPilotSkill(Integer.toString(skill));
