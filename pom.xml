@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>us.nineworlds.xstreamer</groupId>
 	<artifactId>xstreamer</artifactId>
-	<version>0.7.1</version>
+	<version>0.7.2</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>releng/us.nineworlds.xstreamer.target</module>
