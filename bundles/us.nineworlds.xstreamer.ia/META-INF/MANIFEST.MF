@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Imperial Assault
 Bundle-SymbolicName: us.nineworlds.xstreamer.ia;singleton:=true
-Bundle-Version: 0.7.2
+Bundle-Version: 0.7.3
 Bundle-Activator: us.nineworlds.xstreamer.ia.Activator
 Bundle-Vendor: NineWorlds
 Require-Bundle: org.eclipse.ui,
@@ -18,7 +18,10 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: us.nineworlds.xstreamer.ia,
+ us.nineworlds.xstreamer.ia.events,
  us.nineworlds.xstreamer.ia.forms,
+ us.nineworlds.xstreamer.ia.jobs,
  us.nineworlds.xstreamer.ia.listeners,
  us.nineworlds.xstreamer.ia.perspective,
- us.nineworlds.xstreamer.ia.preferences
+ us.nineworlds.xstreamer.ia.preferences,
+ us.nineworlds.xstreamer.ia.property
