@@ -168,10 +168,17 @@ public class Pilot {
 	@JsonProperty("hull")
 	public Integer getHull() {
 		if (!hullLoaded) {
-			Ship foundShip = shipsLookup.findShip(ship);
+			hull = 0;
+			Ship foundShip = shipsLookup.findShip(xwsname);
 			if (foundShip != null) {
 				hull = foundShip.getHull();
 				hullLoaded = true;
+			} else {
+				foundShip = shipsLookup.findShip(ship);
+				if ( foundShip != null) {
+					hull = foundShip.getHull();
+					hullLoaded = true;
+				}
 			}
 		}
 		return hull;
@@ -196,10 +203,17 @@ public class Pilot {
 	@JsonProperty("shields")
 	public Integer getShields() {
 		if (!shieldsLoaded) {
-			Ship foundShip = shipsLookup.findShip(ship);
+			shields = 0;
+			Ship foundShip = shipsLookup.findShip(xwsname);
 			if (foundShip != null) {
 				shields = foundShip.getShields();
 				shieldsLoaded = true;
+			} else {
+				foundShip = shipsLookup.findShip(ship);
+				if (foundShip != null) {
+					shields = foundShip.getShields();
+					shieldsLoaded = true;
+				}
 			}
 		}
 		return shields;
