@@ -60,6 +60,15 @@
     "name": "Rattled",
     "xws": "rattled",
     "unique": true,
-    "id": 7
+    "id": 7,
+    "image": "conditions/rattled.png"
+  },
+  {
+    "image": "conditions/scrambled.png",
+    "text": "When attacking a ship at Range 1 that is equipped with the \"Targeting Scrambler\" upgrade, you cannot modify your attack dice.<br /><br />At the end of the Combat phase, remove this card.",
+    "name": "Scrambled",
+    "xws": "scrambled",
+    "unique": true,
+    "id": 8
   }
 ]
