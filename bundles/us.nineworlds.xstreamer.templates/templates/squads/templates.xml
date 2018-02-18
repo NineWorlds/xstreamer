@@ -1,12 +1,12 @@
 <templates>
 	<template name="GoldSquadron Left Aligned" description="GoldSquadron Podcast template that is left aligned. Auto refreshes."
 		id="us.nineworlds.xstreamer.template.detailSquadLeftAligned.ftl"
-		filename="obsbrowser_detailSquadLeftAligned.ftl" format="html" type="squad"
+		filename="goldsquadron_detailSquadLeftAligned.ftl" format="html" type="squad"
 		path="squads/html/" enabled="true" />
 		
 	<template name="GoldSquadron Right Aligned" description="GoldSquadron Podcast template that is right aligned. Auto refreshes."
 		id="us.nineworlds.xstreamer.template.detailSquadRightAligned.ftl"
-		filename="obsbrowser_detailSquadRightAligned.ftl" format="html" type="squad"
+		filename="goldsquadron_detailSquadRightAligned.ftl" format="html" type="squad"
 		path="squads/html/" enabled="true" />
 		
 	<template name="Dark Side Left Aligned" description="Dark Side Production left aligned template with built in refresh."
