@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Data
 Bundle-SymbolicName: us.nineworlds.xstreamer.ia.data
-Bundle-Version: 0.7.3
+Bundle-Version: 1.0.0.qualifier
 Eclipse-BundleShape: dir
